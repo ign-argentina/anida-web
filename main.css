@@ -1,0 +1,131 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+	background-color: #fafafa;
+	font-family: "Lato", sans-serif;
+	margin: 0 !important;
+}
+section {
+	width: 100%;
+	height: 100vh;
+	display: block;
+}
+
+.home, .menu {
+	text-align: center;
+	margin: auto;
+}
+a {
+	color: black;
+	font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#home-content {
+}
+
+#home-title {font-size: 70px;}
+#home-longtitle {font-size: 30px;}
+#home-description {font-size: 20px;}
+
+/* Sections menu */
+
+#sections-menu ul {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+#sections-menu li {
+	display: inline-block;
+    /*padding: 20px;*/
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+	/*top: 36%;*/
+    margin: 30px;
+    text-align: center;
+}
+#sections-menu a li:hover {
+	background-color: #ddd !important;
+	transition: background-color 0.5s ease;
+}
+#sections-menu a li {
+    font-size: 20px;
+	position: relative;
+    color: white;
+}
+
+/* Scrolling */
+
+a[ id= "home" ]:target ~ #main section.panel {
+    -webkit-transform: translateY( 0px);
+    transform: translateY( 0px );
+}
+
+a[ id= "sections-menu" ]:target ~ #main section.panel {
+    -webkit-transform: translateY( -500px );
+    transform: translateY( -500px );
+}
+a[ id= "section-page" ]:target ~ #main section.panel {
+    -webkit-transform: translateY( -1000px );
+    transform: translateY( -1000px );
+}
+
+/* Section page */
+
+/* {box-sizing: border-box}*/
+
+	.full-height {
+		/*position: absolute;*/
+		top: 0;
+		bottom: 0;
+	}
+	
+	.left-30 {margin-left: 30%}
+	/* Style the tab */
+	.tab {
+	    float: left;
+	    /*border: 1px solid #ccc;*/
+	    background-color: #f1f1f1;
+	    width: 30%;
+	}
+
+	/* Style the buttons that are used to open the tab content */
+	.tab button {
+	    display: block;
+	    background-color: inherit;
+	    color: black;
+	    padding: 22px 16px;
+	    width: 100%;
+	    border: none;
+	    outline: none;
+	    text-align: left;
+	    cursor: pointer;
+	    transition: 0.3s;
+	}
+
+	/* Change background color of buttons on hover */
+	.tab button:hover {
+	    background-color: #ddd;
+	}
+
+	#tab-content {
+		margin-left: 30%;
+		width: 70%
+	}
+
+	/* Create an active/current "tab button" class */
+	.tab button.active {
+	    background-color: #ccc;
+	}
+
+	/* Style the tab content */
+	.tabcontent {
+	    float: left;
+	    padding: 0px 12px;
+	    /*border: 1px solid #ccc;*/
+	    width: 100%;
+	    border-left: none;
+	}

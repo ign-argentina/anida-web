@@ -1,0 +1,83 @@
+<!-- Contenido -->
+<div class="tab full-height">
+ 	<h1>ARGENTINA Y EL MUNDO</h1>
+	<p>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	</p>
+	<p>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	</p>
+	<button class="tablinks" onclick="openCity(event, 'argentina-y-mundo')" id="defaultOpen">Argentina y el Mundo</button>
+	<button class="tablinks" onclick="openCity(event, 'fisico-y-natural')">Argentina físico y natural</button>
+	<button class="tablinks" onclick="openCity(event, 'ambiental')">Argentina ambiental</button>
+	<button class="tablinks" onclick="openCity(event, 'economica')" id="defaultOpen">Argentina económica</button>
+	<button class="tablinks" onclick="openCity(event, 'socio-demografica')">Argentina socio-demográfica</button>
+	<button class="tablinks" onclick="openCity(event, 'institucional')">Argentina institucional</button><br>
+	<a href="#">Inicio</a><br>
+	<a href="#sections-menu">Dimensiones</a>
+</div>
+</div>
+<div id="tab-content" class="full-height left-30">
+	<div id="argentina-y-mundo" class="tabcontent">
+	  <h3>Rasgos básicos</h3>
+	  <h3>Porciones de territorio</h3>
+	  <h3>Límites y fronteras internacionales</h3>
+	  <h3>Organización política del territorio</h3>
+	  <h3>Formación del territorio</h3>
+	  <h3>Malvinas e islas del Atlántico Sur</h3>
+	  <h3>Antártida</h3>
+	  <h3>Inserción internacional</h3>
+	</div>
+
+	<div id="fisico-y-natural" class="tabcontent">
+	  <h3>Argentina físico y natural</h3>
+	  <p>Agregar el texto y/o las imágenes.</p>
+	</div>
+
+	<div id="ambiental" class="tabcontent">
+	  <h3>Argentina Ambiental</h3>
+	  <p>Texto y/o imágenes.</p>
+	</div>
+
+	<div id="economica" class="tabcontent">
+	  <h3>Argentina económica</h3>
+	  <p>Texto y/o imágenes.</p>
+	</div>
+	
+	<div id="socio-demografica" class="tabcontent">
+	  <h3>Argentina socio-demográfica</h3>
+	  <p>Texto y/o imágenes.</p>
+	</div> 
+	
+	<div id="institucional" class="tabcontent">
+	  <h3>Argentina institucional</h3>
+	  <p>Texto y/o imágenes.</p>
+	</div> 
+</div>
+
+<script type="text/javascript">
+	function openCity(evt, cityName) {
+	    // Declare all variables
+	    var i, tabcontent, tablinks;
+
+	    // Get all elements with class="tabcontent" and hide them
+	    tabcontent = document.getElementsByClassName("tabcontent");
+	    for (i = 0; i < tabcontent.length; i++) {
+	        tabcontent[i].style.display = "none";
+	    }
+
+	    // Get all elements with class="tablinks" and remove the class "active"
+	    tablinks = document.getElementsByClassName("tablinks");
+	    for (i = 0; i < tablinks.length; i++) {
+	        tablinks[i].className = tablinks[i].className.replace(" active", "");
+	    }
+
+	    // Show the current tab, and add an "active" class to the link that opened the tab
+	    document.getElementById(cityName).style.display = "block";
+	    evt.currentTarget.className += " active";
+	}
+	
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+</script>
+<!-- fin contenido -->
