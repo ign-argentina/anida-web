@@ -40,7 +40,9 @@ a {
 	margin: 0 !important;
 }
 
-#sections-menu li, #sections-menu li > div {
+#sections-menu li {display: inline-block;}
+
+#sections-menu li > div {
 	display: inline-block;
     /*padding: 20px;*/
     width: 200px;
@@ -50,7 +52,7 @@ a {
     margin: 30px;
     text-align: center;
 }
-#sections-menu a li:hover {
+#sections-menu a li div:hover {
 	background-color: #ddd !important;
 	transition: background-color 0.5s ease;
 }
