@@ -40,7 +40,7 @@ a {
 	margin: 0 !important;
 }
 
-#sections-menu li {
+#sections-menu li, #sections-menu li > div {
 	display: inline-block;
     /*padding: 20px;*/
     width: 200px;
