@@ -4,6 +4,7 @@ html {
 body {
 	background-color: #fafafa;
 	font-family: "Lato", sans-serif;
+	font-size: 16px;
 	margin: 0 !important;
 }
 section {
@@ -84,12 +85,17 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 	}
 	
 	.left-30 {margin-left: 30%}
+
 	/* Style the tab */
 	.tab {
 	    float: left;
 	    /*border: 1px solid #ccc;*/
-	    background-color: #f1f1f1;
+	    background-color: #48608D;
 	    width: 30%;
+	}
+	.tab h1 {
+	    color: #fafafa;
+	    font-size: 200%
 	}
 
 	/* Style the buttons that are used to open the tab content */
