@@ -27,11 +27,17 @@ a {
 }
 
 #home-content {
+	text-align: center;
+	margin-top: 10%;
 }
 
 #home-title {font-size: 70px;}
 #home-longtitle {font-size: 30px;}
-#home-description {font-size: 20px;}
+#home-description {
+	font-size: 20px;
+	width: 50%;
+	display: inline-block;
+}
 
 /* Sections menu */
 
