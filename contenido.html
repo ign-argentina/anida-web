@@ -1,18 +1,15 @@
 <!-- Contenido -->
 <div class="tab full-height">
- 	<h1>ARGENTINA Y EL MUNDO</h1>
-	<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-	</p>
-	<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-	</p>
-	<button class="tablinks" onclick="openCity(event, 'argentina-y-mundo')" id="defaultOpen">Argentina y el Mundo</button>
-	<button class="tablinks" onclick="openCity(event, 'fisico-y-natural')">Argentina físico y natural</button>
-	<button class="tablinks" onclick="openCity(event, 'ambiental')">Argentina ambiental</button>
-	<button class="tablinks" onclick="openCity(event, 'economica')" id="defaultOpen">Argentina económica</button>
-	<button class="tablinks" onclick="openCity(event, 'socio-demografica')">Argentina socio-demográfica</button>
-	<button class="tablinks" onclick="openCity(event, 'administrativa')">Argentina político-administrativa</button>
+	<div id="content-card" class="content-card">
+		<h1></h1>
+		<p></p>
+	</div>
+	<button class="tablinks" onclick="openCity(event, 'argentina-y-mundo', 'mundo')" id="defaultOpen">Argentina y el Mundo</button>
+	<button class="tablinks" onclick="openCity(event, 'fisico-y-natural', 'natural')">Argentina físico y natural</button>
+	<button class="tablinks" onclick="openCity(event, 'ambiental', 'ambiental')">Argentina ambiental</button>
+	<button class="tablinks" onclick="openCity(event, 'economica', 'economica')" id="defaultOpen">Argentina económica</button>
+	<button class="tablinks" onclick="openCity(event, 'socio-demografica', 'demografica')">Argentina socio-demográfica</button>
+	<button class="tablinks" onclick="openCity(event, 'administrativa', 'administrativa')">Argentina político-administrativa</button>
 	<a href="#">Inicio</a>
 	<a href="#sections-menu">Secciones</a>
 </div>
@@ -55,7 +52,7 @@
 </div>
 
 <script type="text/javascript">
-	function openCity(evt, cityName) {
+	function openCity(evt, cityName, section) {
 	    // Declare all variables
 	    var i, tabcontent, tablinks;
 
@@ -74,9 +71,14 @@
 	    // Show the current tab, and add an "active" class to the link that opened the tab
 	    document.getElementById(cityName).style.display = "block";
 	    evt.currentTarget.className += " active";
+
+		// Load title and description to tab
+		$("#content-card h1").html(sections[section].title.toUpperCase());
+		$("#content-card p").html(sections[section].description);
 	}
 	
 	// Get the element with id="defaultOpen" and click on it
 	document.getElementById("defaultOpen").click();
+
 </script>
 <!-- fin contenido -->

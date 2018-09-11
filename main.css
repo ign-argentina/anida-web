@@ -30,7 +30,6 @@ a {
 	text-align: center;
 	margin-top: 10%;
 }
-
 #home-title {font-size: 70px;}
 #home-longtitle {font-size: 30px;}
 #home-description {
@@ -95,6 +94,20 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 }
 
 /* Section page */
+
+.content-card {
+	width: 95%;
+	height: 340px;
+}
+.content-card h1 {
+	/*padding: 0 10px;*/
+	font-size: 2.5rem;
+	word-wrap: break-word;
+}
+.content-card p {
+	padding: 0 10px;
+	text-align: justify;
+}
 
 /* {box-sizing: border-box}*/
 
