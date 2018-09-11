@@ -67,6 +67,16 @@ a {
 	position: relative;
     color: white;
 }
+.btn-section {
+	vertical-align: middle;
+	text-align: center;
+}
+.btn-section p {
+	height: 200px;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 10%;
+}
 
 /* Scrolling */
 
