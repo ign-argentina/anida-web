@@ -15,6 +15,9 @@ section {
 	display: block;
 }
 
+.hide {
+	display: none;
+}
 .home, .menu {
 	text-align: center;
 	margin: auto;
@@ -28,7 +31,7 @@ a {
 
 #home-content {
 	text-align: center;
-	margin-top: 10%;
+	padding-top: 10%;
 }
 #home-title {font-size: 70px;}
 #home-longtitle {font-size: 30px;}
@@ -39,6 +42,13 @@ a {
 }
 
 /* Sections menu */
+
+.background-color-mundo {background-color: #395f91}
+.background-color-natural {background-color: #88734f}
+.background-color-demografica {background-color: #ef9025}
+.background-color-economica {background-color: #cc2d26}
+.background-color-ambiental {background-color: #367d51}
+.background-color-administrativa {background-color: #745389}
 
 #sections-menu ul {
 	padding: 0 !important;
@@ -111,72 +121,74 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 
 /* {box-sizing: border-box}*/
 
-	.full-height {
-		/*position: absolute;*/
-		top: 0;
-		bottom: 0;
-	}
-	
-	/* Style the tab and tab-content containers */
-	.left-30 {margin-left: 30%}
+/* Content page */
 
-	.tab {
-	    float: left;
-	    /*border: 1px solid #ccc;*/
-	    background-color: #48608D;
-	    width: 30%;
-	}
-	#tab-content {
-		margin-left: 30%;
-		width: 70%
-	}
+.full-height {
+	height: 100vh;
+}
 
-	/* Style the tab */
-	.tab h1 {
-	    color: #fafafa;
-	    padding-left: 20%;
-	    margin: 10px 0;
-	}
-	.tab {color: #c9c5c5;}
+/* Style the tab and tab-frame containers */
+.left-30 {margin-left: 30%}
 
-	/* Style the buttons and links that are used to open the tab content */
-	.tab button, .tab a {
-	    display: block;
-	    background-color: inherit;
-	    padding: 22px 16px;
-	    border: none;
-	    outline: none;
-	    text-align: left;
-	    cursor: pointer;
-	    transition: 0.3s;
-	    font-weight: bold;
-	}
+.tab {
+    float: left;
+    width: 30%;
+}
+#tab-frame {
+	margin-left: 30%;
+	width: 70%
+}
 
-	.tab a {color: #c9c5c5;}
-	.tab button { 
-		color: #c9c5c5;
-	    width: 100%;
-	}
+/* Style the tab */
+.tab {color: #c9c5c5; padding: 0 10px;}
+.tab h1 {
+    color: #fafafa;
+    padding: 0 10px 0 90px;
+    margin: 10px 0;
+}
 
-	/* Change background color of buttons on hover */
-	.tab button:hover, .tab a:hover {
-	    background-color: #ddd;
-	    color: #48608d;
-	}
+/* Style the buttons and links that are used to open the tab content */
+.tab a {
+    display: block;
+    background-color: inherit;
+    padding: 22px 60px;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    color: #c9c5c5;
+}
 
-	/* Create an active/current "tab button" class */
-	.tab button.active {
-	    background-color: #ccc;
-	    color: #48608d;
-	}
+/* Change background color of buttons on hover */
+.tab a:hover {
+    background-color: #ddd;
+    color: #48608d;
+}
 
-	/* Style the tab content */
-	.tabcontent {
-	    float: left;
-	    padding: 0px 12px;
-	    /*border: 1px solid #ccc;*/
-	    width: 100%;
-	    border-left: none;
-	    font-color: grey;
-	}
-	.tabcontent h3 {color: gray;}
+/* Create an active/current "tab button" class */
+.tab a.active {
+    background-color: #ccc;
+    color: #48608d;
+}
+
+/* Style the tabcontent */
+.tabcontent {
+    width: 30%;
+    float: left;
+    padding: 0px 12px;
+    border-left: none;
+    font-color: grey;
+}
+.tabcontent h3 {color: gray;}
+
+.tabcontent h1{
+    color: #aeae0d;
+}
+.tabcontent p{
+    color: #c9c5c5;
+}
+.tabcontent-card {
+    padding-top: 300px;
+}

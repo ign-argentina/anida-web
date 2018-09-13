@@ -1,84 +1,106 @@
 <!-- Contenido -->
-<div class="tab full-height">
-	<div id="content-card" class="content-card">
-		<h1></h1>
-		<p></p>
+
+<section id="argentina-y-mundo">
+	<div class="tab full-height background-color-mundo">
+		<div>
+			<div class="tab-title">
+				<h1></h1>
+				<p></p>
+			</div>
+		</div>
 	</div>
-	<button class="tablinks" onclick="openCity(event, 'argentina-y-mundo', 'mundo')" id="defaultOpen">Argentina y el Mundo</button>
-	<button class="tablinks" onclick="openCity(event, 'fisico-y-natural', 'natural')">Argentina físico y natural</button>
-	<button class="tablinks" onclick="openCity(event, 'ambiental', 'ambiental')">Argentina ambiental</button>
-	<button class="tablinks" onclick="openCity(event, 'economica', 'economica')" id="defaultOpen">Argentina económica</button>
-	<button class="tablinks" onclick="openCity(event, 'socio-demografica', 'demografica')">Argentina socio-demográfica</button>
-	<button class="tablinks" onclick="openCity(event, 'administrativa', 'administrativa')">Argentina político-administrativa</button>
-	<a href="#">Inicio</a>
-	<a href="#sections-menu">Secciones</a>
-</div>
-<div id="tab-content" class="full-height left-30">
-	<div id="argentina-y-mundo" class="tabcontent">
-	  <h3>Rasgos básicos</h3>
-	  <h3>Porciones de territorio</h3>
-	  <h3>Límites y fronteras internacionales</h3>
-	  <h3>Organización política del territorio</h3>
-	  <h3>Formación del territorio</h3>
-	  <h3>Malvinas e islas del Atlántico Sur</h3>
-	  <h3>Antártida</h3>
-	  <h3>Inserción internacional</h3>
+	<div class="tab-frame tabcontent">
+		<div class="tabcontent-card">
+			<h3>Rasgos básicos</h3>
+			<h3>Porciones de territorio</h3>
+			<h3>Límites y fronteras internacionales</h3>
+			<h3>Organización política del territorio</h3>
+			<h3>Formación del territorio</h3>
+			<h3>Malvinas e islas del Atlántico Sur</h3>
+			<h3>Antártida</h3>
+			<h3>Inserción internacional</h3>
+		</div>
 	</div>
+</section>
 
-	<div id="fisico-y-natural" class="tabcontent">
-	  <h3>Argentina físico y natural</h3>
-	  <p>Agregar el texto y/o las imágenes.</p>
+<section id="fisico-y-natural">
+	<div class="tab full-height background-color-natural">
+		<div>
+			<div class="tab-title">
+				<h1></h1>
+				<p></p>
+			</div>
+		</div>
 	</div>
-
-	<div id="ambiental" class="tabcontent">
-	  <h3>Argentina Ambiental</h3>
-	  <p>Texto y/o imágenes.</p>
+	<div class="tab-frame tabcontent">
+		<div class="tabcontent-card">
+			<h3>Agregar el texto y/o las imágenes.</h3>
+		</div>
 	</div>
+</section>
 
-	<div id="economica" class="tabcontent">
-	  <h3>Argentina económica</h3>
-	  <p>Texto y/o imágenes.</p>
+<section id="ambiental">
+	<div class="tab full-height background-color-ambiental">
+		<div>
+			<div class="tab-title">
+				<h1></h1>
+				<p></p>
+			</div>
+		</div>
 	</div>
-	
-	<div id="socio-demografica" class="tabcontent">
-	  <h3>Argentina socio-demográfica</h3>
-	  <p>Texto y/o imágenes.</p>
-	</div> 
-	
-	<div id="administrativa" class="tabcontent">
-	  <h3>Argentina político-administrativa</h3>
-	  <p>Texto y/o imágenes.</p>
-	</div> 
-</div>
+	<div class="tab-frame tabcontent">
+		<div class="tabcontent-card">
+			<h3>Agregar el texto y/o las imágenes.</h3>
+		</div>
+	</div>
+</section>
 
-<script type="text/javascript">
-	function openCity(evt, cityName, section) {
-	    // Declare all variables
-	    var i, tabcontent, tablinks;
+<section id="economica" class="content-section">
+	<div class="tab full-height background-color-economica">
+		<div>
+			<div class="tab-title">
+				<h1></h1>
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<div class="tab-frame tabcontent">
+		<div class="tabcontent-card">
+			<h3>Agregar el texto y/o las imágenes.</h3>
+		</div>
+	</div>
+</section>
 
-	    // Get all elements with class="tabcontent" and hide them
-	    tabcontent = document.getElementsByClassName("tabcontent");
-	    for (i = 0; i < tabcontent.length; i++) {
-	        tabcontent[i].style.display = "none";
-	    }
+<section id="socio-demografica">
+	<div class="tab full-height background-color-demografica">
+		<div>
+			<div class="tab-title">
+				<h1></h1>
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<div class="tab-frame tabcontent">
+		<div class="tabcontent-card">
+			<h3>Agregar el texto y/o las imágenes.</h3>
+		</div>
+	</div>
+</section> 
 
-	    // Get all elements with class="tablinks" and remove the class "active"
-	    tablinks = document.getElementsByClassName("tablinks");
-	    for (i = 0; i < tablinks.length; i++) {
-	        tablinks[i].className = tablinks[i].className.replace(" active", "");
-	    }
+<section id="administrativa">
+	<div class="tab full-height background-color-administrativa">
+		<div>
+			<div class="tab-title">
+				<h1></h1>
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<div class="tab-frame tabcontent">
+		<div class="tabcontent-card">
+			<h3>Agregar el texto y/o las imágenes.</h3>
+		</div>
+	</div>
+</section> 
 
-	    // Show the current tab, and add an "active" class to the link that opened the tab
-	    document.getElementById(cityName).style.display = "block";
-	    evt.currentTarget.className += " active";
-
-		// Load title and description to tab
-		$("#content-card h1").html(sections[section].title.toUpperCase());
-		$("#content-card p").html(sections[section].description);
-	}
-	
-	// Get the element with id="defaultOpen" and click on it
-	document.getElementById("defaultOpen").click();
-
-</script>
 <!-- fin contenido -->
