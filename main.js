@@ -47,7 +47,7 @@ $(function(){
 });
 // Load content strucure
 $(document).ready(function () {
-	$("#section-page").load( "./contenido2.html", function(){
+	$("#section-page").load( "./contenido.html", function(){
 		// Load title into tabs
 		$('.tab-title > h1').each(function(i){
 			$(this).text(sections[i].title);
