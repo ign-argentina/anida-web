@@ -179,9 +179,9 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     float: left;
     padding: 0px 12px;
     border-left: none;
-    font-color: grey;
+    color: grey;
 }
-.tabcontent h3 {color: gray;}
+/*.tabcontent h3 {color: gray;}*/
 
 .tabcontent h1{
     color: #aeae0d;
