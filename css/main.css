@@ -1,10 +1,18 @@
+@font-face {
+    font-family: Gotham;
+    src: url("Gotham-Medium.otf") format("opentype");
+}
+@font-face {
+    font-family: Gotham-Light;
+    src: url("Gotham-Light-Regular.otf") format("opentype");
+}
 html {
   scroll-behavior: smooth;
 }
 body {
 	background-color: #fafafa;
-	font-family: "Lato", sans-serif;
-	font-size: 16px;
+	font-family: "Gothaml-Light", sans-serif;
+    font-size: 16px;
 	margin: 0 !important;
 }
 body h3 {font-size: 16px;}
@@ -28,17 +36,36 @@ a {
     text-decoration: none;
     text-transform: uppercase;
 }
-
 #home-content {
 	text-align: center;
-	padding-top: 10%;
+    padding-top: 10%;
 }
-#home-title {font-size: 70px;}
-#home-longtitle {font-size: 30px;}
+#home-title {
+    font-size: 5.7rem;
+    font-weight: 100;
+    letter-spacing: 27px;
+    margin-bottom: 10px;
+}
+#home-longtitle {
+    font-size: 0.8rem;
+    font-weight: 100;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 0;
+}
 #home-description {
 	font-size: 20px;
-	width: 50%;
-	display: inline-block;
+	width: 45%;
+    display: inline-block;
+    margin-top: 10%;
+}
+#sections-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 100;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-top: 10%;
 }
 
 /* Sections menu */
