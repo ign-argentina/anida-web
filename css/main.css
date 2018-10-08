@@ -59,13 +59,13 @@ a {
     display: inline-block;
     margin-top: 10%;
 }
-#sections-link {
+.sections-link, .home-link {
     display: inline-block;
     font-size: 0.8rem;
     font-weight: 100;
     letter-spacing: 3px;
     text-align: center;
-    margin-top: 10%;
+    margin: 8% 0;
 }
 
 /* Sections menu */
