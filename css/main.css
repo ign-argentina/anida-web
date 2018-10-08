@@ -169,28 +169,13 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 }
 
 /* Style the tab */
-.tab {color: #c9c5c5; padding: 0 10px;}
-/*
-.tab h1 {
-    color: #fafafa;
-    padding: 0 10px 0 90px;
-    margin: 10px 0;
-}
-*/
-
-.tab-title h1 {
-    color: #fafafa;
-    margin: 40% 10% 5% 25%;
-    font-size: xx-large;
-    /* 
-    text-align: center;
-    text-transform: uppercase; 
-    */
-}
-.tab-title p {
-    color: #fafafa;
-    text-align: justify;
-    margin: 0 10% 0 25%;
+.tab {
+    color: #c9c5c5;
+    padding: 0 10px;
+    background-repeat: no-repeat;
+    background-size: 26%;
+    background-position-y: 17%;
+    background-position-x: 15%;
 }
 
 /* Style the buttons and links that are used to open the tab content */
@@ -237,4 +222,16 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 }
 .tabcontent-card {
     padding-top: 300px;
+}
+
+.tab-title {
+    color: #fafafa;
+}
+.tab-title h1 {
+    margin: 40% 10% 5% 25%;
+    font-size: xx-large;
+}
+.tab-title p {
+    text-align: justify;
+    margin: 0 10% 0 25%;
 }
