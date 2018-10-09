@@ -4,16 +4,18 @@ var page, sections;
 $.getJSON("js/data.json", function(json) {
 	page = json.page;
 	sections = json.sections;
+	loadPageData();
 });
 
 // Load content into page after all functions and Objects are declared
 // Set page properties
-$(function(){
+function loadPageData() {
 	$(document).attr("title", page.title);
 	$("#home-title").text(page.title);
 	$("#home-longtitle").text(page.longTitle);
 	$("#home-description").text(page.description);
-});
+}
+
 // Load content strucure
 $(document).ready(function () {
 	$("#section-page").load( "./contenido.html", function(){
