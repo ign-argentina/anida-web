@@ -1,9 +1,10 @@
 // Declare all functions and Objects before loading content into page
-var page, sections;
+var page, sections, menus;
 
 $.getJSON("js/data.json", function(json) {
 	page = json.page;
 	sections = json.sections;
+	menus = json.menus;
 	loadPageData();
 });
 
