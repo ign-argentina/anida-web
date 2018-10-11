@@ -113,7 +113,8 @@ a {
 	height: 200px;
 	display: table-cell;
 	vertical-align: middle;
-	padding: 0 10%;
+    padding: 0 10%;
+    text-transform: initial;
 }
 
 /* Scrolling */
