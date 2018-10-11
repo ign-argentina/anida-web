@@ -235,6 +235,6 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     font-size: xx-large;
 }
 .tab-title p {
-    text-align: justify;
+    text-align: left;
     margin: 0 10% 0 25%;
 }
