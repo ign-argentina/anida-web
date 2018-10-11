@@ -33,10 +33,16 @@
             ]
         },
         {
-            "title": "Argentina ambiental",
-            "description": "Realiza una aproximación al carácter complejo e interrelacionado del ambiente en el que viven los habitantes de Argentina, dado por las múltiples dimensiones que abarca, tanto en el plano de la realidad social como del sistema natural, y las múltiples combinaciones entre estas dos dimensiones, variables en cada momento y lugar de nuestro país.",
-            "logo": "img/ambiental.png",
-            "menu": []
+            "title": "Argentina socio-demográfica",
+            "description": "Describe las características socio-demográficas más destacadas de los habitantes de Argentina, brindando información detallada y actualizada de la población y la sociedad del país de modo que el usuario pueda comprender su situación y realizar un análisis crítico de la temática.",
+            "logo": "img/sociodemo.png",
+            "menu": [
+                "tamanio",
+                "distribucion",
+                "calidad-vida",
+                "trabajo",
+                "fecundidad-mortalidad"
+            ]
         },
         {
             "title": "Argentina económica",
@@ -48,16 +54,10 @@
             ]
         },
         {
-            "title": "Argentina socio-demográfica",
-            "description": "Describe las características socio-demográficas más destacadas de los habitantes de Argentina, brindando información detallada y actualizada de la población y la sociedad del país de modo que el usuario pueda comprender su situación y realizar un análisis crítico de la temática.",
-            "logo": "img/sociodemo.png",
-            "menu": [
-                "tamanio",
-                "distribucion",
-                "calidad-vida",
-                "trabajo",
-                "fecundidad-mortalidad"
-            ]
+            "title": "Argentina ambiental",
+            "description": "Realiza una aproximación al carácter complejo e interrelacionado del ambiente en el que viven los habitantes de Argentina, dado por las múltiples dimensiones que abarca, tanto en el plano de la realidad social como del sistema natural, y las múltiples combinaciones entre estas dos dimensiones, variables en cada momento y lugar de nuestro país.",
+            "logo": "img/ambiental.png",
+            "menu": []
         },
         {
             "title": "Argentina político-administrativa",

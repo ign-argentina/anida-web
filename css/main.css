@@ -163,6 +163,9 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     float: left;
     width: 30%;
 }
+.tab:before{
+    opacity: 0.6;
+}
 #tab-frame {
 	margin-left: 30%;
 	width: 70%
