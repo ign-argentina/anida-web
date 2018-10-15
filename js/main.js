@@ -30,7 +30,7 @@ $(document).ready(function () {
 		var sectionHtml = '<section id="' + element.id + '"><div class="tab full-height"><div><div class="tab-title"><h1></h1><p></p></div></div></div><div class="tab-frame tabcontent"><div class="tabcontent-card"></div></div></section>';
 		$("#section-page").append(sectionHtml);
 	});
-	// Load title into tabs
+	// Loads sections title and description into tabs
 	$('.tab-title > h1').each(function(i){
 		$(this).text(sections[i].title);
 		$(this).next().text(sections[i].description);
@@ -39,12 +39,4 @@ $(document).ready(function () {
 			$(this).css("background-image", "url(" + sections[i].logo + ")"); // Adds logo within each section's left panel
 			$(this).css("background-color", sections[i].color); // Adds section color from JSON
 		});
-		
-		// Load sections into sections tabs
-		/*
-		$(".tab").append("<div class='secciones'></div>");
-		$('.secciones').load( "./secciones.html" );
-		$("#section-page").load( "./contenido.html", function(){
-	});
-		*/
 });
