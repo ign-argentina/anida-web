@@ -27,6 +27,7 @@ $(document).ready(function () {
 		});
 		$('.tab').each(function(i) {
 			$(this).css("background-image", "url(" + sections[i].logo + ")"); // Adds logo within each section's left panel
+			$(this).css("background-color", sections[i].color); // Adds section color from JSON
 		});
 
 		// Load sections into sections tabs
