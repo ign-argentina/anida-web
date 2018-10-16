@@ -211,8 +211,9 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     padding: 0px 12px;
     border-left: none;
     color: grey;
+    height: 100vh;
 }
-/*.tabcontent h3 {color: gray;}*/
+.tabcontent h3 {color: gray;}
 
 .tabcontent h1{
     color: #aeae0d;
@@ -221,7 +222,9 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     color: #c9c5c5;
 }
 .tabcontent-card {
-    padding-top: 300px;
+    height: 100vh;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .tab-title {

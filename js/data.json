@@ -43,7 +43,7 @@
             "logo": "img/sociodemo.png",
             "color": "#ef9025",
             "menu": [
-                "tamanio",
+                "tamano",
                 "distribucion",
                 "calidad-vida",
                 "trabajo",
