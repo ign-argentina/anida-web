@@ -72,16 +72,12 @@ a {
 
 /* Sections menu */
 
-.background-color-mundo {background-color: #395f91}
-.background-color-natural {background-color: #88734f}
-.background-color-demografica {background-color: #ef9025}
-.background-color-economica {background-color: #cc2d26}
-.background-color-ambiental {background-color: #367d51}
-.background-color-administrativa {background-color: #745389}
-
 #sections-menu ul {
 	padding: 0 !important;
-	margin: 0 !important;
+    margin: 0 !important;
+    width: 70%;
+    text-align: center;
+    display: inline-block;
 }
 
 #sections-menu li {display: inline-block;}
@@ -215,8 +211,9 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     padding: 0px 12px;
     border-left: none;
     color: grey;
+    height: 100vh;
 }
-/*.tabcontent h3 {color: gray;}*/
+.tabcontent h3 {color: gray;}
 
 .tabcontent h1{
     color: #aeae0d;
@@ -225,7 +222,9 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     color: #c9c5c5;
 }
 .tabcontent-card {
-    padding-top: 300px;
+    height: 100vh;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .tab-title {
