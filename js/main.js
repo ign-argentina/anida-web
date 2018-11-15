@@ -5,7 +5,15 @@ $.getJSON("js/data.json", function(json) {
 	page = json.page;
 	sections = json.sections;
 	menus = json.menus;
+
+	// Load content strucure
 	loadPageData();
+
+	sections.forEach(sectionElement => {
+		addItem(sectionElement.id, sectionElement.title, sectionElement.color);
+		addSection(sectionElement.id, sectionElement.menu);
+	});
+	loadTabs();
 });
 
 // Load content into page after all functions and Objects are declared
@@ -53,13 +61,3 @@ function loadTabs(){
 function imprimirMenuHijos(){
 
 }
-
-// Load content strucure
-$(document).ready(function () {
-
-	sections.forEach(sectionElement => {
-		addItem(sectionElement.id, sectionElement.title, sectionElement.color);
-		addSection(sectionElement.id, sectionElement.menu);
-	});
-	loadTabs();
-});
