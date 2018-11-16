@@ -1,32 +1,7 @@
 // Declare all functions and Objects before loading content into page
 var page, sections, menus;
 
-$.getJSON("js/data.json", function(json) {
-	page = json.page;
-	sections = json.sections;
-	menus = json.menus;
-
-	// Load content strucure
-	loadPageData();
-
-	sections.forEach(sectionElement => {
-		addItem(sectionElement.id, sectionElement.title, sectionElement.color);
-		addSection(sectionElement.id, sectionElement.menu);
-	});
-	loadTabs();
-});
-
-// Load content into page after all functions and Objects are declared
-// Set page properties
-function loadPageData() {
-	$(document).attr("title", page.title);
-	$("#home-title").text(page.title);
-	$("#home-longtitle").text(page.longTitle);
-	$("#home-description").text(page.description);
-}
-
-
-//Define Functions
+//Declare Functions
 function addItem(id, title, color) {
 	// Adds items in section menu
 	var menuHtml = '<a href="#' + id + '"><li><div class="btn-section"><p>' +  title + '</p></div></li></a>';
@@ -61,3 +36,29 @@ function loadTabs(){
 function imprimirMenuHijos(){
 
 }
+// Load content strucure
+$(document).ready(function () {
+	// Load content into page after all functions and Objects are declared
+	$.getJSON("js/data.json", function(json) {
+		page = json.page;
+		sections = json.sections;
+		menus = json.menus;
+		
+		// Set page properties
+		function loadPageData() {
+			$(document).attr("title", page.title);
+			$("#home-title").text(page.title);
+			$("#home-longtitle").text(page.longTitle);
+			$("#home-description").text(page.description);
+		}
+
+		// Load content strucure
+		loadPageData();
+
+		sections.forEach(sectionElement => {
+			addItem(sectionElement.id, sectionElement.title, sectionElement.color);
+			addSection(sectionElement.id, sectionElement.menu);
+		});
+		loadTabs();
+	});
+});
