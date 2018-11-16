@@ -23,8 +23,11 @@ section {
 	display: block;
 }
 
+.no-li-style {
+    list-style: none;
+}
 .hide {
-	display: none;
+    display: none;
 }
 .home, .menu {
 	text-align: center;

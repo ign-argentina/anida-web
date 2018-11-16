@@ -158,6 +158,16 @@
             "title": "Fecundidad y mortalidad",
             "url": "#"
         },
+        "argentina-organismos-internacionales": {
+            "title": "Argentina y organismos internacionales",
+            "url": "#",
+            "parent": "insercion"
+        },
+        "argentina-espacios-ultraterrestres": {
+            "title": "En el espacio ultraterrestre",
+            "url": "#",
+            "parent": "insercion"
+        },
         "tamano-peso": {
             "title": "Tamaño y peso",
             "url": "#",

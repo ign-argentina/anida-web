@@ -18,8 +18,7 @@ function addSections(){
 		if (typeof sectionElement.menu != "undefined" && sectionElement.menu != null && sectionElement.menu.length != null  && sectionElement.menu.length > 0) {
 			var tabcontentSelector = '#' + sectionElement.id + ' .tabcontent-card';
 			sectionElement.menu.forEach(menuElement => {
-				console.log(menus[menuElement].url);
-				var sectionMenusHtml = '<a target="_blank" href="' + menus[menuElement].url + '"><h3>' + menus[menuElement].title + '</h3></a>';
+				var sectionMenusHtml = '<a target="_blank" href="' + menus[menuElement].url + '"><h3 id="' + menuElement + '">' + menus[menuElement].title + '</h3></a>';
 				$(tabcontentSelector).append(sectionMenusHtml);
 			});
 		}
@@ -37,13 +36,23 @@ function loadTabs(){
 	});
 }
 function loadChildMenus(){
-	if (typeof menu != "undefined" && menu != null && menu.length != null  && menu.length > 0) {	
-		var tabcontentSelector = '#' + id + ' .tabcontent-card';
-		menu.forEach(menuElement => {
-			var childMenusHtml = '<a target="_blank" href="' + menus[menuElement].url + '"><h3>' + menus[menuElement].title + '</h3></a>';
-			$(tabcontentSelector).append(childMenusHtml);
+	// Adds child menus
+	if (menus !== 'undefined' && menus !== null && menus != null) {
+		// Iterate over menus and add each child to it's parent		
+		var lastParentMenu = ''; // watch parent menu iteration
+		Object.keys(menus).forEach(function(menuElement){
+			if(typeof menus[menuElement].parent !== 'undefined'){
+				var childMenusSelector = '#' + menus[menuElement].parent;
+				if (lastParentMenu != menus[menuElement].parent) { // if this parent menu has no <ul>
+					lastParentMenu = menus[menuElement].parent;
+					$(childMenusSelector).parent().append('<ul id="ul-' + lastParentMenu + '" class= "no-li-style"></ul>');
+				}
+				var childMenusHtml = '<li><a target="_blank" href="' + menus[menuElement].url + '"><h3 id="' + menuElement +'">' + menus[menuElement].title + '</h3></a></li>';
+				var childMenuUl = '#ul-' + lastParentMenu;
+				$(childMenuUl).append(childMenusHtml);
+			}
 		});
-	}
+	};
 }
 // Load content strucure
 $(document).ready(function () {
@@ -64,5 +73,6 @@ $(document).ready(function () {
 		addItem();
 		addSections();
 		loadTabs();
+		loadChildMenus();
 	});
 });
