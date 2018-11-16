@@ -10,7 +10,7 @@ function addItem() {
 		$('a[href$="#' + sectionElement.id + '"] li div').css("background-color", sectionElement.color);
 	});
 }
-function addSection(){
+function addSections(){
 	// Adds sections HTML structure 
 	sections.forEach(sectionElement => {
 		var sectionHtml = '<section id="' + sectionElement.id + '"><div class="tab full-height"><div><div class="tab-title"><h1></h1><p></p></div></div></div><div class="tab-frame tabcontent"><div class="tabcontent-card"></div></div></section>';
@@ -62,7 +62,7 @@ $(document).ready(function () {
 		}
 		loadPageData();
 		addItem();
-		addSection();
+		addSections();
 		loadTabs();
 	});
 });
