@@ -2,24 +2,31 @@
 var page, sections, menus;
 
 //Declare Functions
-function addItem(id, title, color) {
+function addItem() {
+	sections.forEach(sectionElement => {
 	// Adds items in section menu
-	var menuHtml = '<a href="#' + id + '"><li><div class="btn-section"><p>' +  title + '</p></div></li></a>';
-	$("#section-list ul").append(menuHtml);
-	$('a[href$="#' + id + '"] li div').css("background-color", color);
+		var menuHtml = '<a href="#' + sectionElement.id + '"><li><div class="btn-section"><p>' +  sectionElement.title + '</p></div></li></a>';
+		$("#section-list ul").append(menuHtml);
+		$('a[href$="#' + sectionElement.id + '"] li div').css("background-color", sectionElement.color);
+	});
 }
-function addSection(id, menu){
+function addSection(){
 	// Adds sections HTML structure 
-	var sectionHtml = '<section id="' + id + '"><div class="tab full-height"><div><div class="tab-title"><h1></h1><p></p></div></div></div><div class="tab-frame tabcontent"><div class="tabcontent-card"></div></div></section>';
-	$("#section-page").append(sectionHtml);
+	sections.forEach(sectionElement => {
+		var sectionHtml = '<section id="' + sectionElement.id + '"><div class="tab full-height"><div><div class="tab-title"><h1></h1><p></p></div></div></div><div class="tab-frame tabcontent"><div class="tabcontent-card"></div></div></section>';
+		$("#section-page").append(sectionHtml);
+		
+			console.log("foo");	
 
-	if (typeof menu != "undefined" && menu != null && menu.length != null  && menu.length > 0) {	
-		var tabcontentSelector = '#' + id + ' .tabcontent-card';
-		menu.forEach(menuElement => {
-			var sectionMenusHtml = '<a target="_blank" href="' + menus[menuElement].url + '"><h3>' + menus[menuElement].title + '</h3></a>';
-			$(tabcontentSelector).append(sectionMenusHtml);
-		});
-	}
+		if (typeof sectionElement.menu != "undefined" && sectionElement.menu != null && sectionElement.menu.length != null  && sectionElement.menu.length > 0) {
+			var tabcontentSelector = '#' + sectionElement.id + ' .tabcontent-card';
+			sectionElement.menu.forEach(menuElement => {
+				console.log(menus[menuElement].url);
+				var sectionMenusHtml = '<a target="_blank" href="' + menus[menuElement].url + '"><h3>' + menus[menuElement].title + '</h3></a>';
+				$(tabcontentSelector).append(sectionMenusHtml);
+			});
+		}
+	});
 }
 function loadTabs(){
 	// Loads sections title and description into tabs
@@ -32,9 +39,14 @@ function loadTabs(){
 		$(this).css("background-color", sections[i].color); // Adds section color from JSON
 	});
 }
-
-function imprimirMenuHijos(){
-
+function loadChildMenus(){
+	if (typeof menu != "undefined" && menu != null && menu.length != null  && menu.length > 0) {	
+		var tabcontentSelector = '#' + id + ' .tabcontent-card';
+		menu.forEach(menuElement => {
+			var childMenusHtml = '<a target="_blank" href="' + menus[menuElement].url + '"><h3>' + menus[menuElement].title + '</h3></a>';
+			$(tabcontentSelector).append(childMenusHtml);
+		});
+	}
 }
 // Load content strucure
 $(document).ready(function () {
@@ -51,14 +63,9 @@ $(document).ready(function () {
 			$("#home-longtitle").text(page.longTitle);
 			$("#home-description").text(page.description);
 		}
-
-		// Load content strucure
 		loadPageData();
-
-		sections.forEach(sectionElement => {
-			addItem(sectionElement.id, sectionElement.title, sectionElement.color);
-			addSection(sectionElement.id, sectionElement.menu);
-		});
+		addItem();
+		addSection();
 		loadTabs();
 	});
 });
