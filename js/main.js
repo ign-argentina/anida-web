@@ -54,6 +54,9 @@ function loadChildMenus(){
 		});
 	};
 }
+function toggleMenu(x) {
+    x.classList.toggle("change");
+} 
 // Load content strucure
 $(document).ready(function () {
 	// Load content into page after all functions and Objects are declared
