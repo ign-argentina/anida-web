@@ -64,6 +64,7 @@ function loadChildMenus(){
 }
 function toggleMenu(x) {
     x.classList.toggle("change");
+    $('#colaboradores').toggleClass('hide');
 } 
 // Load content strucure
 $(document).ready(function () {
