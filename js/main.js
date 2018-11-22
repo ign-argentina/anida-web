@@ -2,6 +2,14 @@
 var page, sections, menus;
 
 //Declare Functions
+		
+// Set page properties
+function loadPageData() {
+	$(document).attr("title", page.title);
+	$("#home-title").text(page.title);
+	$("#home-longtitle").text(page.longTitle);
+	$("#home-description").text(page.description);
+}
 function addItem() {
 	sections.forEach(sectionElement => {
 	// Adds items in section menu
@@ -64,14 +72,7 @@ $(document).ready(function () {
 		page = json.page;
 		sections = json.sections;
 		menus = json.menus;
-		
-		// Set page properties
-		function loadPageData() {
-			$(document).attr("title", page.title);
-			$("#home-title").text(page.title);
-			$("#home-longtitle").text(page.longTitle);
-			$("#home-description").text(page.description);
-		}
+
 		loadPageData();
 		addItem();
 		addSections();
