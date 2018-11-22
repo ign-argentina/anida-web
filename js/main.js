@@ -13,7 +13,7 @@ function addItem() {
 function addSections(){
 	// Adds sections HTML structure 
 	sections.forEach(sectionElement => {
-		var sectionHtml = '<section id="' + sectionElement.id + '"><div class="tab full-height"><div><div class="tab-title"><h1></h1><p></p></div></div></div><div class="tab-frame tabcontent"><div class="tabcontent-card"></div></div></section>';
+		var sectionHtml = '<section id="' + sectionElement.id + '"><div class="tab full-height"><div><div class="tab-title"><h1></h1><p></p></div></div></div><div class="tab-frame tabcontent full-height"><div class="tabcontent-card full-height"></div></div></section>';
 		$("#section-page").append(sectionHtml);
 		if (typeof sectionElement.menu != "undefined" && sectionElement.menu != null && sectionElement.menu.length != null  && sectionElement.menu.length > 0) {
 			var tabcontentSelector = '#' + sectionElement.id + ' .tabcontent-card';

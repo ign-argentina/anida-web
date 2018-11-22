@@ -19,8 +19,11 @@ body h3 {font-size: 16px;}
 body h1 {font-size: 70px;}
 section {
 	width: 100%;
-	height: 100vh;
 	display: block;
+}
+
+section, .full-height {
+    height: 100vh;
 }
 
 .no-li-style {
@@ -152,10 +155,6 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 
 /* Content page */
 
-.full-height {
-	height: 100vh;
-}
-
 /* Style the tab and tab-frame containers */
 .left-30 {margin-left: 30%}
 
@@ -214,7 +213,6 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     padding: 0px 12px;
     border-left: none;
     color: grey;
-    height: 100vh;
 }
 .tabcontent h3 {color: gray;}
 
@@ -225,7 +223,6 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     color: #c9c5c5;
 }
 .tabcontent-card {
-    height: 100vh;
     display: table-cell;
     vertical-align: middle;
 }
