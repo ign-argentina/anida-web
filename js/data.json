@@ -12,8 +12,7 @@
             "logo": "img/mundo.png",
             "color": "#395f91",
             "menu": [
-                "rasgos-basicos",
-                "porciones-territorio",
+                "rasgos-componentes",
                 "limites",
                 "org-politica",
                 "formacion-territoio",
@@ -29,8 +28,8 @@
             "logo": "img/natural.png",
             "color": "#88734f",
             "menu": [
-                "clima",
                 "geologia",
+                "clima",
                 "hidrografia",
                 "suelos",
                 "biogeografia"
@@ -44,10 +43,11 @@
             "color": "#ef9025",
             "menu": [
                 "tamano",
+                "fecundidad-mortalidad",
                 "distribucion",
+                "movilidad",
                 "calidad-vida",
-                "trabajo",
-                "fecundidad-mortalidad"
+                "trabajo"
             ]
         },
         {
@@ -67,7 +67,7 @@
             "description": "Realiza una aproximación al carácter complejo e interrelacionado del ambiente en el que viven los habitantes de Argentina, dado por las múltiples dimensiones que abarca, tanto en el plano de la realidad social como del sistema natural, y las múltiples combinaciones entre estas dos dimensiones, variables en cada momento y lugar de nuestro país.",
             "logo": "img/ambiental.png",
             "color": "#367d51",
-            "menu": []
+            "menu": ["argentina-ambiental"]
         },
         {
             "id": "administrativa",
@@ -75,61 +75,57 @@
             "description": "Describe el sistema político-administrativo del país y las provincias, proporcionando la información necesaria para la comprensión del sistema de gobierno nacional y provincial y sus principales políticas.",
             "logo": "img/politico_admin.png",
             "color": "#745389",
-            "menu": []
+            "menu": ["argentina-politico-adm"]
         }
     ],
     "menus": {
-        "rasgos-basicos": {
-            "title": "Rasgos básicos",
-            "url": "#"
-        },
-        "porciones-territorio": {
-            "title": "Porciones de territorio",
-            "url": "#"
+        "rasgos-componentes": {
+            "title": "Rasgos y componentes del territorio",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=a6b2bf22093e4f8d9f9a0e59d4ec82ca"
         },
         "limites": {
             "title": "Límites y fronteras internacionales",
-            "url": "#"
+            "url": "https://ide.ign.gob.ar/portal/home/item.html?id=2bbf319cef994f76ab329bccc2ffe811"
         },
         "org-politica": {
             "title": "Organización política del territorio",
-            "url": "#"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2c7297e24ca641dd8c1ba0ae689ff4cf"
         },
         "formacion-territoio": {
             "title": "Formación del territorio",
-            "url": "#"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=317955464b3b4b228fec815faeba7908"
         },
         "malvinas": {
-            "title": "Malvinas e islas del Atlántico Sur",
-            "url": "#"
+            "title": "Malvinas y otras islas del Atlántico Sur",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=88ebb23ca07544ba9dfe9383584991f5"
         },
         "antartida": {
             "title": "Antártida",
-            "url": "#"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b2cb8044848b438da5a9dd3d0f7a5f04"
         },
         "insercion": {
             "title": "Inserción internacional",
-            "url": "#"
+            "url": "https://ide.ign.gob.ar/portal/home/item.html?id=10126972130a4141a7cba8fdd39eff98"
         },
         "clima": {
             "title": "Clima",
-            "url": "#"
+            "url": "#fisico-y-natural"
         },
         "geologia": {
             "title": "Geología y relieve",
-            "url": "#"
+            "url": "#fisico-y-natural"
         },
         "hidrografia": {
             "title": "Hidrografía",
-            "url": "#"
+            "url": "#fisico-y-natural"
         },
         "suelos": {
             "title": "Suelos",
-            "url": "#"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=909f432ca3c540609871ac04334588bd"
         },
         "biogeografia": {
-            "title": "Biogeografía",
-            "url": "#"
+            "title": "Ecología y biogeografía (contenido en desarrollo)",
+            "url": "#fisico-y-natural"
         },
         "agricola": {
             "title": "Actividades agrícola-ganaderas",
@@ -140,84 +136,100 @@
         },
         "tamano": {
             "title": "Tamaño, composición y crecimiento",
-            "url": "#"
+            "url": "#socio-demografica"
         },
         "distribucion": {
             "title": "Distribución, asentamiento y movilidad",
-            "url": "#"
+            "url": "#socio-demografica"
         },
         "calidad-vida": {
             "title": "Calidad de vida",
-            "url": "#"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0"
         },
         "trabajo": {
-            "title": "Trabajo y empleo",
-            "url": "#"
+            "title": "Trabajo y empleo (contenido en desarrollo)",
+            "url": "#socio-demografica"
         },
         "fecundidad-mortalidad": {
             "title": "Fecundidad y mortalidad",
-            "url": "#"
+            "url": "#socio-demografica"
         },
-        "argentina-organismos-internacionales": {
-            "title": "Argentina y organismos internacionales",
-            "url": "#",
-            "parent": "insercion"
+        "geologia-general": {
+            "title": "Geología",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=bda8f47e469c42c6a0cd2496187e56cb",
+            "parent": "geologia"
         },
-        "argentina-espacios-ultraterrestres": {
-            "title": "En el espacio ultraterrestre",
+        "geologia-argentina": {
+            "title": "Geología de Argentina",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=ab1131d6c3c142a09b3f2a62722a3a79",
+            "parent": "geologia"
+        },
+        "geomorfologia": {
+            "title": "Geomorfología (contenido en desarrollo)",
             "url": "#",
-            "parent": "insercion"
+            "parent": "geologia"
+        },
+        "volcanologia": {
+            "title": "Volcanología (publicación en proceso)",
+            "url": "#",
+            "parent": "geologia"
+        },
+        "clima-general": {
+            "title": "Clima",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=403635e0919c410298b8fa80a87b09f1",
+            "parent": "clima"
+        },
+        "clima-argentina": {
+            "title": "Clima en Argentina (publicación en proceso)",
+            "url": "#",
+            "parent": "clima"
+        },
+        "aguas-superficiales": {
+            "title": "Aguas superficiales",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=9afbdac4af82412d9a7657168198e5f3",
+            "parent": "hidrografia"
+        },
+        "aguas-subterraneas": {
+            "title": "Aguas subterráneas (publicación en proceso)",
+            "url": "#",
+            "parent": "hidrografia"
         },
         "tamano-peso": {
-            "title": "Tamaño y peso",
-            "url": "#",
+            "title": "Tamaño y peso demográfico",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=340df9845c2c4f1ea2fb6939f1e24fcb",
             "parent": "tamano"
         },
         "composicion": {
             "title": "Composición de la población",
-            "url": "#",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57057713a9ae4084a8d5f2bddbfebb66",
             "parent": "tamano"
         },
         "crecimiento": {
             "title": "Crecimiento demográfico",
-            "url": "#",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244",
             "parent": "tamano"
         },
-        "ocupacion": {
-            "title": "Ocupación y poblamiento del territorio",
+        "distribucion-territorial": {
+            "title": "Distribución territorial de la población (publicación en proceso)",
             "url": "#",
             "parent": "distribucion"
         },
-        "cambios": {
-            "title": "Cambios en la distribución entre 2001 y 2010",
+        "asentamiento-poblacion": {
+            "title": "Asentamiento de la población (publicación en proceso)",
             "url": "#",
             "parent": "distribucion"
         },
-        "asentamiento": {
-            "title": "Sistema de asentamiento",
-            "url": "#",
-            "parent": "distribucion"
+        "movilidad": {
+            "title": "Movilidad territorial (contenido en desarrollo)",
+            "url": "#socio-demografica"
         },
-        "asentamiento-urbano": {
-            "title": "Sistema de asentamiento urbano",
-            "url": "#",
-            "parent": "distribucion"
+        "argentina-ambiental": {
+            "title": "Argentina Ambiental (contenido en desarrollo)",
+            "url": "#"
         },
-        "asentamiento-rural": {
-            "title": "Sistema de asentamiento rural",
-            "url": "#",
-            "parent": "distribucion"
-        },
-        "movilidad-interna": {
-            "title": "Movilidad interna",
-            "url": "#",
-            "parent": "distribucion"
-        },
-        "movilidad-internacional": {
-            "title": "Movilidad internacional",
-            "url": "#",
-            "parent": "distribucion"
+        "argentina-politico-adm": {
+            "title": "Argentina politico administrativa ] (contenido en desarrollo)",
+            "url": "#"
         }
     }    
 }
-
