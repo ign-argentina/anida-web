@@ -108,7 +108,7 @@
             "url": "https://ide.ign.gob.ar/portal/home/item.html?id=2bbf319cef994f76ab329bccc2ffe811"
         },
         "org-politica": {
-            "title": "Organización política del territorio",
+            "title": "Organización política",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2c7297e24ca641dd8c1ba0ae689ff4cf"
         },
         "formacion-territoio": {
@@ -200,7 +200,7 @@
             "url": "#socio-demografica"
         },
         "fecundidad-mortalidad": {
-            "title": "Fecundidad y mortalidad",
+            "title": "Fecundidad y mortalidad (contenido en desarrollo)",
             "url": "#socio-demografica"
         },
         "geologia-general": {
