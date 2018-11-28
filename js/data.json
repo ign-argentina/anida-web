@@ -75,7 +75,14 @@
             "description": "Describe el sistema político-administrativo del país y las provincias, proporcionando la información necesaria para la comprensión del sistema de gobierno nacional y provincial y sus principales políticas.",
             "logo": "img/politico_admin.png",
             "color": "#745389",
-            "menu": ["argentina-politico-adm"]
+            "menu": [
+                "sistema-gobierno",
+                "sistema-educativo",
+                "sistema-salud",
+                "sistema-electoral",
+                "sistema-tributario",
+                "sistema-previsional-social"
+            ]
         }
     ],
     "menus": {
@@ -224,11 +231,31 @@
             "url": "#socio-demografica"
         },
         "argentina-ambiental": {
-            "title": "Argentina Ambiental (contenido en desarrollo)",
+            "title": "Sistema  (contenido en desarrollo)",
             "url": "#"
         },
-        "argentina-politico-adm": {
-            "title": "Argentina politico administrativa (contenido en desarrollo)",
+        "sistema-gobierno": {
+            "title": "Sistema de gobierno (contenido en desarrollo)",
+            "url": "#"
+        },
+        "sistema-educativo": {
+            "title": "Sistema educativo (contenido en desarrollo)",
+            "url": "#"
+        },
+        "sistema-salud": {
+            "title": "Sistema de salud (contenido en desarrollo)",
+            "url": "#"
+        },
+        "sistema-electoral": {
+            "title": "Sistema electoral (contenido en desarrollo)",
+            "url": "#"
+        },
+        "sistema-tributario": {
+            "title": "Sistema tributario (contenido en desarrollo)",
+            "url": "#"
+        },
+        "sistema-previsional-social": {
+            "title": "Sistema previsional y de seguridad social (contenido en desarrollo)",
             "url": "#"
         }
     }    
