@@ -57,8 +57,15 @@
             "logo": "img/economica.png",
             "color": "#cc2d26",
             "menu": [
-                "agricola",
-                "energia"
+                "agricola-ganadera",
+                "pesca-acuicultura",
+                "mineria",
+                "industria",
+                "energia",
+                "turismo",
+                "servicios-publicos",
+                "infraestructura-equipamiento",
+                "comercio-exterior"
             ]
         },
         {
@@ -67,7 +74,13 @@
             "description": "Realiza una aproximación al carácter complejo e interrelacionado del ambiente en el que viven los habitantes de Argentina, dado por las múltiples dimensiones que abarca, tanto en el plano de la realidad social como del sistema natural, y las múltiples combinaciones entre estas dos dimensiones, variables en cada momento y lugar de nuestro país.",
             "logo": "img/ambiental.png",
             "color": "#367d51",
-            "menu": ["argentina-ambiental"]
+            "menu": [
+                "recursos-naturales",
+                "procesos-degradacion",
+                "atmosfericas-globales",
+                "riesgo-desastres",
+                "areas-protegidas"
+            ]
         },
         {
             "id": "administrativa",
@@ -134,11 +147,40 @@
             "title": "Ecología y biogeografía (contenido en desarrollo)",
             "url": "#fisico-y-natural"
         },
-        "agricola": {
-            "title": "Actividades agrícola-ganaderas",
+        "agricola-ganadera": {
+            "title": "Actividad agrícola-ganadera",
             "url": "#"
-        },"energia": {
+        },
+        "pesca-acuicultura": {
+            "title": "Pesca y acuicultura",
+            "url": "#"
+        },
+        "mineria": {
+            "title": "Minería",
+            "url": "#"
+        },
+        "industria": {
+            "title": "Industria",
+            "url": "#"
+        },
+        "energia": {
             "title": "Energía",
+            "url": "#"
+        },
+        "turismo": {
+            "title": "Turismo",
+            "url": "#"
+        },
+        "servicios-publicos": {
+            "title": "Servicios públicos",
+            "url": "#"
+        },
+        "infraestructura-equipamiento": {
+            "title": "Infraestructura y equipamiento",
+            "url": "#"
+        },
+        "comercio-exterior": {
+            "title": "Comercio exterior",
             "url": "#"
         },
         "tamano": {
@@ -230,8 +272,24 @@
             "title": "Movilidad territorial (contenido en desarrollo)",
             "url": "#socio-demografica"
         },
-        "argentina-ambiental": {
-            "title": "Sistema  (contenido en desarrollo)",
+        "recursos-naturales": {
+            "title": "Recursos naturales (contenido en desarrollo)",
+            "url": "#"
+        },
+        "procesos-degradacion": {
+            "title": "Procesos de degradación (contenido en desarrollo)",
+            "url": "#"
+        },
+        "atmosfericas-globales": {
+            "title": "Problemáticas atmosféricas globales (contenido en desarrollo)",
+            "url": "#"
+        },
+        "riesgo-desastres": {
+            "title": "Riesgo de desastres (contenido en desarrollo)",
+            "url": "#"
+        },
+        "areas-protegidas": {
+            "title": "Areas naturales protegidas (contenido en desarrollo)",
             "url": "#"
         },
         "sistema-gobierno": {
