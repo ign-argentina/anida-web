@@ -7,7 +7,7 @@
     "sections": [
         {
             "id": "argentina-y-mundo",
-            "title" : "Argentina y el Mundo",
+            "title" : "Argentina y el mundo",
             "description": "Presenta a Argentina en su condición de Estado desde la óptica de la geografía política, proporcionando la información básica necesaria para conocer y comprender la realidad internacional del país, en el pasado y en la actualidad.",
             "logo": "img/mundo.png",
             "color": "#395f91",
@@ -23,8 +23,8 @@
         },
         {
             "id": "fisico-y-natural",
-            "title": "Argentina físico y natural",
-            "description": "Presenta la gran diversidad de condiciones físicas y naturales de Argentina. Esta sección describe las características de los elementos y procesos físico-naturales del territorio argentino.",
+            "title": "Argentina físico-natural",
+            "description": "Argentina presenta una amplia diversidad en sus condiciones físicas y naturales. Esta sección describe las características de los elementos y procesos físico-naturales del territorio argentino.",
             "logo": "img/natural.png",
             "color": "#88734f",
             "menu": [
@@ -148,7 +148,7 @@
             "url": "#fisico-y-natural"
         },
         "agricola-ganadera": {
-            "title": "Actividad agrícola-ganadera",
+            "title": "Actividad agrícolo-ganadera",
             "url": "#"
         },
         "pesca-acuicultura": {
@@ -229,7 +229,7 @@
             "parent": "clima"
         },
         "clima-argentina": {
-            "title": "Clima en Argentina (publicación en proceso)",
+            "title": "Clima de Argentina (publicación en proceso)",
             "url": "#",
             "parent": "clima"
         },
