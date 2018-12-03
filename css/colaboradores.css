@@ -33,3 +33,10 @@
     -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
     transform: rotate(45deg) translate(-8px, -8px) ;
 }
+.col2 {width: 60%;}
+#about h1, #about p{
+    color: black;
+    opacity: 0.7;
+}
+#description-anida, #descripcion-tematica {margin-top: 300px}
+#otro{margin-top: 280px}
