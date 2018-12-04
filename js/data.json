@@ -144,7 +144,7 @@
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=909f432ca3c540609871ac04334588bd"
         },
         "biogeografia": {
-            "title": "Ecología y biogeografía (contenido en desarrollo)",
+            "title": "Ecología y biogeografía",
             "url": "#fisico-y-natural"
         },
         "agricola-ganadera": {
@@ -196,11 +196,11 @@
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0"
         },
         "trabajo": {
-            "title": "Trabajo y empleo (contenido en desarrollo)",
+            "title": "Trabajo y empleo",
             "url": "#socio-demografica"
         },
         "fecundidad-mortalidad": {
-            "title": "Fecundidad y mortalidad (contenido en desarrollo)",
+            "title": "Fecundidad y mortalidad",
             "url": "#socio-demografica"
         },
         "geologia-general": {
@@ -214,12 +214,12 @@
             "parent": "geologia"
         },
         "geomorfologia": {
-            "title": "Geomorfología (contenido en desarrollo)",
+            "title": "Geomorfología",
             "url": "#",
             "parent": "geologia"
         },
         "volcanologia": {
-            "title": "Volcanología (publicación en proceso)",
+            "title": "Volcanología",
             "url": "#",
             "parent": "geologia"
         },
@@ -229,7 +229,7 @@
             "parent": "clima"
         },
         "clima-argentina": {
-            "title": "Clima de Argentina (publicación en proceso)",
+            "title": "Clima de Argentina",
             "url": "#",
             "parent": "clima"
         },
@@ -239,7 +239,7 @@
             "parent": "hidrografia"
         },
         "aguas-subterraneas": {
-            "title": "Aguas subterráneas (publicación en proceso)",
+            "title": "Aguas subterráneas",
             "url": "#",
             "parent": "hidrografia"
         },
@@ -259,61 +259,61 @@
             "parent": "tamano"
         },
         "distribucion-territorial": {
-            "title": "Distribución territorial de la población (publicación en proceso)",
+            "title": "Distribución territorial de la población",
             "url": "#",
             "parent": "distribucion"
         },
         "asentamiento-poblacion": {
-            "title": "Asentamiento de la población (publicación en proceso)",
+            "title": "Asentamiento de la población",
             "url": "#",
             "parent": "distribucion"
         },
         "movilidad": {
-            "title": "Movilidad territorial (contenido en desarrollo)",
+            "title": "Movilidad territorial",
             "url": "#socio-demografica"
         },
         "recursos-naturales": {
-            "title": "Recursos naturales (contenido en desarrollo)",
+            "title": "Recursos naturales",
             "url": "#"
         },
         "procesos-degradacion": {
-            "title": "Procesos de degradación (contenido en desarrollo)",
+            "title": "Procesos de degradación",
             "url": "#"
         },
         "atmosfericas-globales": {
-            "title": "Problemáticas atmosféricas globales (contenido en desarrollo)",
+            "title": "Problemáticas atmosféricas globales",
             "url": "#"
         },
         "riesgo-desastres": {
-            "title": "Riesgo de desastres (contenido en desarrollo)",
+            "title": "Riesgo de desastres",
             "url": "#"
         },
         "areas-protegidas": {
-            "title": "Areas naturales protegidas (contenido en desarrollo)",
+            "title": "Areas naturales protegidas",
             "url": "#"
         },
         "sistema-gobierno": {
-            "title": "Sistema de gobierno (contenido en desarrollo)",
+            "title": "Sistema de gobierno",
             "url": "#"
         },
         "sistema-educativo": {
-            "title": "Sistema educativo (contenido en desarrollo)",
+            "title": "Sistema educativo",
             "url": "#"
         },
         "sistema-salud": {
-            "title": "Sistema de salud (contenido en desarrollo)",
+            "title": "Sistema de salud",
             "url": "#"
         },
         "sistema-electoral": {
-            "title": "Sistema electoral (contenido en desarrollo)",
+            "title": "Sistema electoral",
             "url": "#"
         },
         "sistema-tributario": {
-            "title": "Sistema tributario (contenido en desarrollo)",
+            "title": "Sistema tributario",
             "url": "#"
         },
         "sistema-previsional-social": {
-            "title": "Sistema previsional y de seguridad social (contenido en desarrollo)",
+            "title": "Sistema previsional y de seguridad social",
             "url": "#"
         }
     }    
