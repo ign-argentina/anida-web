@@ -262,7 +262,6 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 
 .tab-title, #colaboradores h3 {
     color: #eae7e7;
-    text-shadow: 2px 2px black;
 }
 .tab-title h1 {
     margin: 40% 10% 5% 25%;
