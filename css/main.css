@@ -49,16 +49,21 @@ section, .full-height {
 .sidebar a:hover {
     color: white;
 }
-.sideTooltip {
-    display: none;
+.sideTooltip .sideTooltipText {
+    visibility: hidden;
     position: fixed;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    margin-left: 25px;
+    z-index: 1;
+    color: white;
     background-color: rgba(42,25,7,.85)!important;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
-.sideTooltip:hover {
-    display: block !important;
+.sideTooltip:hover .sideTooltipText {
+    visibility: visible;
 }
-
 .no-li-style {
     list-style: none;
 }
