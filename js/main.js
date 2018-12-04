@@ -16,6 +16,9 @@ function addItem() {
 		var menuHtml = '<a href="#' + sectionElement.id + '"><li><div class="btn-section"><p>' +  sectionElement.title + '</p></div></li></a>';
 		$("#section-list ul").append(menuHtml);
 		$('a[href$="#' + sectionElement.id + '"] li div').css("background-color", sectionElement.color);
+	// Adds items to sidebar (dots)
+		var sideItem = '<li class="sideTooltip"><a href="#' + sectionElement.id + '"><code>&#9679</code></a><span class="sideTooltipText">' + sectionElement.title + '</div></li>';
+		$(".sidebarList").append(sideItem);
 	});
 }
 function addSections(){

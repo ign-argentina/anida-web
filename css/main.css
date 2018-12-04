@@ -26,6 +26,44 @@ section, .full-height {
     height: 100vh;
 }
 
+.sidebar {
+    top: 50%;
+    /* width: 16px; Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding: 7px;
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+}
+.sidebar a {
+    display: block;
+    color: lightgray;
+    font-size: 1.2rem;
+}
+.sidebar a:hover {
+    color: white;
+}
+.sideTooltip .sideTooltipText {
+    visibility: hidden;
+    position: fixed;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    margin-left: 25px;
+    z-index: 1;
+    color: white;
+    background-color: rgba(42,25,7,.85)!important;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.sideTooltip:hover .sideTooltipText {
+    visibility: visible;
+}
 .no-li-style {
     list-style: none;
 }
@@ -229,7 +267,6 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 
 .tab-title, #colaboradores h3 {
     color: #eae7e7;
-    text-shadow: 2px 2px black;
 }
 .tab-title h1 {
     margin: 40% 10% 5% 25%;
