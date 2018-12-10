@@ -21,11 +21,25 @@ section {
 	width: 100%;
 	display: block;
 }
-
+.full-width {
+    width: 100%;
+}
 section, .full-height {
     height: 100vh;
 }
+.center { 
+    /*height: set a height in px or % */
+    position: relative;
+}
 
+.center span {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 .sidebar {
     top: 50%;
     /* width: 16px; Set the width of the sidebar */
@@ -80,15 +94,22 @@ a {
     text-decoration: none;
     text-transform: uppercase;
 }
+#home {
+    background: url("../img/logo_blanco_ver_paginicio.svg") no-repeat;
+    background-color: #0f93d2;
+    background-position-x: center;
+    background-position-y: top;
+    padding-top: 280px;
+}
 #home-content {
-	text-align: center;
-    padding-top: 10%;
+    text-align: center;
 }
 #home-title {
     font-size: 5.7rem;
     font-weight: 100;
     letter-spacing: 27px;
     margin-bottom: 10px;
+    display: none;
 }
 #home-longtitle {
     font-size: 0.8rem;
@@ -96,6 +117,7 @@ a {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 0;
+    display: none;
 }
 #home-description {
 	font-size: 20px;
@@ -115,7 +137,13 @@ a {
 .home-link {margin-top: 5%; margin-bottom: 8%}
 
 /* Sections menu */
-
+#sections-menu {
+    position: relative;
+}
+#sections-block {
+    position: relative;
+    height: 85%;
+}
 #sections-menu ul {
 	padding: 0 !important;
     margin: 0 !important;
@@ -144,6 +172,14 @@ a {
     font-size: 20px;
 	position: relative;
     color: white;
+}
+.sections-footer {
+
+    bottom: 0;
+    height: 15%;
+    /*width: 100%;*/
+    background-color: lavender;
+    position: absolute;
 }
 .btn-section {
 	vertical-align: middle;
