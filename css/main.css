@@ -134,7 +134,7 @@ a {
     margin: 8% 0;
 }
 .sections-link {margin-top: 10%; margin-bottom: 5%;}
-.home-link {margin-top: 5%; margin-bottom: 8%}
+.home-link {margin-top: 3px; margin-bottom: 3px}
 
 /* Sections menu */
 #sections-menu {
@@ -174,12 +174,15 @@ a {
     color: white;
 }
 .sections-footer {
-
     bottom: 0;
     height: 15%;
-    /*width: 100%;*/
-    background-color: lavender;
+    width: 100%;
+    background-color: #0f93d2;
     position: absolute;
+    background-image: url(http://www.ign.gob.ar/themes/open_framework-6.x-1.x/templates/imagenes-nuevas-frontpage/LogoMinDef.png), url(http://www.ign.gob.ar/themes/open_framework-6.x-1.x/templates/imagenes-nuevas-frontpage/LogoIgn.png), url('../img/logo_blanco_hor_footer.svg');
+    background-size: 16%, 10%, 20%;
+    background-repeat: no-repeat;
+    background-position: left, center, right;
 }
 .btn-section {
 	vertical-align: middle;
