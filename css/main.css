@@ -40,6 +40,9 @@ section, .full-height {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+.menu-toggle-container{
+    z-index: 100;
+}
 .sidebar {
     top: 50%;
     /* width: 16px; Set the width of the sidebar */
