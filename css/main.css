@@ -78,7 +78,7 @@ section, .full-height {
 .sideTooltip:hover .sideTooltipText {
     visibility: visible;
 }
-.no-li-style {
+.no-li-style, .no-li-style li {
     list-style: none;
 }
 .hide {
