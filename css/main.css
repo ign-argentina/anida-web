@@ -98,8 +98,9 @@ a {
     background: url("../img/logo_blanco_ver_paginicio.svg") no-repeat;
     background-color: #0f93d2;
     background-position-x: center;
-    background-position-y: top;
+    background-position-y: 40px;
     padding-top: 280px;
+    background-size: 365px;
 }
 #home-content {
     text-align: center;
