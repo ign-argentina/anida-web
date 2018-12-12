@@ -65,10 +65,6 @@ function loadChildMenus(){
 		});
 	};
 }
-function toggleMenu(x) {
-    x.classList.toggle("change");
-    $('#colaboradores').toggleClass('hide');
-} 
 // Load content strucure
 $(document).ready(function () {
 	// Load content into page after all functions and Objects are declared
@@ -78,6 +74,7 @@ $(document).ready(function () {
 		menus = json.menus;
 
 		loadPageData();
+		loadMenuColaboradores();
 		addItem();
 		addSections();
 		loadTabs();

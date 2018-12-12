@@ -2,7 +2,6 @@
     position: fixed;
     display: inline-block;
     cursor: pointer;
-    /* background-color: #fafafa;     */
     margin: 10px 0 0 15px;
     border-radius: 25px;
     min-width: 48px;
@@ -32,6 +31,12 @@
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
     transform: rotate(45deg) translate(-8px, -8px) ;
+}
+#colaboradores {
+    background-color: #0f93d2;
+    color: #fafafa;
+    padding: 6px;
+    border-radius: 5%;
 }
 #about h1, #about p, #about h3, #about ul, #about li, li{color: rgba(0,0,0,0.7);}
 #description-anida, #descripcion-tematica {margin-top: 300px}
