@@ -45,7 +45,6 @@
                 "tamano",
                 "fecundidad-mortalidad",
                 "distribucion",
-                "movilidad",
                 "calidad-vida",
                 "trabajo"
             ]
@@ -240,7 +239,7 @@
         },
         "aguas-subterraneas": {
             "title": "Aguas subterráneas",
-            "url": "#",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=7cc4ba9c758148f9b6176eb9cc2d79f2",
             "parent": "hidrografia"
         },
         "tamano-peso": {
@@ -257,20 +256,6 @@
             "title": "Crecimiento demográfico",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244",
             "parent": "tamano"
-        },
-        "distribucion-territorial": {
-            "title": "Distribución territorial de la población",
-            "url": "#",
-            "parent": "distribucion"
-        },
-        "asentamiento-poblacion": {
-            "title": "Asentamiento de la población",
-            "url": "#",
-            "parent": "distribucion"
-        },
-        "movilidad": {
-            "title": "Movilidad territorial",
-            "url": "#socio-demografica"
         },
         "recursos-naturales": {
             "title": "Recursos naturales",
