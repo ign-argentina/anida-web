@@ -32,13 +32,13 @@ section, .full-height {
     position: relative;
 }
 
-.center span {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+.vcenter span {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-0%, -50%);
 }
 .menu-toggle-container{
     z-index: 100;
@@ -99,7 +99,6 @@ a {
     text-transform: uppercase;
 }
 #home {
-    background: url("../img/logo_blanco_ver_paginicio.svg") no-repeat;
     background-color: #0f93d2;
     background-position-x: center;
     background-position-y: 40px;
@@ -112,8 +111,7 @@ a {
     font-size: 5.7rem;
     font-weight: 100;
     letter-spacing: 27px;
-    margin-bottom: 10px;
-    display: none;
+    margin: 0;
 }
 #home-longtitle {
     font-size: 0.8rem;
@@ -121,13 +119,11 @@ a {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 0;
-    display: none;
 }
 #home-description {
 	font-size: 20px;
 	width: 45%;
     display: inline-block;
-    margin-top: 10%;
 }
 .sections-link, .home-link {
     display: inline-block;
