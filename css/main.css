@@ -112,6 +112,7 @@ a {
     font-weight: 100;
     letter-spacing: 27px;
     margin: 0;
+    color: #fafafa;
 }
 #home-longtitle {
     font-size: 0.8rem;
@@ -119,6 +120,7 @@ a {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 0;
+    color: #fafafa;
 }
 #home-description {
 	font-size: 20px;
