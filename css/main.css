@@ -103,7 +103,6 @@ a {
     background-color: #0f93d2;
     background-position-x: center;
     background-position-y: 40px;
-    padding-top: 280px;
     background-size: 365px;
 }
 #home-content {
@@ -182,7 +181,7 @@ a {
     bottom: 0;
     height: 15%;
     width: 100%;
-    background-color: #0f93d2;
+    background-color: #045378;
     position: absolute;
     background-image: url(../img/defensamargen-30.svg), url(http://www.ign.gob.ar/themes/open_framework-6.x-1.x/templates/imagenes-nuevas-frontpage/LogoIgn.png), url('../img/logo_blanco_hor_footer.svg');
     background-size: 25%, 10%, 20%;
