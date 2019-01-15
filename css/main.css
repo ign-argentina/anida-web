@@ -35,7 +35,7 @@ section, .full-height {
 .vcenter span {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 0;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-0%, -50%);
@@ -124,8 +124,9 @@ a {
 }
 #home-description {
 	font-size: 20px;
-	width: 45%;
-    display: inline-block;
+	width: 35%;
+  display: inline-block;
+  letter-spacing: 1px;
 }
 .sections-link, .home-link {
     display: inline-block;
@@ -135,10 +136,14 @@ a {
     text-align: center;
 }
 .sections-link{
-    bottom: 16%;
-    position: absolute;
+  bottom: 25%;
+  text-align: center;
+  position: absolute;
+  margin: 0;
+  left: 0;
+  width: 100%;
 }
-.home-link {margin-top: 3px; margin-bottom: 3px}
+.home-link {margin-top: 5%; margin-bottom: 3px}
 
 /* Sections menu */
 #sections-menu {
@@ -146,14 +151,16 @@ a {
 }
 #sections-block {
     position: relative;
-    height: 85%;
+    height: 100%;
 }
-#sections-menu ul {
-	padding: 0 !important;
-    margin: 0 !important;
-    width: 70%;
-    text-align: center;
-    display: inline-block;
+
+#section-list ul {
+  padding: 0 !important;
+  margin: 5% 0 0 0;
+  width: 50%;
+  position: relative;
+  text-align: center;
+  display: inline-block;
 }
 
 #sections-menu li {display: inline-block;}
