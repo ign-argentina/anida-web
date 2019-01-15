@@ -104,7 +104,7 @@
         },
         "limites": {
             "title": "Límites y fronteras internacionales",
-            "url": "https://ide.ign.gob.ar/portal/home/item.html?id=2bbf319cef994f76ab329bccc2ffe811"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2bbf319cef994f76ab329bccc2ffe811"
         },
         "org-politica": {
             "title": "Organización política",
@@ -124,7 +124,7 @@
         },
         "insercion": {
             "title": "Inserción internacional",
-            "url": "https://ide.ign.gob.ar/portal/home/item.html?id=10126972130a4141a7cba8fdd39eff98"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=10126972130a4141a7cba8fdd39eff98"
         },
         "clima": {
             "title": "Clima",
@@ -229,7 +229,7 @@
         },
         "clima-argentina": {
             "title": "Clima de Argentina",
-            "url": "#",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b58d8b8841ef472e962317cac879e87f",
             "parent": "clima"
         },
         "aguas-superficiales": {
