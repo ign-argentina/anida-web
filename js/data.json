@@ -42,7 +42,9 @@
             "logo": "img/sociodemo.png",
             "color": "#ef9025",
             "menu": [
-                "tamano",
+                "tamano-peso",
+                "composicion",
+                "crecimiento",
                 "fecundidad-mortalidad",
                 "distribucion",
                 "calidad-vida",
@@ -182,10 +184,6 @@
             "title": "Comercio exterior",
             "url": "#"
         },
-        "tamano": {
-            "title": "Tamaño, composición y crecimiento",
-            "url": "#socio-demografica"
-        },
         "distribucion": {
             "title": "Distribución, asentamiento y movilidad",
             "url": "#socio-demografica"
@@ -244,18 +242,15 @@
         },
         "tamano-peso": {
             "title": "Tamaño y peso demográfico",
-            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=340df9845c2c4f1ea2fb6939f1e24fcb",
-            "parent": "tamano"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=340df9845c2c4f1ea2fb6939f1e24fcb"
         },
         "composicion": {
             "title": "Composición de la población",
-            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57057713a9ae4084a8d5f2bddbfebb66",
-            "parent": "tamano"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57057713a9ae4084a8d5f2bddbfebb66"
         },
         "crecimiento": {
             "title": "Crecimiento demográfico",
-            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244",
-            "parent": "tamano"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244"
         },
         "recursos-naturales": {
             "title": "Recursos naturales",
@@ -301,5 +296,5 @@
             "title": "Sistema previsional y de seguridad social",
             "url": "#"
         }
-    }    
+    }
 }
