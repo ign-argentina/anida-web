@@ -2,7 +2,7 @@
     "page": {
         "title": "ANIDA",
         "longTitle": "Atlas Nacional Interactivo de Argentina",
-        "description": "Cartografía temática e información georreferenciada con textos explicativos de los temas realizados por especialistas, enriquecidos con contenidos gráficos y multimedia, para consultar y visualizar la información de manera detallada pero atractiva y sencilla de leer e interpretar."
+        "description": "Cartografía temática e información georreferenciada con textos explicativos, enriquecidos con contenidos gráficos y multimedia, para consultar y visualizar la información de manera detallada, atractiva y sencilla de leer e interpretar."
     },
     "sections": [
         {
@@ -45,10 +45,8 @@
                 "tamano-peso",
                 "composicion",
                 "crecimiento",
-                "fecundidad-mortalidad",
                 "distribucion",
                 "calidad-vida",
-                "trabajo"
             ]
         },
         {
@@ -190,15 +188,7 @@
         },
         "calidad-vida": {
             "title": "Calidad de vida",
-            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0"
-        },
-        "trabajo": {
-            "title": "Trabajo y empleo",
-            "url": "#socio-demografica"
-        },
-        "fecundidad-mortalidad": {
-            "title": "Fecundidad y mortalidad",
-            "url": "#socio-demografica"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0",
         },
         "geologia-general": {
             "title": "Geología",
@@ -208,11 +198,6 @@
         "geologia-argentina": {
             "title": "Geología de Argentina",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=ab1131d6c3c142a09b3f2a62722a3a79",
-            "parent": "geologia"
-        },
-        "geomorfologia": {
-            "title": "Geomorfología",
-            "url": "#",
             "parent": "geologia"
         },
         "volcanologia": {
