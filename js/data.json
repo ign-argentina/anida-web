@@ -46,7 +46,7 @@
                 "composicion",
                 "crecimiento",
                 "distribucion",
-                "calidad-vida",
+                "calidad-vida"
             ]
         },
         {
@@ -188,7 +188,7 @@
         },
         "calidad-vida": {
             "title": "Calidad de vida",
-            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0"
         },
         "geologia-general": {
             "title": "Geología",
