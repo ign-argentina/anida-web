@@ -99,7 +99,7 @@ a {
     text-transform: uppercase;
 }
 #home {
-    background-color: #0f93d2;
+    background-color: #E1FFFF;
     background-position-x: center;
     background-position-y: 40px;
     background-size: 365px;
@@ -110,9 +110,9 @@ a {
 #home-title {
     font-size: 5.7rem;
     font-weight: 100;
-    letter-spacing: 27px;
-    margin: 0;
-    color: #fafafa;
+    letter-spacing: 2rem;
+    margin: 0 0 0 1.7rem;
+    color: #5599DB;
 }
 #home-longtitle {
     font-size: 0.8rem;
@@ -120,13 +120,14 @@ a {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 0;
-    color: #fafafa;
+    color: #5599DB;
 }
 #home-description {
 	font-size: 20px;
 	width: 35%;
   display: inline-block;
   letter-spacing: 1px;
+  line-height: 1.4rem;
 }
 .sections-link, .home-link {
     display: inline-block;
@@ -188,7 +189,7 @@ a {
     bottom: 0;
     height: 15%;
     width: 100%;
-    background-color: #045378;
+    background-color: #5599DB;
     position: absolute;
     background-image: url(../img/defensamargen-30.svg), url(http://www.ign.gob.ar/themes/open_framework-6.x-1.x/templates/imagenes-nuevas-frontpage/LogoIgn.png), url('../img/logo_blanco_hor_footer.svg');
     background-size: 25%, 10%, 20%;
