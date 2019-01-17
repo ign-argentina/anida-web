@@ -96,7 +96,7 @@ a {
 	color: black;
 	font-weight: bold;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: initial;
 }
 #home {
     background-color: #E1FFFF;
@@ -262,11 +262,11 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 /* Style the tab */
 .tab {
     color: #c9c5c5;
-    padding: 0 10px;
+    padding: 0 5rem;
     background-repeat: no-repeat;
-    background-size: 26%;
-    background-position-y: 17%;
-    background-position-x: 15%;
+    background-size: 35%;
+    background-position-y: 12%;
+    background-position-x: 18%;
 }
 
 /* Style the buttons and links that are used to open the tab content */
@@ -299,7 +299,7 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 .tabcontent {
     width: 30%;
     float: left;
-    padding: 0px 12px;
+    padding: 15.5rem 5rem;
     border-left: none;
     color: grey;
 }
@@ -320,10 +320,11 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     color: #eae7e7;
 }
 .tab-title h1 {
-    margin: 40% 10% 5% 25%;
+    margin: 65% 10% 5% 25%;
     font-size: xx-large;
 }
 .tab-title p {
     text-align: left;
-    margin: 0 10% 0 25%;
+    margin: 0% 10% 0 25%;
+    line-height: 19px;
 }
