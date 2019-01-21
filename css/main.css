@@ -15,7 +15,7 @@ body {
     font-size: 16px;
 	margin: 0 !important;
 }
-body h3 {font-size: 16px;}
+body h3 {font-size: 16px; }
 body h1 {font-size: 70px;}
 section {
 	width: 100%;
@@ -335,5 +335,9 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 }
 
 .autoridades {
-  padding: 280px 0 75px 0
+  padding: 280px 0 75px 450px
+}
+
+.coordinación {
+  padding: 0 0 0 450px
 }
