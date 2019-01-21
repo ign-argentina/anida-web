@@ -38,10 +38,11 @@
     padding: 6px;
     border-radius: 5%;
 }
-#about h1, #about p, #about h3, #about ul, #about li, li{color: rgba(0,0,0,0.7);}
+#about h1, #about p, #about h3, #about li, li{color: rgba(0,0,0,0.7);}
+#about ul {color: rgba(0,0,0,0.7); line-height: 140%}
 #description-anida, #descripcion-tematica {margin-top: 300px}
 #anida_hoy_descripcion {margin-top: 150px}
-#description-equipo-trabajo {margin-top: 371px;}
+#description-equipo-trabajo {margin-top: 55px;}
 #disclaimer {font-size: 14px;}
 .col2 {width: 60%;}
 .equipo strong, .equipo h3 {color: grey !important;}
