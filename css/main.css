@@ -304,7 +304,6 @@ a[ id= "section-page" ]:target ~ #main section.panel {
     float: left;
     border-left: none;
     color: grey;
-    padding-right: 5%;
 }
 .tabcontent h3 {color: gray;}
 
