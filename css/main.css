@@ -144,6 +144,8 @@ a {
   margin: 0;
   left: 0;
   width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .home-link {margin-top: 5%; margin-bottom: 3px}
 
