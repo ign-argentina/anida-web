@@ -195,7 +195,7 @@ a {
     background-image: url(../img/defensamargen-30.svg), url(../img/ign-logo-footer.svg);
     background-size: 25%, 10%, 20%;
     background-repeat: no-repeat;
-    background-position: left, center, right;
+    background-position: left, right;
 }
 .btn-section {
 	vertical-align: middle;
