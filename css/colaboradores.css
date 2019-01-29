@@ -33,10 +33,11 @@
     transform: rotate(45deg) translate(-8px, -8px) ;
 }
 #colaboradores {
-    background-color: #0f93d2;
+    background-color: #5599DB;
     color: #fafafa;
-    padding: 6px;
-    border-radius: 5%;
+    padding: 7% 0 7% 13%;
+    margin: 8% 0 0 2%;
+    border-radius: 3%;
 }
 #about h1, #about p, #about h3, #about li, li{color: rgba(0,0,0,0.7);}
 #about ul {color: rgba(0,0,0,0.7); line-height: 140%}
