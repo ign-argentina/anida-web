@@ -194,10 +194,10 @@ a {
     width: 100%;
     background-color: #5599DB;
     position: absolute;
-    background-image: url(../img/defensamargen-30.svg), url(../img/ign-logo-footer.svg);
+    background-image: url(../img/defensamargen-30.svg), url(../img/redes-blanco-01.svg), url(../img/redes-blanco-02.svg), url(../img/redes-blanco-03.svg), url(../img/redes-blanco-04.svg), url(../img/ign-logo-footer.svg);
     background-size: 25%, 10%, 20%;
     background-repeat: no-repeat;
-    background-position: left, right;
+    background-position: 3% 50%, 84% 50%, 86% 50%, 88% 50%, 90% 50%, 97% 50%;
 }
 .btn-section {
 	vertical-align: middle;
