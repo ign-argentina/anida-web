@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="188.5px" height="200px" viewBox="0 0 188.5 200" enable-background="new 0 0 188.5 200" xml:space="preserve">
-<path fill="#FAFAFA" d="M166.343,0H15.802C2.363,0,0,12.056,0,25.554v150.495C0,189.557,2.363,200,15.802,200h150.541
-	C179.816,200,188,189.557,188,176.049V25.554C188,12.056,179.816,0,166.343,0z M123.098,83l-1.671,24H107v71H71v-71H59V83h12V61.745
-	c0-6.455,0.156-16.333,4.881-22.51c4.934-6.548,11.659-10.882,23.312-10.882c18.868,0,26.896,2.617,26.896,2.617l-3.802,22.291
-	c0,0-2.391-1.832-8.176-1.832c-5.855,0-7.11,2.027-7.11,7.859V83H123.098z"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px"
+	 height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+<g id="Capa_2" display="none">
+	<rect x="-67.699" y="-8" display="inline" fill="#0000FF" width="981" height="234"/>
+</g>
+<g id="Capa_1">
+</g>
+<g id="f">
+	<path fill="#FFFFFF" d="M188.301,0h-176c-6.627,0-12,5.373-12,12v176c0,6.627,5.373,12,12,12h94v-78h-26V91h26V63.092
+		c-0.083-5.88,6-34.092,35.529-34.092h26.471v29c0,0-16.654-0.16-19.904,0c-6.445,0-10.096,6.011-10.096,9.427V91h30l-5,32h-26v77
+		h51c6.627,0,12-5.373,12-12V12C200.301,5.373,194.928,0,188.301,0z"/>
+</g>
+<g id="yt">
+</g>
 </svg>
