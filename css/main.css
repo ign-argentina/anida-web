@@ -252,14 +252,14 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 
 .tab, .menu-toggle-container {
     float: left;
-    width: 30%;
+    width: 29%;
 }
 .tab:before{
     opacity: 0.6;
 }
 #tab-frame {
 	margin-left: 30%;
-	width: 70%
+	width: 70%;
 }
 
 /* Style the tab */
