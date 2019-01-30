@@ -99,6 +99,10 @@ a {
     text-decoration: none;
     text-transform: initial;
 }
+.disabled {
+    opacity: 0.35;
+    font-style: italic;
+}
 #home {
     background-color: #E1FFFF;
     background-position-x: center;

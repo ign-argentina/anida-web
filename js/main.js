@@ -29,8 +29,15 @@ function addSections(){
 		if (typeof sectionElement.menu != "undefined" && sectionElement.menu != null && sectionElement.menu.length != null  && sectionElement.menu.length > 0) {
 			var tabcontentSelector = '#' + sectionElement.id + ' .tabcontent-card';
 			sectionElement.menu.forEach(menuElement => {
-				var sectionMenusHtml = '<a target="_blank" href="' + menus[menuElement].url + '"><h3 id="' + menuElement + '">' + menus[menuElement].title + '</h3></a>';
-				$(tabcontentSelector).append(sectionMenusHtml);
+				var item_class = "";
+				if (menus[menuElement].class != "undefined" ) { item_class = menus[menuElement].class }
+				if (typeof menus[menuElement].active != "undefined" && menus[menuElement].active === "false") {
+					var sectionMenusHtml = '<a><h3 id="' + menuElement + '" class="' + item_class + '">' + menus[menuElement].title + '</h3></a>';
+					$(tabcontentSelector).append(sectionMenusHtml);
+				} else {
+					var sectionMenusHtml = '<a target="_blank" href="' + menus[menuElement].url + '"><h3 id="' + menuElement + '" class="' + item_class + '">' + menus[menuElement].title + '</h3></a>';
+					$(tabcontentSelector).append(sectionMenusHtml);
+				}
 			});
 		}
 	});

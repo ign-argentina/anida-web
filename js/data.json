@@ -128,15 +128,15 @@
         },
         "clima": {
             "title": "Clima",
-            "url": "#fisico-y-natural"
+            "active": "false"
         },
         "geologia": {
             "title": "Geología y relieve",
-            "url": "#fisico-y-natural"
+            "active": "false"
         },
         "hidrografia": {
             "title": "Hidrografía",
-            "url": "#fisico-y-natural"
+            "active": "false"
         },
         "suelos": {
             "title": "Suelos",
@@ -144,42 +144,61 @@
         },
         "biogeografia": {
             "title": "Ecología y biogeografía",
-            "url": "#fisico-y-natural"
+            "active": "false",
+            "class": "disabled"
         },
         "agricola-ganadera": {
             "title": "Actividad agrícolo-ganadera",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "pesca-acuicultura": {
             "title": "Pesca y acuicultura",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "mineria": {
             "title": "Minería",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "industria": {
             "title": "Industria",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "energia": {
             "title": "Energía",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "turismo": {
             "title": "Turismo",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "servicios-publicos": {
             "title": "Servicios públicos",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "infraestructura-equipamiento": {
             "title": "Infraestructura y equipamiento",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "comercio-exterior": {
             "title": "Comercio exterior",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "distribucion": {
@@ -239,46 +258,68 @@
         },
         "recursos-naturales": {
             "title": "Recursos naturales",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "procesos-degradacion": {
             "title": "Procesos de degradación",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "atmosfericas-globales": {
             "title": "Problemáticas atmosféricas globales",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "riesgo-desastres": {
             "title": "Riesgo de desastres",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "areas-protegidas": {
             "title": "Areas naturales protegidas",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "sistema-gobierno": {
             "title": "Sistema de gobierno",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "sistema-educativo": {
             "title": "Sistema educativo",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "sistema-salud": {
             "title": "Sistema de salud",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "sistema-electoral": {
             "title": "Sistema electoral",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "sistema-tributario": {
             "title": "Sistema tributario",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         },
         "sistema-previsional-social": {
             "title": "Sistema previsional y de seguridad social",
+            "active": "false",
+            "class": "disabled",
             "url": "#"
         }
     }
