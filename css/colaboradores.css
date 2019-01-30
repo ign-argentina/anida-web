@@ -44,7 +44,12 @@
 
 #about h1, #about p, #about h3, #about li, li{color: rgba(0,0,0,0.7);}
 #about ul {color: rgba(0,0,0,0.7); line-height: 140%}
-#description-anida, #descripcion-tematica {margin-top: 300px}
+#description-anida, #descripcion-tematica {margin-top: 300px; color: #48608D;}
+#description-anida, #físico-natural {color: #827351;}
+#description-anida, #socio-demográfica {color: #D78E33;}
+#description-anida, #económica {color: #AE3020;}
+#description-anida, #ambiental {color: #537354;}
+#description-anida, #político-administrativa {color: #6D5487;}
 #anida_hoy_descripcion {margin-top: 83px}
 #description-equipo-trabajo {margin-top: 703px;}
 #disclaimer {font-size: 14px;}
