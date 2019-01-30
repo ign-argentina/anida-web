@@ -61,7 +61,7 @@ section, .full-height {
 }
 .sidebar a {
     display: block;
-    color: #aaaaaa;
+    /*color: #aaaaaa;*/
     font-size: 1.2rem;
 }
 .sidebar a:hover {
