@@ -15,7 +15,7 @@ body {
     font-size: 16px;
 	margin: 0 !important;
 }
-body h3 {font-size: 16px;}
+body h3 {font-size: 16px; margin-bottom: }
 body h1 {font-size: 70px;}
 section {
 	width: 100%;
@@ -27,6 +27,7 @@ section {
 section, .full-height {
     height: 100vh;
 }
+
 .center {
     /*height: set a height in px or % */
     position: relative;
@@ -98,6 +99,10 @@ a {
     text-decoration: none;
     text-transform: initial;
 }
+.disabled {
+    opacity: 0.35;
+    font-style: italic;
+}
 #home {
     background-color: #E1FFFF;
     background-position-x: center;
@@ -143,6 +148,8 @@ a {
   margin: 0;
   left: 0;
   width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .home-link {margin-top: 5%; margin-bottom: 3px}
 
@@ -191,10 +198,10 @@ a {
     width: 100%;
     background-color: #5599DB;
     position: absolute;
-    background-image: url(../img/defensamargen-30.svg), url(http://www.ign.gob.ar/themes/open_framework-6.x-1.x/templates/imagenes-nuevas-frontpage/LogoIgn.png), url('../img/logo_blanco_hor_footer.svg');
-    background-size: 25%, 10%, 20%;
+    background-image: url(../img/defensamargen-30.svg), url(../img/redes-blanco-01.svg), url(../img/redes-blanco-02.svg), url(../img/redes-blanco-03.svg), url(../img/redes-blanco-04.svg), url(../img/ign-logo-footer.svg);
+    background-size: 25%, 1.5%, 1.5%, 1.5%, 1.5%, 10%, 20%;
     background-repeat: no-repeat;
-    background-position: left, center, right;
+    background-position: 3% 50%, 80% 50%, 82% 50%, 84% 50%, 86% 50%, 97% 50%;
 }
 .btn-section {
 	vertical-align: middle;
@@ -249,20 +256,20 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 
 .tab, .menu-toggle-container {
     float: left;
-    width: 30%;
+    width: 20%;
 }
 .tab:before{
     opacity: 0.6;
 }
 #tab-frame {
 	margin-left: 30%;
-	width: 70%
+	width: 70%;
 }
 
 /* Style the tab */
 .tab {
     color: #c9c5c5;
-    padding: 0 10px;
+    padding: 0 5% 0 5%;
     background-repeat: no-repeat;
     background-size: 35%;
     background-position-y: 12%;
@@ -297,9 +304,8 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 
 /* Style the tabcontent */
 .tabcontent {
-    width: 30%;
+    width: 45%;
     float: left;
-    padding: 0px 12px;
     border-left: none;
     color: grey;
 }
@@ -314,6 +320,7 @@ a[ id= "section-page" ]:target ~ #main section.panel {
 .tabcontent-card {
     display: table-cell;
     vertical-align: middle;
+    padding-left: 10%;
 }
 
 .tab-title, #colaboradores h3 {
