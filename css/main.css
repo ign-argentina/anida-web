@@ -141,6 +141,11 @@ a {
     letter-spacing: 3px;
     text-align: center;
 }
+
+.sections-link a, .home-link a {
+    text-transform: uppercase;
+}
+
 .sections-link{
   bottom: 25%;
   text-align: center;
