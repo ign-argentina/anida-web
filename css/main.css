@@ -205,13 +205,13 @@ a {
     background-color: #5599DB;
 }
 
-.sections-footer img #defensa {
+img#defensa {
     height: 100%;
     width: auto;
     padding: 0 0 50% 0;
   }
 
-img #facebook {
+img#facebook {
   width: 100%
   height: auto;
   padding: 0 0 50% 0;
@@ -223,19 +223,19 @@ img#twitter {
   padding: 0 0 50% 0;
 }
 
-img #instagam {
+img#instagam {
   width: 100%
   height: auto;
   padding: 0 0 50% 0;
 }
 
-img #youtube {
+img#youtube {
   width: 100%
   height: auto;
   padding: 0 0 50% 0;
 }
 
-img #ing-logo {
+img#ing-logo {
   width: 100%
   height: auto;
   padding: 0 0 50% 0;
