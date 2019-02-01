@@ -205,7 +205,7 @@ a {
     background-color: #5599DB;
 }
 
-img #defensa {
+.sections-footer img #defensa {
     height: 100%;
     width: auto;
     padding: 0 0 50% 0;
@@ -217,7 +217,7 @@ img #facebook {
   padding: 0 0 50% 0;
 }
 
-img #twitter {
+img#twitter {
   width: 100%
   height: auto;
   padding: 0 0 50% 0;
