@@ -208,37 +208,37 @@ a {
 img#defensa {
   height: 100%;
   width: auto;
-  padding: 0 50% 0 0;
+  padding: 0 52% 0 0;
   }
 
 img#facebook {
   height: 25%;
   width: auto;
-  margin: 0 0% 3% 0;
+  padding: : 0 0.2% 3% 0;
 }
 
 img#twitter {
   height: 25%;
   width: auto;
-  margin: 0 0% 3% 0;
+  padding: : 0 0.2% 3% 0;
 }
 
 img#instagram {
   height: 25%;
   width: auto;
-  margin: 0 0% 3% 0;
+  padding: : 0 0.2% 3% 0;
 }
 
 img#youtube {
   height: 25%;
   width: auto;
-  margin: 0 0% 3% 0;
+  padding: : 0 1% 3% 0;
 }
 
 img#ign-logo {
-  height: 50%;
+  height: 90%;
   width: auto;
-  margin: 0 0% 3% 0;
+  padding: 0 0 0.5% 0;
 }
 
 .btn-section {
