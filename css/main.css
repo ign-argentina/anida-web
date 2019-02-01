@@ -201,13 +201,39 @@ a {
     bottom: 0;
     height: 15%;
     width: 100%;
-    background-color: #5599DB;
     position: absolute;
-    background-image: url(../img/defensamargen-30.svg), url(../img/redes-blanco-01.svg), url(../img/redes-blanco-02.svg), url(../img/redes-blanco-03.svg), url(../img/redes-blanco-04.svg), url(../img/ign-logo-footer.svg);
-    background-size: 25%, 1.5%, 1.5%, 1.5%, 1.5%, 10%, 20%;
-    background-repeat: no-repeat;
-    background-position: 3% 50%, 80% 50%, 82% 50%, 84% 50%, 86% 50%, 97% 50%;
 }
+
+#defensa {
+  width: 100%
+  height: auto;
+}
+
+#facebook {
+  width: 100%
+  height: auto;
+}
+
+#twitter {
+  width: 100%
+  height: auto;
+}
+
+#instagam {
+  width: 100%
+  height: auto;
+}
+
+#youtube {
+  width: 100%
+  height: auto;
+}
+
+#ing-logo {
+  width: 100%
+  height: auto;
+}
+
 .btn-section {
 	vertical-align: middle;
 	text-align: center;
