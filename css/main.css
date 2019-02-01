@@ -122,10 +122,11 @@ a {
 #home-longtitle {
     font-size: 0.8rem;
     font-weight: 100;
-    letter-spacing: 3px;
+    letter-spacing: 3.7px;
     text-transform: uppercase;
     margin-top: 0;
     color: #5599DB;
+    font-family: "Gotham-Medium", sans-serif;
 }
 #home-description {
 	font-size: 20px;
@@ -144,6 +145,11 @@ a {
 
 .sections-link a, .home-link a {
     text-transform: uppercase;
+}
+
+.sections-link a {
+    color: #5599DB;
+    font-family: "Gotham-Medium", sans-serif;
 }
 
 .sections-link{
