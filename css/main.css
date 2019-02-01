@@ -205,34 +205,40 @@ a {
     background-color: #5599DB;
 }
 
-#defensa {
+img #defensa {
+    height: 100%;
+    width: auto;
+    padding: 0 0 50% 0;
+  }
+
+img #facebook {
   width: 100%
   height: auto;
+  padding: 0 0 50% 0;
 }
 
-#facebook {
+img #twitter {
   width: 100%
   height: auto;
+  padding: 0 0 50% 0;
 }
 
-#twitter {
+img #instagam {
   width: 100%
   height: auto;
+  padding: 0 0 50% 0;
 }
 
-#instagam {
+img #youtube {
   width: 100%
   height: auto;
+  padding: 0 0 50% 0;
 }
 
-#youtube {
+img #ing-logo {
   width: 100%
   height: auto;
-}
-
-#ing-logo {
-  width: 100%
-  height: auto;
+  padding: 0 0 50% 0;
 }
 
 .btn-section {
