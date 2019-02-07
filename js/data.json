@@ -144,8 +144,7 @@
         },
         "biogeografia": {
             "title": "Ecología y biogeografía",
-            "active": "false",
-            "class": "disabled"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=140d4525a0c94744b3b7bfd8423a1294"
         },
         "agricola-ganadera": {
             "title": "Actividad agrícolo-ganadera",
