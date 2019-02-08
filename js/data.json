@@ -46,6 +46,7 @@
                 "composicion",
                 "crecimiento",
                 "distribucion",
+                "movilidad",
                 "calidad-vida"
             ]
         },
@@ -201,8 +202,13 @@
             "url": "#"
         },
         "distribucion": {
-            "title": "Distribución, asentamiento y movilidad",
-            "url": "#socio-demografica"
+            "title": "Distribución y asentamiento",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d92e12432ed84d4082d3f3a31f37af00"
+        },
+
+        "movilidad": {
+            "title": "Movilidad territorial",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=300625aaf2c344beaf9187ffa3efe43a"
         },
         "calidad-vida": {
             "title": "Calidad de vida",
