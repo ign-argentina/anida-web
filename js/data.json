@@ -33,7 +33,8 @@
                 "clima",
                 "hidrografia",
                 "suelos",
-                "biogeografia"
+                "biogeografia",
+                "galeria-afn"
             ]
         },
         {
@@ -48,7 +49,8 @@
                 "crecimiento",
                 "distribucion",
                 "movilidad",
-                "calidad-vida"
+                "calidad-vida",
+                "galeria-asd"
             ]
         },
         {
@@ -66,7 +68,8 @@
                 "turismo",
                 "servicios-publicos",
                 "infraestructura-equipamiento",
-                "comercio-exterior"
+                "comercio-exterior",
+                "galeria-ae"
             ]
         },
         {
@@ -80,7 +83,8 @@
                 "procesos-degradacion",
                 "atmosfericas-globales",
                 "riesgo-desastres",
-                "areas-protegidas"
+                "areas-protegidas",
+                "galeria-aa"
             ]
         },
         {
@@ -95,7 +99,8 @@
                 "sistema-salud",
                 "sistema-electoral",
                 "sistema-tributario",
-                "sistema-previsional-social"
+                "sistema-previsional-social",
+                "galeria-apa"
             ]
         }
     ],
@@ -154,6 +159,12 @@
             "title": "Ecología y biogeografía",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=140d4525a0c94744b3b7bfd8423a1294"
         },
+        "galeria-afn": {
+            "title": "Galería",
+            "active": "false",
+            "class": "disabled",
+            "url": "#"
+        },
         "agricola-ganadera": {
             "title": "Actividad agrícolo-ganadera",
             "active": "false",
@@ -208,6 +219,12 @@
             "class": "disabled",
             "url": "#"
         },
+        "galeria-ae": {
+            "title": "Galería",
+            "active": "false",
+            "class": "disabled",
+            "url": "#"
+        },
         "distribucion": {
             "title": "Distribución y asentamiento",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d92e12432ed84d4082d3f3a31f37af00"
@@ -220,6 +237,12 @@
         "calidad-vida": {
             "title": "Calidad de vida",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0"
+        },
+        "galeria-asd": {
+            "title": "Galería",
+            "active": "false",
+            "class": "disabled",
+            "url": "#"
         },
         "geologia-general": {
             "title": "Geología",
@@ -298,6 +321,12 @@
             "class": "disabled",
             "url": "#"
         },
+        "galeria-aa": {
+            "title": "Galería",
+            "active": "false",
+            "class": "disabled",
+            "url": "#"
+        },
         "sistema-gobierno": {
             "title": "Sistema de gobierno",
             "active": "false",
@@ -333,6 +362,12 @@
             "active": "false",
             "class": "disabled",
             "url": "#"
-        }
+        },
+        "galeria-apa": {
+            "title": "Galería",
+            "active": "false",
+            "class": "disabled",
+            "url": "#"
+        },
     }
 }
