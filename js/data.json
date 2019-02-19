@@ -18,7 +18,8 @@
                 "formacion-territoio",
                 "malvinas",
                 "antartida",
-                "insercion"
+                "insercion",
+                "galeria-ayem"
             ]
         },
         {
@@ -126,6 +127,12 @@
         "insercion": {
             "title": "Inserción internacional",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=10126972130a4141a7cba8fdd39eff98"
+        },
+        "galeria-ayem": {
+            "title": "Galería",
+            "active": "false",
+            "class": "disabled",
+            "url": "#",
         },
         "clima": {
             "title": "Clima",
