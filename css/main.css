@@ -86,7 +86,7 @@ section, .full-height {
     list-style: none;
 }
 .list-circle li {list-style-type: none; }
-.list-circle li::before {content: "-";}
+.list-circle li::before {content: "- ";}
 .hide {
     display: none;
 }
