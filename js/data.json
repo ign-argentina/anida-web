@@ -132,7 +132,7 @@
             "title": "Galería",
             "active": "false",
             "class": "disabled",
-            "url": "#",
+            "url": "#"
         },
         "clima": {
             "title": "Clima",
