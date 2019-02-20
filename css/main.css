@@ -104,6 +104,10 @@ a {
     opacity: 0.35;
     font-style: italic;
 }
+
+#galeria-ayem {
+  color: #48608D;
+}
 #home {
     background-color: #E1FFFF;
     background-position-x: center;

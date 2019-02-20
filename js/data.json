@@ -135,6 +135,7 @@
         },
         "galeria-ayem": {
             "title": "Galería",
+            "id": "galeria-ayem",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8636fd126ff04fe3ac3d8ef2d2d201dc"
         },
         "clima": {
