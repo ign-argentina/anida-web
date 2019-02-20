@@ -105,9 +105,34 @@ a {
     font-style: italic;
 }
 
+.galeria {
+  margin-top: 10%;
+}
+
 #galeria-ayem {
   color: #48608D;
 }
+
+#galeria-afn {
+  color: #827351;
+}
+
+#galeria-ae {
+  color: #AE302A;
+}
+
+#galeria-asd {
+  color: #D78E33;
+}
+
+#galeria-aa {
+  color: #537354;
+}
+
+#galeria-apa {
+  color: #6D5487;
+}
+
 #home {
     background-color: #E1FFFF;
     background-position-x: center;

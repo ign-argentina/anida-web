@@ -136,6 +136,7 @@
         "galeria-ayem": {
             "title": "Galería",
             "id": "galeria-ayem",
+            "class": "galeria",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8636fd126ff04fe3ac3d8ef2d2d201dc"
         },
         "clima": {
@@ -161,7 +162,8 @@
         "galeria-afn": {
             "title": "Galería",
             "active": "false",
-            "class": "disabled",
+            "id": "galeria-afn",
+            "class": "disabled galeria",
             "url": "#"
         },
         "agricola-ganadera": {
@@ -221,7 +223,8 @@
         "galeria-ae": {
             "title": "Galería",
             "active": "false",
-            "class": "disabled",
+            "id": "galeria-ae",
+            "class": "disabled galeria",
             "url": "#"
         },
         "distribucion": {
@@ -240,7 +243,8 @@
         "galeria-asd": {
             "title": "Galería",
             "active": "false",
-            "class": "disabled",
+            "id": "galeria-asd",
+            "class": "disabled galeria",
             "url": "#"
         },
         "geologia-general": {
@@ -323,7 +327,8 @@
         "galeria-aa": {
             "title": "Galería",
             "active": "false",
-            "class": "disabled",
+            "id": "galeria-aa",
+            "class": "disabled galeria",
             "url": "#"
         },
         "sistema-gobierno": {
@@ -365,7 +370,8 @@
         "galeria-apa": {
             "title": "Galería",
             "active": "false",
-            "class": "disabled",
+            "id": "galeria-apa",
+            "class": "disabled galeria",
             "url": "#"
         }
     }
