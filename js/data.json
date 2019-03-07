@@ -137,7 +137,7 @@
             "title": "Galería",
             "id": "galeria-ayem",
             "class": "galeria",
-            "url": "https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=0f8e5e1becdb4b01b366ba3b6fd332df"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9adbc5ab2947402999e2a9d7e71ea4e6"
         },
         "clima": {
             "title": "Clima",
@@ -161,10 +161,9 @@
         },
         "galeria-afn": {
             "title": "Galería",
-            "active": "false",
             "id": "galeria-afn",
-            "class": "disabled galeria",
-            "url": "#"
+            "class": "galeria",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9e3fd39ca5464eab83f9b1b904dd7ace"
         },
         "agricola-ganadera": {
             "title": "Actividad agrícolo-ganadera",
@@ -242,10 +241,9 @@
         },
         "galeria-asd": {
             "title": "Galería",
-            "active": "false",
             "id": "galeria-asd",
-            "class": "disabled galeria",
-            "url": "#"
+            "class": "galeria",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=f7beacffe01c4c7886c797124df799cd"
         },
         "geologia-general": {
             "title": "Geología",
