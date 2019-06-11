@@ -1,54 +1,271 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title></title>
-	<meta charset="utf-8">
+  <title>ANIDA</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://anida.ign.gob.ar/js/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- <script src="http://10.20.200.72/tmp/poncho_para_idera.css"></script> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/colaboradores.css">
-	<script src="js/main.js" type="text/javascript"></script>
-	<script src="js/menu-colaboradores.js" type="text/javascript"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 3px;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #5599DB;
+      padding:25px;
+    }
+
+     .home1 {
+	      background-color: #e1ffff;
+    }
+      </style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136146579-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-136146579-4');
+</script>
+
+
 </head>
 <body>
-	<div id="menu-toggle-container" class="menu-toggle-container" onclick="toggleMenu(this)">
-	</div>
-	</div>
-	<div class="sidebar"><ul class="sidebarList"></ul></div>
-	<section id="home" class="section home">
-		<div id="home-content" class="vcenter">
-			<span>
-				<h1 id="home-title"></h1>
-				<h3 id="home-longtitle"></h3>
-				<p id="home-description"></p>
-			</span>
-		<div class="sections-link">
-			<a href="#sections-menu">Secciones</a>
-		</div>
-		</div>
-		<div class='sections-footer full-width'>
-			<a target="_blank" href='https://www.argentina.gob.ar/defensa'><img id="defensa" src="img/defensamargen-30.svg"></a>
-			<a target="_blank" href='https://www.facebook.com/institutogeograficonacional'><img id="facebook" src="img/redes-blanco-01.svg"></a>
-			<a target="_blank" href='https://twitter.com/ARGENTINAIGN'><img id="twitter" src="img/redes-blanco-02.svg"></a>
-			<a target="_blank" href='https://www.instagram.com/argentinaignoficial/'><img id="instagram" src="img/redes-blanco-03.svg"></a>
-			<a target="_blank" href='https://www.youtube.com/user/IgnArgentina'><img id="youtube" src="img/redes-blanco-04.svg"></a>
-			<a target="_blank" href='http://www.ign.gob.ar/'><img id="ign-logo" src="img/ign-logo-footer.svg"></a>
-		</div>
-	</section>
-	<section id="sections-menu" class="section menu">
-		<div class="full-height">
-			<article id="sections-block" class="center">
-				<span class="full-width">
-					<div class="home-link">
-						<a href="#">Inicio</a>
-					</div>
-					<div id="section-list">
-						<ul></ul>
-					</div>
-				</span>
-			</article>
-		</div>
-	</section>
-	<section id="section-page" class="section page"></section>
+<a id="inicio"></a>
+<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		       <a class="navbar-brand" href="index.html">ANIDA</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav">
+		        <li><a href="_acercade.html">Acerca de ANIDA</a></li>
+		        <li><a href="_estructura.html">Estructura temática</a></li>
+		        <li><a href="_anida_hoy.html">ANIDA hoy</a></li>
+		        <li><a href="_equipo.html">Equipo de trabajo</a></li>
+		        <li><a href="_fuente_datos.html">Fuente de datos</a></li>
+		        <li><a href="_contacto.html">Contacto</a></li>
+		      </ul>
+		     <!-- login derecho <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		      </ul>-->
+		    </div>
+		  </div>
+</nav>
+
+<div class="jumbotron full-height text-center home1" style="padding-top:15%">
+  <div class="container">
+    <h1 id="home-title">ANIDA</h1>
+    <h3 id="home-longtitle">Atlas Nacional Interactivo de Argentina</h3>
+    <p id="home-description">Cartografía temática, información georreferenciada, textos explicativos, enriquecidos con contenidos gráficos y multimedia, para visualizar y consultar la información de manera detallada, atractiva y sencilla de leer e interpretar.</p>
+ </div>
+ <div class="jumbotron container home1" style="padding-top:10%">
+  <a class="btn btn-default" target="_self" href="#secciones">SECCIONES</a>
+  </div>
+</div>
+
+
+<div class="container-fluid bg-4 text-center" >
+
+ <a id="secciones"></a>
+ <div class="row" style="padding-top:10%";>
+
+<div class="container-fluid">
+	    <a class="btn btn-default" target="_self" href="#inicio" >INCIO</a><br><hr>
+  </div>
+    <div id="arg-mun-bot" class="col-sm-6 col-md-4">
+     <a target="_self" href="#ayem"><img src="http://anida.ign.gob.ar/img/mundo.png"class="img-center" style="width:50%; padding:2%">
+     <p>Argentina y el mundo</p></a><hr>
+    </div>
+    <div id="arg-fis-bot" class="col-sm-6 col-md-4">
+            <a target="_self" href="#natural"><img src="http://anida.ign.gob.ar/img/natural.png"class="img-center" style="width:50%; padding:2%">
+            <p>Argentina físico-natural</p></a><hr>
+    </div>
+    <div id="arg-soc-bot" class="col-sm-6 col-md-4">
+           <a target="_self" href="#sociodemo"><img src="http://anida.ign.gob.ar/img/sociodemo.png" class="img-center" style="width:50%; padding:2%">
+           <p>Argentina socio-demográfica</p></a><hr>
+    </div>
+     <div id="arg-econ-bot" class="col-sm-6 col-md-4">
+          <a target="_self" href="#economica"><img src="http://anida.ign.gob.ar/img/economica.png" class="img-center" style="width:50%; padding:2%">
+    <p>Argentina económica</p></a><hr>
+    </div>
+     <div id="arg-amb-bot" class="col-sm-6 col-md-4">
+            <a target="_self" href="#ambiental"><img src="http://anida.ign.gob.ar/img/ambiental.png" class="img-center" style="width:50%; padding:2%">
+            <p>Argentina ambiental</p></a><hr>
+    </div>
+    <div id="arg-pol-bot" class="col-sm-6 col-md-4">
+
+      <a target="_self" href="#politico_admin"><img src="http://anida.ign.gob.ar/img/politico_admin.png" class="center" style="width:50%; padding:2%">
+      <p>Argentina político-administrativa</p></a>
+    </div>
+
+  </div>
+</div>
+<br>
+<div class="container-fluid" >
+  <div class="row"><a id="ayem"></a>
+    <div id="ayem-div" class="col-xs-6 col-sm-4 col-md-4 col-lg-4 full-height" style="background-color:#48608D;">
+    <img src="http://anida.ign.gob.ar/img/mundo.png" class="img-center" style="width:70%; padding:5%">
+      <h4>Argentina y el mundo</h4>
+<p>Presenta a Argentina en su condición de Estado desde la óptica de la geografía política, proporcionando la información básica necesaria para conocer y comprender la realidad internacional del país, en el pasado y en la actualidad.</p>
+     <br>
+     <a target="_self" href="#secciones"><i class="far fa-arrow-alt-circle-up" style="font-size: 150%;"></i></a>
+        </div>
+
+    <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#b6bfd1;padding:5%">
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=a6b2bf22093e4f8d9f9a0e59d4ec82ca"><h3>Rasgos y componentes del territorio</h3></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2bbf319cef994f76ab329bccc2ffe811"><h3>Límites y fronteras internacionales</h3></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2c7297e24ca641dd8c1ba0ae689ff4cf"><h3>Organización política</h3></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=317955464b3b4b228fec815faeba7908"><h3>Formación del territorio</h3></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=88ebb23ca07544ba9dfe9383584991f5"><h3>Malvinas y otras islas del Atlántico Sur</h3></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b2cb8044848b438da5a9dd3d0f7a5f04"><h3>Antártida</h3></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=10126972130a4141a7cba8fdd39eff98"><h3>Inserción internacional</h3></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9adbc5ab2947402999e2a9d7e71ea4e6"><h3 id="galeria-ayem" class="galeria">Galería</h3></a>
+    </div>
+  </div>
+
+
+   <div class="row"><a id="natural"></a>
+    <div id="afn-div" class="col-xs-6 col-sm-4 col-md-4 col-lg-4 full-height" style="background-color:#827351;">
+     <img src="http://anida.ign.gob.ar/img/natural.png" class="img-center" style="width:70%; padding:5%">
+    <h4>Argentina físico-natural</h4>
+<p>Argentina presenta una amplia diversidad en sus condiciones físicas y naturales. Esta sección describe las características de los elementos y procesos físico-naturales del territorio argentino.</p>
+    <br>
+    <a target="_self" href="#secciones"><i class="far fa-arrow-alt-circle-up" style="font-size: 150%;"></i></a>
+      </div>
+
+<div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#cdc7b9 ; padding:5%">
+	<h3>Geología y relieve</h3>
+		<a><ul id="ul-geologia" class="no-li-style"><li><a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=bda8f47e469c42c6a0cd2496187e56cb"><h3 id="geologia-general">Geología</h3></a></li><li><a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=ab1131d6c3c142a09b3f2a62722a3a79"><h3 id="geologia-argentina">Geología de Argentina</h3></a></li><li>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8099b9f573364acc8ae98609935bc101"><h3>Volcanología</h3></a></li></ul></a>
+	<h3>Clima</h3>
+		<a><ul id="ul-clima" class="no-li-style"><li>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=403635e0919c410298b8fa80a87b09f1"><h3>Clima</h3></a></li><li>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b58d8b8841ef472e962317cac879e87f"><h3>Clima de Argentina</h3></a></li></ul></a>
+	<h3>Hidrografía</h3>
+		<a><ul id="ul-hidrografia" class="no-li-style"><li>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=9afbdac4af82412d9a7657168198e5f3"><h3>Aguas superficiales</h3></a></li><li><a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=7cc4ba9c758148f9b6176eb9cc2d79f2"><h3 id="aguas-subterraneas">Aguas subterráneas</h3></a></li></ul></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=909f432ca3c540609871ac04334588bd"><h3>Suelos</h3></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=140d4525a0c94744b3b7bfd8423a1294"><h3>Ecología y biogeografía</h3></a>
+		<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9e3fd39ca5464eab83f9b1b904dd7ace"><h3 id="galeria-afn" class="galeria">Galería</h3></a>
+    </div>
+  </div>
+
+
+<div class="row"><a id="sociodemo"></a>
+   <div id="asd-div" class="col-xs-6 col-sm-4 col-md-4 col-lg-4 full-height" style="background-color:#D78E33;">
+     <img src="http://anida.ign.gob.ar/img/sociodemo.png" class="img-center" style="width:70%; padding:5%">
+   <h4>Argentina socio-demográfica</h4>
+<p>Describe las características socio-demográficas más destacadas de los habitantes de Argentina, brindando información detallada y actualizada de la población y la sociedad del país de modo que el usuario pueda comprender su situación y realizar un análisis crítico de la temática.</p>
+   <br>
+      <a target="_self" href="#secciones"><i class="far fa-arrow-alt-circle-up" style="font-size: 150%;"></i></a>
+    </div>
+
+<div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#efd2ad ;padding:5%">
+<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=340df9845c2c4f1ea2fb6939f1e24fcb"><h3 id="tamano-peso" class="undefined">Tamaño y peso demográfico</h3></a>
+<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57057713a9ae4084a8d5f2bddbfebb66"><h3 id="composicion" class="undefined">Composición de la población</h3></a>
+<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244"><h3 id="crecimiento" class="undefined">Crecimiento demográfico</h3></a>
+<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d92e12432ed84d4082d3f3a31f37af00"><h3 id="distribucion" class="undefined">Distribución y asentamiento</h3></a>
+<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=300625aaf2c344beaf9187ffa3efe43a"><h3 id="movilidad" class="undefined"> Movilidad territorial</h3></a>
+<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0"><h3 id="calidad-vida" class="undefined">Calidad de vida</h3></a>
+<a target="_blank" href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=f7beacffe01c4c7886c797124df799cd"><h3 id="galeria-asd" class="galeria">Galería</h3></a>
+    </div>
+  </div>
+
+
+
+  <div class="row"><a id="economica"></a>
+    <div id="arg-econ-div" class="col-xs-6 col-sm-4 col-md-4 col-lg-4 full-height" style="background-color:#AE302A;">
+      <img src="http://anida.ign.gob.ar/img/economica.png" class="img-center" style="width:70%; padding:5%">
+      <h4>Argentina económica</h4>
+<p>Describe las características cuantitativas, cualitativas y territoriales de la economía argentina, proporcionando la información necesaria para la comprensión y análisis crítico de su enorme potencial, alcances y limitaciones.</p>
+   <br>
+     <a target="_self" href="#secciones"><i class="far fa-arrow-alt-circle-up" style="font-size: 150%;"></i></a>
+    </div>
+
+    <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#dfacaa ;padding:5%">
+<a><h3 id="agricola-ganadera" class="disabled">Actividad agrícolo-ganadera</h3></a>
+<a><h3 id="pesca-acuicultura" class="disabled">Pesca y acuicultura</h3></a>
+<a><h3 id="mineria" class="disabled">Minería</h3></a>
+<a><h3 id="industria" class="disabled">Industria</h3></a>
+<a><h3 id="energia" class="disabled">Energía</h3></a>
+<a><h3 id="turismo" class="disabled">Turismo</h3></a>
+<a><h3 id="servicios-publicos" class="disabled">Servicios públicos</h3></a>
+<a><h3 id="infraestructura-equipamiento" class="disabled">Infraestructura y equipamiento</h3></a>
+<a><h3 id="comercio-exterior" class="disabled">Comercio exterior</h3></a>
+<a><h3 id="galeria-ae" class="disabled galeria">Galería</h3></a>
+
+    </div>
+  </div>
+
+
+  <div class="row"><a id="ambiental"></a>
+    <div id="arg-amb-div" class="col-xs-6 col-sm-4 col-md-4 col-lg-4 full-height" style="background-color:#537B54;">
+     <img src="http://anida.ign.gob.ar/img/ambiental.png" class="img-center" style="width:70%; padding:5%">
+     <h4>Argentina ambiental</h4>
+<p>Realiza una aproximación al carácter complejo e interrelacionado del ambiente en el que viven los habitantes de Argentina, dado por las múltiples dimensiones que abarca, tanto en el plano de la realidad social como del sistema natural, y las múltiples combinaciones entre estas dos dimensiones, variables en cada momento y lugar de nuestro país.</p>
+      <br>
+      <a target="_self" href="#secciones"><i class="far fa-arrow-alt-circle-up" style="font-size: 150%;"></i></a>
+   </div>
+
+    <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#bacabb ;padding:5%">
+<a><h3 id="recursos-naturales" class="disabled">Recursos naturales</h3></a>
+<a><h3 id="procesos-degradacion" class="disabled">Procesos de degradación</h3></a>
+<a><h3 id="atmosfericas-globales" class="disabled">Problemáticas atmosféricas globales</h3></a>
+<a><h3 id="riesgo-desastres" class="disabled">Riesgo de desastres</h3></a>
+<a><h3 id="areas-protegidas" class="disabled">Areas naturales protegidas</h3></a>
+<a><h3 id="galeria-aa" class="disabled galeria">Galería</h3></a>
+    </div>
+  </div>
+
+
+  <div class="row"><a id="politico_admin"></a>
+   <div id="arg-pol-div" class="col-xs-6 col-sm-4 col-md-4 col-lg-4 full-height" style="background-color:#6D5487;" >
+     <img src="http://anida.ign.gob.ar/img/politico_admin.png" class="img-center" style="width:70%; padding:5%">
+     <h4>Argentina político-administrativa</h4>
+<p>Presenta a Argentina en su condición de Estado desde la óptica de la geografía política, proporcionando la información básica necesaria para conocer y comprender la realidad internacional del país, en el pasado y en la actualidad.</p>
+     <br>
+      <a target="_self" href="#secciones"><i class="far fa-arrow-alt-circle-up" style="font-size: 150%;"></i></a>
+    </div>
+        <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#c5bbcf ;padding:5%">
+<a><h3 id="sistema-gobierno" class="disabled">Sistema de gobierno</h3></a>
+<a><h3 id="sistema-educativo" class="disabled">Sistema educativo</h3></a>
+<a><h3 id="sistema-salud" class="disabled">Sistema de salud</h3></a>
+<a><h3 id="sistema-electoral" class="disabled">Sistema electoral</h3></a>
+<a><h3 id="sistema-tributario" class="disabled">Sistema tributario</h3></a>
+<a><h3 id="sistema-previsional-social" class="disabled">Sistema previsional y de seguridad social</h3></a>
+<a><h3 id="galeria-apa" class="disabled galeria">Galería</h3></a>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer class="container-fluid text-center full-width" style="position:fixed; bottom:0px; height:70px; padding-top:0px">
+	<div class="container-fluid col-sm-6 col-xs-5" style="padding:0px"><a target="_blank" href="https://www.argentina.gob.ar/defensa"><img src="http://anida.ign.gob.ar/img/defensamargen-30.svg" style="height:60px"></a></div>
+	<div class="col-sm-6 col-xs-7"><a target="_blank" href="https://www.facebook.com/institutogeograficonacional"><img src="http://anida.ign.gob.ar/img/redes-blanco-01.svg" style="height:20px"></a>
+	  			<a target="_blank" href="https://twitter.com/ARGENTINAIGN"><img src="http://anida.ign.gob.ar/img/redes-blanco-02.svg" style="height:20px"></a>
+	  			<a target="_blank" href="https://www.instagram.com/argentinaignoficial/"><img  src="http://anida.ign.gob.ar/img/redes-blanco-03.svg" style="height:20px"></a>
+	  			<a target="_blank" href="https://www.youtube.com/user/IgnArgentina"><img  src="http://anida.ign.gob.ar/img/redes-blanco-04.svg"style="height:20px"></a>
+	  			<a target="_blank" href="http://www.ign.gob.ar/"><img src="http://anida.ign.gob.ar/img/ign-logo-footer.svg" style="height:40px" ></a>
+	 </div>
+</footer>
+
 </body>
 </html>
