@@ -11,11 +11,12 @@ html {
 }
 body {
 	background-color: #fafafa;
-	font-family: "Gotham-Light", sans-serif;
-    font-size: 16px;
-	margin: 0 !important;
+	 font-family: "Gotham-Light", sans-serif;
+        /* font-size: 1.4em;
+	margin: 0 !important;*/
 }
-body h3 {font-size: 16px; margin-bottom: }
+body h3 {font-size: 16px; margin-bottom:}
+body h4 {font-weight: bold;}
 body h1 {font-size: 70px;}
 section {
 	width: 100%;
@@ -85,7 +86,8 @@ section, .full-height {
 .no-li-style, .no-li-style li {
     list-style: none;
 }
-.list-circle li {list-style-type: circle;}
+.list-circle li {list-style-type: none;}
+.list-circle li::before {content: "- ";}
 .hide {
     display: none;
 }
@@ -99,10 +101,44 @@ a {
     text-decoration: none;
     text-transform: initial;
 }
+
+a:hover {
+   color: grey;
+    }
+
 .disabled {
     opacity: 0.35;
     font-style: italic;
 }
+
+.galeria {
+  margin-top: 10%;
+}
+
+#galeria-ayem {
+  color: #48608D;
+}
+
+#galeria-afn {
+  color: #827351;
+}
+
+#galeria-ae {
+  color: #AE302A;
+}
+
+#galeria-asd {
+  color: #D78E33;
+}
+
+#galeria-aa {
+  color: #537354;
+}
+
+#galeria-apa {
+  color: #6D5487;
+}
+
 #home {
     background-color: #E1FFFF;
     background-position-x: center;
@@ -113,23 +149,24 @@ a {
     text-align: center;
 }
 #home-title {
-    font-size: 5.7rem;
-    font-weight: 100;
+    font-size: 7.0rem;
+    font-weight: 150;
     letter-spacing: 2rem;
     margin: 0 0 0 1.7rem;
     color: #5599DB;
 }
 #home-longtitle {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     font-weight: 100;
-    letter-spacing: 3px;
+    letter-spacing: 3.0px;
     text-transform: uppercase;
     margin-top: 0;
     color: #5599DB;
+    font-family: "Gotham-Medium", sans-serif;
 }
 #home-description {
-	font-size: 20px;
-	width: 35%;
+	font-size: 13px;
+	width: 60%;
   display: inline-block;
   letter-spacing: 1px;
   line-height: 1.4rem;
@@ -144,6 +181,11 @@ a {
 
 .sections-link a, .home-link a {
     text-transform: uppercase;
+}
+
+.sections-link a {
+    color: #5599DB;
+    font-family: "Gotham-Medium", sans-serif;
 }
 
 .sections-link{
@@ -201,143 +243,79 @@ a {
     bottom: 0;
     height: 15%;
     width: 100%;
-    background-color: #5599DB;
     position: absolute;
-    background-image: url(../img/defensamargen-30.svg), url(../img/redes-blanco-01.svg), url(../img/redes-blanco-02.svg), url(../img/redes-blanco-03.svg), url(../img/redes-blanco-04.svg), url(../img/ign-logo-footer.svg);
-    background-size: 25%, 1.5%, 1.5%, 1.5%, 1.5%, 10%, 20%;
-    background-repeat: no-repeat;
-    background-position: 3% 50%, 80% 50%, 82% 50%, 84% 50%, 86% 50%, 97% 50%;
-}
-.btn-section {
-	vertical-align: middle;
-	text-align: center;
-}
-.btn-section p {
-	height: 200px;
-	display: table-cell;
-	vertical-align: middle;
-    padding: 0 10%;
-    text-transform: initial;
+    background-color: #5599DB;
 }
 
-/* Scrolling */
+/*MenuSuperior*/
 
-a[ id= "home" ]:target ~ #main section.panel {
-    -webkit-transform: translateY( 0px);
-    transform: translateY( 0px );
-}
+#menusup_titlezone {
+	color: #5599DB;
+	background-color:#fafafa;
+	padding:20px;
+	height: 100px;
+	}
 
-a[ id= "sections-menu" ]:target ~ #main section.panel {
-    -webkit-transform: translateY( -500px );
-    transform: translateY( -500px );
-}
-a[ id= "section-page" ]:target ~ #main section.panel {
-    -webkit-transform: translateY( -1000px );
-    transform: translateY( -1000px );
+#menusup_copete {
+    font-size: 16px;
+    color: #5599DB;
 }
 
-/* Section page */
-
-.content-card {
-	width: 95%;
-	height: 340px;
-}
-.content-card h1 {
-	/*padding: 0 10px;*/
-	font-size: 2.5rem;
-	word-wrap: break-word;
-}
-.content-card p {
-	padding: 0 10px;
-	text-align: justify;
+#menusup_content {
+    font-size: 14px;
 }
 
-/* {box-sizing: border-box}*/
-
-/* Content page */
-
-/* Style the tab and tab-frame containers */
-.left-30 {margin-left: 30%}
-
-.tab, .menu-toggle-container {
-    float: left;
-    width: 20%;
-}
-.tab:before{
-    opacity: 0.6;
-}
-#tab-frame {
-	margin-left: 30%;
-	width: 70%;
+#disclaimer{
+    font-size: 11px;
+    font-style: italic;
+    padding:0px 0px 0px 50px; 
 }
 
-/* Style the tab */
-.tab {
-    color: #c9c5c5;
-    padding: 0 5% 0 5%;
-    background-repeat: no-repeat;
-    background-size: 35%;
-    background-position-y: 12%;
-    background-position-x: 18%;
-    background-size: 42%;
-}
+/*HOME */
 
-/* Style the buttons and links that are used to open the tab content */
-.tab a {
-    display: block;
-    background-color: inherit;
-    padding: 22px 60px;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-    color: #c9c5c5;
-}
+/*AZUL*/
+#arg-mun-bot a:hover {opacity: 0.7;}
 
-/* Change background color of buttons on hover */
-.tab a:hover {
-    background-color: #ddd;
-    color: #48608d;
-}
+#ayem-div h4 {color: #b6bfd1;}
+#ayem-div p {color: #b6bfd1;}
+#ayem-div a {color: #b6bfd1;}
+#ayem-div a:hover {color: #FFFFFF;}
 
-/* Create an active/current "tab button" class */
-.tab a.active {
-    background-color: #ccc;
-    color: #48608d;
-}
 
-/* Style the tabcontent */
-.tabcontent {
-    width: 45%;
-    float: left;
-    border-left: none;
-    color: grey;
-}
-.tabcontent h3 {color: gray;}
+/*OCRE*/
+#arg-fis-bot a:hover {opacity: 0.7;}
 
-.tabcontent h1{
-    color: #aeae0d;
-}
-.tabcontent p{
-    color: #c9c5c5;
-}
-.tabcontent-card {
-    display: table-cell;
-    vertical-align: middle;
-    padding-left: 10%;
-}
+#afn-div h4 {color: #cdc7b9;}
+#afn-div p {color: #cdc7b9;}
+#afn-div a {color: #cdc7b9;}
+#afn-div a:hover {color: #FFFFFF;}
+	
+/*NARANJA*/
+#arg-soc-bot a:hover {opacity: 0.7;}
 
-.tab-title, #colaboradores h3 {
-    color: #eae7e7;
-}
-.tab-title h1 {
-    margin: 100% 10% 5% 25%;
-    font-size: xx-large;
-}
-.tab-title p {
-    text-align: left;
-    margin: 0 10% 0 25%;
-    line-height: 19px;
-}
+#asd-div h4 {color: #efd2ad;}
+#asd-div p {color: #efd2ad;}
+#asd-div a {color: #efd2ad;}
+#asd-div a:hover {color: #FFFFFF;}
+	
+/*ROJO*/
+#arg-econ-bot a:hover {opacity: 0.7;}
+
+#arg-econ-div h4 {color: #dfacaa;}
+#arg-econ-div p {color: #dfacaa;}
+#arg-econ-div a {color: #dfacaa;}
+#arg-econ-div a:hover {color: #FFFFFF;}
+	
+/*VERDE*/
+#arg-amb-bot a:hover {opacity: 0.7;}
+#arg-amb-div h4 {color: #bacabb;}
+#arg-amb-div p {color: #bacabb;}
+#arg-amb-div a {color: #bacabb;}
+#arg-amb-div a:hover {color: #FFFFFF;}
+	
+/*VIOLETA*/
+#arg-pol-bot a:hover {opacity: 0.7;}
+#arg-pol-div h4 {color: #c5bbcf;}
+#arg-pol-div p {color: #c5bbcf;}
+#arg-pol-div a {color: #c5bbcf;}
+#arg-pol-div a:hover {color: #FFFFFF;}

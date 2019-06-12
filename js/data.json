@@ -2,7 +2,7 @@
     "page": {
         "title": "ANIDA",
         "longTitle": "Atlas Nacional Interactivo de Argentina",
-        "description": "Cartografía temática e información georreferenciada con textos explicativos, enriquecidos con contenidos gráficos y multimedia, para consultar y visualizar la información de manera detallada, atractiva y sencilla de leer e interpretar."
+        "description": "Cartografía temática, información georreferenciada, textos explicativos, enriquecidos con contenidos gráficos y multimedia, para visualizar y consultar la información de manera detallada, atractiva y sencilla de leer e interpretar."
     },
     "sections": [
         {
@@ -18,7 +18,8 @@
                 "formacion-territoio",
                 "malvinas",
                 "antartida",
-                "insercion"
+                "insercion",
+                "galeria-ayem"
             ]
         },
         {
@@ -32,7 +33,8 @@
                 "clima",
                 "hidrografia",
                 "suelos",
-                "biogeografia"
+                "biogeografia",
+                "galeria-afn"
             ]
         },
         {
@@ -46,7 +48,9 @@
                 "composicion",
                 "crecimiento",
                 "distribucion",
-                "calidad-vida"
+                "movilidad",
+                "calidad-vida",
+                "galeria-asd"
             ]
         },
         {
@@ -64,7 +68,8 @@
                 "turismo",
                 "servicios-publicos",
                 "infraestructura-equipamiento",
-                "comercio-exterior"
+                "comercio-exterior",
+                "galeria-ae"
             ]
         },
         {
@@ -78,7 +83,8 @@
                 "procesos-degradacion",
                 "atmosfericas-globales",
                 "riesgo-desastres",
-                "areas-protegidas"
+                "areas-protegidas",
+                "galeria-aa"
             ]
         },
         {
@@ -93,7 +99,8 @@
                 "sistema-salud",
                 "sistema-electoral",
                 "sistema-tributario",
-                "sistema-previsional-social"
+                "sistema-previsional-social",
+                "galeria-apa"
             ]
         }
     ],
@@ -126,6 +133,12 @@
             "title": "Inserción internacional",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=10126972130a4141a7cba8fdd39eff98"
         },
+        "galeria-ayem": {
+            "title": "Galería",
+            "id": "galeria-ayem",
+            "class": "galeria",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9adbc5ab2947402999e2a9d7e71ea4e6"
+        },
         "clima": {
             "title": "Clima",
             "active": "false"
@@ -144,8 +157,13 @@
         },
         "biogeografia": {
             "title": "Ecología y biogeografía",
-            "active": "false",
-            "class": "disabled"
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=140d4525a0c94744b3b7bfd8423a1294"
+        },
+        "galeria-afn": {
+            "title": "Galería",
+            "id": "galeria-afn",
+            "class": "galeria",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9e3fd39ca5464eab83f9b1b904dd7ace"
         },
         "agricola-ganadera": {
             "title": "Actividad agrícolo-ganadera",
@@ -201,13 +219,31 @@
             "class": "disabled",
             "url": "#"
         },
+        "galeria-ae": {
+            "title": "Galería",
+            "active": "false",
+            "id": "galeria-ae",
+            "class": "disabled galeria",
+            "url": "#"
+        },
         "distribucion": {
-            "title": "Distribución, asentamiento y movilidad",
-            "url": "#socio-demografica"
+            "title": "Distribución y asentamiento",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d92e12432ed84d4082d3f3a31f37af00"
+        },
+
+        "movilidad": {
+            "title": "Movilidad territorial",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=300625aaf2c344beaf9187ffa3efe43a"
         },
         "calidad-vida": {
             "title": "Calidad de vida",
             "url": "https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0"
+        },
+        "galeria-asd": {
+            "title": "Galería",
+            "id": "galeria-asd",
+            "class": "galeria",
+            "url": "https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=f7beacffe01c4c7886c797124df799cd"
         },
         "geologia-general": {
             "title": "Geología",
@@ -286,6 +322,13 @@
             "class": "disabled",
             "url": "#"
         },
+        "galeria-aa": {
+            "title": "Galería",
+            "active": "false",
+            "id": "galeria-aa",
+            "class": "disabled galeria",
+            "url": "#"
+        },
         "sistema-gobierno": {
             "title": "Sistema de gobierno",
             "active": "false",
@@ -320,6 +363,13 @@
             "title": "Sistema previsional y de seguridad social",
             "active": "false",
             "class": "disabled",
+            "url": "#"
+        },
+        "galeria-apa": {
+            "title": "Galería",
+            "active": "false",
+            "id": "galeria-apa",
+            "class": "disabled galeria",
             "url": "#"
         }
     }
