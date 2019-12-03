@@ -259,10 +259,12 @@ a:hover {
 #menusup_copete {
     font-size: 16px;
     color: #5599DB;
+    padding-right: 3%;
 }
 
 #menusup_content {
     font-size: 14px;
+    padding-right: 10%;
 }
 
 #disclaimer{
