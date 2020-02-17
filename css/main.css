@@ -165,11 +165,11 @@ a:hover {
     font-family: "Gotham-Medium", sans-serif;
 }
 #home-description {
-	font-size: 13px;
+	font-size: 16px;
 	width: 60%;
   display: inline-block;
   letter-spacing: 1px;
-  line-height: 1.4rem;
+  line-height: 2rem;
 }
 .sections-link, .home-link {
     display: inline-block;
@@ -259,12 +259,10 @@ a:hover {
 #menusup_copete {
     font-size: 16px;
     color: #5599DB;
-    padding-right: 3%;
 }
 
 #menusup_content {
     font-size: 14px;
-    padding-right: 10%;
 }
 
 #disclaimer{
