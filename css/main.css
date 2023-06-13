@@ -245,6 +245,7 @@ a:hover {
     width: 100%;
     position: absolute;
     background-color: #5599DB;
+    
 }
 
 /*MenuSuperior*/
@@ -319,3 +320,32 @@ a:hover {
 #arg-pol-div p {color: #c5bbcf;}
 #arg-pol-div a {color: #c5bbcf;}
 #arg-pol-div a:hover {color: #FFFFFF;}
+
+
+/*Carousel*/
+
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 100%,rgba(0,0,0,.5) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 100%,rgba(0,0,0,.5) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 100%,rgba(0,0,0,.5) 100%);
+    
+    
+}
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5) 100%,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 100%,rgba(0,0,0,.0001) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.0001)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 100%,rgba(0,0,0,.5) 100%);
+    
+    
+}
+.carousel-indicators {
+    bottom: 10px;
+    z-index: unset;
+}
+.body-index-background {
+    background-color: #e1ffff;
+}
