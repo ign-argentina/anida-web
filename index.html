@@ -19,15 +19,15 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <link rel="stylesheet" href="css/main.css">
-  <script src="https://anida.ign.gob.ar/js/jquery-3.3.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <!-- <script src="https://anida.ign.gob.ar/js/jquery-3.3.1.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
   <!-- <script src="http://10.20.200.72/tmp/poncho_para_idera.css"></script> -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"> -->
 
-  <style>
+  <!-- <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
       margin-bottom: 0;
@@ -43,52 +43,40 @@
     .home1 {
       background-color: #e1ffff;
     }
-  </style>
-
+  </style> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 
-<body class="body-index-background">
+<body>
 
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSV8Q7P" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSV8Q7P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <a id="inicio"></a>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a id="anida-inicio" class="navbar-brand" href="index.html">ANIDA</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a id="acerca-de-anida" href="acercade.html">Acerca de ANIDA</a></li>
-          <li><a id="estructura-tematica" href="estructura.html">Estructura temática</a></li>
-          <li><a id="anida-hoy" href="anida_hoy.html">ANIDA hoy</a></li>
-          <li><a id="equipo-de-trabajo" href="equipo.html">Equipo de trabajo</a></li>
-          <li><a id="fuente-de-datos" href="fuente_datos.html">Fuente de datos</a></li>
-          <li><a id="recursos-educativos" href="recursos_educativos.html">Recursos educativos</a></li>
-          <li><a id="contacto" href="contacto.html">Contacto</a></li>
-          <li><a id="como-citar" href="cita.html">¿Cómo citar?</a></li>
-          <li><a id="tutoriales" href="tutoriales.html">Tutoriales</a></li>
-          <li><a id="atlas-antartida-link" href="https://antartida-anida.ign.gob.ar" style="color:#cbe3e8;">Atlas de la
-              Antártida Argentina</a></li>
-        </ul>
-        <!-- login derecho <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		      </ul>-->
-      </div>
+  <header id="header"></header>
+  
+  <script>
+    fetch('components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+  
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+      <h1>ANIDA</h1>
+      <h2>Atlas Nacional Interactivo de Argentina</h2>
+      <p>Cartografía temática, información georreferenciada, textos explicativos, enriquecidos con contenidos gráficos y multimedia, para visualizar y consultar la información de manera detallada, atractiva y sencilla de leer e interpretar.</p>
+      <a rel="secciones" href="#ejes" class="btn-get-started scrollto">Secciones</a>
     </div>
-  </nav>
+  </section>
 
-  <div class="jumbotron full-height text-center home1" style="padding-top:15%;">
+  <!--   <div class="jumbotron full-height text-center home1" style="padding-top:15%;">
     <div class="container">
- 
 
       <h1 id="home-title">ANIDA</h1>
       <h3 id="home-longtitle">Atlas Nacional Interactivo de Argentina</h3>
@@ -101,18 +89,73 @@
       <a class="btn btn-default" target="_self" href="#secciones">SECCIONES</a>
       <div class="jumbotron container home1" style="padding-top:2%">
         <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
-          <img alt="Licencia de Creative Commons" style="border-width:0"
-            src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+          <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
         <br>
         Esta obra está bajo una
         <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">licencia de Creative Commons
           Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional </a>
       </div>
     </div>
-  </div>
-
-
-  <div class="container-fluid bg-4 text-center">
+    </div> -->
+    <section id="ejes" class="services">
+      <div class="container">
+        <div class="flex-center">
+    
+          <div class="">
+            <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="assets/images/mundo.png" class="img-center">
+                </div>
+                <h5>Argentina y el mundo</h5>
+                </div>
+                </a>
+                </div>
+                <div class="">
+                  <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
+                    <div class="icon-box">
+                      <div class="icon">
+                        <img src="assets/images/natural.png" class="img-center">
+                      </div>
+                      <h5>Argentina físico-natural</h5>
+                    </div>
+                  </a>
+                </div>
+                <div class="">
+                  <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
+                    <div class="icon-box">
+                      <div class="icon">
+                        <img src="assets/images/sociodemo.png" class="img-center">
+                      </div>
+                      <h5>Argentina socio-demográfica</h5>
+                    </div>
+                  </a>
+                </div>
+                <div class="">
+                  <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
+                    <div class="icon-box">
+                      <div class="icon">
+                        <img src="assets/images/economica.png" class="img-center">
+                      </div>
+                      <h5>Argentina económica</h5>
+                    </div>
+                  </a>
+                </div>
+                <div class="">
+                  <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
+                    <div class="icon-box">
+                      <div class="icon">
+                        <img src="assets/images/ambiental.png" class="img-center">
+                      </div>
+                      <h5>Argentina ambiental</h5>
+                    </div>
+                  </a>
+                </div>
+                </div>
+                </div>
+                </section>
+          
+          <!--  <div class="container-fluid bg-4 text-center">
     <a id="secciones"></a>
 
     <div class="row" style="padding-top:6%;">
@@ -123,10 +166,10 @@
         <br>
       </div>
 
-      <!-- Carousel equipo ANIDA-->
+      Carousel equipo ANIDA
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-        <!-- Wrapper for slides -->
+        Wrapper for slides
 
         <div class="carousel-inner" role="listbox">
 
@@ -166,22 +209,21 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
 
-        <!-- Indicators -->
+  <!-- Indicators -->
 
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"
-            style="background-color: #48608D;"></li>
+  <!--  <ol class="carousel-indicators">
+                                                      <li data-target="#carousel-example-generic" data-slide-to="0" class="active" style="background-color: #48608D;"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1" style="background-color: #827351;"></li>
           <li data-target="#carousel-example-generic" data-slide-to="2" style="background-color: #d78e33;"></li>
           <li data-target="#carousel-example-generic" data-slide-to="3" style="background-color: #ae302a;"></li>
           <li data-target="#carousel-example-generic" data-slide-to="4" style="background-color: #537b54;"></li>
-        </ol>
+        </ol> -->
 
-        <!-- Controls -->
+  <!-- Controls -->
 
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  <!-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span class="sr-only">Previo</span>
         </a>
@@ -189,13 +231,13 @@
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Siguiente</span>
         </a>
-      </div>
+      </div> -->
       <!-- Termina Carousel -->
 
-    </div>
-  </div>
+  <!--  </div>
+                                      </div> -->
 
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
 
     <div class="row"><a id="ayem"></a>
       <div id="ayem-div" class="col-xs-6 col-sm-4 col-md-4 col-lg-4 full-height" style="background-color:#48608D;">
@@ -211,36 +253,28 @@
       </div>
 
       <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#b6bfd1;padding:5%">
-        <a target="_blank" id="rasgos-y-componentes-del-territorio"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=a6b2bf22093e4f8d9f9a0e59d4ec82ca">
+        <a target="_blank" id="rasgos-y-componentes-del-territorio" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=a6b2bf22093e4f8d9f9a0e59d4ec82ca">
           <h3>Rasgos y componentes del territorio</h3>
         </a>
-        <a target="_blank" id="limites-y-fronteras-internacionales"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2bbf319cef994f76ab329bccc2ffe811">
+        <a target="_blank" id="limites-y-fronteras-internacionales" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2bbf319cef994f76ab329bccc2ffe811">
           <h3>Límites y fronteras internacionales</h3>
         </a>
-        <a target="_blank" id="organizacion-politica"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2c7297e24ca641dd8c1ba0ae689ff4cf">
+        <a target="_blank" id="organizacion-politica" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2c7297e24ca641dd8c1ba0ae689ff4cf">
           <h3>Organización política</h3>
         </a>
-        <a target="_blank" id="formacion-del-territorio"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=317955464b3b4b228fec815faeba7908">
+        <a target="_blank" id="formacion-del-territorio" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=317955464b3b4b228fec815faeba7908">
           <h3>Formación del territorio</h3>
         </a>
-        <a target="_blank" id="malvinas-y-otras-islas-del-atlantico-sur"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=88ebb23ca07544ba9dfe9383584991f5">
+        <a target="_blank" id="malvinas-y-otras-islas-del-atlantico-sur" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=88ebb23ca07544ba9dfe9383584991f5">
           <h3>Malvinas y otras islas del Atlántico Sur</h3>
         </a>
-        <a target="_blank" id="antartida"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b2cb8044848b438da5a9dd3d0f7a5f04">
+        <a target="_blank" id="antartida" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b2cb8044848b438da5a9dd3d0f7a5f04">
           <h3>Antártida</h3>
         </a>
-        <a target="_blank" id="insercion-internacional"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=10126972130a4141a7cba8fdd39eff98">
+        <a target="_blank" id="insercion-internacional" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=10126972130a4141a7cba8fdd39eff98">
           <h3>Inserción internacional</h3>
         </a>
-        <a target="_blank" id="galeria-de-recursos-ayem"
-          href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9adbc5ab2947402999e2a9d7e71ea4e6">
+        <a target="_blank" id="galeria-de-recursos-ayem" href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9adbc5ab2947402999e2a9d7e71ea4e6">
           <h3 id="galeria-ayem" class="galeria">Galería de recursos</h3>
         </a>
       </div>
@@ -263,32 +297,27 @@
         <h3>Geología y relieve</h3>
         <ul id="ul-geologia" class="no-li-style">
           <li>
-            <a target="_blank" id="geologia"
-              href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=bda8f47e469c42c6a0cd2496187e56cb">
+            <a target="_blank" id="geologia" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=bda8f47e469c42c6a0cd2496187e56cb">
               <h3 id="geologia-general">Geología</h3>
             </a>
           </li>
           <li>
-            <a target="_blank" id="geologia-de-argentina"
-              href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=ab1131d6c3c142a09b3f2a62722a3a79">
+            <a target="_blank" id="geologia-de-argentina" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=ab1131d6c3c142a09b3f2a62722a3a79">
               <h3 id="geologia-argentina">Geología de Argentina</h3>
             </a>
           </li>
           <li>
-            <a target="_blank" id="geomorfologia"
-              href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=3863bf5c30a84eeab2d299958dc87118">
+            <a target="_blank" id="geomorfologia" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=3863bf5c30a84eeab2d299958dc87118">
               <h3 id="geomorfologia">Geomorfología</h3>
             </a>
           </li>
           <li>
-            <a target="_blank" id="volcanologia"
-              href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8099b9f573364acc8ae98609935bc101">
+            <a target="_blank" id="volcanologia" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8099b9f573364acc8ae98609935bc101">
               <h3>Volcanología</h3>
             </a>
           </li>
           <li>
-            <a target="_blank" id="sismologia"
-              href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=ef7f123b3610420d931b5595cd2ae90c">
+            <a target="_blank" id="sismologia" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=ef7f123b3610420d931b5595cd2ae90c">
               <h3>Sismología</h3>
             </a>
           </li>
@@ -297,14 +326,12 @@
         <h3>Clima</h3>
         <ul id="ul-clima" class="no-li-style">
           <li>
-            <a target="_blank" id="clima"
-              href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=403635e0919c410298b8fa80a87b09f1">
+            <a target="_blank" id="clima" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=403635e0919c410298b8fa80a87b09f1">
               <h3>Clima</h3>
             </a>
           </li>
           <li>
-            <a target="_blank" id="clima-de-argentina"
-              href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b58d8b8841ef472e962317cac879e87f">
+            <a target="_blank" id="clima-de-argentina" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b58d8b8841ef472e962317cac879e87f">
               <h3>Clima de Argentina</h3>
             </a>
           </li>
@@ -313,31 +340,26 @@
         <h3>Hidrografía</h3>
         <ul id="ul-hidrografia" class="no-li-style">
           <li>
-            <a target="_blank" id="aguas-superficiales"
-              href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=9afbdac4af82412d9a7657168198e5f3">
+            <a target="_blank" id="aguas-superficiales" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=9afbdac4af82412d9a7657168198e5f3">
               <h3>Aguas superficiales</h3>
             </a>
           </li>
           <li>
-            <a target="_blank" id="aguas-subterraneas"
-              href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=7cc4ba9c758148f9b6176eb9cc2d79f2">
+            <a target="_blank" id="aguas-subterraneas" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=7cc4ba9c758148f9b6176eb9cc2d79f2">
               <h3>Aguas subterráneas</h3>
             </a>
           </li>
         </ul>
 
-        <a target="_blank" id="suelos"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=909f432ca3c540609871ac04334588bd">
+        <a target="_blank" id="suelos" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=909f432ca3c540609871ac04334588bd">
           <h3>Suelos</h3>
         </a>
 
-        <a target="_blank" id="ecologia-y-biogeografia"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=140d4525a0c94744b3b7bfd8423a1294">
+        <a target="_blank" id="ecologia-y-biogeografia" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=140d4525a0c94744b3b7bfd8423a1294">
           <h3>Ecología y biogeografía</h3>
         </a>
 
-        <a target="_blank" id="galeria-de-recursos-natural"
-          href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9e3fd39ca5464eab83f9b1b904dd7ace">
+        <a target="_blank" id="galeria-de-recursos-natural" href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9e3fd39ca5464eab83f9b1b904dd7ace">
           <h3 id="galeria-afn" class="galeria">Galería de recursos</h3>
         </a>
 
@@ -358,32 +380,25 @@
       </div>
 
       <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#efd2ad ;padding:5%">
-        <a target="_blank" id="tamano-y-peso-demografico"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=340df9845c2c4f1ea2fb6939f1e24fcb">
+        <a target="_blank" id="tamano-y-peso-demografico" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=340df9845c2c4f1ea2fb6939f1e24fcb">
           <h3 id="tamano-peso" class="undefined">Tamaño y peso demográfico</h3>
         </a>
-        <a target="_blank" id="composicion-de-la-poblacion"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57057713a9ae4084a8d5f2bddbfebb66">
+        <a target="_blank" id="composicion-de-la-poblacion" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57057713a9ae4084a8d5f2bddbfebb66">
           <h3 id="composicion" class="undefined">Composición de la población</h3>
         </a>
-        <a target="_blank" id="crecimiento-demografico"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244">
+        <a target="_blank" id="crecimiento-demografico" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244">
           <h3 id="crecimiento" class="undefined">Crecimiento demográfico</h3>
         </a>
-        <a target="_blank" id="distribucion-y-asentamiento"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d92e12432ed84d4082d3f3a31f37af00">
+        <a target="_blank" id="distribucion-y-asentamiento" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d92e12432ed84d4082d3f3a31f37af00">
           <h3 id="distribucion" class="undefined">Distribución y asentamiento</h3>
         </a>
-        <a target="_blank" id="movilidad-territorial"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=300625aaf2c344beaf9187ffa3efe43a">
+        <a target="_blank" id="movilidad-territorial" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=300625aaf2c344beaf9187ffa3efe43a">
           <h3 id="movilidad" class="undefined"> Movilidad territorial</h3>
         </a>
-        <a target="_blank" id="calidad-de-vida"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0">
+        <a target="_blank" id="calidad-de-vida" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0">
           <h3 id="calidad-vida" class="undefined">Calidad de vida</h3>
         </a>
-        <a target="_blank" id="galeria-de-recursos-sociodemo"
-          href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=f7beacffe01c4c7886c797124df799cd">
+        <a target="_blank" id="galeria-de-recursos-sociodemo" href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=f7beacffe01c4c7886c797124df799cd">
           <h3 id="galeria-asd" class="galeria">Galería de recursos</h3>
         </a>
       </div>
@@ -402,35 +417,31 @@
         <h4>EN DESARROLLO</h4>
         <br>
         <a target="_self" href="#secciones"><i class="far fa-arrow-alt-circle-up" style="font-size: 150%;"></i></a>
-      </div>
+      </div> -->
 
-      <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#dfacaa ;padding:5%">
-        <a target="_blank" id="actividad-agricola-ganadera"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8">
+  <!--  <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#dfacaa ;padding:5%">
+                                                <a target="_blank" id="actividad-agricola-ganadera" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8">
           <h3 id="agricola-ganadera" class="undefined">Actividad agrícola-ganadera</h3>
         </a>
-        <a target="_blank" id="pesca-y-acuicultura"
-          href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="pesca-y-acuicultura" href="">
           <h3 id="pesca-acuicultura" class="disabled">Pesca y acuicultura</h3>
         </a>
-        <a target="_blank" id="mineria" href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="mineria" href="">
           <h3 id="mineria" class="disabled">Minería</h3>
         </a>
-        <a target="_blank" id="industria" href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="industria" href="">
           <h3 id="industria" class="disabled">Industria</h3>
         </a>
-        <a target="_blank" id="energia"
-          href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d754b267b7a240a9b24f1b0898556fea">
+        <a target="_blank" id="energia" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d754b267b7a240a9b24f1b0898556fea">
           <h3 id="energia" class="undefined">Energía</h3>
         </a>
-        <a target="_blank" id="turismo" href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="turismo" href="">
           <h3 id="turismo" class="disabled">Turismo</h3>
         </a>
         <a target="_blank" id="transporte" href="https://arcg.is/1Hjfij">
           <h3 id="infraestructura-equipamiento" class="undefined">Transporte</h3>
         </a>
-        <a target="_blank" id="comercio-exterior"
-          href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="comercio-exterior" href="">
           <h3 id="comercio-exterior" class="disabled">Comercio exterior</h3>
         </a>
         <a target="_blank" id="galeria-de-recursos-economica">
@@ -459,24 +470,19 @@
       </div>
 
       <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8 full-height" style="background-color:#bacabb ;padding:5%">
-        <a target="_blank" id="recursos-naturales"
-          href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="recursos-naturales" href="">
           <h3 id="recursos-naturales" class="disabled">Recursos naturales</h3>
         </a>
-        <a target="_blank" id="actividades-humanas-e-implicancias-ambientales"
-          href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="actividades-humanas-e-implicancias-ambientales" href="">
           <h3 id="procesos-degradacion" class="disabled">Actividades humanas e implicancias ambientales</h3>
         </a>
-        <a target="_blank" id="riesgo-de-desastre"
-          href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="riesgo-de-desastre" href="">
           <h3 id="riesgo-desastres" class="disabled">Riesgo de desastres</h3>
         </a>
-        <a target="_blank" id="cambio-climatico"
-          href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="cambio-climatico" href="">
           <h3 id="areas-protegidas" class="disabled">Cambio climático</h3>
         </a>
-        <a target="_blank" id="areas-naturales-protegidas"
-          href=""><!-- Completar href con el link de destino entre las comillas -->
+        <a target="_blank" id="areas-naturales-protegidas" href="">
           <h3 id="areas-protegidas" class="disabled">Áreas naturales protegidas</h3>
         </a>
         <a target="_blank" id="galeria-de-recursos-ambiental">
@@ -484,12 +490,17 @@
         </a>
       </div>
     </div>
-  </div>
+    </div>-->
+    
+    <footer id="footer"></footer>
+    
+    <script>
+          fetch('components/footer.ht   .then(response => response.   .then(da                      document.getElementById('footer').innerHTML = data;
+           
+    </script>
 
-  <footer class="container-fluid text-center full-width hidden-xs"
-    style="position:fixed; bottom:0px; height:70px; padding-top:0px">
-    <div class="container-fluid col-sm-6 col-xs-5" style="padding:0px"><a target="_blank"
-        href="https://www.argentina.gob.ar/defensa">
+  <!-- <footer class="container-fluid text-center full-width hidden-xs" style="position:fixed; bottom:0px; height:70px; padding-top:0px">
+                        <div class="container-fluid col-sm-6 col-xs-5" style="padding:0px"><a target="_blank" href="https://www.argentina.gob.ar/defensa">
         <img src="img/defensamargen-2024.svg" style="height:100px"></a></div>
     <div class="col-sm-6 col-xs-7">
       <a target="_blank" href="https://www.facebook.com/institutogeograficonacional">
@@ -506,8 +517,7 @@
     </div>
   </footer>
 
-  <footer class="container-fluid text-center full-width visible-xs"
-    style="position:fixed; bottom:0px; height:70px; padding-top:0px">
+  <footer class="container-fluid text-center full-width visible-xs" style="position:fixed; bottom:0px; height:70px; padding-top:0px">
     <div class="container-fluid col-sm-6 col-xs-5" style="padding:0px">
       <a target="_blank" href="https://www.argentina.gob.ar/defensa">
         <img src="img/defensamargen-2024.svg" style="height:75px"></a>
@@ -524,7 +534,7 @@
         <img src="http://anida.ign.gob.ar/img/ign-logo-footer.svg" style="height:40px"></a>
       <br><strong style="color:white">ISSN: 2684-0391</strong>
     </div>
-  </footer>
+  </footer> -->
 
 </body>
 
