@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" id="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">
-      <img src="assets/icons/logo_blanco_hor_footer.svg" alt="ANIDA" width="auto" height="50">
+      <img src="assets/icons/logo_blanco_hor_footer.svg" alt="ANIDA">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,19 +9,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="pages/acercade.html">
-            Acerca de ANIDA
-          </a>
+          <a class="nav-link" href="pages/acercade.html">Acerca de ANIDA</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pages/estructura.html">
+        <!-- Menú multinivel -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button">
             Estructura temática
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Argentina y el mundo</a></li>
-            <li><a class="dropdown-item" href="#">Argentina fisico-natural</a></li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Argentina y el mundo</a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Rasgos básicos</a></li>
+                <li><a class="dropdown-item" href="#">Límites</a></li>
+                <li><a class="dropdown-item" href="#">Política</a></li>
+                <li><a class="dropdown-item" href="#">Territorio</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item" href="#">Argentina físico-natural</a></li>
             <li><a class="dropdown-item" href="#">Argentina socio-demográfica</a></li>
-            <li><a class="dropdown-item" href="#">Argentina econóomica</a></li>
+            <li><a class="dropdown-item" href="#">Argentina económica</a></li>
             <li><a class="dropdown-item" href="#">Argentina ambiental</a></li>
           </ul>
         </li>
@@ -69,3 +76,30 @@
     </div>
   </div>
 </nav>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Manejo de clicks en móvil
+    if (window.innerWidth < 992) {
+      document.querySelectorAll('.dropdown-submenu a').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+          let nextEl = this.nextElementSibling;
+          if (nextEl && nextEl.classList.contains('dropdown-menu')) {
+            e.preventDefault();
+            if (nextEl.style.display == 'block') {
+              nextEl.style.display = 'none';
+            } else {
+              nextEl.style.display = 'block';
+            }
+          }
+        });
+      });
+    }
+  });
+
+  // Prevenir que los enlaces # redirijan
+  document.querySelectorAll('.dropdown-submenu a[href="#"]').forEach(function (element) {
+    element.addEventListener('click', function (e) {
+      e.preventDefault();
+    });
+  });
+</script>

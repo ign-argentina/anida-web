@@ -19,35 +19,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <!-- <link rel="stylesheet" href="css/main.css"> -->
-  <!-- <script src="https://anida.ign.gob.ar/js/jquery-3.3.1.min.js"></script> -->
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
-  <!-- <script src="http://10.20.200.72/tmp/poncho_para_idera.css"></script> -->
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"> -->
-
-  <!-- <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 3px;
-    }
-
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #5599DB;
-      padding: 25px;
-    }
-
-    .home1 {
-      background-color: #e1ffff;
-    }
-  </style> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" href="styles/main.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
@@ -57,7 +33,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header id="header"></header>
-  
+
   <script>
     fetch('components/navbar.html')
       .then(response => response.text())
@@ -65,7 +41,7 @@
         document.getElementById('header').innerHTML = data;
       });
   </script>
-  
+
   <section id="hero" class="d-flex align-items-center">
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
       <h1>ANIDA</h1>
@@ -74,88 +50,68 @@
       <a rel="secciones" href="#ejes" class="btn-get-started scrollto">Secciones</a>
     </div>
   </section>
-
-  <!--   <div class="jumbotron full-height text-center home1" style="padding-top:15%;">
+  <section id="ejes" class="services">
     <div class="container">
-
-      <h1 id="home-title">ANIDA</h1>
-      <h3 id="home-longtitle">Atlas Nacional Interactivo de Argentina</h3>
-      <p id="home-description">Cartografía temática, información georreferenciada, textos explicativos, enriquecidos con
-        contenidos gráficos y multimedia, para visualizar y consultar la información de manera detallada, atractiva y
-        sencilla de leer e interpretar.
-      </p>
-    </div>
-    <div class="jumbotron container home1" style="padding-top:10%;">
-      <a class="btn btn-default" target="_self" href="#secciones">SECCIONES</a>
-      <div class="jumbotron container home1" style="padding-top:2%">
-        <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
-          <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
-        <br>
-        Esta obra está bajo una
-        <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">licencia de Creative Commons
-          Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional </a>
-      </div>
-    </div>
-    </div> -->
-    <section id="ejes" class="services">
-      <div class="container">
-        <div class="flex-center">
-    
-          <div class="">
-            <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
-              <div class="icon-box">
-                <div class="icon">
-                  <img src="assets/images/mundo.png" class="img-center">
+      <div class="flex-container">
+        <!-- Ítem 1 -->
+        <div class="flex-item">
+          <a href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris" target="_blank">
+            <div class="icon-box">
+              <div class="icon">
+                <img src="assets/images/mundo.png" alt="Argentina y el mundo">
                 </div>
                 <h5>Argentina y el mundo</h5>
                 </div>
                 </a>
                 </div>
-                <div class="">
-                  <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
-                    <div class="icon-box">
-                      <div class="icon">
-                        <img src="assets/images/natural.png" class="img-center">
-                      </div>
-                      <h5>Argentina físico-natural</h5>
-                    </div>
-                  </a>
+        <!-- Ítem 2 -->
+        <div class="flex-item">
+          <a href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris" target="_blank">
+            <div class="icon-box">
+              <div class="icon">
+                <img src="assets/images/natural.png" alt="Argentina físico-natural">
                 </div>
-                <div class="">
-                  <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
-                    <div class="icon-box">
-                      <div class="icon">
-                        <img src="assets/images/sociodemo.png" class="img-center">
-                      </div>
-                      <h5>Argentina socio-demográfica</h5>
-                    </div>
-                  </a>
+                <h5>Argentina físico-natural</h5>
                 </div>
-                <div class="">
-                  <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
-                    <div class="icon-box">
-                      <div class="icon">
-                        <img src="assets/images/economica.png" class="img-center">
-                      </div>
-                      <h5>Argentina económica</h5>
-                    </div>
-                  </a>
+                </a>
                 </div>
-                <div class="">
-                  <a target="_blank" href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris">
-                    <div class="icon-box">
-                      <div class="icon">
-                        <img src="assets/images/ambiental.png" class="img-center">
-                      </div>
-                      <h5>Argentina ambiental</h5>
-                    </div>
-                  </a>
+        <!-- Ítem 3 -->
+        <div class="flex-item">
+          <a href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris" target="_blank">
+            <div class="icon-box">
+              <div class="icon">
+                <img src="assets/images/sociodemo.png" alt="Argentina socio-demográfica">
+                </div>
+                <h5>Argentina socio-demográfica</h5>
+                </div>
+                </a>
+                </div>
+        <!-- Ítem 4 -->
+        <div class="flex-item">
+          <a href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris" target="_blank">
+            <div class="icon-box">
+              <div class="icon">
+                <img src="assets/images/economica.png" alt="Argentina económica">
+                </div>
+                <h5>Argentina económica</h5>
+                </div>
+                </a>
+                </div>
+        <!-- Ítem 5 -->
+        <div class="flex-item">
+          <a href="https://riesgo.ign.gob.ar/mapa/?zoom=4&lat=-40&lng=-59&layers=argenmap_gris" target="_blank">
+            <div class="icon-box">
+              <div class="icon">
+                <img src="assets/images/ambiental.png" alt="Argentina ambiental">
+                </div>
+                <h5>Argentina ambiental</h5>
+                </div>
+                </a>
                 </div>
                 </div>
                 </div>
                 </section>
-          
-          <!--  <div class="container-fluid bg-4 text-center">
+  <!--  <div class="container-fluid bg-4 text-center">
     <a id="secciones"></a>
 
     <div class="row" style="padding-top:6%;">
@@ -214,7 +170,7 @@
   <!-- Indicators -->
 
   <!--  <ol class="carousel-indicators">
-                                                      <li data-target="#carousel-example-generic" data-slide-to="0" class="active" style="background-color: #48608D;"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active" style="background-color: #48608D;"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1" style="background-color: #827351;"></li>
           <li data-target="#carousel-example-generic" data-slide-to="2" style="background-color: #d78e33;"></li>
           <li data-target="#carousel-example-generic" data-slide-to="3" style="background-color: #ae302a;"></li>
@@ -232,10 +188,10 @@
           <span class="sr-only">Siguiente</span>
         </a>
       </div> -->
-      <!-- Termina Carousel -->
+  <!-- Termina Carousel -->
 
   <!--  </div>
-                                      </div> -->
+</div> -->
 
   <!-- <div class="container-fluid">
 
@@ -491,50 +447,15 @@
       </div>
     </div>
     </div>-->
-    
-    <footer id="footer"></footer>
-    
-    <script>
-          fetch('components/footer.ht   .then(response => response.   .then(da                      document.getElementById('footer').innerHTML = data;
-           
+  <footer id="footer"></footer>
+  
+  <script>
+        fetch('components/footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer').innerHTML = data;
+          });
     </script>
-
-  <!-- <footer class="container-fluid text-center full-width hidden-xs" style="position:fixed; bottom:0px; height:70px; padding-top:0px">
-                        <div class="container-fluid col-sm-6 col-xs-5" style="padding:0px"><a target="_blank" href="https://www.argentina.gob.ar/defensa">
-        <img src="img/defensamargen-2024.svg" style="height:100px"></a></div>
-    <div class="col-sm-6 col-xs-7">
-      <a target="_blank" href="https://www.facebook.com/institutogeograficonacional">
-        <img src="http://anida.ign.gob.ar/img/redes-blanco-01.svg" style="height:35px"></a>
-      <a target="_blank" href="https://twitter.com/ARGENTINAIGN">
-        <img src="http://anida.ign.gob.ar/img/redes-blanco-02.svg" style="height:35px"></a>
-      <a target="_blank" href="https://www.instagram.com/argentinaignoficial/">
-        <img src="http://anida.ign.gob.ar/img/redes-blanco-03.svg" style="height:35px"></a>
-      <a target="_blank" href="https://www.youtube.com/user/IgnArgentina">
-        <img src="http://anida.ign.gob.ar/img/redes-blanco-04.svg" style="height:35px"></a>
-      <a target="_blank" href="http://www.ign.gob.ar/">
-        <img src="http://anida.ign.gob.ar/img/ign-logo-footer.svg" style="height:70px"></a>
-      <strong style="color:white">ISSN: 2684-0391</strong>
-    </div>
-  </footer>
-
-  <footer class="container-fluid text-center full-width visible-xs" style="position:fixed; bottom:0px; height:70px; padding-top:0px">
-    <div class="container-fluid col-sm-6 col-xs-5" style="padding:0px">
-      <a target="_blank" href="https://www.argentina.gob.ar/defensa">
-        <img src="img/defensamargen-2024.svg" style="height:75px"></a>
-    </div>
-    <div class="col-sm-6 col-xs-7"><a target="_blank" href="https://www.facebook.com/institutogeograficonacional">
-        <img src="http://anida.ign.gob.ar/img/redes-blanco-01.svg" style="height:20px"></a>
-      <a target="_blank" href="https://twitter.com/ARGENTINAIGN">
-        <img src="http://anida.ign.gob.ar/img/redes-blanco-02.svg" style="height:20px"></a>
-      <a target="_blank" href="https://www.instagram.com/argentinaignoficial/">
-        <img src="http://anida.ign.gob.ar/img/redes-blanco-03.svg" style="height:20px"></a>
-      <a target="_blank" href="https://www.youtube.com/user/IgnArgentina">
-        <img src="http://anida.ign.gob.ar/img/redes-blanco-04.svg" style="height:20px"></a>
-      <a target="_blank" href="http://www.ign.gob.ar/">
-        <img src="http://anida.ign.gob.ar/img/ign-logo-footer.svg" style="height:40px"></a>
-      <br><strong style="color:white">ISSN: 2684-0391</strong>
-    </div>
-  </footer> -->
 
 </body>
 
