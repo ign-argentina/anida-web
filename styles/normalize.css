@@ -51,13 +51,11 @@ a {
   cursor: pointer;
 }
 a:focus {
-  outline: 2px dashed #005fcc;
   /* Indicador de enfoque accesible */
   outline-offset: 2px;
 }
 /* 7. Estilos base para imágenes, videos y figuras */
 img, picture, video, canvas, svg {
-  display: block;
   max-width: 100%;
   /* Asegurar que no excedan el contenedor */
   height: auto;
