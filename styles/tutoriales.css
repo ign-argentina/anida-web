@@ -1,0 +1,31 @@
+/* Estilos para los tutoriales */
+.tutorial {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.tutorial h3 {
+  color: #005fcc;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.tutorial iframe {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+/* Responsividad */
+@media (max-width: 768px) {
+  .tutorial {
+    padding: 1rem;
+  }
+  .tutorial h3 {
+    font-size: 1.25rem;
+  }
+  .tutorial iframe {
+    height: 280px;
+  }
+}
+/* Fin estilos para los tutoriales */

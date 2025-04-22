@@ -1,108 +1,56 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" id="navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/index.html">
-      <img src="/assets/icons/logo_blanco_hor_footer.svg" alt="ANIDA">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<head>
+  <link rel="stylesheet" href="/styles/navbar.css">
+</head>
+<nav class="topnav" id="myTopnav">
+
+  <!-- Logo de ANIDA -->
+  <a href="/index.html" class="logo">
+    <img src="/assets/icons/logo_blanco_hor_footer.svg" alt="ANIDA">
+  </a>
+<!-- Menú multinivel: Estructura temática -->
+<div class="dropdown">
+  <button class="dropbtn" onclick="toggleDropdown(this)">
+    Estructura temática
+    <i class='bx bxs-chevron-down'></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/acercade.html">Acerca de ANIDA</a>
-        </li>
-        <!-- Menú multinivel -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/pages/estructura.html" role="button">
-            Estructura temática
-          </a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="/pages/temas/arg_mundo.html">Argentina y el mundo</a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a target="_blank" class=" dropdown-item" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=a6b2bf22093e4f8d9f9a0e59d4ec82ca">Rasgos básicos y componentes del territorio</a></li>
-                <li><a target="_blank" class=" dropdown-item" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2bbf319cef994f76ab329bccc2ffe811">Límites y fronteras internacionales</a></li>
-                <li><a target="_blank" class=" dropdown-item" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2c7297e24ca641dd8c1ba0ae689ff4cf">Organización política</a></li>
-                <li><a target="_blank" class=" dropdown-item" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=317955464b3b4b228fec815faeba7908">Formación del territorio</a></li>
-                <li><a target="_blank" class=" dropdown-item" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=88ebb23ca07544ba9dfe9383584991f5">Malvinas y otras islas del Atlántico Sur</a></li>
-                <li><a target="_blank" class=" dropdown-item" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b2cb8044848b438da5a9dd3d0f7a5f04">Antártida</a></li>
-                <li><a target="_blank" class=" dropdown-item" href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=10126972130a4141a7cba8fdd39eff98">Inserción internacional</a></li>
-              </ul>
-            </li>
-            <li><a class="dropdown-item" href="/pages/temas/arg_fisico_natural.html">Argentina físico-natural</a></li>
-            <li><a class="dropdown-item" href="/pages/temas/arg_socio_demo.html">Argentina socio-demográfica</a></li>
-            <li><a class="dropdown-item" href="/pages/temas/arg_econ.html">Argentina económica</a></li>
-            <li><a class="dropdown-item" href="/pages/temas/arg_ambiental.html">Argentina ambiental</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/anida_hoy.html">
-            ANIDA hoy
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/equipo.html">
-            Equipo de trabajo
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/fuente_datos.html">
-            Fuente de datos
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/recursos_educativos.html">
-            Recursos educativos
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/contacto.html">
-            Contacto
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/cita.html">
-            ¿Cómo citar?
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/tutoriales.html">
-            Tutoriales
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://antartida-anida.ign.gob.ar">
-            Atlas de la Antártida Argentina
-          </a>
-        </li>
-      </ul>
+    <div class="dropdown-content">
+      <div class="dropdown-submenu">
+        <a href="/pages/temas/arg_mundo.html" onclick="toggleSubmenu(this, event)">
+          Argentina y el mundo
+        </a>
+        <div class="dropdown-subcontent">
+          <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=a6b2bf22093e4f8d9f9a0e59d4ec82ca" target="_blank">Rasgos básicos y componentes del territorio</a>
+          <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2bbf319cef994f76ab329bccc2ffe811" target="_blank">Límites y fronteras internacionales</a>
+          <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2c7297e24ca641dd8c1ba0ae689ff4cf" target="_blank">Organización política</a>
+          <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=317955464b3b4b228fec815faeba7908" target="_blank">Formación del territorio</a>
+          <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=88ebb23ca07544ba9dfe9383584991f5" target="_blank">Malvinas y otras islas del Atlántico Sur</a>
+          <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b2cb8044848b438da5a9dd3d0f7a5f04" target="_blank">Antártida</a>
+          <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=10126972130a4141a7cba8fdd39eff98" target="_blank">Inserción internacional</a>
+        </div>
+        </div>
+        <a href="/pages/temas/arg_fisico_natural.html">Argentina físico-natural</a>
+        <a href="/pages/temas/arg_socio_demo.html">Argentina socio-demográfica</a>
+        <a href="/pages/temas/arg_econ.html">Argentina económica</a>
+        <a href="/pages/temas/arg_ambiental.html">Argentina ambiental</a>
     </div>
   </div>
-</nav>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Manejo de clicks en móvil
-    if (window.innerWidth < 992) {
-      document.querySelectorAll('.dropdown-submenu a').forEach(function (element) {
-        element.addEventListener('click', function (e) {
-          let nextEl = this.nextElementSibling;
-          if (nextEl && nextEl.classList.contains('dropdown-menu')) {
-            e.preventDefault();
-            if (nextEl.style.display == 'block') {
-              nextEl.style.display = 'none';
-            } else {
-              nextEl.style.display = 'block';
-            }
-          }
-        });
-      });
-    }
-  });
+  <a href="/pages/temas/temas.html">Mapas temáticos</a>
+  
+  <a href="/pages/recursos_educativos.html">Recursos educativos</a>
+  
+  <a href="https://antartida-anida.ign.gob.ar">Atlas de la Antártida Argentina</a>
+  
+  <a href="/pages/tutoriales.html">Tutoriales</a>
+  
+  <a href="/pages/acercade.html">Acerca de ANIDA</a>
+  
+  <a href="/pages/equipo.html">Equipo de trabajo</a>
+  
+  <a href="/pages/cita.html">¿Cómo citar?</a>
+  
+  <a href="/pages/contacto.html">Contacto</a>
+  
+  <!-- Boton menu en celulares -->
+  <a href="javascript:void(0);" class="icon" onclick="toggleResponsiveNavbar()">&#9776;</a>
 
-  // Prevenir que los enlaces # redirijan
-  document.querySelectorAll('.dropdown-submenu a[href="#"]').forEach(function (element) {
-    element.addEventListener('click', function (e) {
-      e.preventDefault();
-    });
-  });
-</script>
+</nav>

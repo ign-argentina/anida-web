@@ -1,0 +1,35 @@
+/* Estilos para las fuentes de datos */
+.data-source {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.data-source h3 {
+  color: #005fcc;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.data-source ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+.data-source ul ul {
+  list-style-type: circle;
+  margin-top: 0.5rem;
+}
+.data-source ul li {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+/* Responsividad */
+@media (max-width: 768px) {
+  .data-source {
+    padding: 1rem;
+  }
+  .data-source h3 {
+    font-size: 1.25rem;
+  }
+}
+/* Fin estilos para las fuentes de datos */
