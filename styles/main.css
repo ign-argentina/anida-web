@@ -133,15 +133,19 @@ section {
   flex: 0 1 300px;
   text-align: center;
   transition: transform 0.3s ease;
+  background-color: #f4f4f4;
 }
 .flex-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 /* Icon Box */
 .icon-box {
   padding: 1.5rem;
-  background-color: #f9f9f9;
+  background-color: #f4f4f4;
   transition: box-shadow 0.3s ease;
+}
+.no-bg {
+  background-color: transparent;
 }
 /* Icono Imagen*/
 .icon {
@@ -231,8 +235,10 @@ ul li {
   padding: 0 1rem;
 }
 .section-intro {
-  margin-bottom: 2rem;
-  text-align: center;
+  margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #157DB9;
 }
 .section-intro p {
   font-size: 1.2rem;

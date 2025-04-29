@@ -109,7 +109,7 @@ button:focus,
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid #005fcc;
+  outline: 2px solid #157DB9;
   outline-offset: 2px;
 }
 /* 13. Prevenir estilos predeterminados en detalles y resumen */

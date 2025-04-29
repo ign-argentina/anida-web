@@ -10,7 +10,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .thematic-section h3 {
-  color: #005fcc;
+  color: #157DB9;
   margin-bottom: 1.5rem;
   font-size: 1.75rem;
 }
@@ -26,12 +26,6 @@
 .thematic-section ul li {
   margin-bottom: 0.5rem;
   color: #444;
-}
-.section-intro {
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-left: 4px solid #005fcc;
 }
 /* Responsividad */
 @media (max-width: 768px) {

@@ -1,6 +1,6 @@
 /* Navbar */
 header {
-  height: 75px;
+  height: 65px;
 }
 nav#navbar.navbar {
   margin-bottom: 0;
@@ -106,8 +106,10 @@ button.navbar-toggler {
   padding: 0
 }
 .topnav .logo img {
-  height: 75px;
+  height: 65px;
   display: block;
+  width: 100px;
+    padding: 0 15px;
 }
 .topnav a {
   float: left;
@@ -116,7 +118,8 @@ button.navbar-toggler {
   text-align: center;
   padding: 20px 16px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
+    font-weight: 500;
 }
 .topnav .icon {
   display: none;
@@ -168,6 +171,9 @@ button.navbar-toggler {
 .topnav a:hover, .dropdown:hover .dropbtn {
   background-color: #555;
   color: white;
+}
+.dropbtn-a {
+  padding: 0 !important;
 }
 .dropdown-content a:hover {
   background-color: #ddd;
