@@ -53,19 +53,9 @@ button.navbar-toggler {
   .dropdown-submenu:hover>.dropdown-menu {
     display: block;
   }
-  /* Flecha para submenús */
-  .dropdown-submenu>a:after {
-    display: block;
-    content: " ";
+                .menu-chevron-right {
     float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #cccccc;
-    margin-top: 5px;
-    margin-right: -10px;
+    font-size: large;
   }
 }
 /* Ajustes para móvil */
@@ -109,7 +99,7 @@ button.navbar-toggler {
   height: 65px;
   display: block;
   width: 100px;
-    padding: 0 15px;
+  padding: 0 15px;
 }
 .topnav a {
   float: left;
@@ -119,7 +109,7 @@ button.navbar-toggler {
   padding: 20px 16px;
   text-decoration: none;
   font-size: 14px;
-    font-weight: 500;
+  font-weight: 500;
 }
 .topnav .icon {
   display: none;
@@ -196,6 +186,7 @@ button.navbar-toggler {
   .topnav a.icon {
     float: right;
     display: block;
+    margin: 0;
   }
   .topnav.responsive {
     position: fixed;
@@ -220,9 +211,11 @@ button.navbar-toggler {
     padding-left: 20px;
   }
   .topnav.responsive .dropdown .dropbtn {
-    display: block;
+    display: flex;
     width: 100%;
     text-align: left;
+    justify-content: space-between;
+      font-size: x-large;
   }
   .topnav.responsive .dropdown-subcontent {
     position: relative;
