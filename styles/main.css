@@ -1,3 +1,33 @@
+/* Paleta de colores
+
+IGN
+#157DB9
+
+Navbar y Footer
+#222b30
+#313f46
+
+Arg y el mundo
+#48608D
+#b6bfd1
+
+Arg fis-nat
+#827351
+#cdc7b9
+
+Arg sociodemo
+#D78E33
+#efd2ad
+
+Arg econ
+#AE302A
+#dfacaa
+
+Arg amb
+#537B54
+#bacabb
+
+*/
 @font-face {
   font-family: "Arial, Helvetica, sans-serif";
   src: local("Arial") local("Helvetica") local("sans-serif");
@@ -44,7 +74,7 @@ a:hover {
 #hero {
   width: 100%;
   /* height: calc(100vh - 110px); */
-  background-image: url('../assets/images/fondo_horizontal_1900_1800_preliminar.jpg');
+  background-image: url('../assets/images/fondo_horizontal_1900_1800.jpg');
   height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
