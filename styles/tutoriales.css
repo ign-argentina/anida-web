@@ -36,4 +36,7 @@
   color: #157DB9;
   margin-bottom: 0.5rem;
 }
+.cita a {
+  overflow-wrap: break-word;
+}
 /* Fin estilos para los tutoriales */

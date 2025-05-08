@@ -41,8 +41,7 @@
   text-decoration: none;
   font-size: 1rem;
   transition: background 0.2s;
-  width: 100px;
-    text-align: center;
+  text-align: center;
 }
 .resource-btn:hover {
   background: #0f5e8b;

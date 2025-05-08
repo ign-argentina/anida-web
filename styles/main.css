@@ -84,7 +84,29 @@ a:hover {
 }
 #hero .container {
   text-align: center;
-  width: 500px;
+  width: 100%;
+}
+#hero>div>a>i {
+  font-size: 6rem;
+  color: #FFF;
+}
+#hero > div > picture > img {
+  width: -webkit-fill-available;
+}
+@media (max-width: 500px) {
+  #hero {
+    background-image: none;
+    background-color: #fff5f5;
+    height: 50vh;
+  }
+  #hero>div>img {
+    color: #333;
+    fill: #333;
+  }
+  #hero>div>a>i {
+    color: #333;
+    font-size: 4rem;
+  }
 }
 #hero h1 {
   margin: 0 0 10px 0;
@@ -118,14 +140,16 @@ a:hover {
 }
 #hero .btn-get-started:hover {
   background: #157DB9;
-    border-color: #157DB9;
+  border-color: #157DB9;
+}
+#hero>div>img {
+  width: 100%;
 }
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
   }
 }
-
 @media (max-width: 768px) {
   #hero {
     text-align: center;
@@ -192,7 +216,7 @@ section {
 /* Título */
 .icon-box h5 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 14px;
   font-weight: 600;
   color: #333;
 }
@@ -267,9 +291,9 @@ ul li {
 }
 .section-intro {
   margin-bottom: 3rem;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-left: 4px solid #157DB9;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-left: 4px solid #157DB9;
 }
 .section-intro p {
   font-size: 1.2rem;

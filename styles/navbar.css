@@ -172,6 +172,12 @@ button.navbar-toggler {
   background-color: #ddd;
   color: black;
 }
+.dropdown-submenu>.dropdown-subcontent {
+  display: none;
+}
+.dropdown-submenu:hover>.dropdown-subcontent {
+  display: block;
+}
 /* Desktop hover behavior */
 @media screen and (min-width: 601px) {
   .dropdown:hover .dropdown-content {

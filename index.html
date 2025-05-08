@@ -21,10 +21,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
   <meta name="author" content="Instituto Geográfico Nacional">
-  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino">
+  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino, procesos geográficos, cartografía temática, información georreferenciada, textos explicativos, contenidos gráficos, multimedia, visualización de datos, consulta de información, interpretación de datos, análisis geográfico, educación geográfica, recursos educativos, investigación geográfica">
+
   <!-- Meta etiquetas para SEO -->
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
+  <meta name="language" content="Spanish">
 
   <!-- Favicon -->
   <link rel="icon" href="/assets/icons/favicon.png" type="image/svg+xml">
@@ -33,7 +35,11 @@
   <!-- Open Graph (para redes sociales) -->
   <meta property="og:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
   <meta property="og:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
-  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800_preliminar.jpg">
+  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+  <meta property="og:image:alt" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:secure_url" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+
   <meta property="og:url" content="https://anida.ign.gob.ar/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
@@ -42,7 +48,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
   <meta name="twitter:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
-  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800_preliminar.jpg">
+  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -75,13 +81,16 @@
 
   <section id="hero" class="d-flex align-items-center">
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
-      <img src="/assets/icons/logo_blanco_ANIDA_texto.svg" alt="">
+      <picture>
+        <source media="(max-width: 500px)" srcset="/assets/icons/logo_blanco_ANIDA_texto_negro.svg">
+        <img src="/assets/icons/logo_blanco_ANIDA_texto.svg" alt="ANIDA">
+      </picture>
       <!-- <h1>ANIDA</h1> -->
       <!-- <h2>Atlas Nacional Interactivo de Argentina</h2> -->
       <!-- <p>Cartografía temática, información georreferenciada, textos explicativos, enriquecidos con contenidos gráficos y multimedia, para visualizar y consultar la información de manera detallada, atractiva y sencilla de leer e interpretar.</p> -->
       <!-- <a rel="secciones" href="#ejes" class="btn-get-started scrollto">Secciones temáticas</a> -->
       <br>
-      <a rel="secciones" href="#ejes" class="scrollto"><i class="bx bx-chevron-down" style="font-size: 3rem; color: #FFF;"></i></a>
+      <a rel="secciones" href="#ejes" class="scrollto"><i class="bx bx-chevron-down"></i></a>
     </div>
   </section>
   <section id="ejes" class="services">
