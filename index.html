@@ -10,8 +10,8 @@
       }); var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WSV8Q7P');
-      </script>
+    })(window, document, 'script', 'dataLayer', 'GTM-WSV8Q7P');
+  </script>
   <!-- End Google Tag Manager -->
 
   <!-- Título del sitio -->
@@ -72,7 +72,7 @@
   <header id="header"></header>
 
   <script>
-        fetch('/components/navbar.html')
+    fetch('/components/navbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('header').innerHTML = data;
@@ -106,7 +106,7 @@
               <h5>Argentina y el mundo</h5>
             </div>
           </a>
-          </div>
+        </div>
         <!-- Ítem 2 -->
         <div class="flex-item no-bg">
           <a href="/pages/temas/arg_fisico_natural.html">
@@ -116,8 +116,8 @@
               </div>
               <h5>Argentina físico-natural</h5>
             </div>
-            </a>
-            </div>
+          </a>
+        </div>
         <!-- Ítem 3 -->
         <div class="flex-item no-bg">
           <a href="/pages/temas/arg_socio_demo.html">
@@ -127,8 +127,8 @@
               </div>
               <h5>Argentina socio-demográfica</h5>
             </div>
-            </a>
-            </div>
+          </a>
+        </div>
         <!-- Ítem 4 -->
         <div class="flex-item no-bg">
           <a href="/pages/temas/arg_econ.html">
@@ -138,8 +138,8 @@
               </div>
               <h5>Argentina económica</h5>
             </div>
-            </a>
-            </div>
+          </a>
+        </div>
         <!-- Ítem 5 -->
         <div class="flex-item no-bg">
           <a href="/pages/temas/arg_ambiental.html">
@@ -149,21 +149,21 @@
               </div>
               <h5>Argentina ambiental</h5>
             </div>
-            </a>
-            </div>
-            </div>
-            </div>
-            </section>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer id="footer"></footer>
 
   <script>
-        fetch('/components/footer.html')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('footer').innerHTML = data;
-          });
-    </script>
+    fetch('/components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
   <script src="/js/main.js"></script>
 </body>
 
