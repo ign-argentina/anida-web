@@ -37,3 +37,49 @@ window.onclick = function (event) {
     }
   }
 }
+
+// Crear un objeto con las rutas permitidas
+const allowedRoutes = {
+  '/': 'index.html',
+  '/acercade': 'pages/acercade.html',
+  '/contacto': 'pages/contacto.html',
+  '/equipo': 'pages/equipo.html',
+  '/estructura': 'pages/estructura.html',
+  '/recursos': 'pages/recursos.html',
+  '/tutoriales': 'pages/tutoriales.html',
+  '/argentina_mundo': 'pages/arg_mundo.html',
+  '/argentina_ambiental': 'pages/arg_ambiental.html',
+  '/argentina_economica': 'pages/arg_econ.html',
+  '/argentina_sociodemografica': 'pages/arg_socio_demo.html',
+  '/argentina_fisico_natural': 'pages/arg_fisico_natural.html',
+};
+
+// Función para manejar el ruteo
+function handleRouting() {
+  const currentPath = window.location.pathname;
+
+  // Verificar si la ruta está permitida
+  if (!allowedRoutes[currentPath]) {
+    // Redirigir a página 404 o inicio
+    window.location.href = '/404.html';
+    return;
+  }
+
+// Cargar la página correspondiente
+  loadPage(allowedRoutes[currentPath]);
+}
+
+// Función para cargar contenido de la página
+function loadPage(url) {
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('content').innerHTML = html;
+    })
+    .catch(error => {
+      console.error('Error loading page:', error);
+    });
+}
+
+// Implementar history API para navegación sin recarga
+window.addEventListener('popstate', handleRouting);
