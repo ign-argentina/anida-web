@@ -96,7 +96,7 @@ a:hover {
 @media (max-width: 500px) {
   #hero {
     background-image: none;
-    background-color: #fff5f5;
+    background-color: #f4f4f4;
     height: 50vh;
   }
   #hero>div>img {
