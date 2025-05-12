@@ -75,7 +75,7 @@ a:hover {
 #hero {
   width: 100%;
   /* height: calc(100vh - 110px); */
-  background-image: url('../assets/images/fondo_horizontal_1900_1800.jpg');
+  background-image: url('../assets/images/fondo_horizontal_1900_1800.webp');
   height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;

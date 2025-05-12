@@ -70,7 +70,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSV8Q7P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header id="header"></header>
+  <header id="header" role="navigation" aria-label="Menú principal"></header>
 
   <script>
     fetch('/components/navbar.html')
@@ -79,84 +79,84 @@
         document.getElementById('header').innerHTML = data;
       });
   </script>
-
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
-      <picture>
-        <source media="(max-width: 500px)" srcset="/assets/icons/logo_blanco_ANIDA_texto_negro.svg">
-        <img src="/assets/icons/logo_blanco_ANIDA_texto.svg" alt="ANIDA">
-      </picture>
-      <!-- <h1>ANIDA</h1> -->
-      <!-- <h2>Atlas Nacional Interactivo de Argentina</h2> -->
-      <!-- <p>Cartografía temática, información georreferenciada, textos explicativos, enriquecidos con contenidos gráficos y multimedia, para visualizar y consultar la información de manera detallada, atractiva y sencilla de leer e interpretar.</p> -->
-      <!-- <a rel="secciones" href="#ejes" class="btn-get-started scrollto">Secciones temáticas</a> -->
-      <br>
-      <a rel="secciones" href="#ejes" class="scrollto"><i class="bx bx-chevron-down"></i></a>
-    </div>
-  </section>
-  <section id="ejes" class="services">
-    <div class="container">
-      <div class="flex-container">
-        <!-- Ítem 1 -->
-        <div class="flex-item no-bg">
-          <a href="/pages/arg_mundo.html">
-            <div class="icon-box no-bg">
-              <div class="icon">
-                <img src="assets/images/mundo/mundo.png" alt="Argentina y el mundo">
+  <main role="main">
+    <section id="hero" class="d-flex align-items-center">
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+        <picture>
+          <source media="(max-width: 500px)" srcset="/assets/icons/logo_blanco_ANIDA_texto_negro.svg">
+          <img src="/assets/icons/logo_blanco_ANIDA_texto.svg" alt="ANIDA">
+        </picture>
+        <h1 style="display: none;">ANIDA</h1>
+        <!-- <h2>Atlas Nacional Interactivo de Argentina</h2> -->
+        <!-- <p>Cartografía temática, información georreferenciada, textos explicativos, enriquecidos con contenidos gráficos y multimedia, para visualizar y consultar la información de manera detallada, atractiva y sencilla de leer e interpretar.</p> -->
+        <!-- <a rel="secciones" href="#ejes" class="btn-get-started scrollto">Secciones temáticas</a> -->
+        <br>
+        <a rel="secciones" href="#ejes" class="scrollto" title="Estructura temática"><i class="bx bx-chevron-down"></i></a>
+      </div>
+    </section>
+    <section id="ejes" class="services">
+      <div class="container">
+        <div class="flex-container">
+          <!-- Ítem 1 -->
+          <div class="flex-item no-bg">
+            <a href="/pages/arg_mundo.html" id="arg-mundo" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Argentina y el mundo" title="Argentina y el mundo">
+              <div class="icon-box no-bg">
+                <div class="icon">
+                  <img src="assets/images/mundo/mundo.png" alt="Argentina y el mundo">
+                </div>
+                <h5>Argentina y el mundo</h5>
               </div>
-              <h5>Argentina y el mundo</h5>
-            </div>
-          </a>
-        </div>
-        <!-- Ítem 2 -->
-        <div class="flex-item no-bg">
-          <a href="/pages/arg_fisico_natural.html">
-            <div class="icon-box no-bg">
-              <div class="icon">
-                <img src="/assets/images/natural/natural.png" alt="Argentina físico-natural">
+            </a>
+          </div>
+          <!-- Ítem 2 -->
+          <div class="flex-item no-bg">
+            <a href="/pages/arg_fisico_natural.html" id="arg-fisico-natural" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Argentina físico-natural" title="Argentina físico-natural">
+              <div class="icon-box no-bg">
+                <div class="icon">
+                  <img src="/assets/images/natural/natural.png" alt="Argentina físico-natural">
+                </div>
+                <h5>Argentina físico-natural</h5>
               </div>
-              <h5>Argentina físico-natural</h5>
-            </div>
-          </a>
-        </div>
-        <!-- Ítem 3 -->
-        <div class="flex-item no-bg">
-          <a href="/pages/arg_socio_demo.html">
-            <div class="icon-box no-bg">
-              <div class="icon">
-                <img src="/assets/images/sociodemo/sociodemo.png" alt="Argentina socio-demográfica">
+            </a>
+          </div>
+          <!-- Ítem 3 -->
+          <div class="flex-item no-bg">
+            <a href="/pages/arg_socio_demo.html" id="arg-socio-demo" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Argentina socio-demográfica" title="Argentina socio-demográfica">
+              <div class="icon-box no-bg">
+                <div class="icon">
+                  <img src="/assets/images/sociodemo/sociodemo.png" alt="Argentina socio-demográfica">
+                </div>
+                <h5>Argentina socio-demográfica</h5>
               </div>
-              <h5>Argentina socio-demográfica</h5>
-            </div>
-          </a>
-        </div>
-        <!-- Ítem 4 -->
-        <div class="flex-item no-bg">
-          <a href="/pages/arg_econ.html">
-            <div class="icon-box no-bg">
-              <div class="icon">
-                <img src="/assets/images/econ/economica.png" alt="Argentina económica">
+            </a>
+          </div>
+          <!-- Ítem 4 -->
+          <div class="flex-item no-bg">
+            <a href="/pages/arg_econ.html" id="arg-econ" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Argentina económica" title="Argentina económica">
+              <div class="icon-box no-bg">
+                <div class="icon">
+                  <img src="/assets/images/econ/economica.png" alt="Argentina económica">
+                </div>
+                <h5>Argentina económica</h5>
               </div>
-              <h5>Argentina económica</h5>
-            </div>
-          </a>
-        </div>
-        <!-- Ítem 5 -->
-        <div class="flex-item no-bg">
-          <a href="/pages/arg_ambiental.html">
-            <div class="icon-box no-bg">
-              <div class="icon">
-                <img src="/assets/images/ambiental/ambiental.png" alt="Argentina ambiental">
+            </a>
+          </div>
+          <!-- Ítem 5 -->
+          <div class="flex-item no-bg">
+            <a href="/pages/arg_ambiental.html" id="arg-ambiental" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Argentina ambiental" title="Argentina ambiental">
+              <div class="icon-box no-bg">
+                <div class="icon">
+                  <img src="/assets/images/ambiental/ambiental.png" alt="Argentina ambiental">
+                </div>
+                <h5>Argentina ambiental</h5>
               </div>
-              <h5>Argentina ambiental</h5>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <footer id="footer"></footer>
+    </section>
+  </main>
+  <footer id="footer" role="contentinfo"></footer>
 
   <script>
     fetch('/components/footer.html')
