@@ -1,0 +1,137 @@
+/* Normalize.css */
+/* 1. Establecer un box-sizing consistente en todos los elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Eliminar márgenes predeterminados */
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, figure,
+dl, dd, ul, ol,
+pre, table, fieldset, legend {
+  margin: 0;
+}
+/* 3. Establecer un tamaño de fuente base y un line-height consistente */
+html {
+  font-size: 16px;
+  /* Base de 16px para rem */
+  line-height: 1.5;
+  /* Espaciado cómodo entre líneas */
+  -webkit-text-size-adjust: 100%;
+  /* Prevenir zoom en dispositivos móviles */
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+/* 4. Estilos base para el body */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  /* Color de texto predeterminado */
+  background-color: #fff;
+  /* Fondo blanco */
+  text-rendering: optimizeSpeed;
+  /* Mejor rendimiento de renderizado */
+  -webkit-font-smoothing: antialiased;
+  /* Suavizado de fuentes */
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+/* 5. Asegurar que las listas no tengan estilos predeterminados */
+ul, ol {
+  list-style: none;
+  padding: 0;
+}
+/* 6. Eliminar subrayado predeterminado en enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+  /* Heredar el color del texto */
+  cursor: pointer;
+}
+a:focus {
+  /* Indicador de enfoque accesible */
+  outline-offset: 2px;
+}
+/* 7. Estilos base para imágenes, videos y figuras */
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  /* Asegurar que no excedan el contenedor */
+  height: auto;
+}
+figure {
+  margin: 0;
+}
+/* 8. Asegurar que los formularios sean consistentes */
+button, input, select, textarea {
+  font: inherit;
+  /* Heredar tipografía del body */
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+textarea {
+  resize: vertical;
+  /* Permitir solo redimensionar verticalmente */
+}
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+/* 9. Asegurar que las tablas sean responsivas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+/* 10. Prevenir problemas de scroll en el body */
+html, body {
+  overflow-x: hidden;
+}
+/* 11. Asegurar que los elementos ocultos sean invisibles */
+[hidden] {
+  display: none !important;
+}
+/* 12. Mejorar accesibilidad en elementos interactivos */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #157DB9;
+  outline-offset: 2px;
+}
+/* 13. Prevenir estilos predeterminados en detalles y resumen */
+details {
+  display: block;
+}
+summary {
+  cursor: pointer;
+}
+/* 14. Asegurar que los elementos multimedia sean accesibles */
+audio, video {
+  display: inline-block;
+}
+/* 15. Prevenir problemas de altura en iFrames */
+iframe {
+  border: 0;
+}
+/* 16. Asegurar que los elementos de bloque sean consistentes */
+article, aside, footer, header, nav, section {
+  display: block;
+}
+/* 17. Prevenir problemas de subrayado en enlaces dentro de SVG */
+svg {
+  fill: currentColor;
+}

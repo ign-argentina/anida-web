@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /old/
+Disallow: /old/disabled/
+Disallow: /components/
+Disallow: /js/
+Disallow: /styles/
+Disallow: /assets/
+Allow: /assets/icons/favicon.png
+Allow: /assets/icons/logo_blanco_ANIDA_200x50.svg
+Sitemap: https://www.tusitio.com/sitemap.xml

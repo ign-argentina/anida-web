@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WSV8Q7P');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Título del sitio -->
+  <title>ANIDA - Atlas Geográfico Digital de Argentina</title>
+  <!-- Meta etiquetas básicas -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
+  <meta name="author" content="Instituto Geográfico Nacional">
+  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino, procesos geográficos, cartografía temática, información georreferenciada, textos explicativos, contenidos gráficos, multimedia, visualización de datos, consulta de información, interpretación de datos, análisis geográfico, educación geográfica, recursos educativos, investigación geográfica">
+
+  <!-- Meta etiquetas para SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="language" content="Spanish">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/icons/favicon.png" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon.png">
+
+  <!-- Open Graph (para redes sociales) -->
+  <meta property="og:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta property="og:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
+  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+  <meta property="og:image:alt" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:secure_url" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+
+  <meta property="og:url" content="https://anida.ign.gob.ar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta name="twitter:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
+  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/styles/normalize.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/estructura.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSV8Q7P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header id="header"></header>
+
+  <script>
+    fetch('/components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+  <main>
+    <div id="menusup_titlezone" class="jumbotron text-center">
+      <h2>Estructura temática</h2>
+    </div>
+
+    <section class="content-section">
+      <div class="container">
+        <!-- Introducción -->
+        <div class="section-intro">
+          <p>En <Strong>ANIDA</Strong> el conocimiento y la información sobre el territorio nacional se organiza en torno a grandes secciones temáticas, denominadas, a saber: Argentina y el mundo, Argentina físico- natural, Argentina socio-demográfica, Argentina económica y Argentina ambiental. Las secciones temáticas surgen a partir del agrupamiento de contenidos cuya información presenta características comunes y se organizan en temas particulares o parciales que se despliegan de un asunto general.</p>
+        </div>
+
+        <!-- Secciones temáticas -->
+        <div class="thematic-sections">
+          <p>A continuación, se presenta la estructura temática básica de ANIDA, enumerando los ejes temáticos. En la publicación, estos ejes temáticos están compuestos por contenidos a nivel de temas, en todos los casos, y también de subtemas, en muchos de ellos.</p>
+          <!-- Argentina y el mundo -->
+          <article class="thematic-section">
+            <h3>Argentina y el mundo</h3>
+            <p>Presenta a Argentina en su condición de Estado desde la óptica de la geografía política, proporcionando la información básica necesaria para conocer y comprender la realidad internacional del país, en el pasado y en la actualidad.</p>
+            <ul>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=a6b2bf22093e4f8d9f9a0e59d4ec82ca" target="_blank" id="estructu-basicos-territorio" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Rasgos básicos y componentes del territorio" title="Rasgos básicos y componentes del territorio">Rasgos básicos y componentes del territorio</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2bbf319cef994f76ab329bccc2ffe811" target="_blank" id="estructu-limites-fronteras" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Límites y fronteras internacionales" title="Límites y fronteras internacionales">Límites y fronteras internacionales</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=2c7297e24ca641dd8c1ba0ae689ff4cf" target="_blank" id="estructu-org-politica" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Organización política" title="Organización política">Organización política</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=317955464b3b4b228fec815faeba7908" target="_blank" id="estructu-formacion-territorio" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Formación del territorio" title="Formación del territorio">Formación del territorio</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=88ebb23ca07544ba9dfe9383584991f5" target="_blank" id="estructu-malvinas-islas" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Malvinas y otras islas del Atlántico Sur" title="Malvinas y otras islas del Atlántico Sur">Malvinas y otras islas del Atlántico Sur</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b2cb8044848b438da5a9dd3d0f7a5f04" target="_blank" id="estructu-antartida" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Antártida" title="Antártida">Antártida</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=10126972130a4141a7cba8fdd39eff98" target="_blank" id="estructu-insercion-internacional" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Inserción internacional" title="Inserción internacional">Inserción internacional</a></li>
+            </ul>
+          </article>
+
+          <!-- Argentina físico-natural -->
+          <article class="thematic-section">
+            <h3 id="físico-natural">Argentina físico-natural</h3>
+            <p>Argentina presenta una amplia diversidad en sus condiciones físicas y naturales. Esta sección describe las características de los elementos y procesos físico-naturales del territorio argentino.</p>
+            <ul>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=bda8f47e469c42c6a0cd2496187e56cb" target="_blank" id="estructu-geologia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Geología" title="Geología">Geología</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=ab1131d6c3c142a09b3f2a62722a3a79" target="_blank" id="estructu-geologia-argentina" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Geología de Argentina" title="Geología de Argentina">Geología de Argentina</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=3863bf5c30a84eeab2d299958dc87118" target="_blank" id="estructu-geomorfologia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Geomorfología" title="Geomorfología">Geomorfología</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8099b9f573364acc8ae98609935bc101" target="_blank" id="estructu-volcanologia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Volcanología" title="Volcanología">Volcanología</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=ef7f123b3610420d931b5595cd2ae90c" target="_blank" id="estructu-sismologia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Sismología" title="Sismología">Sismología</a></li>
+
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=403635e0919c410298b8fa80a87b09f1" target="_blank" id="estructu-clima" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Clima" title="Clima">Clima</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=b58d8b8841ef472e962317cac879e87f" target="_blank" id="estructu-clima-argentina" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Clima de Argentina" title="Clima de Argentina">Clima de Argentina</a></li>
+
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=9afbdac4af82412d9a7657168198e5f3" target="_blank" id="estructu-aguas-superficiales" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Aguas superficiales" title="Aguas superficiales">Aguas superficiales</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=7cc4ba9c758148f9b6176eb9cc2d79f2" target="_blank" id="estructu-aguas-subterraneas" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Aguas subterráneas" title="Aguas subterráneas">Aguas subterráneas</a></li>
+
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=909f432ca3c540609871ac04334588bd" target="_blank" id="estructu-suelo" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Suelo" title="Suelo">Suelo</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=140d4525a0c94744b3b7bfd8423a1294" target="_blank" id="estructu-ecologia-biogeografia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Ecología y biogeografía" title="Ecología y biogeografía">Ecología y biogeografía</a></li>
+            </ul>
+          </article>
+
+          <!-- Argentina socio-demográfica -->
+          <article class="thematic-section">
+            <h3 id="socio-demográfica">Argentina socio-demográfica</h3>
+            <p>Describe las características socio-demográficas más destacadas de los habitantes de Argentina, brindando información detallada y actualizada de la población y la sociedad del país de modo que el usuario pueda comprender su situación y realizar un análisis crítico de la temática.</p>
+            <ul>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=340df9845c2c4f1ea2fb6939f1e24fcb" target="_blank" id="estructu-tamaño-peso-demografico" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Tamaño y peso demográfico" title="Tamaño y peso demográfico">Tamaño y peso demográfico</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57057713a9ae4084a8d5f2bddbfebb66" target="_blank" id="estructu-composicion-poblacion" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Composición de la población" title="Composición de la población">Composición de la población</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244" target="_blank" id="estructu-crecimiento-demografico" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Crecimiento demográfico" title="Crecimiento demográfico">Crecimiento demográfico</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d92e12432ed84d4082d3f3a31f37af00" target="_blank" id="estructu-distribucion-asentamiento" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Distribución y asentamiento" title="Distribución y asentamiento">Distribución y asentamiento</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=300625aaf2c344beaf9187ffa3efe43a" target="_blank" id="estructu-movilidad-territorial" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Movilidad territorial" title="Movilidad territorial">Movilidad territorial</a></li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0" target="_blank" id="estructu-calidad-vida" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Calidad de vida" title="Calidad de vida">Calidad de vida</a></li>
+            </ul>
+          </article>
+
+          <!-- Argentina económica -->
+          <article class="thematic-section">
+            <h3 id="económica">Argentina económica</h3>
+            <p>Describe las características cuantitativas, cualitativas y territoriales de la economía argentina, proporcionando la información necesaria para la comprensión y análisis crítico de su enorme potencial, alcances y limitaciones.</p>
+            <ul>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8" target="_blank" id="estructu-actividad-agro" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Actividad agrícola-ganadera" title="Actividad agrícola-ganadera">Actividad agrícola-ganadera</a></li>
+              <li>Pesca y acuicultura</li>
+              <li>Minería</li>
+              <li>Industria</li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d754b267b7a240a9b24f1b0898556fea" target="_blank" id="estructu-energia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Energía" title="Energía">Energía</a></li>
+              <li>Turismo</li>
+              <li><a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57af2edeb8114526a75b0a59a1bddbdb" target="_blank" id="estructu-transporte" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Transporte" title="Transporte">Transporte</a></li>
+              <li>Comercio exterior</li>
+            </ul>
+          </article>
+
+          <!-- Argentina ambiental -->
+          <article class="thematic-section">
+            <h3 id="ambiental">Argentina ambiental</h3>
+            <p>Realiza una aproximación al carácter complejo e interrelacionado del ambiente en el que viven los habitantes de Argentina, dado por las múltiples dimensiones que abarca, tanto en el plano de la realidad social como del sistema natural, y las múltiples combinaciones entre estas dos dimensiones, variables en cada momento y lugar de nuestro país.</p>
+            <ul>
+              <li>Recursos naturales</li>
+              <li>Actividades humanas e implicancias ambientales</li>
+              <li>Riesgo de desastres</li>
+              <li>Áreas naturales protegidas</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer"></footer>
+
+  <script>
+    fetch('/components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

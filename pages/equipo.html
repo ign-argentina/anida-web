@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WSV8Q7P');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Título del sitio -->
+  <title>ANIDA - Atlas Geográfico Digital de Argentina</title>
+  <!-- Meta etiquetas básicas -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
+  <meta name="author" content="Instituto Geográfico Nacional">
+  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino, procesos geográficos, cartografía temática, información georreferenciada, textos explicativos, contenidos gráficos, multimedia, visualización de datos, consulta de información, interpretación de datos, análisis geográfico, educación geográfica, recursos educativos, investigación geográfica">
+
+  <!-- Meta etiquetas para SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="language" content="Spanish">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/icons/favicon.png" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon.png">
+
+  <!-- Open Graph (para redes sociales) -->
+  <meta property="og:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta property="og:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
+  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+  <meta property="og:image:alt" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:secure_url" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+
+  <meta property="og:url" content="https://anida.ign.gob.ar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta name="twitter:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
+  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/styles/normalize.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/equipo.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSV8Q7P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header id="header"></header>
+
+  <script>
+    fetch('/components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+  <main>
+    <div id="menusup_titlezone" class="jumbotron text-center">
+      <h2>Equipo de trabajo</h2>
+    </div>
+
+    <section class="content-section">
+      <div class="container">
+        <!-- Autoridades y equipo principal -->
+        <div class="section-authorities">
+          <h3>Autoridades</h3>
+          <div class="authority-item">
+            <h5>Presidente del instituto Geográfico Nacional</h5>
+            <p>CR (R) Ingeniero Geógrafo Jorge Horacio Machuca</p>
+          </div>
+
+          <div class="authority-item">
+            <h5>Dirección Nacional de Servicios Geográficos</h5>
+            <p>Ing. Agrim. Agustín Chizzini Melo</p>
+          </div>
+
+          <div class="authority-item">
+            <h5>Geografía</h5>
+            <p>Lic. María Dolores Puente</p>
+          </div>
+
+          <!-- Equipo de trabajo -->
+          <div class="section-team">
+            <h3>Equipo de trabajo</h3>
+
+            <div class="team-area">
+              <h5>Coordinación de ANIDA</h5>
+              <ul>
+                <li>Analía Almirón</li>
+              </ul>
+            </div>
+
+            <div class="team-area">
+              <h5>Edición</h5>
+              <ul>
+                <li>Analía Almirón</li>
+                <li>Paula Villa</li>
+                <li>Eugenia Arnodo</li>
+              </ul>
+            </div>
+
+            <div class="team-area">
+              <h5>Base de datos y cartografía SIG y Web</h5>
+              <ul>
+                <li>Florencia Biscay</li>
+              </ul>
+            </div>
+
+            <div class="team-area">
+              <h5>Cartografía</h5>
+              <ul>
+                <li>Andrea Daffunchio</li>
+              </ul>
+            </div>
+
+            <div class="team-area">
+              <h5>Diseño gráfico</h5>
+              <ul>
+                <li>Eugenia Arnodo</li>
+              </ul>
+            </div>
+
+            <!-- <div class="team-area">
+          <h5>Desarrollo sitio web</h5>
+          <ul>
+            <li>Gonzalo Pérez</li>
+            <li>Jorge Alba Posse</li>
+            <li>Gustavo Silvestre Coutinho</li>
+          </ul>
+        </div> -->
+
+          </div>
+
+          <!-- Colaboradores -->
+          <div class="section-collaborators">
+            <h3>Colaboradores</h3>
+
+            <article class="collaborator-area data-source">
+              <h5>Argentina y el mundo</h5>
+              <ul>
+                <li>Analía Almirón. IGN/GEO, FFYL, UBA.</li>
+                <li>Melina López Calvo. IGN.</li>
+              </ul>
+            </article>
+
+            <article class="collaborator-area data-source">
+              <h5>Argentina físico-natural</h5>
+              <ul>
+                <li>Analía L. Casa. SEGEMAR.</li>
+                <li>Corina Risso. GL, GVGV- IGEBA, FCEyN, UBA.</li>
+                <li>Elvira Gentile. IG, GEO, FFyL, UBA.</li>
+                <li>Gustavo Cruzate. INTA</li>
+                <li>Héctor J. M. Morrás. INTA</li>
+                <li>Ignacio Gatti, IGN/GEO, FFyL, UBA.</li>
+                <li>Jorge Néstor Santa Cruz. CETA, FAVET, UBA.</li>
+                <li>Marcela G. Yamin. SEGEMAR.</li>
+                <li>Marcelo I. Cegarra. SEGEMAR/UNDAV.</li>
+                <li>María José Pizarro. INTA.</li>
+                <li>María Josefa Fioriti. COHIFE.</li>
+                <li>Miguel Ángel Giraut. GEO, FFyL, UBA/SIPH- COREBE.</li>
+                <li>Nora Madanes. FCEyN, UBA/EGE e IEGEBA, UBA, CONICET.</li>
+                <li>Luis Alberto Gómez. INTA.</li>
+                <li>Paula Martín. IG, FFyL, UBA/CONICET/SHN.</li>
+                <li>Ricardo Varela. ex FCNyM, UNLP/CONICET.</li>
+                <li>Roberto Bó. FCEyN, UBA/EGE e IEGEBA-CONICET.</li>
+                <li>Sebastián Torrella. GESEAA/EGE e IEGEBA, CONICET/FCEyN, UBA.</li>
+                <li>Silvina Malzof. FCEyN, UBA/EGE e IEGEBA, CONICET.</li>
+                <li>Soledad Volosín. FCEyN, UBA.</li>
+                <li>Viviana Alder. FCEyN, UBA/EGE e IEGEBA, CONICET.</li>
+              </ul>
+            </article>
+
+            <article class="collaborator-area data-source">
+              <h5>Argentina socio-demográfica</h5>
+              <ul>
+                <li>Alejandro Rascovan. IMHICIHU, CONICET.</li>
+                <li>Brenda Matossian. IMHICIHU, CONICET.</li>
+                <li>Cecilia Melella. FSOC, UBA.</li>
+                <li>Claudia A. Mikkelsen. CONICET/GESPyT, UNMDP/CIG, UNICEN.</li>
+                <li>Fernando Ariel Manzano. CONICET-FCH, UNICEN.</li>
+                <li>Guillermo Ángel Velázquez. CONICET-FCH, UNICEN.</li>
+                <li>Juan Pablo Celemín. CONICET-UNICEN.</li>
+                <li>Laura Calvelo. FSOC, UBA/ DNP, MIOPyV.</li>
+                <li>Lautaro Lafleur. FSOC, UBA/ MTEySS.</li>
+                <li>María Dolores Linares. CONICET-IESH, FCH, UNLPam.</li>
+                <li>Marina Laura Lapenda. FCH, UNICEN.</li>
+                <li>Mauro Escobar Basavilbaso. CIIE-DFCBA/ ISFD N°82.</li>
+                <li>Sebastián Gómez Lende. CONICET/CIG, FCH, UNICEN.</li>
+                <li>Susana María Sassone. IMHICIHU, CONICET.</li>
+              </ul>
+            </article>
+
+            <article class="collaborator-area data-source">
+              <h5>Argentina económica</h5>
+              <ul>
+                <li>Alejandro Monastra. CONICET-ICI, UNGS.</li>
+                <li>Ana Villasenin. GEO, FFyL-UBA.</li>
+                <li>Analía Conte. IMHICIHU, CONICET.</li>
+                <li>Damián Villegas. GEO, FFyL-UBA.</li>
+                <li>Guillermina Jacinto. CONICET-CESAL, FCH, UNICEN.</li>
+                <li>Gustavo Lipovich. IG, FFyL-UBA.</li>
+                <li>Jorge Blanco. IG, FFyL-UBA.</li>
+                <li>José Luis Berdolini. CONICET-UNNOBA.</li>
+                <li>Mariana Etchepareborda. IMHICIHU, CONICET.</li>
+                <li>Mariela Marino. IMHICIHU, CONICET.</li>
+                <li>Nicolás Moser. GEO, FFyL-UBA.</li>
+                <li>Paloma Garay Santoló. IG, FFyL-UBA.</li>
+                <li>Salvador Gil. UNSAM</li>
+                <li>Silvina Carrizo. CONICET-CIUT, FAU, UNLP.</li>
+              </ul>
+            </article>
+
+          </div>
+
+          <!-- Siglas y abreviaturas -->
+          <section class="section-collaborators disclaimer">
+            <p class="">La pertenencia institucional es la que cada colaborador tenía al momento de realizar su contribución al ANIDA.</p>
+            <h4>Siglas y abreviaturas</h4>
+            <ul class="acronyms-list">
+              <li class="acronym-card">
+                <div class="acronym">CESAL, FCH, UNICEN</div>
+                <div class="meaning">Centro de Estudios Sociales de América Latina, Universidad Nacional del Centro de la Provincia de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">CETA, FAVET, UBA</div>
+                <div class="meaning">Centro de Estudios Transdisciplinarios del Agua, Facultad de Veterinarias, Universidad de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">CIG, FCH, UNICEN</div>
+                <div class="meaning">Centro de Investigaciones Geográficas, Facultad de Ciencias Humanas, Universidad Nacional del Centro de la Provincia de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">CIUYT, FAU, UNLP</div>
+                <div class="meaning">Centro de Investigaciones Urbanas y Territoriales, Facultad de Arquitectura y Urbanismo, Universidad Nacional de La Plata.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">COHIFE</div>
+                <div class="meaning">Consejo Hídrico Federal.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">CONICET</div>
+                <div class="meaning">Consejo Nacional de Investigaciones Científicas y Técnicas.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">COREBE</div>
+                <div class="meaning">Comisión Regional del Río Bermejo.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">DNP, MIOPyV</div>
+                <div class="meaning">Dirección Nacional de Población, Ministerio del Interior, Obras Públicas y Vivienda.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">EGE, FCEYN, UBA</div>
+                <div class="meaning">Departamento de Ecología, Genética y Evolución, Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">FCEyN, UBA</div>
+                <div class="meaning">Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">FCH, UNICEN</div>
+                <div class="meaning">Facultad de Ciencias Humanas, Universidad Nacional del Centro de la Provincia de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">FCNyM, UNLP</div>
+                <div class="meaning">Facultad de Ciencias Naturales y Museo, Universidad Nacional de La Plata.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">FSOC, UBA</div>
+                <div class="meaning">Facultad de Ciencias Sociales, Universidad de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">GEO, FFyL, UBA</div>
+                <div class="meaning">Departamento de Geografía, Facultad de Filosofía y Letras, Universidad de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">GESEAA, FCEyN, UBA</div>
+                <div class="meaning">Grupo de Estudios de Sistemas Ecológicos en Ambientes Agrícolas, Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">GESPyT, UNMDP</div>
+                <div class="meaning">Grupo de Estudios sobre Población y Territorio, Universidad Nacional de Mar del Plata.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">GL, FCEyN, UBA</div>
+                <div class="meaning">Departamento de Ciencias Geológicas, Universidad de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">GVGV, IGEBA, FCEyN, UBA</div>
+                <div class="meaning">Grupo de Volcanología y Geofísica Volcánica, Instituto de Geociencias Básicas, Aplicadas y Ambientales de Buenos Aires, Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">ICI, UNGS</div>
+                <div class="meaning">Instituto de Ciencias, Universidad Nacional de General Sarmiento.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">IEGEBA, UBA, CONICET</div>
+                <div class="meaning">Instituto de Ecología, Genética y Evolución de Buenos Aires, Universidad de Buenos Aires - Consejo Nacional de Investigaciones Científicas y Técnicas.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">IESH, FCH, UNLPam</div>
+                <div class="meaning">Instituto de Estudios Sociohistóricos, Universidad Nacional de La Pampa.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">IG, FFyL, UBA</div>
+                <div class="meaning">Instituto de Geografía, Facultad de Filosofía y Letras, Universidad de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">IMHICIHU, CONICET</div>
+                <div class="meaning">Instituto Multidisciplinario de Historia y Ciencias Humanas, Consejo Nacional de Investigaciones Científicas y Técnicas.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">INTA</div>
+                <div class="meaning">Instituto Nacional de Tecnología Agropecuaria.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">MTEySS</div>
+                <div class="meaning">Ministerio de Trabajo, Empleo y Seguridad Social.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">SEGEMAR</div>
+                <div class="meaning">Servicio Geológico Minero Argentino.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">SHN</div>
+                <div class="meaning">Servicio de Hidrografía Naval.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">SIPH</div>
+                <div class="meaning">Secretaría de Infraestructura y Política Hídrica.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">UNNOBA</div>
+                <div class="meaning">Universidad Nacional del Noroeste de la Provincia de Buenos Aires.</div>
+              </li>
+              <li class="acronym-card">
+                <div class="acronym">UNSAM</div>
+                <div class="meaning">Universidad Nacional de San Martín.</div>
+              </li>
+            </ul>
+          </section>
+
+        </div>
+    </section>
+  </main>
+  <footer id="footer"></footer>
+
+  <script>
+    fetch('/components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
