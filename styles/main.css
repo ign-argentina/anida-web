@@ -92,6 +92,7 @@ a:hover {
 }
 #hero > div > picture > img {
   width: -webkit-fill-available;
+  max-width: 950px;
 }
 .scrollto {
   position: relative;

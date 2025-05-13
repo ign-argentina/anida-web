@@ -16,17 +16,17 @@
 
   <!-- Título del sitio -->
   <title>ANIDA - Atlas Geográfico Digital de Argentina</title>
-
   <!-- Meta etiquetas básicas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
   <meta name="author" content="Instituto Geográfico Nacional">
-  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino">
+  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino, procesos geográficos, cartografía temática, información georreferenciada, textos explicativos, contenidos gráficos, multimedia, visualización de datos, consulta de información, interpretación de datos, análisis geográfico, educación geográfica, recursos educativos, investigación geográfica">
 
   <!-- Meta etiquetas para SEO -->
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
+  <meta name="language" content="Spanish">
 
   <!-- Favicon -->
   <link rel="icon" href="/assets/icons/favicon.png" type="image/svg+xml">
@@ -35,8 +35,12 @@
   <!-- Open Graph (para redes sociales) -->
   <meta property="og:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
   <meta property="og:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
-  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800_preliminar.jpg">
-  <meta property="og:url" content="https://www.anida.gob.ar"> <!-- Cambia esta URL por la de tu sitio -->
+  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+  <meta property="og:image:alt" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:secure_url" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+
+  <meta property="og:url" content="https://anida.ign.gob.ar/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
 
@@ -44,15 +48,17 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
   <meta name="twitter:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
-  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800_preliminar.jpg">
+  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="/styles/normalize.css">
   <link rel="stylesheet" href="/styles/main.css">
-  <!-- Boxicons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/navbar.css">
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -73,87 +79,87 @@
         document.getElementById('header').innerHTML = data;
       });
   </script>
+  <main>
+    <div id="menusup_titlezone" class="jumbotron text-center">
+      <h2>Argentina socio-demográfica</h2>
+    </div>
+    <section class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <p>Describe las características socio-demográficas más destacadas de los habitantes de Argentina, brindando información detallada y actualizada de la población y la sociedad del país de modo que el usuario pueda comprender su situación y realizar un análisis crítico de la temática.</p>
+        </div>
 
-  <div id="menusup_titlezone" class="jumbotron text-center">
-    <h2>Argentina socio-demográfica</h2>
-  </div>
-  <section class="content-section">
-    <div class="container">
-      <div class="section-intro">
-        <p>Describe las características socio-demográficas más destacadas de los habitantes de Argentina, brindando información detallada y actualizada de la población y la sociedad del país de modo que el usuario pueda comprender su situación y realizar un análisis crítico de la temática.</p>
-      </div>
-
-      <!-- Cuerpo principal -->
-      <div class="section-body">
-        <div class="flex-container">
-          <!-- Ítem 1 -->
-          <div class="flex-item">
-            <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=340df9845c2c4f1ea2fb6939f1e24fcb" target="_blank">
-              <div class="icon-box">
-                <div class="icon">
-                  <img src="/assets/images/sociodemo/vistaprevia_asd_01_tamypeso.jpg" alt="Tamaño y peso demográfico">
+        <!-- Cuerpo principal -->
+        <div class="section-body">
+          <div class="flex-container">
+            <!-- Ítem 1 -->
+            <div class="flex-item">
+              <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=340df9845c2c4f1ea2fb6939f1e24fcb" target="_blank" id="tamaño-peso-demografico" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Tamaño y peso demográfico" title="Tamaño y peso demográfico">
+                <div class="icon-box">
+                  <div class="icon">
+                    <img src="/assets/images/sociodemo/vistaprevia_asd_01_tamypeso.jpg" alt="Tamaño y peso demográfico">
+                  </div>
+                  <h5>Tamaño y peso demográfico</h5>
                 </div>
-                <h5>Tamaño y peso demográfico</h5>
-              </div>
-            </a>
-          </div>
-          <!-- Ítem 2 -->
-          <div class="flex-item">
-            <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57057713a9ae4084a8d5f2bddbfebb66" target="_blank">
-              <div class="icon-box">
-                <div class="icon">
-                  <img src="/assets/images/sociodemo/vistaprevia_asd_02_composicion.jpg" alt="Composición de la población">
+              </a>
+            </div>
+            <!-- Ítem 2 -->
+            <div class="flex-item">
+              <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=57057713a9ae4084a8d5f2bddbfebb66" target="_blank" id="composicion-poblacion" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Composición de la población" title="Composición de la población">
+                <div class="icon-box">
+                  <div class="icon">
+                    <img src="/assets/images/sociodemo/vistaprevia_asd_02_composicion.jpg" alt="Composición de la población">
+                  </div>
+                  <h5>Composición de la población</h5>
                 </div>
-                <h5>Composición de la población</h5>
-              </div>
-            </a>
-          </div>
-          <!-- Ítem 3 -->
-          <div class="flex-item">
-            <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244" target="_blank">
-              <div class="icon-box">
-                <div class="icon">
-                  <img src="/assets/images/sociodemo/vistaprevia_asd_03_crecdemo.jpg" alt="Crecimiento demográfico">
+              </a>
+            </div>
+            <!-- Ítem 3 -->
+            <div class="flex-item">
+              <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6dff50df29e1474ea1682878250dc244" target="_blank" id="crecimiento-demografico" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Crecimiento demográfico" title="Crecimiento demográfico">
+                <div class="icon-box">
+                  <div class="icon">
+                    <img src="/assets/images/sociodemo/vistaprevia_asd_03_crecdemo.jpg" alt="Crecimiento demográfico">
+                  </div>
+                  <h5>Crecimiento demográfico</h5>
                 </div>
-                <h5>Crecimiento demográfico</h5>
-              </div>
-            </a>
-          </div>
-          <!-- Ítem 4 -->
-          <div class="flex-item">
-            <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d92e12432ed84d4082d3f3a31f37af00" target="_blank">
-              <div class="icon-box">
-                <div class="icon">
-                  <img src="/assets/images/sociodemo/vistaprevia_asd_04_distryasent.jpg" alt="Distribución y asentamiento">
+              </a>
+            </div>
+            <!-- Ítem 4 -->
+            <div class="flex-item">
+              <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=d92e12432ed84d4082d3f3a31f37af00" target="_blank" id="distribucion-asentamiento" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Distribución y asentamiento" title="Distribución y asentamiento">
+                <div class="icon-box">
+                  <div class="icon">
+                    <img src="/assets/images/sociodemo/vistaprevia_asd_04_distryasent.jpg" alt="Distribución y asentamiento">
+                  </div>
+                  <h5>Distribución y asentamiento</h5>
                 </div>
-                <h5>Distribución y asentamiento</h5>
-              </div>
-            </a>
-          </div>
-          <!-- Ítem 5 -->
-          <div class="flex-item">
-            <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=300625aaf2c344beaf9187ffa3efe43a" target="_blank">
-              <div class="icon-box">
-                <div class="icon">
-                  <img src="/assets/images/sociodemo/vistaprevia_asd_05_movterr.jpg" alt="Movilidad territorial">
+              </a>
+            </div>
+            <!-- Ítem 5 -->
+            <div class="flex-item">
+              <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=300625aaf2c344beaf9187ffa3efe43a" target="_blank" id="movilidad-territorial" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Movilidad territorial" title="Movilidad territorial">
+                <div class="icon-box">
+                  <div class="icon">
+                    <img src="/assets/images/sociodemo/vistaprevia_asd_05_movterr.jpg" alt="Movilidad territorial">
+                  </div>
+                  <h5>Movilidad territorial</h5>
                 </div>
-                <h5>Movilidad territorial</h5>
-              </div>
-            </a>
-          </div>
-          <!-- Ítem 6 -->
-          <div class="flex-item">
-            <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0" target="_blank">
-              <div class="icon-box">
-                <div class="icon">
-                  <img src="/assets/images/sociodemo/vistaprevia_asd_06_calidaddevida.jpg" alt="Calidad de vida">
+              </a>
+            </div>
+            <!-- Ítem 6 -->
+            <div class="flex-item">
+              <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=6c0ededef0a34747a8c0b1afe9781ae0" target="_blank" id="calidad-de-vida" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Calidad de vida" title="Calidad de vida">
+                <div class="icon-box">
+                  <div class="icon">
+                    <img src="/assets/images/sociodemo/vistaprevia_asd_06_calidaddevida.jpg" alt="Calidad de vida">
+                  </div>
+                  <h5>Calidad de vida</h5>
                 </div>
-                <h5>Calidad de vida</h5>
-              </div>
-            </a>
-          </div>
-          <!-- Ítem 7 -->
-          <!-- <div class="flex-item">
+              </a>
+            </div>
+            <!-- Ítem 7 -->
+            <!-- <div class="flex-item">
                       <a href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=f7beacffe01c4c7886c797124df799cd" target="_blank">
               <div class="icon-box">
                 <div class="icon">
@@ -163,11 +169,11 @@
               </div>
             </a>
           </div> -->
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
+    </section>
+  </main>
   <footer id="footer"></footer>
 
   <script>

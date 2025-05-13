@@ -16,17 +16,17 @@
 
   <!-- Título del sitio -->
   <title>ANIDA - Atlas Geográfico Digital de Argentina</title>
-
   <!-- Meta etiquetas básicas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
   <meta name="author" content="Instituto Geográfico Nacional">
-  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino">
+  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino, procesos geográficos, cartografía temática, información georreferenciada, textos explicativos, contenidos gráficos, multimedia, visualización de datos, consulta de información, interpretación de datos, análisis geográfico, educación geográfica, recursos educativos, investigación geográfica">
 
   <!-- Meta etiquetas para SEO -->
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
+  <meta name="language" content="Spanish">
 
   <!-- Favicon -->
   <link rel="icon" href="/assets/icons/favicon.png" type="image/svg+xml">
@@ -35,8 +35,12 @@
   <!-- Open Graph (para redes sociales) -->
   <meta property="og:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
   <meta property="og:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
-  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800_preliminar.jpg">
-  <meta property="og:url" content="https://www.anida.gob.ar"> <!-- Cambia esta URL por la de tu sitio -->
+  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+  <meta property="og:image:alt" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:secure_url" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+
+  <meta property="og:url" content="https://anida.ign.gob.ar/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
 
@@ -44,16 +48,18 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
   <meta name="twitter:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
-  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800_preliminar.jpg">
+  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="/styles/normalize.css">
   <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
   <link rel="stylesheet" href="/styles/tutoriales.css">
-  <!-- Boxicons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -74,77 +80,77 @@
         document.getElementById('header').innerHTML = data;
       });
   </script>
-
-  <div id="menusup_titlezone" class="jumbotron text-center">
-    <h2>¿Cómo usar el atlas?</h2>
-  </div>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="section-intro">
-        <p>Aquí acercamos a los usuarios tutoriales para guiar la interacción con los contenidos del atlas en sus dos componentes principales: los paneles de textos y los mapas interactivos. También lineamientos para la citación.</p>
-      </div>
-      <!-- Tutorial: Paneles de texto -->
-      <article class="tutorial">
-        <h3>Paneles de texto</h3>
-        <iframe style="width: 100%;" width="854" height="480" src="https://www.youtube.com/embed/PGmvMQ-KY9g" title="ANIDA - Paneles de texto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-        </iframe>
-      </article>
-
-      <!-- Tutorial: Mapas interactivos -->
-      <article class="tutorial">
-        <h3>Mapas interactivos</h3>
-        <iframe style="width: 100%;" width="854" height="480" src="https://www.youtube.com/embed/kbmw09btsTU" title="ANIDA - Mapas interactivos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-        </iframe>
-      </article>
-      <!-- Cómo citar ANIDA -->
-      <div class="cita">
-        <h3>¿Cómo citar ANIDA?</h3>
-
-        <article class="data-source">
-          <h5>¿Cómo citar el sitio web?</h5>
-          <p>
-            Instituto Geográfico Nacional. (s.f.). <i>ANIDA. Atlas Nacional Interactivo de Argentina</i>
-            <a href="https://anida.ign.gob.ar" target="_blank">https://anida.ign.gob.ar</a>
-          </p>
-        </article>
-
-        <article class="cita data-source">
-          <h5>¿Cómo citar partes del sitio web?</h5>
-          <p>
-            Ejemplo: referencia bibliográfica de la publicación “Volcanología”.<br>
-            Risso, C. y Volosín, S. (2019). <i>Argentina físico-natural: Volcanología.</i> ANIDA. Atlas Nacional Interactivo de Argentina.<br>
-            <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8099b9f573364acc8ae98609935bc101" target="_blank">
-              https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8099b9f573364acc8ae98609935bc101
-            </a>
-          </p>
-        </article>
-
-        <article class="cita data-source">
-          <h5>¿Cómo incorporar material de ANIDA en trabajos propios?</h5>
-          <p>
-            Ejemplo: reproducir material de la publicación “Actividad agrícola-ganadera”.<br>
-            Fuente: reproducido de Actividad agrícola-ganadera, por A. Conte, M. Etchepareborda y M. Marino, 2020,
-            <i>ANIDA. Atlas Nacional Interactivo de Argentina</i>.<br>
-            <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8" target="_blank">
-              https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8
-            </a>
-          </p>
-
-          <p>
-            Referencia bibliográfica:<br>
-            Conte, A., Etchepareborda, M., y Marino, M. (2020). <i>Argentina económica: Actividad agrícola-ganadera.</i>
-            ANIDA. Atlas Nacional Interactivo de Argentina.<br>
-            <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8" target="_blank">
-              https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8
-            </a>
-          </p>
-        </article>
-      </div>
-
+  <main>
+    <div id="menusup_titlezone" class="jumbotron text-center">
+      <h2>¿Cómo usar el atlas?</h2>
     </div>
-  </section>
 
+    <section class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <p>Aquí acercamos a los usuarios tutoriales para guiar la interacción con los contenidos del atlas en sus dos componentes principales: los paneles de textos y los mapas interactivos. También lineamientos para la citación.</p>
+        </div>
+        <!-- Tutorial: Paneles de texto -->
+        <article class="tutorial">
+          <h3>Paneles de texto</h3>
+          <iframe style="width: 100%;" width="854" height="480" src="https://www.youtube.com/embed/PGmvMQ-KY9g" title="ANIDA - Paneles de texto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+          </iframe>
+        </article>
+
+        <!-- Tutorial: Mapas interactivos -->
+        <article class="tutorial">
+          <h3>Mapas interactivos</h3>
+          <iframe style="width: 100%;" width="854" height="480" src="https://www.youtube.com/embed/kbmw09btsTU" title="ANIDA - Mapas interactivos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+          </iframe>
+        </article>
+        <!-- Cómo citar ANIDA -->
+        <div class="cita">
+          <h3>¿Cómo citar ANIDA?</h3>
+
+          <article class="data-source">
+            <h5>¿Cómo citar el sitio web?</h5>
+            <p>
+              Instituto Geográfico Nacional. (s.f.). <i>ANIDA. Atlas Nacional Interactivo de Argentina</i>
+              <a href="https://anida.ign.gob.ar" target="_blank" title="Ejemplo de ¿Cómo citar el sitio web?">https://anida.ign.gob.ar</a>
+            </p>
+          </article>
+
+          <article class="cita data-source">
+            <h5>¿Cómo citar partes del sitio web?</h5>
+            <p>
+              Ejemplo: referencia bibliográfica de la publicación “Volcanología”.<br>
+              Risso, C. y Volosín, S. (2019). <i>Argentina físico-natural: Volcanología.</i> ANIDA. Atlas Nacional Interactivo de Argentina.<br>
+              <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8099b9f573364acc8ae98609935bc101" target="_blank" title="Ejemplo de ¿Cómo citar partes del sitio web?">
+                https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=8099b9f573364acc8ae98609935bc101
+              </a>
+            </p>
+          </article>
+
+          <article class="cita data-source">
+            <h5>¿Cómo incorporar material de ANIDA en trabajos propios?</h5>
+            <p>
+              Ejemplo: reproducir material de la publicación “Actividad agrícola-ganadera”.<br>
+              Fuente: reproducido de Actividad agrícola-ganadera, por A. Conte, M. Etchepareborda y M. Marino, 2020,
+              <i>ANIDA. Atlas Nacional Interactivo de Argentina</i>.<br>
+              <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8" target="_blank" title="Ejemplo de ¿Cómo incorporar material de ANIDA en trabajos propios?">
+                https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8
+              </a>
+            </p>
+
+            <p>
+              Referencia bibliográfica:<br>
+              Conte, A., Etchepareborda, M., y Marino, M. (2020). <i>Argentina económica: Actividad agrícola-ganadera.</i>
+              ANIDA. Atlas Nacional Interactivo de Argentina.<br>
+              <a href="https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8" target="_blank" title="Ejemplo de ¿Como incorporar material de ANIDA en trabajos propios?">
+                https://ide.ign.gob.ar/portal/apps/MapJournal/index.html?appid=25362ceb139445519f15d54635ba87a8
+              </a>
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+  </main>
   <footer id="footer"></footer>
 
   <script>
