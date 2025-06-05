@@ -1,47 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.anida.ign.gob.ar//</loc>
+    <loc>https://www.anida.ign.gob.ar/</loc>
+    <lastmod>2025-06-05</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/acercade.html</loc>
+    <lastmod>2025-06-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/contacto.html</loc>
+    <lastmod>2025-05-30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/equipo.html</loc>
+    <lastmod>2025-05-25</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/arg_ambiental.html</loc>
+    <lastmod>2025-06-02</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/arg_econ.html</loc>
+    <lastmod>2025-05-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/arg_fisico_natural.html</loc>
+    <lastmod>2025-05-29</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/arg_mundo.html</loc>
+    <lastmod>2025-06-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/arg_socio_demo.html</loc>
+    <lastmod>2025-06-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/otros_recursos.html</loc>
+    <lastmod>2025-05-27</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.anida.ign.gob.ar/tutoriales.html</loc>
+    <lastmod>2025-05-31</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
