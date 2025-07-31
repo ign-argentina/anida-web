@@ -1,0 +1,69 @@
+[
+  {
+    "id": "mapa-001",
+    "titulo": "Actividad agrícola-ganadera 2020",
+    "categoria": "Argentina económica",
+    "keywords": [
+      "agricola",
+      "ganadera",
+      "2020"
+    ],
+    "escala_espacial": "Escala nacional",
+    "escala_temporal": "Años puntuales",
+    "tipo_fenomeno": [
+      "Superficial"
+    ],
+    "tipo_escala": "Cuantitativa",
+    "tipo_datos": "Superficiales",
+    "tipo_mapa": "Coropletas",
+    "resumen": "Distribución de la actividad agrícola en 2020.",
+    "institucion": "ANIDA",
+    "fecha_actualizacion": "2020-05-15",
+    "ruta_imagen": "assets/images/econ/vistaprevia_ae_07_transporte.jpg"
+  },
+  {
+    "id": "mapa-002",
+    "titulo": "Población por departamento 2010",
+    "categoria": "Argentina socio-demográfica",
+    "keywords": [
+      "poblacion",
+      "departamento",
+      "2010"
+    ],
+    "escala_espacial": "País por departamento",
+    "escala_temporal": "Años puntuales",
+    "tipo_fenomeno": [
+      "Discreto"
+    ],
+    "tipo_escala": "Nominal",
+    "tipo_datos": "Puntuales",
+    "tipo_mapa": "Puntos",
+    "resumen": "Mapa de la distribución de la población por departamento según censo 2010.",
+    "institucion": "INDEC",
+    "fecha_actualizacion": "2011-12-01",
+    "ruta_imagen": "assets/images/natural/vistaprevia_afn_08_aguassup.jpg"
+  },
+  {
+    "id": "mapa-003",
+    "titulo": "Áreas protegidas nacionales",
+    "categoria": "Argentina ambiental",
+    "keywords": [
+      "areas",
+      "protegidas",
+      "parques",
+      "nacionales"
+    ],
+    "escala_espacial": "Escala nacional",
+    "escala_temporal": "Años puntuales",
+    "tipo_fenomeno": [
+      "Superficial"
+    ],
+    "tipo_escala": "Nominal",
+    "tipo_datos": "Superficiales",
+    "tipo_mapa": "Coropletas",
+    "resumen": "Ubicación y extensión de las áreas protegidas nacionales.",
+    "institucion": "APN",
+    "fecha_actualizacion": "2023-03-10",
+    "ruta_imagen": "assets/images/natural/vistaprevia_afn_05_sismos.jpg"
+  }
+]
