@@ -1,41 +1,80 @@
-**Estructura de directorios**
+# Documentación del Proyecto Anida Web
+
+## Estructura de directorios
 
 ```plaintext
-
 anida-web/
-├── index.html
-├── css/
-│   ├── styles.css              # Estilos principales
-│   ├── normalize.css           # Reset CSS para consistencia entre navegadores
-│   └── responsive.css          # Media queries y estilos responsive
-│
-├── js/
-│   ├── main.js                 # JavaScript principal
-│   └── utils/                  # Funciones utilitarias JS
-│       └── scroll.js           # Ejemplo: manejo de scroll suave
 │
 ├── assets/
-│   ├── images/
-│   │   ├── raw/               # Imágenes originales
-│   │   └── optimized/         # Imágenes optimizadas
+│   ├── fonts/
+│   │   ├── Gotham-Light-Regular.otf
+│   │   └── Gotham-Medium.otf
 │   ├── icons/
-│   │   └── favicon/           # Favicons en diferentes tamaños
-│   └── fonts/                 # Fuentes locales si se requieren
+│   │   ├── defensamargen-2024.svg
+│   │   ├── favicon.png
+│   │   ├── ign-logo-footer.svg
+│   │   └── ...
+│   └── images/
+│       ├── fondo_horizontal_1900_1800.jpg
+│       ├── fondo_horizontal_1900_1800.webp
+│       ├── ambiental/
+│       ├── econ/
+│       ├── mundo/
+│       ├── natural/
+│       ├── politico_admin/
+│       └── sociodemo/
 │
-├── pages/
-│   ├── about.html
-│   ├── services.html
-│   └── contact.html
+├── components/
+│   ├── footer.html
+│   ├── form.html
+│   └── navbar.html
 │
-├── components/                # Fragmentos HTML reutilizables
-│   ├── header.html           # Navbar/header
-│   └── footer.html           # Pie de página
+├── docs/
+│   └── documentation.md
 │
-├── .htaccess                 # Configuración del servidor Apache
-├── robots.txt               # Directivas para bots de búsqueda
-├── sitemap.xml             # Mapa del sitio para SEO
-└── README.md               # Documentación del proyecto
-
+├── js/
+│   ├── main.js
+│   └── utils/
+│
+├── old/
+│   ├── data.json
+│   ├── main.css
+│   ├── menu-colaboradores.js
+│   └── disabled/
+│       ├── anida_hoy.html
+│       ├── cita.html
+│       ├── fuente_datos.html
+│       └── img/
+│
+├── styles/
+│   ├── acercade.css
+│   ├── contacto.css
+│   ├── equipo.css
+│   ├── estructura.css
+│   ├── footer.css
+│   ├── fuente_datos.css
+│   ├── main.css
+│   ├── navbar.css
+│   ├── normalize.css
+│   ├── recursos_educativos.css
+│   ├── responsive.css
+│   └── tutoriales.css
+│
+├── acercade.html
+├── arg_ambiental.html
+├── arg_econ.html
+├── arg_fisico_natural.html
+├── arg_mundo.html
+├── arg_socio_demo.html
+├── contacto.html
+├── equipo.html
+├── estructura.html
+├── index.html
+├── otros_recursos.html
+├── tutoriales.html
+├── README.md
+├── robots.txt
+└── sitemap.xml
 ```
 
 Instructivo: Modificación y Adición de Ítems en Secciones Temáticas
