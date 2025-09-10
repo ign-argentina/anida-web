@@ -25,10 +25,17 @@ const app = {
   currentModalIndex: 0 // Índice del mapa actual en modal
 };
 
+// Helper: buscar índice en filteredMaps por id
+function findIndexById(id) {
+  if (!id) return -1;
+  return app.filteredMaps.findIndex(m => (m.id || m.ID || m.Id || m.id === 0) ? String(m.id) === String(id) : false);
+}
+
 // DOM Elements
 const elements = {
   searchForm: null,
   keywordInput: null,
+  searchButton: null,
   categoryFilters: null,
   resultsCount: null,
   resultsGrid: null,
@@ -45,6 +52,7 @@ function initApp() {
   // Capturar elementos del DOM
   elements.searchForm = document.getElementById('search-form');
   elements.keywordInput = document.getElementById('keyword-input');
+  elements.searchButton = document.querySelector('#search-form button[type="submit"]');
   elements.categoryFilters = document.querySelectorAll('input[name="category"]');
   elements.resultsCount = document.getElementById('results-count');
   elements.resultsGrid = document.getElementById('results-grid');
@@ -98,21 +106,45 @@ async function fetchMapsData() {
  */
 function setupEventListeners() {
   // Evento de búsqueda
-  elements.searchForm.addEventListener('submit', (e) => {
+  if (elements.searchForm) {
+    elements.searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     handleSearch();
-  });
+    });
+  }
+
+  // Input listener: búsqueda en vivo y control de habilitación del botón
+  if (elements.keywordInput) {
+    // Inicializar estado del botón según contenido actual
+    if (elements.searchButton) elements.searchButton.disabled = (elements.keywordInput.value || '').trim().length < 3;
+
+    elements.keywordInput.addEventListener('input', (e) => {
+      const val = (e.target.value || '').trim();
+      // Habilitar solo si hay al menos 3 caracteres
+      if (elements.searchButton) elements.searchButton.disabled = val.length < 3;
+
+      // Búsqueda en vivo: actualizar filtros y resultados en cada cambio
+      app.activeFilters.keyword = val;
+      app.currentBatch = 0;
+      filterMaps();
+      renderMaps(true);
+      updateActiveFilters();
+      updateResultsCount();
+    });
+  }
 
   // Radio buttons de categoría
-  elements.categoryFilters.forEach(radio => {
-    radio.addEventListener('change', handleSearch);
-  });
+  if (elements.categoryFilters && elements.categoryFilters.length) {
+    elements.categoryFilters.forEach(radio => {
+      radio.addEventListener('change', handleSearch);
+    });
+  }
 
   // Botón cargar más
-  elements.loadMoreBtn.addEventListener('click', loadMoreMaps);
+  if (elements.loadMoreBtn) elements.loadMoreBtn.addEventListener('click', loadMoreMaps);
 
   // Limpiar todos los filtros
-  elements.clearFiltersBtn.addEventListener('click', clearAllFilters);
+  if (elements.clearFiltersBtn) elements.clearFiltersBtn.addEventListener('click', clearAllFilters);
 
   // Cerrar modal con Escape
   document.addEventListener('keydown', (e) => {
@@ -121,19 +153,23 @@ function setupEventListeners() {
     }
   });
 
-  // Botón aplicar filtros avanzados
-  elements.applyAdvancedBtn.addEventListener('click', () => {
-    getAdvancedFilters();
-    handleSearch();
-    // Cerrar acordeón después de aplicar
-    const accordionButton = document.querySelector('.accordion-button');
-    if (!accordionButton.classList.contains('collapsed')) {
-      accordionButton.click();
-    }
-  });
+  // Botón aplicar filtros avanzados (si existe)
+  if (elements.applyAdvancedBtn) {
+    elements.applyAdvancedBtn.addEventListener('click', () => {
+      getAdvancedFilters();
+      handleSearch();
+      // Cerrar acordeón después de aplicar
+      const accordionButton = document.querySelector('.accordion-button');
+      if (accordionButton && !accordionButton.classList.contains('collapsed')) {
+        accordionButton.click();
+      }
+    });
+  }
 
-  // Botón limpiar filtros avanzados
-  elements.clearAdvancedBtn.addEventListener('click', clearAdvancedFilters);
+  // Botón limpiar filtros avanzados (si existe)
+  if (elements.clearAdvancedBtn) {
+    elements.clearAdvancedBtn.addEventListener('click', clearAdvancedFilters);
+  }
 }
 
 /**
@@ -156,11 +192,13 @@ function handleSearch() {
   const keyword = elements.keywordInput.value.trim();
   let category = 'Todos';
 
-  elements.categoryFilters.forEach(radio => {
-    if (radio.checked) {
-      category = radio.value;
-    }
-  });
+  if (elements.categoryFilters && elements.categoryFilters.length) {
+    elements.categoryFilters.forEach(radio => {
+      if (radio.checked) {
+        category = radio.value;
+      }
+    });
+  }
 
   // Actualizar filtros activos
   app.activeFilters.keyword = keyword;
@@ -228,65 +266,70 @@ function clearAdvancedFilters() {
  */
 function filterMaps() {
   const { keyword, category, advanced } = app.activeFilters;
-
   app.filteredMaps = app.allMaps.filter(map => {
+    // Map schema helpers: compatibilidad con esquema antiguo y nuevo
+    const mapCategory = map.section || map.categoria || '';
+    const mapTitle = map.title || map.titulo || '';
+    const mapKeywords = Array.isArray(map.keywords) ? map.keywords : (typeof map.keywords === 'string' ? map.keywords.split(';').map(k=>k.trim()).filter(Boolean) : (map.keywords || []));
+
     // Filtrar por categoría rápida
-    if (category !== 'Todos' && map.categoria !== category) {
+    if (category !== 'Todos' && mapCategory !== category) {
       return false;
     }
 
     // Filtrar por keyword si existe
     if (keyword) {
       const normalizedKeyword = normalizeText(keyword);
-      const normalizedTitle = normalizeText(map.titulo);
+      const normalizedTitle = normalizeText(mapTitle);
 
       // Si no hay coincidencia en título ni keywords, excluir
       if (!normalizedTitle.includes(normalizedKeyword) &&
-        !map.keywords.some(k => normalizeText(k).includes(normalizedKeyword))) {
+        !mapKeywords.some(k => normalizeText(k).includes(normalizedKeyword))) {
         return false;
       }
     }
 
-    // Filtrar por filtros avanzados
+    // Filtrar por filtros avanzados (si hay datos en el JSON los usará, si no, no filtrará)
     // Estructura temática
     if (advanced.estructuraTematica.length > 0 &&
-      !advanced.estructuraTematica.includes(map.categoria)) {
+      !advanced.estructuraTematica.includes(mapCategory)) {
       return false;
     }
 
     // Escala espacial
     if (advanced.escalaEspacial.length > 0 &&
-      !advanced.escalaEspacial.includes(map.escala_espacial)) {
+      !advanced.escalaEspacial.includes(map.escala_espacial || map.escalaEspacial || '')) {
       return false;
     }
 
     // Escala temporal
     if (advanced.escalaTemporal.length > 0 &&
-      !advanced.escalaTemporal.includes(map.escala_temporal)) {
+      !advanced.escalaTemporal.includes(map.escala_temporal || map.escalaTemporal || '')) {
       return false;
     }
 
     // Tipo de fenómeno (es un array en el mapa)
+    const mapTipoFenomeno = Array.isArray(map.tipo_fenomeno) ? map.tipo_fenomeno : (map.tipoFenomeno || []);
     if (advanced.tipoFenomeno.length > 0 &&
-      !advanced.tipoFenomeno.some(tipo => map.tipo_fenomeno.includes(tipo))) {
+      !advanced.tipoFenomeno.some(tipo => mapTipoFenomeno.includes(tipo))) {
       return false;
     }
 
     // Tipo de escala
     if (advanced.tipoEscala.length > 0 &&
-      !advanced.tipoEscala.includes(map.tipo_escala)) {
+      !advanced.tipoEscala.includes(map.tipo_escala || map.tipoEscala || '')) {
       return false;
     }
 
     // Tipo de datos
     if (advanced.tipoDatos.length > 0 &&
-      !advanced.tipoDatos.includes(map.tipo_datos)) {
+      !advanced.tipoDatos.includes(map.tipo_datos || map.tipoDatos || '')) {
       return false;
     }
 
     // Tipo de mapa
     if (advanced.tipoMapa.length > 0 &&
-      !advanced.tipoMapa.includes(map.tipo_mapa)) {
+      !advanced.tipoMapa.includes(map.tipo_mapa || map.tipoMapa || '')) {
       return false;
     }
 
@@ -334,15 +377,24 @@ function createMapThumbnail(map, index) {
   const miniatura = document.createElement('div');
   miniatura.className = 'miniatura';
   miniatura.setAttribute('data-index', index);
+  if (map.id) miniatura.setAttribute('data-id', map.id);
+
+  const imgSrc = map.image || map.ruta_imagen || '';
+  const title = map.title || map.titulo || '';
 
   miniatura.innerHTML = `
-    <img src="${map.ruta_imagen}" alt="${map.titulo}" loading="lazy">
-    <div class="miniatura-titulo">${map.titulo}</div>
+    <img src="${imgSrc}" alt="${title}" loading="lazy">
+    <div class="miniatura-titulo">${title}</div>
   `;
 
   // Event listener para abrir modal
   miniatura.addEventListener('click', () => {
-    openMapModal(index);
+    // Si hay id, abrir modal usando id para garantizar unicidad
+    if (map.id) {
+      openMapModal(map.id);
+    } else {
+      openMapModal(index);
+    }
   });
 
   return miniatura;
@@ -360,6 +412,7 @@ function loadMoreMaps() {
  * Actualiza el contador de resultados
  */
 function updateResultsCount() {
+  if (!elements.resultsCount) return;
   elements.resultsCount.textContent = `${app.filteredMaps.length} resultados`;
 }
 
@@ -367,6 +420,13 @@ function updateResultsCount() {
  * Actualiza los filtros activos mostrados
  */
 function updateActiveFilters() {
+  // Si el contenedor de filtros activos no existe en el DOM (puede estar comentado), salir
+  if (!elements.activeFiltersContainer) {
+    // Asegurar que el botón de limpiar filtros esté oculto si existe
+    if (elements.clearFiltersBtn) elements.clearFiltersBtn.style.display = 'none';
+    return;
+  }
+
   elements.activeFiltersContainer.innerHTML = '';
 
   const { keyword, category, advanced } = app.activeFilters;
@@ -483,8 +543,18 @@ function clearAllFilters() {
  * @param {number} index - Índice del mapa en la lista filtrada
  */
 function openMapModal(index) {
-  app.currentModalIndex = index;
-  const map = app.filteredMaps[index];
+  // index puede ser numérico (índice) o un id (string)
+  let idx = typeof index === 'number' ? index : findIndexById(index);
+  if (idx === -1) {
+    // intentar interpretar como número
+    const asNum = parseInt(index, 10);
+    if (!isNaN(asNum) && app.filteredMaps[asNum]) idx = asNum;
+  }
+
+  if (idx < 0 || idx >= app.filteredMaps.length) return;
+
+  app.currentModalIndex = idx;
+  const map = app.filteredMaps[idx];
 
   // Crear modal si no existe
   if (!elements.modal) {
@@ -494,12 +564,12 @@ function openMapModal(index) {
   }
 
   // Formatear fecha para visualización
-  const fecha = new Date(map.fecha_actualizacion);
+ /*  const fecha = new Date(map.fecha_actualizacion);
   const fechaFormateada = fecha.toLocaleDateString('es-AR', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric'
-  });
+  }); */
 
   // Determinar si estamos en viewport móvil
   const isMobile = window.innerWidth < 900;
@@ -507,69 +577,133 @@ function openMapModal(index) {
   // Contenido del modal según dispositivo
   if (isMobile) {
     // Versión móvil (imagen fullscreen + botón descarga)
+    const mobileImage = map.image || map.ruta_imagen || '';
+    const mobileDownload = map.download || map.download_link || map.ruta_descarga || mobileImage;
     elements.modal.innerHTML = `
       <div class="modal-mobile">
-        <img src="${map.ruta_imagen}" alt="${map.titulo}">
+        <img src="${mobileImage}" alt="${map.title || map.titulo}">
         <div class="modal-mobile-actions">
           <button class="close-modal-btn">×</button>
-          <a href="${map.ruta_imagen}" download class="download-btn" target="_blank">
+          <a href="${mobileDownload}" download class="download-btn" target="_blank">
             <i class='bx bx-download'></i> Descargar
           </a>
-          <a href="${map.ruta_imagen}" class="view-btn" target="_blank">
+          <a href="${mobileImage}" class="view-btn" target="_blank">
             <i class='bx bx-window-open'></i> Ver
           </a>
         </div>
       </div>
     `;
+  // Añadir botones overlay chevron para navegación móvil
+  const mobilePrev = document.createElement('button');
+  mobilePrev.setAttribute('aria-label', 'Anterior');
+  mobilePrev.className = 'modal-nav-btn prev-map-btn overlay left';
+  // Inline styles: colocados dentro del modal, en la parte inferior para no tapar la imagen
+  mobilePrev.setAttribute('style', [
+    'position:absolute',
+    'bottom:18px',
+    'left:12px',
+    'width:48px',
+    'height:48px',
+    'display:flex',
+    'align-items:center',
+    'justify-content:center',
+    'background:transparent',
+    'border:none',
+    'padding:0',
+    'cursor:pointer',
+    'z-index:1200'
+  ].join(';'));
+  mobilePrev.innerHTML = `<i class='bx bx-chevron-left' style="font-size:30px;color:white;line-height:1;"></i>`;
+
+  const mobileNext = document.createElement('button');
+  mobileNext.setAttribute('aria-label', 'Siguiente');
+  mobileNext.className = 'modal-nav-btn next-map-btn overlay right';
+  mobileNext.setAttribute('style', [
+    'position:absolute',
+    'bottom:18px',
+    'right:12px',
+    'width:48px',
+    'height:48px',
+    'display:flex',
+    'align-items:center',
+    'justify-content:center',
+    'background:transparent',
+    'border:none',
+    'padding:0',
+    'cursor:pointer',
+    'z-index:1200'
+  ].join(';'));
+  mobileNext.innerHTML = `<i class='bx bx-chevron-right' style="font-size:30px;color:white;line-height:1;"></i>`;
+
+  // Deshabilitar según posición
+  if (idx === 0) {
+    mobilePrev.disabled = true;
+    mobilePrev.style.opacity = '0.4';
+    mobilePrev.style.pointerEvents = 'none';
+  }
+  if (idx === app.filteredMaps.length - 1) {
+    mobileNext.disabled = true;
+    mobileNext.style.opacity = '0.4';
+    mobileNext.style.pointerEvents = 'none';
+  }
+
+  // Hover color change (no CSS :hover porque usamos estilos inline)
+  const mobilePrevIcon = mobilePrev.querySelector('i');
+  const mobileNextIcon = mobileNext.querySelector('i');
+  if (mobilePrevIcon) {
+    mobilePrev.addEventListener('mouseenter', () => mobilePrevIcon.style.color = '#d3d3d3');
+    mobilePrev.addEventListener('mouseleave', () => mobilePrevIcon.style.color = 'white');
+  }
+  if (mobileNextIcon) {
+    mobileNext.addEventListener('mouseenter', () => mobileNextIcon.style.color = '#d3d3d3');
+    mobileNext.addEventListener('mouseleave', () => mobileNextIcon.style.color = 'white');
+  }
+
+  elements.modal.appendChild(mobilePrev);
+  elements.modal.appendChild(mobileNext);
+
+  if (!mobilePrev.disabled) mobilePrev.addEventListener('click', () => openMapModal(idx - 1));
+  if (!mobileNext.disabled) mobileNext.addEventListener('click', () => openMapModal(idx + 1));
   } else {
     // Versión desktop (modal con aside lateral)
+    const desktopImage = map.image || map.ruta_imagen || '';
+    const desktopDownload = map.download || map.download_link || map.ruta_descarga || desktopImage;
+    const title = map.title || map.titulo || '';
+    const author = map.author || map.autor || '';
+    const year = map.year || map.año || '';
+    const section = map.section || map.categoria || '';
+    const publication = map.publication || map.publicacion || '';
+    const link = map.link || map.enlace || '';
+    
     elements.modal.innerHTML = `
       <div class="modal-img-container">
-        <img src="${map.ruta_imagen}" alt="${map.titulo}">
+        <img src="${desktopImage}" alt="${title}">
       </div>
       <aside class="modal-aside">
         <div class="modal-info">
-          <h2>${map.titulo}</h2>
-          <p class="map-resumen">${map.resumen}</p>
+          <h4>${title}</h4>
+          ${author ? `<p class="map-author"><strong>Autor:</strong> ${author}</p>` : ''}
           
           <div class="map-metadata">
-            <div class="metadata-item">
-              <strong>Categoría:</strong> ${map.categoria}
-            </div>
-            <div class="metadata-item">
-              <strong>Institución:</strong> ${map.institucion}
-            </div>
-            <div class="metadata-item">
-              <strong>Fecha de actualización:</strong> ${fechaFormateada}
-            </div>
-            <div class="metadata-item">
-              <strong>Escala espacial:</strong> ${map.escala_espacial}
-            </div>
-            <div class="metadata-item">
-              <strong>Escala temporal:</strong> ${map.escala_temporal}
-            </div>
-            <div class="metadata-item">
-              <strong>Tipo de mapa:</strong> ${map.tipo_mapa}
-            </div>
+            ${section ? `<div class="metadata-item">
+              <strong>Sección:</strong> ${section}
+            </div>` : ''}
+            ${publication ? `<div class="metadata-item">
+              <strong>Publicación:</strong> ${publication}
+            </div>` : ''}
+            ${year ? `<div class="metadata-item">
+              <strong>Año:</strong> ${year}
+            </div>` : ''}
+            ${link ? `<div class="metadata-item">
+              <strong>Enlace:</strong> <a href="${link}" target="_blank" rel="noopener">Ver publicación</a>
+            </div>` : ''}
           </div>
         </div>
         
         <div class="modal-actions">
-          <div class="modal-nav">
-            <button class="prev-map-btn" ${index === 0 ? 'disabled' : ''}>
-              <i class='bx bx-chevron-left'></i> Anterior
-            </button>
-            <button class="next-map-btn" ${index === app.filteredMaps.length - 1 ? 'disabled' : ''}>
-              Siguiente <i class='bx bx-chevron-right'></i>
-            </button>
-          </div>
-          
           <div class="modal-download">
-            <a href="${map.ruta_imagen}" download class="download-btn" target="_blank">
+            <a href="${desktopDownload}" download class="download-btn" target="_blank">
               <i class='bx bx-download'></i> Descargar
-            </a>
-            <a href="${map.ruta_imagen}" class="view-btn" target="_blank">
-              <i class='bx bx-window-open'></i> Ver en pestaña
             </a>
           </div>
           
@@ -579,20 +713,82 @@ function openMapModal(index) {
     `;
 
     // Event listeners para navegación entre mapas
-    const prevBtn = elements.modal.querySelector('.prev-map-btn');
-    const nextBtn = elements.modal.querySelector('.next-map-btn');
+  // Crear y añadir botones overlay chevron a izquierda/derecha (desktop)
+  const prevBtn = document.createElement('button');
+  prevBtn.setAttribute('aria-label', 'Anterior');
+  prevBtn.className = 'modal-nav-btn prev-map-btn overlay left';
+  // Inline styles: fijados a la pantalla, centrados verticalmente
+  prevBtn.setAttribute('style', [
+    'position:fixed',
+    'top:50%',
+    'left:8px',
+    'transform:translateY(-50%)',
+    'width:48px',
+    'height:48px',
+    'min-width:40px',
+    'min-height:40px',
+    'display:flex',
+    'align-items:center',
+    'justify-content:center',
+    'background:transparent',
+    'border:none',
+    'padding:0',
+    'cursor:pointer',
+    'z-index:1200'
+  ].join(';'));
+  prevBtn.innerHTML = `<i class='bx bx-chevron-left' style="font-size:30px;color:white;line-height:1;"></i>`;
 
-    if (prevBtn && !prevBtn.disabled) {
-      prevBtn.addEventListener('click', () => {
-        openMapModal(index - 1);
-      });
-    }
+  const nextBtn = document.createElement('button');
+  nextBtn.setAttribute('aria-label', 'Siguiente');
+  nextBtn.className = 'modal-nav-btn next-map-btn overlay right';
+  nextBtn.setAttribute('style', [
+    'position:fixed',
+    'top:50%',
+    'right:8px',
+    'transform:translateY(-50%)',
+    'width:48px',
+    'height:48px',
+    'min-width:40px',
+    'min-height:40px',
+    'display:flex',
+    'align-items:center',
+    'justify-content:center',
+    'background:transparent',
+    'border:none',
+    'padding:0',
+    'cursor:pointer',
+    'z-index:1200'
+  ].join(';'));
+  nextBtn.innerHTML = `<i class='bx bx-chevron-right' style="font-size:30px;color:white;line-height:1;"></i>`;
 
-    if (nextBtn && !nextBtn.disabled) {
-      nextBtn.addEventListener('click', () => {
-        openMapModal(index + 1);
-      });
-    }
+  if (idx === 0) {
+    prevBtn.disabled = true;
+    prevBtn.style.opacity = '0.4';
+    prevBtn.style.pointerEvents = 'none';
+  }
+  if (idx === app.filteredMaps.length - 1) {
+    nextBtn.disabled = true;
+    nextBtn.style.opacity = '0.4';
+    nextBtn.style.pointerEvents = 'none';
+  }
+
+  // Hover color change for icons
+  const prevIcon = prevBtn.querySelector('i');
+  const nextIcon = nextBtn.querySelector('i');
+  if (prevIcon) {
+    prevBtn.addEventListener('mouseenter', () => prevIcon.style.color = '#d3d3d3');
+    prevBtn.addEventListener('mouseleave', () => prevIcon.style.color = 'white');
+  }
+  if (nextIcon) {
+    nextBtn.addEventListener('mouseenter', () => nextIcon.style.color = '#d3d3d3');
+    nextBtn.addEventListener('mouseleave', () => nextIcon.style.color = 'white');
+  }
+
+  elements.modal.appendChild(prevBtn);
+  elements.modal.appendChild(nextBtn);
+
+  if (!prevBtn.disabled) prevBtn.addEventListener('click', () => openMapModal(idx - 1));
+  if (!nextBtn.disabled) nextBtn.addEventListener('click', () => openMapModal(idx + 1));
   }
 
   // Event listener para cerrar modal

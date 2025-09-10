@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procesador XLSX a JSON</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.min.js"></script>
+  <style>
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+    <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Procesador XLSX a JSON</h1>
+
+    <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="fileInput">
+        Cargar archivo .xlsx o .csv (delimitado por ;)
+      </label>
+      <input type="file" id="fileInput" accept=".xlsx,.csv" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none">
+    </div>
+
+    <div id="jsonOutputContainer" class="hidden mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">JSON Resultante:</h2>
+      <pre id="jsonOutput" class="bg-gray-100 p-4 rounded-md text-sm text-gray-800 border border-gray-200 overflow-auto max-h-96"></pre>
+      <button id="copyJsonBtn" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Copiar JSON
+      </button>
+    </div>
+
+    <div id="errorMessage" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <strong class="font-bold">Error:</strong>
+      <span class="block sm:inline" id="errorText"></span>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const fileInput = document.getElementById('fileInput');
+      const jsonOutputContainer = document.getElementById('jsonOutputContainer');
+      const jsonOutput = document.getElementById('jsonOutput');
+      const copyJsonBtn = document.getElementById('copyJsonBtn');
+      const errorMessage = document.getElementById('errorMessage');
+      const errorText = document.getElementById('errorText');
+
+  fileInput.addEventListener('change', handleFileUpload);
+      copyJsonBtn.addEventListener('click', copyJsonToClipboard);
+
+      function handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (!file) {
+          showError('No se seleccionó ningún archivo.');
+          return;
+        }
+
+        const name = (file.name || '').toLowerCase();
+
+        if (name.endsWith('.csv')) {
+          // Leer CSV como texto (delimitador ';')
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            try {
+              const text = e.target.result;
+              const data = parseCSV(text, ';'); // Devuelve array de arrays
+              processAndDisplayJson(data);
+              hideError();
+            } catch (err) {
+              showError('Error al procesar el archivo CSV. Asegúrate de que el formato es correcto y usa ; como separador.');
+              console.error(err);
+            }
+          };
+          reader.onerror = (e) => {
+            showError('Error al leer el archivo CSV.');
+            console.error(e);
+          };
+          reader.readAsText(file, 'utf-8');
+          return;
+        }
+
+        if (name.endsWith('.xlsx') || name.endsWith('.xls')) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            try {
+              const data = new Uint8Array(e.target.result);
+              const workbook = XLSX.read(data, { type: 'array' });
+              const firstSheetName = workbook.SheetNames[0];
+              const worksheet = workbook.Sheets[firstSheetName];
+              const json = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+              processAndDisplayJson(json);
+              hideError();
+            } catch (err) {
+              showError('Error al leer el archivo XLSX. Asegúrate de que es un archivo válido.');
+              console.error(err);
+            }
+          };
+          reader.onerror = (e) => {
+            showError('Error al cargar el archivo.');
+            console.error(e);
+          };
+          reader.readAsArrayBuffer(file);
+          return;
+        }
+
+        showError('Formato de archivo no soportado. Use .xlsx o .csv.');
+      }
+
+      // Parser CSV simple que soporta campos con comillas dobles y separador configurable
+      function parseCSV(text, delimiter = ';') {
+        const rows = [];
+        let row = [];
+        let cur = '';
+        let inQuotes = false;
+        let i = 0;
+        while (i < text.length) {
+          const ch = text[i];
+          if (inQuotes) {
+            if (ch === '"') {
+              // Si aparece doble comilla seguida, es una comilla escapada
+              if (i + 1 < text.length && text[i + 1] === '"') {
+                cur += '"';
+                i += 2;
+                continue;
+              }
+              inQuotes = false;
+              i++;
+              continue;
+            }
+            cur += ch;
+            i++;
+            continue;
+          }
+
+          if (ch === '"') {
+            inQuotes = true;
+            i++;
+            continue;
+          }
+
+          if (ch === delimiter) {
+            row.push(cur);
+            cur = '';
+            i++;
+            continue;
+          }
+
+          // Manejar saltos de línea (CR, LF o CRLF)
+          if (ch === '\r') {
+            // mirar si hay \r\n
+            if (i + 1 < text.length && text[i + 1] === '\n') {
+              i += 2;
+            } else {
+              i++;
+            }
+            row.push(cur);
+            rows.push(row);
+            row = [];
+            cur = '';
+            continue;
+          }
+          if (ch === '\n') {
+            i++;
+            row.push(cur);
+            rows.push(row);
+            row = [];
+            cur = '';
+            continue;
+          }
+
+          cur += ch;
+          i++;
+        }
+
+        // Agregar resto
+        if (cur.length > 0 || inQuotes || row.length > 0) {
+          row.push(cur);
+          rows.push(row);
+        }
+
+        // Normalizar líneas vacías al final
+        while (rows.length && rows[rows.length - 1].length === 1 && rows[rows.length - 1][0] === '') rows.pop();
+        return rows;
+      }
+
+      function processAndDisplayJson(data) {
+        if (data.length === 0) {
+          showError('El archivo XLSX está vacío.');
+          jsonOutputContainer.classList.add('hidden');
+          return;
+        }
+
+        const headers = data[0]; // Primera fila son los encabezados
+        const rows = data.slice(1); // El resto son las filas de datos
+
+        const processedData = rows.map(row => {
+          let obj = {};
+          headers.forEach((header, index) => {
+            let key = header.toLowerCase().replace(/\s/g, ''); // Normalizar claves
+            let value = row[index];
+
+            switch (key) {
+              case 'keywords':
+                obj[key] = typeof value === 'string' ? value.split(';').map(k => k.trim()).filter(k => k) : [];
+                break;
+              case 'year':
+                obj[key] = typeof value === 'string' ? parseInt(value.replace(/[^0-9]/g, ''), 10) : (typeof value === 'number' ? value : null);
+                if (isNaN(obj[key])) obj[key] = null; // Si no es un número válido, poner null
+                break;
+              case 'image':
+              case 'download':
+              case 'link':
+                obj[key] = typeof value === 'string' ? value : '';
+                break;
+              default:
+                obj[key] = value;
+            }
+          });
+          return obj;
+        });
+
+        const prettyJson = JSON.stringify(processedData, null, 2);
+        jsonOutput.textContent = prettyJson;
+        jsonOutputContainer.classList.remove('hidden');
+      }
+
+      function copyJsonToClipboard() {
+        navigator.clipboard.writeText(jsonOutput.textContent).then(() => {
+          alert('JSON copiado al portapapeles!');
+        }).catch(err => {
+          console.error('Error al copiar el JSON: ', err);
+          alert('Error al copiar el JSON.');
+        });
+      }
+
+      function showError(message) {
+        errorText.textContent = message;
+        errorMessage.classList.remove('hidden');
+        jsonOutputContainer.classList.add('hidden'); // Ocultar el JSON si hay error
+      }
+
+      function hideError() {
+        errorMessage.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>
