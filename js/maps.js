@@ -108,8 +108,8 @@ function setupEventListeners() {
   // Evento de búsqueda
   if (elements.searchForm) {
     elements.searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    handleSearch();
+      e.preventDefault();
+      handleSearch();
     });
   }
 
@@ -270,7 +270,7 @@ function filterMaps() {
     // Map schema helpers: compatibilidad con esquema antiguo y nuevo
     const mapCategory = map.section || map.categoria || '';
     const mapTitle = map.title || map.titulo || '';
-    const mapKeywords = Array.isArray(map.keywords) ? map.keywords : (typeof map.keywords === 'string' ? map.keywords.split(';').map(k=>k.trim()).filter(Boolean) : (map.keywords || []));
+    const mapKeywords = Array.isArray(map.keywords) ? map.keywords : (typeof map.keywords === 'string' ? map.keywords.split(';').map(k => k.trim()).filter(Boolean) : (map.keywords || []));
 
     // Filtrar por categoría rápida
     if (category !== 'Todos' && mapCategory !== category) {
@@ -563,14 +563,6 @@ function openMapModal(index) {
     document.body.appendChild(elements.modal);
   }
 
-  // Formatear fecha para visualización
- /*  const fecha = new Date(map.fecha_actualizacion);
-  const fechaFormateada = fecha.toLocaleDateString('es-AR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric'
-  }); */
-
   // Determinar si estamos en viewport móvil
   const isMobile = window.innerWidth < 900;
 
@@ -580,90 +572,120 @@ function openMapModal(index) {
     const mobileImage = map.image || map.ruta_imagen || '';
     const mobileDownload = map.download || map.download_link || map.ruta_descarga || mobileImage;
     elements.modal.innerHTML = `
-      <div class="modal-mobile">
-        <img src="${mobileImage}" alt="${map.title || map.titulo}">
-        <div class="modal-mobile-actions">
-          <button class="close-modal-btn">×</button>
-          <a href="${mobileDownload}" download class="download-btn" target="_blank">
-            <i class='bx bx-download'></i> Descargar
-          </a>
-          <a href="${mobileImage}" class="view-btn" target="_blank">
-            <i class='bx bx-window-open'></i> Ver
-          </a>
-        </div>
+      <div class="modal-mobile" style="position:relative;">
+      <img src="${mobileImage}" alt="${map.title || map.titulo}">
+      <button class="close-modal-btn" style="
+        position:absolute;
+        top:12px;
+        right:12px;
+        width:40px;
+        height:40px;
+        font-size:28px;
+        background:rgba(0,0,0,0.5);
+        color:white;
+        border:none;
+        border-radius:50%;
+        cursor:pointer;
+        z-index:1201;
+      ">×</button>
+      <div class="modal-mobile-actions" style="
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:18px;
+        display:flex;
+        justify-content:center;
+        z-index:1200;
+      ">
+        <a href="${mobileDownload}" download class="download-btn" target="_blank" style="
+        display:flex;
+        align-items:center;
+        gap:6px;
+        background:#1976d2;
+        color:white;
+        border:none;
+        border-radius:24px;
+        padding:10px 22px;
+        font-size:16px;
+        text-decoration:none;
+        box-shadow:0 2px 8px rgba(0,0,0,0.12);
+        ">
+        <i class='bx bx-download'></i> Descargar
+        </a>
+      </div>
       </div>
     `;
-  // Añadir botones overlay chevron para navegación móvil
-  const mobilePrev = document.createElement('button');
-  mobilePrev.setAttribute('aria-label', 'Anterior');
-  mobilePrev.className = 'modal-nav-btn prev-map-btn overlay left';
-  // Inline styles: colocados dentro del modal, en la parte inferior para no tapar la imagen
-  mobilePrev.setAttribute('style', [
-    'position:absolute',
-    'bottom:18px',
-    'left:12px',
-    'width:48px',
-    'height:48px',
-    'display:flex',
-    'align-items:center',
-    'justify-content:center',
-    'background:transparent',
-    'border:none',
-    'padding:0',
-    'cursor:pointer',
-    'z-index:1200'
-  ].join(';'));
-  mobilePrev.innerHTML = `<i class='bx bx-chevron-left' style="font-size:30px;color:white;line-height:1;"></i>`;
+    // Añadir botones overlay chevron para navegación móvil
+    const mobilePrev = document.createElement('button');
+    mobilePrev.setAttribute('aria-label', 'Anterior');
+    mobilePrev.className = 'modal-nav-btn prev-map-btn overlay left';
+    // Inline styles: colocados dentro del modal, en la parte inferior para no tapar la imagen
+    mobilePrev.setAttribute('style', [
+      'position:absolute',
+      'bottom:18px',
+      'left:12px',
+      'width:48px',
+      'height:48px',
+      'display:flex',
+      'align-items:center',
+      'justify-content:center',
+      'background:transparent',
+      'border:none',
+      'padding:0',
+      'cursor:pointer',
+      'z-index:1200'
+    ].join(';'));
+    mobilePrev.innerHTML = `<i class='bx bx-chevron-left' style="font-size:30px;color:white;line-height:1;"></i>`;
 
-  const mobileNext = document.createElement('button');
-  mobileNext.setAttribute('aria-label', 'Siguiente');
-  mobileNext.className = 'modal-nav-btn next-map-btn overlay right';
-  mobileNext.setAttribute('style', [
-    'position:absolute',
-    'bottom:18px',
-    'right:12px',
-    'width:48px',
-    'height:48px',
-    'display:flex',
-    'align-items:center',
-    'justify-content:center',
-    'background:transparent',
-    'border:none',
-    'padding:0',
-    'cursor:pointer',
-    'z-index:1200'
-  ].join(';'));
-  mobileNext.innerHTML = `<i class='bx bx-chevron-right' style="font-size:30px;color:white;line-height:1;"></i>`;
+    const mobileNext = document.createElement('button');
+    mobileNext.setAttribute('aria-label', 'Siguiente');
+    mobileNext.className = 'modal-nav-btn next-map-btn overlay right';
+    mobileNext.setAttribute('style', [
+      'position:absolute',
+      'bottom:18px',
+      'right:12px',
+      'width:48px',
+      'height:48px',
+      'display:flex',
+      'align-items:center',
+      'justify-content:center',
+      'background:transparent',
+      'border:none',
+      'padding:0',
+      'cursor:pointer',
+      'z-index:1200'
+    ].join(';'));
+    mobileNext.innerHTML = `<i class='bx bx-chevron-right' style="font-size:30px;color:white;line-height:1;"></i>`;
 
-  // Deshabilitar según posición
-  if (idx === 0) {
-    mobilePrev.disabled = true;
-    mobilePrev.style.opacity = '0.4';
-    mobilePrev.style.pointerEvents = 'none';
-  }
-  if (idx === app.filteredMaps.length - 1) {
-    mobileNext.disabled = true;
-    mobileNext.style.opacity = '0.4';
-    mobileNext.style.pointerEvents = 'none';
-  }
+    // Deshabilitar según posición
+    if (idx === 0) {
+      mobilePrev.disabled = true;
+      mobilePrev.style.opacity = '0.4';
+      mobilePrev.style.pointerEvents = 'none';
+    }
+    if (idx === app.filteredMaps.length - 1) {
+      mobileNext.disabled = true;
+      mobileNext.style.opacity = '0.4';
+      mobileNext.style.pointerEvents = 'none';
+    }
 
-  // Hover color change (no CSS :hover porque usamos estilos inline)
-  const mobilePrevIcon = mobilePrev.querySelector('i');
-  const mobileNextIcon = mobileNext.querySelector('i');
-  if (mobilePrevIcon) {
-    mobilePrev.addEventListener('mouseenter', () => mobilePrevIcon.style.color = '#d3d3d3');
-    mobilePrev.addEventListener('mouseleave', () => mobilePrevIcon.style.color = 'white');
-  }
-  if (mobileNextIcon) {
-    mobileNext.addEventListener('mouseenter', () => mobileNextIcon.style.color = '#d3d3d3');
-    mobileNext.addEventListener('mouseleave', () => mobileNextIcon.style.color = 'white');
-  }
+    // Hover color change (no CSS :hover porque usamos estilos inline)
+    const mobilePrevIcon = mobilePrev.querySelector('i');
+    const mobileNextIcon = mobileNext.querySelector('i');
+    if (mobilePrevIcon) {
+      mobilePrev.addEventListener('mouseenter', () => mobilePrevIcon.style.color = '#d3d3d3');
+      mobilePrev.addEventListener('mouseleave', () => mobilePrevIcon.style.color = 'white');
+    }
+    if (mobileNextIcon) {
+      mobileNext.addEventListener('mouseenter', () => mobileNextIcon.style.color = '#d3d3d3');
+      mobileNext.addEventListener('mouseleave', () => mobileNextIcon.style.color = 'white');
+    }
 
-  elements.modal.appendChild(mobilePrev);
-  elements.modal.appendChild(mobileNext);
+    elements.modal.appendChild(mobilePrev);
+    elements.modal.appendChild(mobileNext);
 
-  if (!mobilePrev.disabled) mobilePrev.addEventListener('click', () => openMapModal(idx - 1));
-  if (!mobileNext.disabled) mobileNext.addEventListener('click', () => openMapModal(idx + 1));
+    if (!mobilePrev.disabled) mobilePrev.addEventListener('click', () => openMapModal(idx - 1));
+    if (!mobileNext.disabled) mobileNext.addEventListener('click', () => openMapModal(idx + 1));
   } else {
     // Versión desktop (modal con aside lateral)
     const desktopImage = map.image || map.ruta_imagen || '';
@@ -674,121 +696,147 @@ function openMapModal(index) {
     const section = map.section || map.categoria || '';
     const publication = map.publication || map.publicacion || '';
     const link = map.link || map.enlace || '';
-    
+    const citation = `${author} (${year}). ${title} [Mapa]. ${section}: ${publication}. ANIDA. Atlas Nacional Interactivo de Argentina. ${link}`;
+
     elements.modal.innerHTML = `
       <div class="modal-img-container">
-        <img src="${desktopImage}" alt="${title}">
+      <img src="${desktopImage}" alt="${title}">
       </div>
       <aside class="modal-aside">
-        <div class="modal-info">
-          <h4>${title}</h4>
-          ${author ? `<p class="map-author"><strong>Autor:</strong> ${author}</p>` : ''}
-          
-          <div class="map-metadata">
-            ${section ? `<div class="metadata-item">
-              <strong>Sección:</strong> ${section}
-            </div>` : ''}
-            ${publication ? `<div class="metadata-item">
-              <strong>Publicación:</strong> ${publication}
-            </div>` : ''}
-            ${year ? `<div class="metadata-item">
-              <strong>Año:</strong> ${year}
-            </div>` : ''}
-            ${link ? `<div class="metadata-item">
-              <strong>Enlace:</strong> <a href="${link}" target="_blank" rel="noopener">Ver publicación</a>
-            </div>` : ''}
-          </div>
-        </div>
+      <div class="modal-info">
+        <h4>${title}</h4>
         
-        <div class="modal-actions">
-          <div class="modal-download">
-            <a href="${desktopDownload}" download class="download-btn" target="_blank">
-              <i class='bx bx-download'></i> Descargar
-            </a>
-          </div>
-          
-          <button class="close-modal-btn">×</button>
+        <div class="map-metadata">
+        <div class="metadata-item">
+          ${author && section
+        ? `<p class="map-author" id="map-citation">
+              <strong>Como citar:</strong> ${author} (${year}). ${title} [Mapa]. ${section}: ${publication}. ANIDA. Atlas Nacional Interactivo de Argentina. <a href="${link}" target="_blank" rel="noopener">Enlace</a>
+            </p>
+            <button class="copy-citation-btn" style="margin-top:8px;">Copiar cita</button>`
+        : ''
+      }
         </div>
+        </div>
+      </div>
+      
+      <div class="modal-actions">
+        <div class="modal-download">
+        <a href="${desktopDownload}" download class="download-btn" target="_blank">
+          <i class='bx bx-download'></i> Descargar
+        </a>
+        ${link
+        ? `<a href="${link}" target="_blank" class="view-btn" rel="noopener">
+            <i class='bx bx-link-external'></i>Ver publicación
+            </a>`
+        : ''
+      }
+        </div>
+      </div>
+      
+      <button class="close-modal-btn">×</button>
       </aside>
     `;
 
+    // Botón copiar cita
+    const copyBtn = elements.modal.querySelector('.copy-citation-btn');
+    if (copyBtn) {
+      // Cambiar el contenido del botón a solo icono y texto
+      copyBtn.innerHTML = `<i class='bx bx-copy'></i> Copiar cita`;
+      copyBtn.addEventListener('click', () => {
+        const citationEl = elements.modal.querySelector('#map-citation');
+        if (citationEl) {
+          let citationText = citationEl.textContent || '';
+          const linkEl = citationEl.querySelector('a');
+          if (linkEl) {
+            citationText = citationText.replace(linkEl.textContent, linkEl.href);
+          }
+          navigator.clipboard.writeText(citation).then(() => {
+            copyBtn.innerHTML = `<i class='bx bx-check'></i> ¡Copiado!`;
+            setTimeout(() => {
+              copyBtn.innerHTML = `<i class='bx bx-copy'></i> Copiar cita`;
+            }, 1200);
+          });
+        }
+      });
+    }
+
     // Event listeners para navegación entre mapas
-  // Crear y añadir botones overlay chevron a izquierda/derecha (desktop)
-  const prevBtn = document.createElement('button');
-  prevBtn.setAttribute('aria-label', 'Anterior');
-  prevBtn.className = 'modal-nav-btn prev-map-btn overlay left';
-  // Inline styles: fijados a la pantalla, centrados verticalmente
-  prevBtn.setAttribute('style', [
-    'position:fixed',
-    'top:50%',
-    'left:8px',
-    'transform:translateY(-50%)',
-    'width:48px',
-    'height:48px',
-    'min-width:40px',
-    'min-height:40px',
-    'display:flex',
-    'align-items:center',
-    'justify-content:center',
-    'background:transparent',
-    'border:none',
-    'padding:0',
-    'cursor:pointer',
-    'z-index:1200'
-  ].join(';'));
-  prevBtn.innerHTML = `<i class='bx bx-chevron-left' style="font-size:30px;color:white;line-height:1;"></i>`;
+    // Crear y añadir botones overlay chevron a izquierda/derecha (desktop)
+    const prevBtn = document.createElement('button');
+    prevBtn.setAttribute('aria-label', 'Anterior');
+    prevBtn.className = 'modal-nav-btn prev-map-btn overlay left';
+    // Inline styles: fijados a la pantalla, centrados verticalmente
+    prevBtn.setAttribute('style', [
+      'position:fixed',
+      'top:50%',
+      'left:8px',
+      'transform:translateY(-50%)',
+      'width:48px',
+      'height:48px',
+      'min-width:40px',
+      'min-height:40px',
+      'display:flex',
+      'align-items:center',
+      'justify-content:center',
+      'background:transparent',
+      'border:none',
+      'padding:0',
+      'cursor:pointer',
+      'z-index:1200'
+    ].join(';'));
+    prevBtn.innerHTML = `<i class='bx bx-chevron-left' style="font-size:60px;color:white;line-height:1;"></i>`;
 
-  const nextBtn = document.createElement('button');
-  nextBtn.setAttribute('aria-label', 'Siguiente');
-  nextBtn.className = 'modal-nav-btn next-map-btn overlay right';
-  nextBtn.setAttribute('style', [
-    'position:fixed',
-    'top:50%',
-    'right:8px',
-    'transform:translateY(-50%)',
-    'width:48px',
-    'height:48px',
-    'min-width:40px',
-    'min-height:40px',
-    'display:flex',
-    'align-items:center',
-    'justify-content:center',
-    'background:transparent',
-    'border:none',
-    'padding:0',
-    'cursor:pointer',
-    'z-index:1200'
-  ].join(';'));
-  nextBtn.innerHTML = `<i class='bx bx-chevron-right' style="font-size:30px;color:white;line-height:1;"></i>`;
+    const nextBtn = document.createElement('button');
+    nextBtn.setAttribute('aria-label', 'Siguiente');
+    nextBtn.className = 'modal-nav-btn next-map-btn overlay right';
+    nextBtn.setAttribute('style', [
+      'position:fixed',
+      'top:50%',
+      'right:8px',
+      'transform:translateY(-50%)',
+      'width:48px',
+      'height:48px',
+      'min-width:40px',
+      'min-height:40px',
+      'display:flex',
+      'align-items:center',
+      'justify-content:center',
+      'background:transparent',
+      'border:none',
+      'padding:0',
+      'cursor:pointer',
+      'z-index:1200'
+    ].join(';'));
+    nextBtn.innerHTML = `<i class='bx bx-chevron-right' style="font-size:60px;color:white;line-height:1;"></i>`;
 
-  if (idx === 0) {
-    prevBtn.disabled = true;
-    prevBtn.style.opacity = '0.4';
-    prevBtn.style.pointerEvents = 'none';
-  }
-  if (idx === app.filteredMaps.length - 1) {
-    nextBtn.disabled = true;
-    nextBtn.style.opacity = '0.4';
-    nextBtn.style.pointerEvents = 'none';
-  }
+    if (idx === 0) {
+      prevBtn.disabled = true;
+      prevBtn.style.opacity = '0.4';
+      prevBtn.style.pointerEvents = 'none';
+    }
+    if (idx === app.filteredMaps.length - 1) {
+      nextBtn.disabled = true;
+      nextBtn.style.opacity = '0.4';
+      nextBtn.style.pointerEvents = 'none';
+    }
 
-  // Hover color change for icons
-  const prevIcon = prevBtn.querySelector('i');
-  const nextIcon = nextBtn.querySelector('i');
-  if (prevIcon) {
-    prevBtn.addEventListener('mouseenter', () => prevIcon.style.color = '#d3d3d3');
-    prevBtn.addEventListener('mouseleave', () => prevIcon.style.color = 'white');
-  }
-  if (nextIcon) {
-    nextBtn.addEventListener('mouseenter', () => nextIcon.style.color = '#d3d3d3');
-    nextBtn.addEventListener('mouseleave', () => nextIcon.style.color = 'white');
-  }
+    // Hover color change for icons
+    const prevIcon = prevBtn.querySelector('i');
+    const nextIcon = nextBtn.querySelector('i');
+    if (prevIcon) {
+      prevBtn.addEventListener('mouseenter', () => prevIcon.style.color = '#d3d3d3');
+      prevBtn.addEventListener('mouseleave', () => prevIcon.style.color = 'white');
+    }
+    if (nextIcon) {
+      nextBtn.addEventListener('mouseenter', () => nextIcon.style.color = '#d3d3d3');
+      nextBtn.addEventListener('mouseleave', () => nextIcon.style.color = 'white');
+    }
 
-  elements.modal.appendChild(prevBtn);
-  elements.modal.appendChild(nextBtn);
+    elements.modal.appendChild(prevBtn);
+    elements.modal.appendChild(nextBtn);
 
-  if (!prevBtn.disabled) prevBtn.addEventListener('click', () => openMapModal(idx - 1));
-  if (!nextBtn.disabled) nextBtn.addEventListener('click', () => openMapModal(idx + 1));
+    if (!prevBtn.disabled) prevBtn.addEventListener('click', () => openMapModal(idx - 1));
+    if (!nextBtn.disabled) nextBtn.addEventListener('click', () => openMapModal(idx + 1));
   }
 
   // Event listener para cerrar modal
