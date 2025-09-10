@@ -76,10 +76,17 @@
   background: transparent;
 }
 .modal-img-container img {
-  max-height: 100vh;
+  max-height: 90vh;
   width: auto;
   border-radius: 8px;
   box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+}
+
+.modal-desktop.modal-desktop-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
 }
 
 /* Aside lateral en modal */
@@ -310,6 +317,129 @@
 .metadata-item {
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 0.5rem;
+}
+
+/* Botones de navegación overlay */
+.modal-nav-btn {
+  width: 48px;
+  height: 48px;
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+.modal-nav-btn:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.modal-nav-btn i {
+  font-size: 30px;
+  color: white;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.modal-nav-btn:hover:not(:disabled) i {
+  color: #d3d3d3;
+}
+
+/* Desktop navigation buttons */
+.modal-nav-btn.desktop {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-nav-btn.desktop.left {
+  left: 8px;
+}
+
+.modal-nav-btn.desktop.right {
+  right: 8px;
+}
+
+.modal-nav-btn.desktop i {
+  font-size: 60px;
+}
+
+/* Mobile navigation buttons */
+.modal-nav-btn.mobile {
+  position: absolute;
+  bottom: 18px;
+}
+
+.modal-nav-btn.mobile.left {
+  left: 12px;
+}
+
+.modal-nav-btn.mobile.right {
+  right: 12px;
+}
+
+/* Mobile modal styles */
+.modal-mobile-container {
+  position: relative;
+}
+
+.modal-mobile-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  font-size: 28px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1201;
+}
+
+.modal-mobile-actions-centered {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  display: flex;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.modal-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 22px;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.copy-citation-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
 }
 
 /* Estilos responsive */
