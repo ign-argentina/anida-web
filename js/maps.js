@@ -661,7 +661,9 @@ function createDesktopModalContent(map) {
     </div>
     <aside class="modal-aside">
       <div class="modal-info">
-        <h4>${title}</h4>
+        <h5 style="color: grey">${section}</h5>
+        <h6 style="color: grey">${publication}</h6>
+        <h4 style="margin-top: 0.5rem;">${title}</h4>
         <div class="map-metadata">
           <div class="metadata-item">
             ${author && section ? `
