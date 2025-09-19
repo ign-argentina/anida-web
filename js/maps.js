@@ -399,7 +399,7 @@ function createMapThumbnail(map, index) {
   const miniatura = document.createElement('div');
   const normalizedMap = normalizeMapData(map);
 
-  miniatura.className = 'miniatura';
+  miniatura.className = 'flex-item';
   miniatura.setAttribute('data-index', index);
 
   if (map.id) {
@@ -407,12 +407,20 @@ function createMapThumbnail(map, index) {
   }
 
   miniatura.innerHTML = `
-    <img src="${normalizedMap.image}" alt="${normalizedMap.title}" loading="lazy">
-    <div class="miniatura-titulo">${normalizedMap.title}</div>
+    <a href="#" title="${normalizedMap.title}" data-tracking-category="maps" data-tracking-action="click" data-tracking-label="${normalizedMap.title}">
+      <div class="icon-box">
+        <div class="icon">
+          <img src="${normalizedMap.image}" alt="${normalizedMap.title}" loading="lazy">
+        </div>
+        <h5>${normalizedMap.title}</h5>
+      </div>
+    </a>
   `;
 
   // Event listener para abrir modal
-  miniatura.addEventListener('click', () => {
+  const link = miniatura.querySelector('a');
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
     // Si hay id, abrir modal usando id para garantizar unicidad
     const modalId = map.id ? map.id : index;
     openMapModal(modalId);
@@ -658,7 +666,7 @@ function createDesktopModalContent(map) {
           <div class="metadata-item">
             ${author && section ? `
               <p class="map-author" id="map-citation">
-                <strong>Como citar:</strong> ${author} (${year}). ${title} [Mapa]. ${section}: ${publication}. ANIDA. Atlas Nacional Interactivo de Argentina. <a href="${link}" target="_blank" rel="noopener">Enlace</a>
+                <strong>Referencia bibliográfica:</strong> ${author} (${year}). <i>${title}</i> [Mapa]. ${section}: ${publication}. ANIDA. Atlas Nacional Interactivo de Argentina. <a href="${link}" target="_blank" rel="noopener" style="word-break: break-all;">${link}</a>
               </p>
               <button class="copy-citation-btn">
                 <i class='bx bx-copy'></i> Copiar cita

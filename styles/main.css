@@ -222,6 +222,7 @@ section#ejes {
   max-width: 250px;
   width: 100%;
   height: auto;
+  max-height: 337px;
   display: block;
   margin: 0 auto;
 }
