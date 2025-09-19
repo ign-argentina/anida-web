@@ -79,11 +79,9 @@
 
 /* Estilos para búsqueda y filtros */
 .search-container {
-  background: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .quick-filters {
@@ -91,6 +89,8 @@
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
   margin-top: 1rem;
+  justify-content: center;
+  max-width: 900px;
 }
 
 .form-check-input:checked {
@@ -276,6 +276,7 @@ a.download-btn:hover, a.view-btn:hover, #load-more-btn:hover {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  justify-content: space-around;
 }
 
 .map-metadata {
