@@ -240,7 +240,7 @@ a.download-btn:hover, a.view-btn:hover, #load-more-btn:hover {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;

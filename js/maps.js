@@ -22,7 +22,8 @@ const app = {
       tipoMapa: []
     }
   },
-  currentModalIndex: 0 // Índice del mapa actual en modal
+  currentModalIndex: 0, // Índice del mapa actual en modal
+  modalKeyHandler: null // Referencia al handler de teclado del modal
 };
 
 // Helper: buscar índice en filteredMaps por id
@@ -184,13 +185,6 @@ function setupEventListeners() {
   if (elements.clearFiltersBtn) {
     elements.clearFiltersBtn.addEventListener('click', clearAllFilters);
   }
-
-  // Cerrar modal con Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && elements.modal) {
-      closeModal();
-    }
-  });
 }
 
 /**
@@ -579,22 +573,40 @@ function clearAllFilters() {
  * @param {string} direction - 'prev' o 'next'
  * @param {boolean} isMobile - Si es versión móvil
  * @param {number} idx - Índice actual
- * @returns {HTMLElement} - Elemento botón
+ * @returns {HTMLElement|null} - Elemento botón o null si hay error
  */
 function createNavButton(direction, isMobile, idx) {
+  // Validaciones
+  if (!direction || (direction !== 'prev' && direction !== 'next')) {
+    console.warn('Dirección de botón inválida:', direction);
+    return null;
+  }
+  
+  if (typeof idx !== 'number' || idx < 0) {
+    console.warn('Índice inválido para botón de navegación:', idx);
+    return null;
+  }
+
+  if (!app.filteredMaps || app.filteredMaps.length === 0) {
+    console.warn('No hay mapas disponibles para crear botones de navegación');
+    return null;
+  }
+
   const button = document.createElement('button');
   const isPrev = direction === 'prev';
   const icon = isPrev ? 'bx-chevron-left' : 'bx-chevron-right';
   const label = isPrev ? 'Anterior' : 'Siguiente';
 
   button.setAttribute('aria-label', label);
+  button.setAttribute('type', 'button');
   button.className = `modal-nav-btn ${direction}-map-btn ${isMobile ? 'mobile' : 'desktop'} ${isPrev ? 'left' : 'right'}`;
   button.innerHTML = `<i class='bx ${icon}'></i>`;
 
   // Deshabilitar según posición
-  const shouldDisable = isPrev ? idx === 0 : idx === app.filteredMaps.length - 1;
+  const shouldDisable = isPrev ? (idx <= 0) : (idx >= app.filteredMaps.length - 1);
   if (shouldDisable) {
     button.disabled = true;
+    button.setAttribute('aria-disabled', 'true');
   }
 
   return button;
@@ -607,11 +619,192 @@ function createNavButton(direction, isMobile, idx) {
  * @param {number} idx - Índice actual
  */
 function setupNavListeners(prevBtn, nextBtn, idx) {
-  if (!prevBtn.disabled) {
-    prevBtn.addEventListener('click', () => openMapModal(idx - 1));
+  // Validar que los índices sean válidos
+  if (typeof idx !== 'number' || idx < 0 || idx >= app.filteredMaps.length) {
+    console.warn('Índice inválido para navegación:', idx);
+    return;
   }
-  if (!nextBtn.disabled) {
-    nextBtn.addEventListener('click', () => openMapModal(idx + 1));
+
+  // Limpiar listener de teclado anterior si existe
+  cleanupModalKeyHandler();
+
+  // Configurar botones de navegación
+  if (prevBtn && !prevBtn.disabled) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const newIdx = app.currentModalIndex - 1;
+      if (newIdx >= 0) {
+        updateModalContent(newIdx);
+      }
+    });
+  }
+  
+  if (nextBtn && !nextBtn.disabled) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const newIdx = app.currentModalIndex + 1;
+      if (newIdx < app.filteredMaps.length) {
+        updateModalContent(newIdx);
+      }
+    });
+  }
+
+  // Crear handler de teclado para navegación con flechas
+  app.modalKeyHandler = function(e) {
+    // Solo procesar si el modal está abierto y no hay inputs activos
+    if (!elements.modal || document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+      return;
+    }
+
+    const currentIdx = app.currentModalIndex;
+    
+    switch(e.key) {
+      case 'ArrowLeft':
+        e.preventDefault();
+        if (currentIdx > 0) {
+          updateModalContent(currentIdx - 1);
+        }
+        break;
+      case 'ArrowRight':
+        e.preventDefault();
+        if (currentIdx < app.filteredMaps.length - 1) {
+          updateModalContent(currentIdx + 1);
+        }
+        break;
+      case 'Escape':
+        e.preventDefault();
+        closeModal();
+        break;
+    }
+  };
+
+  // Agregar listener de teclado
+  document.addEventListener('keydown', app.modalKeyHandler);
+}
+
+/**
+ * Helper: Limpiar el handler de teclado del modal
+ */
+function cleanupModalKeyHandler() {
+  if (app.modalKeyHandler) {
+    document.removeEventListener('keydown', app.modalKeyHandler);
+    app.modalKeyHandler = null;
+  }
+}
+
+/**
+ * Helper: Actualizar solo el contenido del modal existente
+ * @param {number} idx - Índice del mapa a mostrar
+ */
+function updateModalContent(idx) {
+  if (!elements.modal || idx < 0 || idx >= app.filteredMaps.length) {
+    return;
+  }
+
+  const map = app.filteredMaps[idx];
+  if (!map) {
+    console.error('Mapa no encontrado en índice:', idx);
+    return;
+  }
+
+  // Actualizar índice actual
+  app.currentModalIndex = idx;
+
+  // Determinar si estamos en viewport móvil
+  const isMobile = window.innerWidth < 900;
+
+  // Buscar el contenedor de contenido del modal
+  const existingContent = elements.modal.querySelector('.modal-mobile, .modal-desktop');
+  if (!existingContent) {
+    console.warn('No se encontró contenido del modal para actualizar');
+    return;
+  }
+
+  try {
+    // Crear nuevo contenido
+    if (isMobile) {
+      existingContent.outerHTML = createMobileModalContent(map);
+    } else {
+      const { html, citation } = createDesktopModalContent(map);
+      existingContent.outerHTML = html;
+      setupCopyButton(citation);
+    }
+
+    // Actualizar botones de navegación
+    updateNavigationButtons(idx, isMobile);
+
+    // Reconfigurar el listener del botón cerrar
+    const closeBtn = elements.modal.querySelector('.close-modal-btn');
+    if (closeBtn) {
+      // Remover listeners existentes clonando el elemento
+      const newCloseBtn = closeBtn.cloneNode(true);
+      closeBtn.parentNode.replaceChild(newCloseBtn, closeBtn);
+      
+      newCloseBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+  } catch (error) {
+    console.error('Error al actualizar contenido del modal:', error);
+  }
+}
+
+/**
+ * Helper: Actualizar estado de los botones de navegación
+ * @param {number} idx - Índice actual
+ * @param {boolean} isMobile - Si es versión móvil
+ */
+function updateNavigationButtons(idx, isMobile) {
+  const prevBtn = elements.modal.querySelector('.prev-map-btn');
+  const nextBtn = elements.modal.querySelector('.next-map-btn');
+
+  if (prevBtn) {
+    const shouldDisable = idx <= 0;
+    prevBtn.disabled = shouldDisable;
+    prevBtn.setAttribute('aria-disabled', shouldDisable ? 'true' : 'false');
+    
+    // Limpiar listeners existentes clonando el elemento
+    const newPrevBtn = prevBtn.cloneNode(true);
+    prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+    
+    // Agregar nuevo listener si no está deshabilitado
+    if (!shouldDisable) {
+      newPrevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const newIdx = app.currentModalIndex - 1;
+        if (newIdx >= 0) {
+          updateModalContent(newIdx);
+        }
+      });
+    }
+  }
+
+  if (nextBtn) {
+    const shouldDisable = idx >= app.filteredMaps.length - 1;
+    nextBtn.disabled = shouldDisable;
+    nextBtn.setAttribute('aria-disabled', shouldDisable ? 'true' : 'false');
+    
+    // Limpiar listeners existentes clonando el elemento
+    const newNextBtn = nextBtn.cloneNode(true);
+    nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+    
+    // Agregar nuevo listener si no está deshabilitado
+    if (!shouldDisable) {
+      newNextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const newIdx = app.currentModalIndex + 1;
+        if (newIdx < app.filteredMaps.length) {
+          updateModalContent(newIdx);
+        }
+      });
+    }
   }
 }
 
@@ -719,55 +912,97 @@ function setupCopyButton(citation) {
 
 /**
  * Abre el modal con el mapa seleccionado
- * @param {number} index - Índice del mapa en la lista filtrada
+ * @param {number|string} index - Índice del mapa en la lista filtrada o ID del mapa
  */
 function openMapModal(index) {
-  // index puede ser numérico (índice) o un id (string)
-  let idx = typeof index === 'number' ? index : findIndexById(index);
-  if (idx === -1) {
-    // intentar interpretar como número
-    const asNum = parseInt(index, 10);
-    if (!isNaN(asNum) && app.filteredMaps[asNum]) idx = asNum;
+  // Validar que existen mapas filtrados
+  if (!app.filteredMaps || app.filteredMaps.length === 0) {
+    console.warn('No hay mapas disponibles para mostrar en modal');
+    return;
   }
 
-  if (idx < 0 || idx >= app.filteredMaps.length) return;
+  // Determinar índice real
+  let idx;
+  if (typeof index === 'number') {
+    idx = index;
+  } else {
+    // Intentar encontrar por ID
+    idx = findIndexById(index);
+    if (idx === -1) {
+      // Como fallback, intentar parsear como número
+      const asNum = parseInt(index, 10);
+      if (!isNaN(asNum) && asNum >= 0 && asNum < app.filteredMaps.length) {
+        idx = asNum;
+      }
+    }
+  }
 
-  app.currentModalIndex = idx;
+  // Validar índice final
+  if (typeof idx !== 'number' || idx < 0 || idx >= app.filteredMaps.length) {
+    console.warn('Índice de mapa inválido:', index, 'Calculado:', idx);
+    return;
+  }
+
   const map = app.filteredMaps[idx];
-
-  // Crear modal si no existe
-  if (!elements.modal) {
-    elements.modal = document.createElement('div');
-    elements.modal.className = 'modal-fullscreen';
-    document.body.appendChild(elements.modal);
+  if (!map) {
+    console.error('Mapa no encontrado en índice:', idx);
+    return;
   }
+
+  // Si el modal ya existe, solo actualizar contenido
+  if (elements.modal) {
+    updateModalContent(idx);
+    return;
+  }
+
+  // Crear nuevo modal solo si no existe
+  elements.modal = document.createElement('div');
+  elements.modal.className = 'modal-fullscreen';
+  document.body.appendChild(elements.modal);
+
+  // Actualizar índice actual
+  app.currentModalIndex = idx;
 
   // Determinar si estamos en viewport móvil
   const isMobile = window.innerWidth < 900;
 
-  // Crear contenido del modal
-  if (isMobile) {
-    elements.modal.innerHTML = createMobileModalContent(map);
-  } else {
-    const { html, citation } = createDesktopModalContent(map);
-    elements.modal.innerHTML = html;
-    setupCopyButton(citation);
+  try {
+    // Crear contenido del modal
+    if (isMobile) {
+      elements.modal.innerHTML = createMobileModalContent(map);
+    } else {
+      const { html, citation } = createDesktopModalContent(map);
+      elements.modal.innerHTML = html;
+      setupCopyButton(citation);
+    }
+
+    // Crear y configurar botones de navegación
+    const prevBtn = createNavButton('prev', isMobile, idx);
+    const nextBtn = createNavButton('next', isMobile, idx);
+
+    if (prevBtn && nextBtn) {
+      elements.modal.appendChild(prevBtn);
+      elements.modal.appendChild(nextBtn);
+      setupNavListeners(prevBtn, nextBtn, idx);
+    }
+
+    // Event listener para cerrar modal
+    const closeBtn = elements.modal.querySelector('.close-modal-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    // Bloquear scroll en el body
+    document.body.style.overflow = 'hidden';
+
+  } catch (error) {
+    console.error('Error al crear contenido del modal:', error);
+    closeModal();
   }
-
-  // Crear y configurar botones de navegación
-  const prevBtn = createNavButton('prev', isMobile, idx);
-  const nextBtn = createNavButton('next', isMobile, idx);
-
-  elements.modal.appendChild(prevBtn);
-  elements.modal.appendChild(nextBtn);
-
-  setupNavListeners(prevBtn, nextBtn, idx);
-
-  // Event listener para cerrar modal
-  elements.modal.querySelector('.close-modal-btn').addEventListener('click', closeModal);
-
-  // Bloquear scroll en el body
-  document.body.style.overflow = 'hidden';
 }
 
 /**
@@ -775,8 +1010,15 @@ function openMapModal(index) {
  */
 function closeModal() {
   if (elements.modal) {
+    // Limpiar event listeners de teclado
+    cleanupModalKeyHandler();
+    
+    // Remover modal del DOM
     document.body.removeChild(elements.modal);
     elements.modal = null;
+    
+    // Resetear índice del modal
+    app.currentModalIndex = 0;
 
     // Restaurar scroll
     document.body.style.overflow = '';
