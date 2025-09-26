@@ -727,9 +727,9 @@ function updateModalContent(idx) {
     if (isMobile) {
       existingContent.outerHTML = createMobileModalContent(map);
     } else {
-      const { html, citation } = createDesktopModalContent(map);
+      const { html, citationText, citationHTML } = createDesktopModalContent(map);
       existingContent.outerHTML = html;
-      setupCopyButton(citation);
+      setupCopyButton(citationText, citationHTML);
     }
 
     // Actualizar botones de navegación
@@ -845,7 +845,9 @@ function createDesktopModalContent(map) {
   const publication = map.publication || map.publicacion || '';
   const link = map.link || map.enlace || '';
 
-  const citation = `${author} (${year}). ${title} [Mapa]. ${section}: ${publication}. ANIDA. Atlas Nacional Interactivo de Argentina. ${link}`;
+  // Crear tanto la versión de texto plano como la de HTML para la cita
+  const citationText = `${author} (${year}). ${title} [Mapa]. ${section}: ${publication}. ANIDA. Atlas Nacional Interactivo de Argentina. ${link}`;
+  const citationHTML = `${author} (${year}). <i>${title}</i> [Mapa]. ${section}: ${publication}. ANIDA. Atlas Nacional Interactivo de Argentina. ${link}`;
 
   const html = `
   <div class="modal-desktop modal-desktop-container">
@@ -889,23 +891,61 @@ function createDesktopModalContent(map) {
   </div>
   `;
 
-  return { html, citation };
+  return { html, citationText, citationHTML };
 }
 
 /**
  * Helper: Configurar botón de copiar cita
- * @param {string} citation - Texto de la cita
+ * @param {string} citationText - Texto plano de la cita
+ * @param {string} citationHTML - Versión HTML de la cita con formato
  */
-function setupCopyButton(citation) {
+function setupCopyButton(citationText, citationHTML) {
   const copyBtn = elements.modal.querySelector('.copy-citation-btn');
-  if (copyBtn) {
+  if (copyBtn && citationHTML) {
     copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(citation).then(() => {
-        copyBtn.innerHTML = `<i class='bx bx-check'></i> ¡Copiado!`;
-        setTimeout(() => {
-          copyBtn.innerHTML = `<i class='bx bx-copy'></i> Copiar cita`;
-        }, 1200);
-      });
+      // Usar Clipboard API con HTML si está disponible
+      if (navigator.clipboard && navigator.clipboard.write) {
+        try {
+          const blob = new Blob([citationHTML], { type: 'text/html' });
+          const textBlob = new Blob([citationText], { type: 'text/plain' });
+          const data = [new ClipboardItem({ 
+            'text/html': blob,
+            'text/plain': textBlob
+          })];
+          
+          navigator.clipboard.write(data).then(() => {
+            copyBtn.innerHTML = `<i class='bx bx-check'></i> ¡Copiado!`;
+            setTimeout(() => {
+              copyBtn.innerHTML = `<i class='bx bx-copy'></i> Copiar cita`;
+            }, 1200);
+          }).catch(() => {
+            // Fallback si falla el copiado con HTML
+            fallbackCopyText();
+          });
+        } catch (error) {
+          // Fallback si hay error en la creación del ClipboardItem
+          fallbackCopyText();
+        }
+      } else {
+        // Fallback: copiar solo texto plano
+        fallbackCopyText();
+      }
+      
+      function fallbackCopyText() {
+        navigator.clipboard.writeText(citationText).then(() => {
+          copyBtn.innerHTML = `<i class='bx bx-check'></i> ¡Copiado!`;
+          setTimeout(() => {
+            copyBtn.innerHTML = `<i class='bx bx-copy'></i> Copiar cita`;
+          }, 1200);
+        }).catch(() => {
+          // Último fallback: seleccionar texto manualmente
+          console.warn('Error al copiar al portapapeles');
+          copyBtn.innerHTML = `<i class='bx bx-x'></i> Error`;
+          setTimeout(() => {
+            copyBtn.innerHTML = `<i class='bx bx-copy'></i> Copiar cita`;
+          }, 1200);
+        });
+      }
     });
   }
 }
@@ -971,9 +1011,9 @@ function openMapModal(index) {
     if (isMobile) {
       elements.modal.innerHTML = createMobileModalContent(map);
     } else {
-      const { html, citation } = createDesktopModalContent(map);
+      const { html, citationText, citationHTML } = createDesktopModalContent(map);
       elements.modal.innerHTML = html;
-      setupCopyButton(citation);
+      setupCopyButton(citationText, citationHTML);
     }
 
     // Crear y configurar botones de navegación
