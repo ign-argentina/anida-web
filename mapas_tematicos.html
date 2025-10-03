@@ -102,9 +102,9 @@
                 <i class='bx bx-search'></i> Buscar
               </button>
             </div>
-            
+
             <!-- Filtros rápidos (categorías) -->
-            
+
             <div class="quick-filters">
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="category" id="cat-todos" value="Todos" checked>
@@ -131,7 +131,7 @@
                 <label class="form-check-label" for="cat-amb">Argentina ambiental</label>
               </div>
             </div>
-<!--
+
             <div class="accordion mt-3" id="advanced-search-accordion">
               <div class="accordion-item">
                 <h2 class="accordion-header">
@@ -142,9 +142,9 @@
                 <div id="collapseAdvanced" class="accordion-collapse collapse" data-bs-parent="#advanced-search-accordion">
                   <div class="accordion-body">
                     <p class="text-muted mb-3">Filtrar por múltiples criterios. Seleccione una o más opciones en cada categoría.</p>
-                    
+
                     <div class="row">
-                      <div class="col-md-6 mb-3">
+                      <!-- <div class="col-md-6 mb-3">
                         <h5 class="filter-title">Estructura temática</h5>
                         <div class="filter-group">
                           <div class="form-check">
@@ -168,9 +168,8 @@
                             <label class="form-check-label" for="estructura-5">Argentina ambiental</label>
                           </div>
                         </div>
-                      </div>
-                      
-                      
+                      </div> -->
+
                       <div class="col-md-6 mb-3">
                         <h5 class="filter-title">Escala espacial</h5>
                         <div class="filter-group">
@@ -204,8 +203,7 @@
                           </div>
                         </div>
                       </div>
-                      
-                      
+
                       <div class="col-md-6 mb-3">
                         <h5 class="filter-title">Escala temporal</h5>
                         <div class="filter-group">
@@ -223,9 +221,8 @@
                           </div>
                         </div>
                       </div>
-                      
-                      
-                      <div class="col-md-6 mb-3">
+
+                      <!-- <div class="col-md-6 mb-3">
                         <h5 class="filter-title">Tipo de fenómeno</h5>
                         <div class="filter-group">
                           <div class="form-check">
@@ -257,9 +254,9 @@
                             <label class="form-check-label" for="fenomeno-7">Espacio-temporal</label>
                           </div>
                         </div>
-                      </div>
-                      
-                      <div class="col-md-4 mb-3">
+                      </div> -->
+
+                      <!-- <div class="col-md-4 mb-3">
                         <h5 class="filter-title">Tipo de escala</h5>
                         <div class="filter-group">
                           <div class="form-check">
@@ -279,9 +276,9 @@
                             <label class="form-check-label" for="escala-4">De intervalo</label>
                           </div>
                         </div>
-                      </div>
-                      
-                      <div class="col-md-4 mb-3">
+                      </div> -->
+
+                      <!-- <div class="col-md-4 mb-3">
                         <h5 class="filter-title">Tipo de datos</h5>
                         <div class="filter-group">
                           <div class="form-check">
@@ -301,9 +298,9 @@
                             <label class="form-check-label" for="datos-4">Símbolos proporcionales</label>
                           </div>
                         </div>
-                      </div>
-                      
-                      <div class="col-md-4 mb-3">
+                      </div> -->
+
+                      <!-- <div class="col-md-4 mb-3">
                         <h5 class="filter-title">Tipo de mapa</h5>
                         <div class="filter-group">
                           <div class="form-check">
@@ -327,9 +324,9 @@
                             <label class="form-check-label" for="mapa-5">Cartograma</label>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
-                    
+
                     <div class="d-flex justify-content-end mt-3">
                       <button type="button" id="clear-advanced-btn" class="btn btn-outline-secondary me-2">Limpiar filtros avanzados</button>
                       <button type="button" id="apply-advanced-btn" class="btn btn-primary">Aplicar filtros</button>
@@ -338,25 +335,25 @@
                 </div>
               </div>
             </div>
-            -->
+
           </form>
         </div>
 
         <!-- Filtros activos -->
-        <!-- <div class="active-filters-container mt-3">
+        <div class="active-filters-container mt-3">
           <div id="active-filters" class="active-filters"></div>
           <button id="clear-filters-btn" class="btn btn-sm btn-outline-secondary">Limpiar todos</button>
         </div>
- -->
+
         <!-- Resultados -->
         <div class="results-container mt-4">
           <div class="results-header">
             <h3 id="results-count">0 resultados</h3>
           </div>
-          
+
           <!-- Grid de miniaturas -->
           <div id="results-grid" class="flex-container"></div>
-          
+
           <!-- Botón "Cargar más" -->
           <div class="d-flex justify-content-center mt-4 mb-5">
             <button id="load-more-btn" class="btn">Cargar más</button>

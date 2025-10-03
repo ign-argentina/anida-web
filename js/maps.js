@@ -315,12 +315,23 @@ function filterMaps() {
 
     // Filtrar por keyword si existe
     if (keyword) {
-      const normalizedKeyword = normalizeText(keyword);
+      // Dividir la búsqueda en términos individuales
+      const searchTerms = keyword.trim().split(/\s+/).map(term => normalizeText(term));
       const normalizedTitle = normalizeText(normalizedMap.title);
+      const normalizedKeywords = normalizedMap.keywords.map(k => normalizeText(k));
 
-      // Si no hay coincidencia en título ni keywords, excluir
-      if (!normalizedTitle.includes(normalizedKeyword) &&
-        !normalizedMap.keywords.some(k => normalizeText(k).includes(normalizedKeyword))) {
+      // Verificar si al menos uno de los términos aparece en el título o en alguna keyword
+      const hasMatch = searchTerms.some(term => {
+        // Buscar en el título
+        if (normalizedTitle.includes(term)) {
+          return true;
+        }
+        // Buscar en las keywords
+        return normalizedKeywords.some(keyword => keyword.includes(term));
+      });
+
+      // Si no hay coincidencia, excluir
+      if (!hasMatch) {
         return false;
       }
     }
