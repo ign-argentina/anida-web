@@ -37,6 +37,7 @@ const elements = {
   searchForm: null,
   keywordInput: null,
   searchButton: null,
+  clearKeywordBtn: null,
   categoryFilters: null,
   resultsCount: null,
   resultsGrid: null,
@@ -54,6 +55,7 @@ function initApp() {
   elements.searchForm = document.getElementById('search-form');
   elements.keywordInput = document.getElementById('keyword-input');
   elements.searchButton = document.querySelector('#search-form button[type="submit"]');
+  elements.clearKeywordBtn = document.getElementById('clear-keyword-btn');
   elements.categoryFilters = document.querySelectorAll('input[name="category"]');
   elements.resultsCount = document.getElementById('results-count');
   elements.resultsGrid = document.getElementById('results-grid');
@@ -121,11 +123,36 @@ function setupSearchListeners() {
       elements.searchButton.disabled = (elements.keywordInput.value || '').trim().length < 3;
     }
 
+    // Inicializar visibilidad del botón limpiar
+    if (elements.clearKeywordBtn) {
+      elements.clearKeywordBtn.style.display = (elements.keywordInput.value || '').trim().length > 0 ? 'inline-block' : 'none';
+      elements.clearKeywordBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        elements.keywordInput.value = '';
+        // Actualizar estado del botón de búsqueda
+        if (elements.searchButton) elements.searchButton.disabled = true;
+        // Ocultar el propio botón
+        elements.clearKeywordBtn.style.display = 'none';
+        // Actualizar filtros y resultados
+        app.activeFilters.keyword = '';
+        app.currentBatch = 0;
+        filterMaps();
+        renderMaps(true);
+        updateActiveFilters();
+        updateResultsCount();
+      });
+    }
+
     elements.keywordInput.addEventListener('input', (e) => {
       const val = (e.target.value || '').trim();
       // Habilitar solo si hay al menos 3 caracteres
       if (elements.searchButton) {
         elements.searchButton.disabled = val.length < 3;
+      }
+
+      // Mostrar/ocultar botón limpiar según contenido
+      if (elements.clearKeywordBtn) {
+        elements.clearKeywordBtn.style.display = val.length > 0 ? 'inline-block' : 'none';
       }
 
       // Búsqueda en vivo: actualizar filtros y resultados en cada cambio
