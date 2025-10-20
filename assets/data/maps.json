@@ -1818,34 +1818,35 @@
     "image": "https://static.ign.gob.ar/anida/02AFN/02geologiaarg/m_afn_geol_arg_pciasgeologicas_96.jpg",
     "download": "https://static.ign.gob.ar/anida/02AFN/02geologiaarg/m_afn_geol_arg_pciasgeologicas_300.jpg",
     "keywords": [
-      "Geología",
+      "geología",
       "Argentina",
-      "Provincias",
-      "Geológicas",
-      "Ubicación",
-      "Cuencas",
-      "Macizo",
-      "Cordillera",
-      "Sierras",
-      "Sistema",
-      "Región",
+      "provincia",
+      "geológica",
+      "ubicación",
+      "cuenca",
+      "macizo",
+      "cordillera",
+      "sierra",
+      "sistema",
+      "región",
       "Parte continental americana",
-      "Precordillera",
-      "Puna",
-      "Tandilia",
-      "Ventania",
-      "Mesopotamia"
+      "precordillera",
+      "puna",
+      "tandilia",
+      "ventania",
+      "mesopotamia: hidrogeología",
+      "hidrología"
     ],
     "keywords_search": [
       "geologia",
       "argentina",
-      "provincias",
-      "geologicas",
+      "provincia",
+      "geologica",
       "ubicacion",
-      "cuencas",
+      "cuenca",
       "macizo",
       "cordillera",
-      "sierras",
+      "sierra",
       "sistema",
       "region",
       "parte continental americana",
@@ -1853,7 +1854,8 @@
       "puna",
       "tandilia",
       "ventania",
-      "mesopotamia"
+      "mesopotamia hidrogeologia",
+      "hidrologia"
     ],
     "title": "Provincias geológicas",
     "title_search": "provincias geologicas",
@@ -1892,16 +1894,16 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/02geologiaarg/m_afn_geol_llano_clarom_300.jpg",
     "keywords": [
       "Argentina",
-      "Cuenca",
-      "Claromecó",
-      "Tandilia",
-      "Ventania",
-      "Sistemas",
-      "Sierras",
-      "Curvas",
-      "Frente",
-      "Mínimo",
-      "Gravimétrico"
+      "cuenca",
+      "claromecó",
+      "tandilia",
+      "ventania",
+      "sistema",
+      "sierra",
+      "curva",
+      "localidad",
+      "hidrogeología",
+      "hidrología"
     ],
     "keywords_search": [
       "argentina",
@@ -1909,12 +1911,12 @@
       "claromeco",
       "tandilia",
       "ventania",
-      "sistemas",
-      "sierras",
-      "curvas",
-      "frente",
-      "minimo",
-      "gravimetrico"
+      "sistema",
+      "sierra",
+      "curva",
+      "localidad",
+      "hidrogeologia",
+      "hidrologia"
     ],
     "title": "Cuenca de Claromecó",
     "title_search": "cuenca de claromeco",
@@ -1951,29 +1953,33 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/02geologiaarg/m_afn_geol_llano_sedimen_300.jpg",
     "keywords": [
       "Argentina",
-      "Cuencas",
-      "Sedimentarias",
-      "Llanura",
-      "Oriental",
-      "Curvas",
-      "Sierra",
-      "Elevaciones",
-      "Estructuras",
-      "Geología",
-      "Geológica"
+      "cuenca",
+      "sedimentaria",
+      "llanura",
+      "oriental",
+      "curva",
+      "sierra",
+      "elevación",
+      "estructura",
+      "geología",
+      "geológica",
+      "hidrogeología",
+      "hidrología"
     ],
     "keywords_search": [
       "argentina",
-      "cuencas",
-      "sedimentarias",
+      "cuenca",
+      "sedimentaria",
       "llanura",
       "oriental",
-      "curvas",
+      "curva",
       "sierra",
-      "elevaciones",
-      "estructuras",
+      "elevacion",
+      "estructura",
       "geologia",
-      "geologica"
+      "geologica",
+      "hidrogeologia",
+      "hidrologia"
     ],
     "title": "Cuencas sedimentarias de la Llanura oriental",
     "title_search": "cuencas sedimentarias de la llanura oriental",
@@ -2009,24 +2015,32 @@
     "image": "https://static.ign.gob.ar/anida/02AFN/02geologiaarg/m_afn_geol_llano_zonasmorfo_96.jpg",
     "download": "https://static.ign.gob.ar/anida/02AFN/02geologiaarg/m_afn_geol_llano_zonasmorfo_300.jpg",
     "keywords": [
-      "Geología",
+      "geología",
       "Argentina",
-      "Zonas",
-      "Morfoestructurales",
-      "Cuencas",
-      "Escudo",
-      "Alto",
-      "Sierras"
+      "zona",
+      "morfoestructural",
+      "cuenca",
+      "escudo",
+      "alto",
+      "sierra",
+      "llanura",
+      "oriental",
+      "hidrogeología",
+      "hidrología"
     ],
     "keywords_search": [
       "geologia",
       "argentina",
-      "zonas",
-      "morfoestructurales",
-      "cuencas",
+      "zona",
+      "morfoestructural",
+      "cuenca",
       "escudo",
       "alto",
-      "sierras"
+      "sierra",
+      "llanura",
+      "oriental",
+      "hidrogeologia",
+      "hidrologia"
     ],
     "title": "Zonas morfoestructurales de la Llanura oriental",
     "title_search": "zonas morfoestructurales de la llanura oriental",
@@ -2621,27 +2635,27 @@
     "image": "https://static.ign.gob.ar/anida/02AFN/aguassub/m_afn_aguasubt_arg_reg_hidrogeo_96.jpg",
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassub/m_afn_aguasubt_arg_reg_hidrogeo_300.jpg",
     "keywords": [
-      "Aguas",
-      "subterraneas",
-      "Superficiales",
-      "Regiones",
-      "hidrogeológicas",
+      "agua",
+      "subterranea",
+      "superficial",
+      "región",
+      "hidrogeológica",
+      "hidrogeología",
       "Argentina",
-      "Región",
-      "Pozos",
-      "subterráneos",
+      "pozo",
+      "subterráneo",
       "Parte continental americana"
     ],
     "keywords_search": [
-      "aguas",
-      "subterraneas",
-      "superficiales",
-      "regiones",
-      "hidrogeologicas",
-      "argentina",
+      "agua",
+      "subterranea",
+      "superficial",
       "region",
-      "pozos",
-      "subterraneos",
+      "hidrogeologica",
+      "hidrogeologia",
+      "argentina",
+      "pozo",
+      "subterraneo",
       "parte continental americana"
     ],
     "title": "Regiones hidrogeológicas",
@@ -2681,41 +2695,49 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_cuencas_buscador_300.jpg",
     "keywords": [
       "Argentina",
-      "Cuencas",
-      "hidricas",
-      "Hidrográficas",
-      "Regiones",
-      "Hidrológica",
-      "Aguas",
-      "superficiales",
-      "Ríos",
-      "lagos",
-      "Espejos",
-      "Cursos",
-      "Cuenca del Plata",
+      "cuenca",
+      "hidrica",
+      "hidrográfica",
+      "hidrografía",
+      "hidrología",
+      "región",
+      "hidrológica",
+      "agua",
+      "superficial",
+      "río",
+      "lago",
+      "espejo",
+      "curso",
+      "plata",
       "Parte continental americana",
-      "Vertientes",
-      "Atlántica",
-      "Pacífica"
+      "vertiente",
+      "atlántica",
+      "pacífica",
+      "drenaje",
+      "fluvial"
     ],
     "keywords_search": [
       "argentina",
-      "cuencas",
-      "hidricas",
-      "hidrograficas",
-      "regiones",
+      "cuenca",
+      "hidrica",
+      "hidrografica",
+      "hidrografia",
+      "hidrologia",
+      "region",
       "hidrologica",
-      "aguas",
-      "superficiales",
-      "rios",
-      "lagos",
-      "espejos",
-      "cursos",
-      "cuenca del plata",
+      "agua",
+      "superficial",
+      "rio",
+      "lago",
+      "espejo",
+      "curso",
+      "plata",
       "parte continental americana",
-      "vertientes",
+      "vertiente",
       "atlantica",
-      "pacifica"
+      "pacifica",
+      "drenaje",
+      "fluvial"
     ],
     "title": "Cuencas y regiones hídricas superficiales",
     "title_search": "cuencas y regiones hidricas superficiales",
@@ -2753,32 +2775,40 @@
     "image": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_cuencasexoycerradas_96.jpg",
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_cuencasexoycerradas_300.jpg",
     "keywords": [
-      "Cuencas",
-      "Hidrográficas",
-      "Exorreicas",
-      "Endorreicas",
-      "Vertientes",
-      "Hidrología",
-      "Aguas",
-      "superficiales",
-      "Drenaje",
+      "cuenca",
+      "hidrográfica",
+      "exorreica",
+      "endorreica",
+      "cerrada",
+      "vertiente",
+      "atlántica",
+      "pacífica",
+      "hidrología",
+      "hidrografía",
+      "agua",
+      "superficial",
+      "drenaje",
       "Parte continental americana",
-      "Cerradas",
-      "Argentina"
+      "Argentina",
+      "fluvial"
     ],
     "keywords_search": [
-      "cuencas",
-      "hidrograficas",
-      "exorreicas",
-      "endorreicas",
-      "vertientes",
+      "cuenca",
+      "hidrografica",
+      "exorreica",
+      "endorreica",
+      "cerrada",
+      "vertiente",
+      "atlantica",
+      "pacifica",
       "hidrologia",
-      "aguas",
-      "superficiales",
+      "hidrografia",
+      "agua",
+      "superficial",
       "drenaje",
       "parte continental americana",
-      "cerradas",
-      "argentina"
+      "argentina",
+      "fluvial"
     ],
     "title": "Cuencas exorreicas y cerradas",
     "title_search": "cuencas exorreicas y cerradas",
@@ -2817,21 +2847,25 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_esp_agua_300.jpg",
     "keywords": [
       "Argentina",
-      "Espejos",
+      "espejo",
       "agua",
       "acumulada",
-      "cuerpos",
+      "cuerpo",
       "superficial",
-      "Parte continental americana"
+      "Parte continental americana",
+      "hidrología",
+      "hidrografía"
     ],
     "keywords_search": [
       "argentina",
-      "espejos",
+      "espejo",
       "agua",
       "acumulada",
-      "cuerpos",
+      "cuerpo",
       "superficial",
-      "parte continental americana"
+      "parte continental americana",
+      "hidrologia",
+      "hidrografia"
     ],
     "title": "Espejos de agua",
     "title_search": "espejos de agua",
@@ -2870,24 +2904,24 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_lagosppales_300.jpg",
     "keywords": [
       "Argentina",
-      "cuerpos",
+      "cuerpo",
       "agua",
-      "lagos",
-      "principales",
-      "aguas",
-      "superficiales",
+      "lago",
+      "principal",
+      "superficial",
       "hidrología",
+      "hidrografía",
       "Parte continental americana"
     ],
     "keywords_search": [
       "argentina",
-      "cuerpos",
+      "cuerpo",
       "agua",
-      "lagos",
-      "principales",
-      "aguas",
-      "superficiales",
+      "lago",
+      "principal",
+      "superficial",
       "hidrologia",
+      "hidrografia",
       "parte continental americana"
     ],
     "title": "Lagos principales",
@@ -2927,26 +2961,28 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_riosppales_300.jpg",
     "keywords": [
       "Argentina",
-      "Cursos",
+      "curso",
       "agua",
-      "ríos",
-      "corrientes",
-      "superficiales",
+      "río",
+      "corriente",
+      "superficial",
       "hidrología",
-      "afluentes",
-      "principales",
+      "hidrografía",
+      "afluente",
+      "principal",
       "Parte continental americana"
     ],
     "keywords_search": [
       "argentina",
-      "cursos",
+      "curso",
       "agua",
-      "rios",
-      "corrientes",
-      "superficiales",
+      "rio",
+      "corriente",
+      "superficial",
       "hidrologia",
-      "afluentes",
-      "principales",
+      "hidrografia",
+      "afluente",
+      "principal",
       "parte continental americana"
     ],
     "title": "Cursos de agua",
@@ -2985,26 +3021,28 @@
     "image": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_hidro_cuencadelplata_96.jpg",
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_hidro_cuencadelplata_300.jpg",
     "keywords": [
-      "Cuenca",
-      "Plata",
-      "Río",
-      "Subcuencas",
-      "ríos",
-      "afluentes",
+      "cuenca",
+      "plata",
+      "río",
+      "subcuenca",
+      "afluente",
       "Argentina",
       "superficial",
-      "agua"
+      "agua",
+      "hidrología",
+      "hidrografía"
     ],
     "keywords_search": [
       "cuenca",
       "plata",
       "rio",
-      "subcuencas",
-      "rios",
-      "afluentes",
+      "subcuenca",
+      "afluente",
       "argentina",
       "superficial",
-      "agua"
+      "agua",
+      "hidrologia",
+      "hidrografia"
     ],
     "title": "Cuenca del Plata",
     "title_search": "cuenca del plata",
@@ -5111,8 +5149,7 @@
     "publication_search": "tamano y peso demografico",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/tamano_y_peso_demografico.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5120,8 +5157,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5182,8 +5218,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5191,8 +5226,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5253,8 +5287,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5262,8 +5295,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5330,8 +5362,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5339,8 +5370,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5405,8 +5435,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5414,8 +5443,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5484,8 +5512,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5493,16 +5520,21 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
       "siglos",
       "xxi"
     ],
-    "space": [],
-    "space_search": []
+    "space": [
+      "País Parte Continental Americana",
+      "País por departamento"
+    ],
+    "space_search": [
+      "pais parte continental americana",
+      "pais por departamento"
+    ]
   },
   {
     "id": "92",
@@ -5547,8 +5579,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5556,8 +5587,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5616,8 +5646,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5625,8 +5654,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5691,8 +5719,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5700,8 +5727,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5764,8 +5790,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5773,8 +5798,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5841,8 +5865,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5850,8 +5873,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5908,8 +5930,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5917,8 +5938,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -5979,8 +5999,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -5988,8 +6007,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -6056,8 +6074,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -6065,8 +6082,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -6131,8 +6147,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -6140,8 +6155,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -6208,8 +6222,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -6217,8 +6230,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -6287,8 +6299,7 @@
     "publication_search": "composicion de la poblacion",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -6296,8 +6307,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -6366,8 +6376,7 @@
     "publication_search": "crecimiento demografico",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/crecimiento_demografico.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -6376,8 +6385,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -6443,8 +6451,7 @@
     "publication_search": "crecimiento demografico",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/crecimiento_demografico.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -6453,8 +6460,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -6524,8 +6530,7 @@
     "publication_search": "crecimiento demografico",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/crecimiento_demografico.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -6534,8 +6539,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -6599,8 +6603,7 @@
     "publication_search": "crecimiento demografico",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/crecimiento_demografico.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -6609,8 +6612,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -6672,8 +6674,7 @@
     "publication_search": "crecimiento demografico",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/crecimiento_demografico.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -6682,8 +6683,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -6691,8 +6691,14 @@
       "siglos",
       "xxi"
     ],
-    "space": [],
-    "space_search": []
+    "space": [
+      "País Parte Continental Americana",
+      "País por provincia"
+    ],
+    "space_search": [
+      "pais parte continental americana",
+      "pais por provincia"
+    ]
   },
   {
     "id": "108",
@@ -6747,8 +6753,7 @@
     "publication_search": "crecimiento demografico",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/crecimiento_demografico.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -6757,8 +6762,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -6766,8 +6770,14 @@
       "siglos",
       "xxi"
     ],
-    "space": [],
-    "space_search": []
+    "space": [
+      "País Parte Continental Americana",
+      "País por provincia"
+    ],
+    "space_search": [
+      "pais parte continental americana",
+      "pais por provincia"
+    ]
   },
   {
     "id": "109",
@@ -6818,8 +6828,7 @@
     "publication_search": "crecimiento demografico",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/crecimiento_demografico.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -6828,8 +6837,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -6837,8 +6845,14 @@
       "siglos",
       "xxi"
     ],
-    "space": [],
-    "space_search": []
+    "space": [
+      "País Parte Continental Americana",
+      "País por provincia"
+    ],
+    "space_search": [
+      "pais parte continental americana",
+      "pais por provincia"
+    ]
   },
   {
     "id": "110",
@@ -6889,8 +6903,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -6899,8 +6912,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -6964,8 +6976,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -6973,8 +6984,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7035,8 +7045,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7044,8 +7053,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7106,8 +7114,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7115,8 +7122,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7177,8 +7183,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7186,8 +7191,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7250,8 +7254,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "anteriores",
       "2010",
       "Periodos",
@@ -7263,8 +7266,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "anteriores",
       "2010",
       "periodos",
@@ -7335,8 +7337,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7344,8 +7345,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7406,8 +7406,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7415,8 +7414,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7471,8 +7469,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7480,8 +7477,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7538,8 +7534,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7547,8 +7542,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7609,8 +7603,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7618,8 +7611,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7678,8 +7670,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7687,8 +7678,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7743,8 +7733,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7752,8 +7741,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7812,8 +7800,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7821,8 +7808,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7883,8 +7869,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7892,8 +7877,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -7946,8 +7930,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -7955,8 +7938,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8011,8 +7993,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8020,8 +8001,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8076,8 +8056,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8085,8 +8064,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8141,8 +8119,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8150,8 +8127,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8204,8 +8180,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8213,8 +8188,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8267,8 +8241,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8276,8 +8249,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8330,8 +8302,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8339,8 +8310,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8393,8 +8363,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8402,8 +8371,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8456,8 +8424,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8465,8 +8432,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8529,8 +8495,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -8539,8 +8504,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -8606,8 +8570,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -8616,8 +8579,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -8679,8 +8641,7 @@
     "publication_search": "distribucion y asentamiento",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -8689,8 +8650,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -8748,8 +8708,7 @@
     "publication_search": "movilidad territorial",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/movilidad_territorial.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8757,8 +8716,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8821,8 +8779,7 @@
     "publication_search": "movilidad territorial",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/movilidad_territorial.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8830,8 +8787,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8892,8 +8848,7 @@
     "publication_search": "movilidad territorial",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/movilidad_territorial.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8901,8 +8856,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -8963,8 +8917,7 @@
     "publication_search": "movilidad territorial",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/movilidad_territorial.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -8972,8 +8925,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -9030,8 +8982,7 @@
     "publication_search": "movilidad territorial",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/movilidad_territorial.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -9039,8 +8990,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -9101,8 +9051,7 @@
     "publication_search": "movilidad territorial",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/movilidad_territorial.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -9110,8 +9059,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -9176,8 +9124,7 @@
     "publication_search": "movilidad territorial",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/movilidad_territorial.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -9185,8 +9132,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -9253,8 +9199,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -9263,8 +9208,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -9324,8 +9268,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -9334,8 +9277,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -9387,8 +9329,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "Periodos",
       "2000-2010",
@@ -9396,8 +9337,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "periodos",
       "2000-2010",
@@ -9448,8 +9388,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -9457,8 +9396,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -9785,8 +9723,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -9795,8 +9732,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -9988,8 +9924,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -9998,8 +9933,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -10134,8 +10068,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "Periodos",
       "2000-2010",
@@ -10143,8 +10076,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "periodos",
       "2000-2010",
@@ -10209,8 +10141,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -10218,8 +10149,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -10282,8 +10212,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "Periodos",
       "2000-2010",
@@ -10291,8 +10220,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "periodos",
       "2000-2010",
@@ -10355,8 +10283,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "2010",
       "Periodos",
@@ -10365,8 +10292,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "2010",
       "periodos",
@@ -10430,8 +10356,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "Periodos",
       "2000-2010",
@@ -10439,8 +10364,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "periodos",
       "2000-2010",
@@ -10503,8 +10427,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -10512,8 +10435,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -10572,8 +10494,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "Periodos",
       "2000-2010",
@@ -10581,8 +10502,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "periodos",
       "2000-2010",
@@ -10641,8 +10561,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -10650,8 +10569,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -10710,8 +10628,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2001",
       "Periodos",
       "2000-2010",
@@ -10719,8 +10636,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2001",
       "periodos",
       "2000-2010",
@@ -10779,8 +10695,7 @@
     "publication_search": "calidad de vida",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -10788,8 +10703,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -12208,8 +12122,7 @@
     "publication_search": "actividad agricola-ganadera",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_economica/actividad_agricola_ganadera.html",
     "time": [
-      "Años",
-      "Censales",
+      "Años censales",
       "Anteriores",
       "2010",
       "Periodos",
@@ -12220,8 +12133,7 @@
       "XX"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "anteriores",
       "2010",
       "periodos",
@@ -12285,8 +12197,7 @@
     "publication_search": "actividad agricola-ganadera",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_economica/actividad_agricola_ganadera.html",
     "time": [
-      "Años",
-      "Censales",
+      "Años censales",
       "Anteriores",
       "2010",
       "Periodos",
@@ -12297,8 +12208,7 @@
       "XX"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "anteriores",
       "2010",
       "periodos",
@@ -12360,8 +12270,7 @@
     "publication_search": "actividad agricola-ganadera",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_economica/actividad_agricola_ganadera.html",
     "time": [
-      "Años",
-      "Censales",
+      "Años censales",
       "Anteriores",
       "2010",
       "Periodos",
@@ -12372,8 +12281,7 @@
       "XX"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "anteriores",
       "2010",
       "periodos",
@@ -15992,32 +15900,32 @@
     "keywords": [
       "Argentina",
       "Parte continental americana",
-      "Provincias",
-      "Producción",
-      "Gas",
-      "Natural",
-      "Cuencas",
-      "Hidrocarburiferas",
-      "Producción",
-      "Recurso",
-      "Energía",
+      "provincia",
+      "producción",
+      "gas",
+      "natural",
+      "cuenca",
+      "hidrocarburífera",
+      "recurso",
+      "energía",
       "productiva",
-      "Yacimientos"
+      "yacimiento",
+      "hidrocarburo"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
-      "provincias",
+      "provincia",
       "produccion",
       "gas",
       "natural",
-      "cuencas",
-      "hidrocarburiferas",
-      "produccion",
+      "cuenca",
+      "hidrocarburifera",
       "recurso",
       "energia",
       "productiva",
-      "yacimientos"
+      "yacimiento",
+      "hidrocarburo"
     ],
     "title": "Producción de gas por cuenca. Año 2019",
     "title_search": "produccion de gas por cuenca ano 2019",
@@ -16114,28 +16022,30 @@
     "keywords": [
       "Argentina",
       "Parte continental americana",
-      "Provincias",
-      "Gas",
-      "Reservas",
-      "Cuenca",
-      "Volumen",
-      "Total",
-      "Recursos",
-      "Hidrocarburiferas",
-      "Energía"
+      "provincia",
+      "gas",
+      "reserva",
+      "cuenca",
+      "volumen",
+      "total",
+      "recurso",
+      "hidrocarburífera",
+      "energía",
+      "hidrocarburo"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
-      "provincias",
+      "provincia",
       "gas",
-      "reservas",
+      "reserva",
       "cuenca",
       "volumen",
       "total",
-      "recursos",
-      "hidrocarburiferas",
-      "energia"
+      "recurso",
+      "hidrocarburifera",
+      "energia",
+      "hidrocarburo"
     ],
     "title": "Reservas de gas por cuenca. Año 2018",
     "title_search": "reservas de gas por cuenca ano 2018",
@@ -16175,22 +16085,26 @@
     "keywords": [
       "Argentina",
       "Parte continental americana",
-      "Provincias",
-      "Cuencas",
-      "Hidrocarburíferas",
-      "Producción",
-      "Productiva",
-      "Energía"
+      "provincia",
+      "cuenca",
+      "hidrocarburífera",
+      "producción",
+      "productiva",
+      "energía",
+      "recurso, hidrocarburo",
+      "petroleo"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
-      "provincias",
-      "cuencas",
-      "hidrocarburiferas",
+      "provincia",
+      "cuenca",
+      "hidrocarburifera",
       "produccion",
       "productiva",
-      "energia"
+      "energia",
+      "recurso hidrocarburo",
+      "petroleo"
     ],
     "title": "Cuencas hidrocarburíferas",
     "title_search": "cuencas hidrocarburiferas",
@@ -16230,28 +16144,30 @@
     "keywords": [
       "Argentina",
       "Parte continental americana",
-      "Provincias",
-      "Exploración",
-      "Explotación",
-      "Hidrocarburos",
-      "Áreas",
-      "Cuencas",
-      "Productivas",
-      "Productivo",
-      "Energía"
+      "provincia",
+      "exploración",
+      "explotación",
+      "hidrocarburo",
+      "área",
+      "cuenca",
+      "productiva",
+      "productivo",
+      "energía",
+      "petroleo"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
-      "provincias",
+      "provincia",
       "exploracion",
       "explotacion",
-      "hidrocarburos",
-      "areas",
-      "cuencas",
-      "productivas",
+      "hidrocarburo",
+      "area",
+      "cuenca",
+      "productiva",
       "productivo",
-      "energia"
+      "energia",
+      "petroleo"
     ],
     "title": "Exploración y explotación de hidrocarburos",
     "title_search": "exploracion y explotacion de hidrocarburos",
@@ -16291,19 +16207,21 @@
     "keywords": [
       "Argentina",
       "Parte continental americana",
-      "Provincias",
-      "Producción",
-      "Transporte",
-      "Hidrocarburos",
-      "Terminales",
-      "Gas",
-      "Regasificadoras",
-      "Combustible",
-      "Liquido",
-      "Ductos",
-      "Cuencas",
-      "Productivas",
-      "Energía"
+      "provincias",
+      "producción",
+      "transporte",
+      "hidrocarburo",
+      "terminal",
+      "gas",
+      "propano",
+      "regasificador",
+      "combustible",
+      "liquido",
+      "ducto",
+      "cuenca",
+      "productiva",
+      "energía",
+      "petroleo"
     ],
     "keywords_search": [
       "argentina",
@@ -16311,16 +16229,18 @@
       "provincias",
       "produccion",
       "transporte",
-      "hidrocarburos",
-      "terminales",
+      "hidrocarburo",
+      "terminal",
       "gas",
-      "regasificadoras",
+      "propano",
+      "regasificador",
       "combustible",
       "liquido",
-      "ductos",
-      "cuencas",
-      "productivas",
-      "energia"
+      "ducto",
+      "cuenca",
+      "productiva",
+      "energia",
+      "petroleo"
     ],
     "title": "Producción y transporte de hidrocarburos",
     "title_search": "produccion y transporte de hidrocarburos",
@@ -16398,8 +16318,7 @@
     "publication_search": "energia",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_economica/energia.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -16407,8 +16326,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -16463,8 +16381,7 @@
     "publication_search": "energia",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_economica/energia.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -16472,8 +16389,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -16528,8 +16444,7 @@
     "publication_search": "energia",
     "link": "https://anida.ign.gob.ar/publicacion/argentina_economica/energia.html",
     "time": [
-      "Años",
-      "censales",
+      "Años censales",
       "2010",
       "Periodos",
       "2000-2010",
@@ -16537,8 +16452,7 @@
       "XXI"
     ],
     "time_search": [
-      "anos",
-      "censales",
+      "anos censales",
       "2010",
       "periodos",
       "2000-2010",
@@ -16561,13 +16475,14 @@
     "keywords": [
       "Argentina",
       "Parte continental americana",
-      "Provincias",
-      "Producción",
-      "Petróleo",
-      "Cuenca",
-      "Hidrocarburífera",
-      "Volumen",
-      "Producido"
+      "provincias",
+      "producción",
+      "petróleo",
+      "cuenca",
+      "hidrocarburífera",
+      "volumen",
+      "producido",
+      "hidrocarburo"
     ],
     "keywords_search": [
       "argentina",
@@ -16578,7 +16493,8 @@
       "cuenca",
       "hidrocarburifera",
       "volumen",
-      "producido"
+      "producido",
+      "hidrocarburo"
     ],
     "title": "Producción de petróleo por cuenca. Año 2019",
     "title_search": "produccion de petroleo por cuenca ano 2019",
@@ -16671,30 +16587,32 @@
     "keywords": [
       "Argentina",
       "Parte continental americana",
-      "Provincias",
-      "Reservas",
-      "Petróleo",
-      "Cuenca",
-      "Volumen",
-      "Totales",
-      "Tipo",
-      "Recursos",
-      "Hidrocarburíferas",
-      "Productiva"
+      "provincia",
+      "reserva",
+      "petróleo",
+      "cuenca",
+      "volumen",
+      "total",
+      "tipo",
+      "recurso",
+      "hidrocarburífera",
+      "productiva",
+      "hidrocarburo"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
-      "provincias",
-      "reservas",
+      "provincia",
+      "reserva",
       "petroleo",
       "cuenca",
       "volumen",
-      "totales",
+      "total",
       "tipo",
-      "recursos",
-      "hidrocarburiferas",
-      "productiva"
+      "recurso",
+      "hidrocarburifera",
+      "productiva",
+      "hidrocarburo"
     ],
     "title": "Reservas de petróleo por cuenca. Año 2018",
     "title_search": "reservas de petroleo por cuenca ano 2018",
