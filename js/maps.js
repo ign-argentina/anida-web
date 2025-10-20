@@ -167,26 +167,25 @@ function setupSearchListeners() {
  * Helper: configurar listeners de filtros avanzados
  */
 function setupAdvancedFiltersListeners() {
-  // Botón aplicar filtros avanzados (si existe)
-  if (elements.applyAdvancedBtn) {
-    elements.applyAdvancedBtn.addEventListener('click', () => {
-      getAdvancedFilters();
-      handleSearch();
-      // Cerrar acordeón después de aplicar
-      const accordionButton = document.querySelector('.accordion-button');
-      if (accordionButton && !accordionButton.classList.contains('collapsed')) {
-        accordionButton.click();
-      }
-    });
-  }
-
   // Botón limpiar filtros avanzados (si existe)
   if (elements.clearAdvancedBtn) {
     elements.clearAdvancedBtn.addEventListener('click', clearAdvancedFilters);
   }
 
-  // Configurar lógica de selección en cascada para filtros temporales
+  // Configurar lógica de selección en cascada para filtros temporales PRIMERO
+  // Esto maneja los listeners de cambio internamente
   setupCascadingTemporalFilters();
+
+  // Configurar listeners en checkboxes de escala espacial (no temporal, ya manejados arriba)
+  if (elements.advancedFilters.escalaEspacial) {
+    elements.advancedFilters.escalaEspacial.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        // Obtener filtros actualizados y aplicar búsqueda automáticamente
+        getAdvancedFilters();
+        handleSearch();
+      });
+    });
+  }
 }
 
 /**
@@ -217,6 +216,10 @@ function setupCascadingTemporalFilters() {
           childCheckbox.checked = isChecked;
         }
       });
+      
+      // Aplicar filtros automáticamente después de la cascada
+      getAdvancedFilters();
+      handleSearch();
     });
 
     // Listeners para los hijos: deselecciona el padre si algún hijo cambia
@@ -239,6 +242,10 @@ function setupCascadingTemporalFilters() {
               parentCheckbox.checked = true;
             }
           }
+          
+          // Aplicar filtros automáticamente después del cambio
+          getAdvancedFilters();
+          handleSearch();
         });
       }
     });
