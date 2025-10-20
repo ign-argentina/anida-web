@@ -118,7 +118,7 @@
 }
 
 .filter-group {
-  max-height: 200px;
+  max-height: 400px;
   overflow-y: auto;
   padding-right: 0.5rem;
 }
@@ -139,6 +139,28 @@
 
 .filter-group::-webkit-scrollbar-thumb:hover {
   background: #999;
+}
+
+/* Jerarquía de filtros de dos niveles */
+.filter-group .form-check-label.fw-bold {
+  font-weight: 600;
+  color: #157DB9;
+}
+
+.filter-group .ms-4 {
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #e9f1ff;
+}
+
+.filter-group .ms-4 .form-check {
+  margin-bottom: 0.25rem;
+}
+
+.filter-group .form-check.mt-2 {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f0f0f0;
 }
 
 /* Filtros activos */

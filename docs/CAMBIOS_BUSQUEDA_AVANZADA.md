@@ -78,6 +78,24 @@ Se corrigieron los valores de los filtros para que coincidan exactamente con los
 - Corregido: Los valores `value` ahora coinciden con las etiquetas
 - **ANTES:** `value="Años puntuales"` con label "Años censales"
 - **AHORA:** `value="Años censales"` con label "Años censales"
+- **NUEVO (v2.1):** Se agregó estructura jerárquica de dos niveles:
+  - **Años censales** (categoría padre)
+    - 2001
+    - 2010
+    - 2022
+    - Años anteriores
+  - **Períodos** (categoría padre)
+    - 1900-1950
+    - 1950-1990
+    - 1960-1970
+    - 1970-1980
+    - 1980-1990
+    - 1990-2000
+    - 2000-2010
+    - 2010-2020
+    - 2020-2030
+  - **Siglos** (categoría padre)
+    - XV, XVI, XVII, XVIII, XIX, XX, XXI
 
 #### Escala Espacial
 - Corregidos IDs duplicados (había tres checkboxes con `id="espacial-6"`)
@@ -167,4 +185,4 @@ Estos campos no existen en el JSON actual, por lo que su código solo agregaba c
 
 **Fecha de actualización:** 19 de octubre de 2025  
 **Autor:** GitHub Copilot  
-**Versión:** 2.0
+**Versión:** 2.1 - Filtros temporales jerárquicos
