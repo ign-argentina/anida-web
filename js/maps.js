@@ -410,34 +410,90 @@ function filterMaps() {
       }
     }
 
-    // Filtrar por escala espacial (usando space_search)
+    // Filtrar por escala espacial (usando space_search con lógica OR)
     if (advanced.escalaEspacial.length > 0) {
       const mapSpaceSearch = map.space_search || [];
       // Normalizar los filtros seleccionados
       const normalizedFilters = advanced.escalaEspacial.map(f => normalizeText(f));
       
-      // Verificar si TODOS los filtros seleccionados tienen coincidencia (AND lógico)
-      const allFiltersMatch = normalizedFilters.every(filter => 
+      // Al menos UNO de los filtros debe coincidir (OR lógico)
+      const hasMatch = normalizedFilters.some(filter => 
         mapSpaceSearch.some(space => space.includes(filter) || filter.includes(space))
       );
 
-      if (!allFiltersMatch) {
+      if (!hasMatch) {
         return false;
       }
     }
 
-    // Filtrar por escala temporal (usando time_search con coincidencia EXACTA)
+    // Filtrar por escala temporal con lógica híbrida (OR dentro de grupos, AND entre grupos)
     if (advanced.escalaTemporal.length > 0) {
       const mapTimeSearch = map.time_search || [];
-      // Normalizar los filtros seleccionados
       const normalizedFilters = advanced.escalaTemporal.map(f => normalizeText(f));
       
-      // Verificar si TODOS los filtros seleccionados tienen coincidencia EXACTA (AND lógico)
-      const allFiltersMatch = normalizedFilters.every(filter => 
-        mapTimeSearch.some(time => time === filter) // Coincidencia exacta
-      );
+      // Definir categorías padre y sus hijos
+      const parentCategories = {
+        'anos censales': ['2001', '2010', '2022', 'anos anteriores'],
+        'periodos': ['1900-1950', '1950-1990', '1960-1970', '1970-1980', '1980-1990', '1990-2000', '2000-2010', '2010-2020', '2020-2030'],
+        'siglos': ['xv', 'xvi', 'xvii', 'xviii', 'xix', 'xx', 'xxi']
+      };
 
-      if (!allFiltersMatch) {
+      // Clasificar filtros seleccionados por grupo
+      const filtersByGroup = {
+        'anos censales': [],
+        'periodos': [],
+        'siglos': [],
+        'padres': [] // Categorías padre seleccionadas directamente
+      };
+
+      normalizedFilters.forEach(filter => {
+        // Primero verificar si es una categoría padre
+        if (filter === 'anos censales' || filter === 'periodos' || filter === 'siglos') {
+          filtersByGroup.padres.push(filter);
+        } else {
+          // Si no, buscar en qué grupo pertenece
+          let assigned = false;
+          for (const [parent, children] of Object.entries(parentCategories)) {
+            if (children.includes(filter)) {
+              filtersByGroup[parent].push(filter);
+              assigned = true;
+              break;
+            }
+          }
+          
+          if (!assigned) {
+            console.warn('Filtro temporal no clasificado:', filter);
+          }
+        }
+      });
+
+      // Evaluar cada grupo: dentro del grupo usa OR, entre grupos usa AND
+      const groupResults = [];
+
+      // Evaluar categorías padre seleccionadas directamente
+      if (filtersByGroup.padres.length > 0) {
+        const padresMatch = filtersByGroup.padres.some(parent =>
+          mapTimeSearch.includes(parent)
+        );
+        groupResults.push(padresMatch);
+      }
+
+      // Evaluar cada grupo de hijos
+      for (const [groupName, filters] of Object.entries(filtersByGroup)) {
+        if (groupName === 'padres' || filters.length === 0) continue;
+
+        // Dentro del grupo: OR (al menos uno debe coincidir con coincidencia exacta)
+        const groupMatch = filters.some(filter => 
+          mapTimeSearch.some(time => time === filter)
+        );
+        
+        groupResults.push(groupMatch);
+      }
+
+      // Entre grupos: AND (todos los grupos con filtros deben coincidir)
+      const allGroupsMatch = groupResults.length === 0 || groupResults.every(result => result === true);
+
+      if (!allGroupsMatch) {
         return false;
       }
     }

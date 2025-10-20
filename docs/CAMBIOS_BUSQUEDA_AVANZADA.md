@@ -42,33 +42,69 @@ Se mejoró la función de filtrado para:
 - Implementa coincidencia flexible (permite coincidencias parciales)
 - Normaliza los filtros seleccionados para comparación case-insensitive sin acentos
 
-**Código de filtrado espacial:**
+**Código de filtrado espacial (v2.3 - OR):**
 ```javascript
-// Lógica AND: TODOS los filtros deben coincidir
+// Lógica OR: Al menos UNO de los filtros debe coincidir
 if (advanced.escalaEspacial.length > 0) {
   const mapSpaceSearch = map.space_search || [];
   const normalizedFilters = advanced.escalaEspacial.map(f => normalizeText(f));
   
-  const allFiltersMatch = normalizedFilters.every(filter => 
+  const hasMatch = normalizedFilters.some(filter => 
     mapSpaceSearch.some(space => space.includes(filter) || filter.includes(space))
   );
 
-  if (!allFiltersMatch) return false;
+  if (!hasMatch) return false;
 }
 ```
 
-**Código de filtrado temporal (coincidencia exacta + lógica AND):**
+**Código de filtrado temporal (v2.3 - OR dentro de grupos, AND entre grupos):**
 ```javascript
-// Lógica AND con coincidencia EXACTA
+// Lógica híbrida: OR dentro de grupos, AND entre grupos
 if (advanced.escalaTemporal.length > 0) {
   const mapTimeSearch = map.time_search || [];
   const normalizedFilters = advanced.escalaTemporal.map(f => normalizeText(f));
   
-  const allFiltersMatch = normalizedFilters.every(filter => 
-    mapTimeSearch.some(time => time === filter) // Coincidencia exacta
-  );
+  // Clasificar filtros por grupo
+  const filtersByGroup = {
+    'anos censales': [],
+    'periodos': [],
+    'siglos': [],
+    'padres': []
+  };
 
-  if (!allFiltersMatch) return false;
+  // Clasificar cada filtro
+  normalizedFilters.forEach(filter => {
+    if (filter === 'anos censales' || filter === 'periodos' || filter === 'siglos') {
+      filtersByGroup.padres.push(filter);
+    } else {
+      // Asignar al grupo correspondiente
+      for (const [parent, children] of Object.entries(parentCategories)) {
+        if (children.includes(filter)) {
+          filtersByGroup[parent].push(filter);
+          break;
+        }
+      }
+    }
+  });
+
+  // Evaluar cada grupo con OR interno
+  const groupResults = [];
+  
+  for (const [groupName, filters] of Object.entries(filtersByGroup)) {
+    if (filters.length === 0) continue;
+    
+    // OR dentro del grupo
+    const groupMatch = filters.some(filter => 
+      mapTimeSearch.some(time => time === filter)
+    );
+    
+    groupResults.push(groupMatch);
+  }
+
+  // AND entre grupos
+  const allGroupsMatch = groupResults.every(result => result === true);
+  
+  if (!allGroupsMatch) return false;
 }
 ```
 
@@ -283,13 +319,21 @@ Cuando se seleccionan múltiples filtros, el resultado debe cumplir **TODOS** lo
 
 **Fecha de actualización:** 19 de octubre de 2025  
 **Autor:** GitHub Copilot  
-**Versión:** 2.2 - Filtros excluyentes con selección en cascada
+**Versión:** 2.3 - Lógica híbrida OR/AND optimizada
 
 ### Changelog
 
-**v2.2** (19/10/2025)
+**v2.3** (19/10/2025) 🎯 **ACTUAL**
+- ✅ **IMPLEMENTADA** lógica OR dentro de grupos temporales (años, períodos, siglos)
+- ✅ **IMPLEMENTADA** lógica AND entre grupos temporales diferentes
+- ✅ **IMPLEMENTADA** lógica OR en filtros espaciales
+- ✅ **IMPLEMENTADA** lógica AND entre filtros espaciales y temporales
+- ✅ **OPTIMIZADA** usabilidad: permite comparaciones múltiples intuitivas
+- ✅ **REDUCIDOS** casos de "0 resultados" inesperados
+
+**v2.2** (19/10/2025) ⚠️ OBSOLETA - Demasiado restrictiva
 - ✅ Implementada selección en cascada para filtros temporales
-- ✅ Cambiada lógica de filtros a AND (excluyente/intersección)
+- ⚠️ Cambiada lógica de filtros a AND puro (demasiado restrictiva)
 - ✅ Implementada coincidencia exacta en filtros temporales
 - ✅ Sincronización automática padre-hijo en checkboxes
 
@@ -300,3 +344,203 @@ Cuando se seleccionan múltiples filtros, el resultado debe cumplir **TODOS** lo
 **v2.0** (19/10/2025)
 - ✅ Optimización inicial del sistema de filtros
 - ✅ Uso de campos `_search` normalizados del JSON
+
+---
+
+## 🎯 Lógica de Filtrado v2.3 - Sistema Híbrido OR/AND
+
+### Resumen de la Lógica
+
+| Contexto | Lógica | Ejemplo |
+|----------|--------|---------|
+| **Dentro de grupo temporal** | OR (inclusivo) | `2010 + 2022` = mapas con 2010 **O** 2022 |
+| **Entre grupos temporales** | AND (restrictivo) | `2010 + XXI` = mapas con 2010 **Y** XXI |
+| **Filtros espaciales** | OR (inclusivo) | `País Bicontinental + Global` = mapas con uno **O** ambos |
+| **Espacial + Temporal** | AND (restrictivo) | `Provincia + 2010` = mapas con provincia **Y** 2010 |
+
+### 📊 Filtros Temporales: OR Dentro de Grupos
+
+Cuando seleccionas múltiples valores **del mismo grupo padre**, se aplica lógica **OR**:
+
+#### Ejemplo 1: Múltiples Años Censales
+```
+Selección: ☑ 2010 + ☑ 2022
+
+Resultado: Muestra mapas que tienen "2010" O "2022"
+
+Mapas que aparecen:
+- time_search: ["2010", "xxi"] ✅
+- time_search: ["2022", "xxi"] ✅
+- time_search: ["2010", "2022", "xxi"] ✅
+
+Mapas que NO aparecen:
+- time_search: ["2001", "xxi"] ❌
+```
+
+#### Ejemplo 2: Múltiples Períodos
+```
+Selección: ☑ 1900-1950 + ☑ 2000-2010
+
+Resultado: Muestra mapas con cualquiera de los dos períodos
+
+Mapas que aparecen:
+- time_search: ["periodos", "1900-1950", "siglos", "xx"] ✅
+- time_search: ["periodos", "2000-2010", "siglos", "xxi"] ✅
+
+Mapas que NO aparecen:
+- time_search: ["periodos", "1960-1970", "siglos", "xx"] ❌
+```
+
+#### Ejemplo 3: Múltiples Siglos
+```
+Selección: ☑ XIX + ☑ XX + ☑ XXI
+
+Resultado: Muestra mapas de cualquiera de los tres siglos
+
+Mapas que aparecen:
+- time_search: ["siglos", "xix"] ✅
+- time_search: ["siglos", "xx"] ✅
+- time_search: ["siglos", "xxi"] ✅
+
+Mapas que NO aparecen:
+- time_search: ["siglos", "xviii"] ❌
+```
+
+### 🔗 Filtros Temporales: AND Entre Grupos
+
+Cuando seleccionas valores de **grupos diferentes**, se aplica lógica **AND**:
+
+#### Ejemplo 1: Año + Siglo
+```
+Selección: ☑ 2010 + ☑ XXI
+
+Resultado: Muestra SOLO mapas que tienen AMBOS
+
+Mapas que aparecen:
+- time_search: ["anos censales", "2010", "siglos", "xxi"] ✅
+
+Mapas que NO aparecen:
+- time_search: ["2010", "siglos", "xx"] ❌ (falta XXI)
+- time_search: ["2022", "siglos", "xxi"] ❌ (falta 2010)
+```
+
+#### Ejemplo 2: Período + Siglo
+```
+Selección: ☑ 2000-2010 + ☑ XXI
+
+Resultado: Muestra mapas con AMBOS criterios
+
+Mapas que aparecen:
+- time_search: ["periodos", "2000-2010", "siglos", "xxi"] ✅
+
+Mapas que NO aparecen:
+- time_search: ["periodos", "2000-2010", "siglos", "xx"] ❌
+- time_search: ["periodos", "1990-2000", "siglos", "xxi"] ❌
+```
+
+#### Ejemplo 3: Combinación Compleja
+```
+Selección: ☑ 2010 + ☑ 2022 + ☑ XXI
+
+Lógica aplicada:
+- OR entre 2010 y 2022 (mismo grupo)
+- AND con XXI (grupo diferente)
+
+Resultado: Muestra mapas con (2010 O 2022) Y XXI
+
+Mapas que aparecen:
+- time_search: ["2010", "xxi"] ✅
+- time_search: ["2022", "xxi"] ✅
+- time_search: ["2010", "2022", "xxi"] ✅
+
+Mapas que NO aparecen:
+- time_search: ["2010", "xx"] ❌ (falta XXI)
+- time_search: ["2001", "xxi"] ❌ (falta 2010 o 2022)
+```
+
+### 🗺️ Filtros Espaciales: Lógica OR
+
+Todos los filtros espaciales usan lógica **OR** (inclusiva):
+
+```
+Selección: ☑ País Bicontinental + ☑ País por provincia
+
+Resultado: Muestra mapas que tienen UNO O AMBOS valores
+
+Mapas que aparecen:
+- space_search: ["pais bicontinental"] ✅
+- space_search: ["pais por provincia"] ✅
+- space_search: ["pais bicontinental", "pais por provincia"] ✅
+
+Mapas que NO aparecen:
+- space_search: ["global"] ❌
+```
+
+### 🔄 Combinación Espacial + Temporal: AND
+
+Los filtros espaciales y temporales se combinan con lógica **AND**:
+
+```
+Selección: 
+- Espacial: ☑ País por provincia
+- Temporal: ☑ 2010
+
+Resultado: Muestra mapas que tienen AMBOS
+
+Mapas que aparecen:
+- space_search: ["pais por provincia"]
+  time_search: ["2010", "xxi"] ✅
+
+Mapas que NO aparecen:
+- space_search: ["pais por provincia"]
+  time_search: ["2022", "xxi"] ❌ (falta 2010)
+  
+- space_search: ["global"]
+  time_search: ["2010", "xxi"] ❌ (falta provincia)
+```
+
+### 📈 Casos de Uso Prácticos
+
+#### Caso 1: Comparar Censos
+```
+Objetivo: Ver mapas de los censos 2010 y 2022 por provincia
+
+Selección:
+- ☑ 2010
+- ☑ 2022
+- ☑ País por provincia
+
+Resultado: Mapas de censo 2010 O 2022 (OR) que sean por provincia (AND)
+```
+
+#### Caso 2: Análisis Histórico
+```
+Objetivo: Ver mapas de los siglos XIX y XX
+
+Selección:
+- ☑ XIX
+- ☑ XX
+
+Resultado: Mapas del siglo XIX O del siglo XX (OR dentro de grupo)
+```
+
+#### Caso 3: Período Específico Regional
+```
+Objetivo: Ver mapas del período 2000-2010 en la región
+
+Selección:
+- ☑ 2000-2010
+- ☑ Regional o subnacional
+
+Resultado: Mapas del período 2000-2010 (exacto) que sean regionales (AND)
+```
+
+### ⚖️ Comparación v2.2 vs v2.3
+
+| Selección | v2.2 (AND puro) | v2.3 (OR/AND híbrido) |
+|-----------|-----------------|----------------------|
+| `☑ 2010 + ☑ 2022` | ❌ 0 resultados | ✅ Todos los censos 2010 y 2022 |
+| `☑ XX + ☑ XXI` | ❌ 0 resultados | ✅ Todos los mapas de ambos siglos |
+| `☑ 2010 + ☑ XXI` | ✅ Solo intersección | ✅ Solo intersección (igual) |
+| `☑ 1900-1950 + ☑ 2000-2010` | ❌ 0 resultados | ✅ Mapas de ambos períodos |
+| Usabilidad | ⚠️ Muy restrictiva | ✅ Intuitiva y flexible |
