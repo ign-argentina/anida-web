@@ -44,29 +44,31 @@ Se mejoró la función de filtrado para:
 
 **Código de filtrado espacial:**
 ```javascript
+// Lógica AND: TODOS los filtros deben coincidir
 if (advanced.escalaEspacial.length > 0) {
   const mapSpaceSearch = map.space_search || [];
   const normalizedFilters = advanced.escalaEspacial.map(f => normalizeText(f));
   
-  const hasMatch = normalizedFilters.some(filter => 
+  const allFiltersMatch = normalizedFilters.every(filter => 
     mapSpaceSearch.some(space => space.includes(filter) || filter.includes(space))
   );
 
-  if (!hasMatch) return false;
+  if (!allFiltersMatch) return false;
 }
 ```
 
-**Código de filtrado temporal:**
+**Código de filtrado temporal (coincidencia exacta + lógica AND):**
 ```javascript
+// Lógica AND con coincidencia EXACTA
 if (advanced.escalaTemporal.length > 0) {
   const mapTimeSearch = map.time_search || [];
   const normalizedFilters = advanced.escalaTemporal.map(f => normalizeText(f));
   
-  const hasMatch = normalizedFilters.some(filter => 
-    mapTimeSearch.some(time => time.includes(filter) || filter.includes(time))
+  const allFiltersMatch = normalizedFilters.every(filter => 
+    mapTimeSearch.some(time => time === filter) // Coincidencia exacta
   );
 
-  if (!hasMatch) return false;
+  if (!allFiltersMatch) return false;
 }
 ```
 
@@ -122,12 +124,108 @@ Estos campos no existen en el JSON actual, por lo que su código solo agregaba c
 ### 🎯 Precisión
 - Búsqueda por palabras clave más precisa (todos los términos deben coincidir)
 - Filtros avanzados usan los datos reales del JSON
-- Coincidencias flexibles para mejor UX
+- **Coincidencia exacta en filtros temporales** (v2.2): "2010" NO coincide con "2010-2020"
+- **Lógica AND (excluyente)** (v2.2): Los filtros se intersectan, no se unen
 
 ### 🧹 Mantenibilidad
 - Código más simple y fácil de entender
 - Menos puntos de fallo potenciales
 - Sincronización perfecta entre HTML, JS y JSON
+
+### 🎨 UX Mejorada (v2.2)
+- **Selección en cascada**: Click en categoría padre selecciona/deselecciona todos los hijos
+- **Sincronización automática**: Cambios en hijos actualizan estado del padre
+- **Filtros intuitivos**: Combinación excluyente evita resultados ambiguos
+
+## Lógica de Filtrado (v2.2)
+
+### Filtros Temporales: Coincidencia Exacta
+
+Los filtros temporales ahora requieren **coincidencia exacta** en el array `time_search`:
+
+**Ejemplo 1: Filtro "2010"**
+```javascript
+// Mapa A
+"time_search": ["anos censales", "2010", "siglos", "xxi"]  // ✅ COINCIDE
+
+// Mapa B  
+"time_search": ["periodos", "2010-2020", "siglos", "xxi"]  // ❌ NO COINCIDE
+```
+
+**Ejemplo 2: Filtro "Siglos"**
+```javascript
+// Mapa A
+"time_search": ["siglos", "xxi"]  // ✅ COINCIDE
+
+// Mapa B
+"time_search": ["periodos", "2010-2020"]  // ❌ NO COINCIDE
+```
+
+### Filtros Múltiples: Lógica AND (Intersección)
+
+Cuando se seleccionan múltiples filtros, el resultado debe cumplir **TODOS** los filtros:
+
+**Ejemplo 1: Filtro "XXI" + "1900-1950"**
+```javascript
+// Este mapa NO aparecerá en los resultados porque no tiene ambos valores
+"time_search": ["siglos", "xxi"]  // ❌ Tiene XXI pero no 1900-1950
+
+// Este mapa tampoco aparecerá
+"time_search": ["periodos", "1900-1950"]  // ❌ Tiene 1900-1950 pero no XXI
+
+// Solo este tipo de mapa aparecería (si existiera)
+"time_search": ["periodos", "1900-1950", "siglos", "xxi"]  // ✅ Tiene AMBOS
+```
+
+**Ejemplo 2: Filtro "País Bicontinental" + "Global"**
+```javascript
+// Solo mapas que tengan AMBOS valores
+"space_search": ["pais bicontinental", "global"]  // ✅ COINCIDE
+
+// Este NO aparecerá
+"space_search": ["pais bicontinental"]  // ❌ Solo tiene uno
+```
+
+### Selección en Cascada
+
+**Comportamiento de Categorías Padre:**
+
+1. **Click en padre seleccionado → Selecciona todos los hijos**
+   ```
+   ☑ Siglos
+       ☑ XV
+       ☑ XVI
+       ☑ XVII
+       ... (todos)
+   ```
+
+2. **Click en padre para deseleccionar → Deselecciona todos los hijos**
+   ```
+   ☐ Siglos
+       ☐ XV
+       ☐ XVI
+       ☐ XVII
+       ... (todos)
+   ```
+
+3. **Deseleccionar un hijo → Deselecciona el padre**
+   ```
+   ☑ Siglos
+       ☑ XV
+       ☐ XVI  ← Click aquí
+       ☑ XVII
+   
+   Resultado:
+   ☐ Siglos  ← Se deselecciona automáticamente
+       ☑ XV
+       ☐ XVI
+       ☑ XVII
+   ```
+
+4. **Seleccionar todos los hijos manualmente → Selecciona el padre**
+   ```
+   Si todos los hijos están marcados, el padre se marca automáticamente
+   ```
 
 ## Estructura de Datos en `maps.json`
 
@@ -185,4 +283,20 @@ Estos campos no existen en el JSON actual, por lo que su código solo agregaba c
 
 **Fecha de actualización:** 19 de octubre de 2025  
 **Autor:** GitHub Copilot  
-**Versión:** 2.1 - Filtros temporales jerárquicos
+**Versión:** 2.2 - Filtros excluyentes con selección en cascada
+
+### Changelog
+
+**v2.2** (19/10/2025)
+- ✅ Implementada selección en cascada para filtros temporales
+- ✅ Cambiada lógica de filtros a AND (excluyente/intersección)
+- ✅ Implementada coincidencia exacta en filtros temporales
+- ✅ Sincronización automática padre-hijo en checkboxes
+
+**v2.1** (19/10/2025)
+- ✅ Agregada estructura jerárquica de dos niveles para escala temporal
+- ✅ 27 opciones temporales específicas (años, períodos, siglos)
+
+**v2.0** (19/10/2025)
+- ✅ Optimización inicial del sistema de filtros
+- ✅ Uso de campos `_search` normalizados del JSON

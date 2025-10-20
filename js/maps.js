@@ -184,6 +184,65 @@ function setupAdvancedFiltersListeners() {
   if (elements.clearAdvancedBtn) {
     elements.clearAdvancedBtn.addEventListener('click', clearAdvancedFilters);
   }
+
+  // Configurar lógica de selección en cascada para filtros temporales
+  setupCascadingTemporalFilters();
+}
+
+/**
+ * Configura la lógica de selección en cascada para filtros temporales
+ */
+function setupCascadingTemporalFilters() {
+  // Definir relaciones padre-hijo
+  const parentChildRelations = {
+    'Años censales': ['2001', '2010', '2022', 'Años anteriores'],
+    'Periodos': ['1900-1950', '1950-1990', '1960-1970', '1970-1980', '1980-1990', '1990-2000', '2000-2010', '2010-2020', '2020-2030'],
+    'Siglos': ['XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI']
+  };
+
+  // Configurar listeners para cada categoría padre
+  Object.keys(parentChildRelations).forEach(parentValue => {
+    const parentCheckbox = document.querySelector(`input[name="escalaTemporal"][value="${parentValue}"]`);
+    const childValues = parentChildRelations[parentValue];
+    
+    if (!parentCheckbox) return;
+
+    // Listener para el padre: selecciona/deselecciona todos los hijos
+    parentCheckbox.addEventListener('change', (e) => {
+      const isChecked = e.target.checked;
+      
+      childValues.forEach(childValue => {
+        const childCheckbox = document.querySelector(`input[name="escalaTemporal"][value="${childValue}"]`);
+        if (childCheckbox) {
+          childCheckbox.checked = isChecked;
+        }
+      });
+    });
+
+    // Listeners para los hijos: deselecciona el padre si algún hijo cambia
+    childValues.forEach(childValue => {
+      const childCheckbox = document.querySelector(`input[name="escalaTemporal"][value="${childValue}"]`);
+      
+      if (childCheckbox) {
+        childCheckbox.addEventListener('change', () => {
+          // Si se deselecciona un hijo, deseleccionar el padre
+          if (!childCheckbox.checked) {
+            parentCheckbox.checked = false;
+          } else {
+            // Si se selecciona un hijo, verificar si todos están seleccionados para marcar el padre
+            const allChildrenChecked = childValues.every(cv => {
+              const cb = document.querySelector(`input[name="escalaTemporal"][value="${cv}"]`);
+              return cb && cb.checked;
+            });
+            
+            if (allChildrenChecked) {
+              parentCheckbox.checked = true;
+            }
+          }
+        });
+      }
+    });
+  });
 }
 
 /**
@@ -357,28 +416,28 @@ function filterMaps() {
       // Normalizar los filtros seleccionados
       const normalizedFilters = advanced.escalaEspacial.map(f => normalizeText(f));
       
-      // Verificar si algún filtro coincide con algún valor en space_search
-      const hasMatch = normalizedFilters.some(filter => 
+      // Verificar si TODOS los filtros seleccionados tienen coincidencia (AND lógico)
+      const allFiltersMatch = normalizedFilters.every(filter => 
         mapSpaceSearch.some(space => space.includes(filter) || filter.includes(space))
       );
 
-      if (!hasMatch) {
+      if (!allFiltersMatch) {
         return false;
       }
     }
 
-    // Filtrar por escala temporal (usando time_search)
+    // Filtrar por escala temporal (usando time_search con coincidencia EXACTA)
     if (advanced.escalaTemporal.length > 0) {
       const mapTimeSearch = map.time_search || [];
       // Normalizar los filtros seleccionados
       const normalizedFilters = advanced.escalaTemporal.map(f => normalizeText(f));
       
-      // Verificar si algún filtro coincide con algún valor en time_search
-      const hasMatch = normalizedFilters.some(filter => 
-        mapTimeSearch.some(time => time.includes(filter) || filter.includes(time))
+      // Verificar si TODOS los filtros seleccionados tienen coincidencia EXACTA (AND lógico)
+      const allFiltersMatch = normalizedFilters.every(filter => 
+        mapTimeSearch.some(time => time === filter) // Coincidencia exacta
       );
 
-      if (!hasMatch) {
+      if (!allFiltersMatch) {
         return false;
       }
     }
