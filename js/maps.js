@@ -442,14 +442,16 @@ function filterMaps() {
       const filtersByGroup = {
         'anos censales': [],
         'periodos': [],
-        'siglos': [],
-        'padres': [] // Categorías padre seleccionadas directamente
+        'siglos': []
       };
 
       normalizedFilters.forEach(filter => {
         // Primero verificar si es una categoría padre
         if (filter === 'anos censales' || filter === 'periodos' || filter === 'siglos') {
-          filtersByGroup.padres.push(filter);
+          // NO agregamos la categoría padre a los filtros
+          // La cascada ya se encargó de seleccionar todos los hijos
+          // Ignoramos esta etiqueta padre para no causar 0 resultados
+          return;
         } else {
           // Si no, buscar en qué grupo pertenece
           let assigned = false;
@@ -470,17 +472,12 @@ function filterMaps() {
       // Evaluar cada grupo: dentro del grupo usa OR, entre grupos usa AND
       const groupResults = [];
 
-      // Evaluar categorías padre seleccionadas directamente
-      if (filtersByGroup.padres.length > 0) {
-        const padresMatch = filtersByGroup.padres.some(parent =>
-          mapTimeSearch.includes(parent)
-        );
-        groupResults.push(padresMatch);
-      }
+      // NO evaluamos categorías padre directamente
+      // Solo evaluamos los hijos que ya fueron seleccionados por la cascada
 
       // Evaluar cada grupo de hijos
       for (const [groupName, filters] of Object.entries(filtersByGroup)) {
-        if (groupName === 'padres' || filters.length === 0) continue;
+        if (filters.length === 0) continue;
 
         // Dentro del grupo: OR (al menos uno debe coincidir con coincidencia exacta)
         const groupMatch = filters.some(filter => 

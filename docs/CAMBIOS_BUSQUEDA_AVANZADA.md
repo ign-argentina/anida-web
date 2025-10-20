@@ -1,5 +1,41 @@
 # Optimización de Búsqueda Avanzada - ANIDA
 
+## Versión Actual: 2.3.1 (19 oct 2025)
+
+---
+
+## 🔴 HOTFIX v2.3.1 - Fix de Filtros Padre
+
+**Fecha:** 19 de octubre de 2025  
+**Problema:** Al seleccionar una categoría padre (Años censales, Períodos, Siglos), el sistema devolvía 0 resultados  
+**Causa:** Las etiquetas padre se agregaban literalmente a los filtros pero no existen en los datos JSON  
+**Solución:** Las categorías padre ahora se ignoran en el filtrado; solo se procesan los valores hijos
+
+### Cambios Técnicos
+
+```javascript
+// ❌ ANTES (v2.3)
+if (filter === 'anos censales' || filter === 'periodos' || filter === 'siglos') {
+  filtersByGroup.padres.push(filter); // Agregaba el padre
+}
+
+// ✅ AHORA (v2.3.1)
+if (filter === 'anos censales' || filter === 'periodos' || filter === 'siglos') {
+  return; // Ignora el padre, la cascada ya seleccionó los hijos
+}
+```
+
+### Resultado
+
+- ✅ Seleccionar "Años censales" ahora muestra todos los mapas de 2001, 2010, 2022, años anteriores
+- ✅ Seleccionar "Períodos" ahora muestra todos los mapas de cualquier período
+- ✅ Seleccionar "Siglos" ahora muestra todos los mapas de cualquier siglo
+- ✅ Combinaciones como "Años censales + XXI" funcionan correctamente
+
+📄 **Documentación completa:** [`docs/FIX_FILTROS_PADRE.md`](./FIX_FILTROS_PADRE.md)
+
+---
+
 ## Resumen de Cambios
 
 ### 1. Actualización del Estado Global (`maps.js`)
