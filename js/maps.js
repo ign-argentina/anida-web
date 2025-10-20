@@ -13,13 +13,8 @@ const app = {
     keyword: '',
     category: 'Todos',
     advanced: {
-      estructuraTematica: [],
       escalaEspacial: [],
-      escalaTemporal: [],
-      tipoFenomeno: [],
-      tipoEscala: [],
-      tipoDatos: [],
-      tipoMapa: []
+      escalaTemporal: []
     }
   },
   currentModalIndex: 0, // Índice del mapa actual en modal
@@ -65,13 +60,8 @@ function initApp() {
   elements.applyAdvancedBtn = document.getElementById('apply-advanced-btn');
   elements.clearAdvancedBtn = document.getElementById('clear-advanced-btn');
   elements.advancedFilters = {
-    estructuraTematica: document.querySelectorAll('input[name="estructuraTematica"]'),
     escalaEspacial: document.querySelectorAll('input[name="escalaEspacial"]'),
-    escalaTemporal: document.querySelectorAll('input[name="escalaTemporal"]'),
-    tipoFenomeno: document.querySelectorAll('input[name="tipoFenomeno"]'),
-    tipoEscala: document.querySelectorAll('input[name="tipoEscala"]'),
-    tipoDatos: document.querySelectorAll('input[name="tipoDatos"]'),
-    tipoMapa: document.querySelectorAll('input[name="tipoMapa"]')
+    escalaTemporal: document.querySelectorAll('input[name="escalaTemporal"]')
   };
 
   // Cargar datos
@@ -342,49 +332,55 @@ function filterMaps() {
 
     // Filtrar por keyword si existe
     if (keyword) {
+      // Usar keywords_search normalizado si existe, sino normalizar manualmente
+      const searchableFields = [
+        map.title_search || normalizeText(normalizedMap.title),
+        ...(map.keywords_search || normalizedMap.keywords.map(k => normalizeText(k)))
+      ];
+
       // Dividir la búsqueda en términos individuales
       const searchTerms = keyword.trim().split(/\s+/).map(term => normalizeText(term));
-      const normalizedTitle = normalizeText(normalizedMap.title);
-      const normalizedKeywords = normalizedMap.keywords.map(k => normalizeText(k));
 
-      // Verificar si al menos uno de los términos aparece en el título o en alguna keyword
-      const hasMatch = searchTerms.some(term => {
-        // Buscar en el título
-        if (normalizedTitle.includes(term)) {
-          return true;
-        }
-        // Buscar en las keywords
-        return normalizedKeywords.some(keyword => keyword.includes(term));
-      });
+      // Verificar si todos los términos aparecen en algún campo
+      const allTermsMatch = searchTerms.every(term => 
+        searchableFields.some(field => field.includes(term))
+      );
 
-      // Si no hay coincidencia, excluir
+      if (!allTermsMatch) {
+        return false;
+      }
+    }
+
+    // Filtrar por escala espacial (usando space_search)
+    if (advanced.escalaEspacial.length > 0) {
+      const mapSpaceSearch = map.space_search || [];
+      // Normalizar los filtros seleccionados
+      const normalizedFilters = advanced.escalaEspacial.map(f => normalizeText(f));
+      
+      // Verificar si algún filtro coincide con algún valor en space_search
+      const hasMatch = normalizedFilters.some(filter => 
+        mapSpaceSearch.some(space => space.includes(filter) || filter.includes(space))
+      );
+
       if (!hasMatch) {
         return false;
       }
     }
 
-    // Filtrar por filtros avanzados (si hay datos en el JSON los usará, si no, no filtrará)
-    const advancedChecks = [
-      { filter: advanced.estructuraTematica, field: normalizedMap.category },
-      { filter: advanced.escalaEspacial, field: map.escala_espacial || map.escalaEspacial || '' },
-      { filter: advanced.escalaTemporal, field: map.escala_temporal || map.escalaTemporal || '' },
-      { filter: advanced.tipoEscala, field: map.tipo_escala || map.tipoEscala || '' },
-      { filter: advanced.tipoDatos, field: map.tipo_datos || map.tipoDatos || '' },
-      { filter: advanced.tipoMapa, field: map.tipo_mapa || map.tipoMapa || '' }
-    ];
+    // Filtrar por escala temporal (usando time_search)
+    if (advanced.escalaTemporal.length > 0) {
+      const mapTimeSearch = map.time_search || [];
+      // Normalizar los filtros seleccionados
+      const normalizedFilters = advanced.escalaTemporal.map(f => normalizeText(f));
+      
+      // Verificar si algún filtro coincide con algún valor en time_search
+      const hasMatch = normalizedFilters.some(filter => 
+        mapTimeSearch.some(time => time.includes(filter) || filter.includes(time))
+      );
 
-    // Verificar filtros simples
-    for (const check of advancedChecks) {
-      if (check.filter.length > 0 && !check.filter.includes(check.field)) {
+      if (!hasMatch) {
         return false;
       }
-    }
-
-    // Tipo de fenómeno (es un array en el mapa)
-    const mapTipoFenomeno = Array.isArray(map.tipo_fenomeno) ? map.tipo_fenomeno : (map.tipoFenomeno || []);
-    if (advanced.tipoFenomeno.length > 0 &&
-      !advanced.tipoFenomeno.some(tipo => mapTipoFenomeno.includes(tipo))) {
-      return false;
     }
 
     // Si pasó todos los filtros, incluir en resultados
@@ -561,13 +557,8 @@ function updateActiveFilters() {
 
   // Mostrar filtros avanzados activos
   const groupNames = {
-    estructuraTematica: 'Estructura temática',
     escalaEspacial: 'Escala espacial',
-    escalaTemporal: 'Escala temporal',
-    tipoFenomeno: 'Tipo de fenómeno',
-    tipoEscala: 'Tipo de escala',
-    tipoDatos: 'Tipo de datos',
-    tipoMapa: 'Tipo de mapa'
+    escalaTemporal: 'Escala temporal'
   };
 
   Object.keys(advanced).forEach(filterGroup => {
