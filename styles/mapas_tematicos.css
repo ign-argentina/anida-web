@@ -710,3 +710,62 @@ a.download-btn:hover, a.view-btn:hover, #load-more-btn:hover {
     left: 15px;
   }
 }
+
+/* ===========================================
+   FILTROS INTELIGENTES - Contadores y estados
+   =========================================== */
+
+/* Filtros de categoría deshabilitados */
+.form-check-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.form-check-input:disabled + .form-check-label {
+  cursor: not-allowed !important;
+  opacity: 0.5 !important;
+  color: #999;
+}
+
+/* Contador de resultados en filtros */
+.form-check-label {
+  transition: opacity 0.2s ease, color 0.2s ease;
+  user-select: none;
+}
+
+/* Tooltip para filtros deshabilitados */
+.form-check-input:disabled + .form-check-label[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-left: 10px;
+  margin-top: -5px;
+  pointer-events: none;
+}
+
+/* Estilos para contadores en categorías padre (bold) */
+.fw-bold span {
+  font-weight: normal;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Animación suave al actualizar contadores */
+.form-check-label {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}

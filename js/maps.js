@@ -110,6 +110,9 @@ async function fetchMapsData() {
     app.filteredMaps = [...app.allMaps];
     renderMaps();
     updateResultsCount();
+    
+    // Actualizar contadores de filtros después de cargar los datos
+    updateFilterCounts();
 
     // Mostrar estadísticas de indexación
     console.log(`📊 Estadísticas de indexación:
@@ -1013,6 +1016,9 @@ function handleSearch() {
   renderMaps(true);
   updateActiveFilters();
   updateResultsCount();
+  
+  // Actualizar contadores de filtros
+  updateFilterCounts();
 }
 
 /**
@@ -1057,6 +1063,9 @@ function clearAdvancedFilters() {
 
   if (hasActiveAdvancedFilters) {
     handleSearch();
+  } else {
+    // Actualizar contadores aunque no haya filtros activos
+    updateFilterCounts();
   }
 }
 
@@ -1576,6 +1585,216 @@ function clearAllFilters() {
 
   // Ejecutar búsqueda para actualizar resultados
   handleSearch();
+}
+
+/**
+ * Obtiene la cantidad de resultados para un filtro específico
+ * @param {string} filterType - Tipo de filtro ('category', 'escalaEspacial', 'escalaTemporal')
+ * @param {string} filterValue - Valor del filtro
+ * @returns {number} - Cantidad de mapas que coinciden
+ */
+function getFilterResultCount(filterType, filterValue) {
+  const currentKeyword = app.activeFilters.keyword;
+  const currentCategory = app.activeFilters.category;
+  const currentAdvanced = app.activeFilters.advanced;
+  
+  // Filtrar según el tipo
+  return app.allMaps.filter(map => {
+    const normalizedMap = normalizeMapData(map);
+    
+    // Aplicar filtro de keyword si existe
+    if (currentKeyword) {
+      const searchableFields = [
+        map.title_search || normalizeText(normalizedMap.title),
+        ...(map.keywords_search || normalizedMap.keywords.map(k => normalizeText(k)))
+      ];
+      const searchTerms = currentKeyword.trim().split(/\s+/).map(term => normalizeText(term));
+      
+      const allTermsMatch = searchTerms.every(term => 
+        searchableFields.some(field => field.includes(term))
+      );
+      
+      if (!allTermsMatch) return false;
+    }
+    
+    // Aplicar filtros avanzados activos (excepto el que estamos evaluando)
+    // Escala espacial
+    if (filterType !== 'escalaEspacial' && currentAdvanced.escalaEspacial.length > 0) {
+      const mapSpaceSearch = map.space_search || [];
+      const normalizedFilters = currentAdvanced.escalaEspacial.map(f => normalizeText(f));
+      const hasMatch = normalizedFilters.some(filter => 
+        mapSpaceSearch.some(space => space.includes(filter) || filter.includes(space))
+      );
+      if (!hasMatch) return false;
+    }
+    
+    // Escala temporal
+    if (filterType !== 'escalaTemporal' && currentAdvanced.escalaTemporal.length > 0) {
+      const mapTimeSearch = map.time_search || [];
+      const normalizedFilters = currentAdvanced.escalaTemporal.map(f => normalizeText(f));
+      
+      // Filtrar categorías padre
+      const filteredTemporalFilters = normalizedFilters.filter(f => 
+        f !== 'anos censales' && f !== 'periodos' && f !== 'siglos'
+      );
+      
+      if (filteredTemporalFilters.length > 0) {
+        const hasMatch = filteredTemporalFilters.some(filter => 
+          mapTimeSearch.includes(filter)
+        );
+        if (!hasMatch) return false;
+      }
+    }
+    
+    // Aplicar categoría activa (excepto si estamos evaluando categorías)
+    if (filterType !== 'category' && currentCategory !== 'Todos') {
+      if (normalizedMap.category !== currentCategory) return false;
+    }
+    
+    // Aplicar filtro específico que estamos evaluando
+    switch(filterType) {
+      case 'category':
+        if (filterValue === 'Todos') return true;
+        return normalizedMap.category === filterValue;
+        
+      case 'escalaEspacial':
+        const mapSpaceSearch = map.space_search || [];
+        const normalizedSpatialFilter = normalizeText(filterValue);
+        return mapSpaceSearch.some(space => 
+          space.includes(normalizedSpatialFilter) || normalizedSpatialFilter.includes(space)
+        );
+        
+      case 'escalaTemporal':
+        const mapTimeSearch = map.time_search || [];
+        const normalizedTemporalFilter = normalizeText(filterValue);
+        
+        // Categorías padre
+        const parentCategories = {
+          'anos censales': ['2001', '2010', '2022', 'anos anteriores'],
+          'periodos': ['1900-1950', '1950-1990', '1960-1970', '1970-1980', '1980-1990', '1990-2000', '2000-2010', '2010-2020', '2020-2030'],
+          'siglos': ['xv', 'xvi', 'xvii', 'xviii', 'xix', 'xx', 'xxi']
+        };
+        
+        // Si es categoría padre, contar si tiene algún hijo
+        if (parentCategories[normalizedTemporalFilter]) {
+          const children = parentCategories[normalizedTemporalFilter];
+          return children.some(child => mapTimeSearch.includes(child));
+        }
+        
+        // Si es hijo, buscar coincidencia exacta
+        return mapTimeSearch.includes(normalizedTemporalFilter);
+        
+      default:
+        return true;
+    }
+  }).length;
+}
+
+/**
+ * Actualiza los contadores de resultados en todos los filtros
+ */
+function updateFilterCounts() {
+  // Actualizar filtros de categoría
+  if (elements.categoryFilters && elements.categoryFilters.length) {
+    elements.categoryFilters.forEach(radio => {
+      const filterValue = radio.value;
+      const count = getFilterResultCount('category', filterValue);
+      const label = radio.nextElementSibling;
+      
+      if (label) {
+        // Guardar texto original si no existe
+        if (!label.hasAttribute('data-original-text')) {
+          label.setAttribute('data-original-text', label.textContent.trim());
+        }
+        
+        const originalText = label.getAttribute('data-original-text');
+        label.textContent = `${originalText} (${count})`;
+        
+        // Deshabilitar si no hay resultados (excepto "Todos")
+        if (count === 0 && filterValue !== 'Todos') {
+          radio.disabled = true;
+          label.style.opacity = '0.5';
+          label.style.cursor = 'not-allowed';
+          label.title = 'No hay resultados disponibles para esta categoría';
+        } else {
+          radio.disabled = false;
+          label.style.opacity = '1';
+          label.style.cursor = 'pointer';
+          label.title = '';
+        }
+      }
+    });
+  }
+  
+  // Actualizar filtros de escala espacial
+  if (elements.advancedFilters.escalaEspacial) {
+    elements.advancedFilters.escalaEspacial.forEach(checkbox => {
+      const filterValue = checkbox.value;
+      const count = getFilterResultCount('escalaEspacial', filterValue);
+      const label = checkbox.nextElementSibling;
+      
+      if (label) {
+        // Guardar texto original si no existe
+        if (!label.hasAttribute('data-original-text')) {
+          label.setAttribute('data-original-text', label.textContent.trim());
+        }
+        
+        const originalText = label.getAttribute('data-original-text');
+        label.textContent = `${originalText} (${count})`;
+        
+        // Deshabilitar si no hay resultados
+        if (count === 0) {
+          checkbox.disabled = true;
+          label.style.opacity = '0.5';
+          label.style.cursor = 'not-allowed';
+          label.title = 'No hay resultados disponibles para esta escala espacial';
+        } else {
+          checkbox.disabled = false;
+          label.style.opacity = '1';
+          label.style.cursor = 'pointer';
+          label.title = '';
+        }
+      }
+    });
+  }
+  
+  // Actualizar filtros de escala temporal
+  if (elements.advancedFilters.escalaTemporal) {
+    elements.advancedFilters.escalaTemporal.forEach(checkbox => {
+      const filterValue = checkbox.value;
+      const count = getFilterResultCount('escalaTemporal', filterValue);
+      const label = checkbox.nextElementSibling;
+      
+      if (label) {
+        // Guardar texto original si no existe
+        if (!label.hasAttribute('data-original-text')) {
+          label.setAttribute('data-original-text', label.textContent.trim());
+        }
+        
+        const originalText = label.getAttribute('data-original-text');
+        
+        // Para categorías padre, mostrar sin modificar el estilo bold
+        if (label.classList.contains('fw-bold')) {
+          label.innerHTML = `${originalText} <span style="font-weight: normal;">(${count})</span>`;
+        } else {
+          label.textContent = `${originalText} (${count})`;
+        }
+        
+        // Deshabilitar si no hay resultados
+        if (count === 0) {
+          checkbox.disabled = true;
+          label.style.opacity = '0.5';
+          label.style.cursor = 'not-allowed';
+          label.title = 'No hay resultados disponibles para esta escala temporal';
+        } else {
+          checkbox.disabled = false;
+          label.style.opacity = '1';
+          label.style.cursor = 'pointer';
+          label.title = '';
+        }
+      }
+    });
+  }
 }
 
 /**
