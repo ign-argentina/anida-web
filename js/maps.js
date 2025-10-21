@@ -436,6 +436,9 @@ function setupSearchListeners() {
         if (elements.searchButton) elements.searchButton.disabled = true;
         // Ocultar el propio botón
         elements.clearKeywordBtn.style.display = 'none';
+        // Limpiar error y autocompletado
+        clearInputError();
+        hideAutocomplete();
         // Actualizar filtros y resultados
         app.activeFilters.keyword = '';
         app.currentBatch = 0;
@@ -443,6 +446,7 @@ function setupSearchListeners() {
         renderMaps(true);
         updateActiveFilters();
         updateResultsCount();
+        updateFilterCounts(); // Resetear filtros inteligentes
       });
     }
 
@@ -482,20 +486,38 @@ function setupSearchListeners() {
       // Búsqueda en vivo con debouncing
       // Usamos el valor sanitizado para la búsqueda, pero NO modificamos el input
       app.searchTimeout = setTimeout(() => {
-        app.activeFilters.keyword = val;
-        app.currentBatch = 0;
-        filterMaps();
-        renderMaps(true);
-        updateActiveFilters();
-        updateResultsCount();
+        // Solo buscar si hay al menos 3 caracteres o el campo está vacío (para resetear)
+        if (val.length >= 3 || val.length === 0) {
+          app.activeFilters.keyword = val;
+          app.currentBatch = 0;
+          filterMaps();
+          renderMaps(true);
+          updateActiveFilters();
+          updateResultsCount();
+          updateFilterCounts(); // Actualizar filtros inteligentes
+        }
       }, app.debounceDelay); // Esperar 300ms (configurable) antes de buscar
     });
     
-    // Navegación con teclado en autocompletado
+    // Navegación con teclado en autocompletado y Enter para buscar
     elements.keywordInput.addEventListener('keydown', (e) => {
       const dropdown = elements.autocompleteDropdown;
       const isDropdownVisible = dropdown && dropdown.style.display === 'block';
       
+      // Manejar Enter cuando NO hay dropdown activo
+      if (e.key === 'Enter' && !isDropdownVisible) {
+        e.preventDefault();
+        const trimmedValue = (e.target.value || '').trim();
+        if (trimmedValue.length >= 3) {
+          // Cancelar timeout de búsqueda en vivo
+          clearTimeout(app.searchTimeout);
+          // Ejecutar búsqueda inmediatamente
+          handleSearch();
+        }
+        return;
+      }
+      
+      // Resto del manejo solo si dropdown está visible
       if (!isDropdownVisible) return;
       
       switch(e.key) {
@@ -707,12 +729,12 @@ function sanitizeInput(input, maxLength = 150) {
     };
   }
   
-  // Paso 6: Validar longitud mínima (opcional, pero recomendado)
-  if (sanitized.length > 0 && sanitized.length < 2) {
+  // Paso 6: Validar longitud mínima (requerido para búsqueda)
+  if (sanitized.length > 0 && sanitized.length < 3) {
     return {
       sanitized: sanitized,
       valid: false,
-      error: 'La búsqueda debe tener al menos 2 caracteres'
+      error: 'La búsqueda debe tener al menos 3 caracteres'
     };
   }
   
@@ -780,14 +802,123 @@ function showInputError(message) {
  */
 function clearInputError() {
   const errorElement = document.getElementById('search-input-error');
+  const warningElement = document.getElementById('search-typo-warning');
   
   if (errorElement) {
     errorElement.style.display = 'none';
   }
   
+  if (warningElement) {
+    warningElement.style.display = 'none';
+  }
+  
   if (elements.keywordInput) {
     elements.keywordInput.style.borderColor = '';
   }
+}
+
+/**
+ * Detecta si hay resultados por fuzzy match pero posibles errores de escritura
+ * @param {string} keyword - Palabra clave buscada
+ */
+function detectTypoSuggestion(keyword) {
+  // Solo verificar si:
+  // 1. Hay keyword de búsqueda
+  // 2. Hay resultados encontrados (por fuzzy match)
+  // 3. Fuzzy match está activado
+  if (!keyword || app.filteredMaps.length === 0 || !app.fuzzyMatch) {
+    return;
+  }
+  
+  const normalizedKeyword = normalizeText(keyword);
+  const searchTerms = normalizedKeyword.trim().split(/\s+/);
+  
+  // Verificar si TODOS los términos tienen coincidencia exacta
+  let allExactMatches = true;
+  
+  for (const term of searchTerms) {
+    let hasExactMatch = false;
+    
+    // Buscar en los resultados filtrados si alguno tiene coincidencia exacta
+    for (const map of app.filteredMaps) {
+      const searchableFields = [
+        map.title_search || normalizeText(normalizeMapData(map).title),
+        ...(map.keywords_search || normalizeMapData(map).keywords.map(k => normalizeText(k)))
+      ];
+      
+      // Si encontramos coincidencia exacta en cualquier campo, este término está OK
+      if (searchableFields.some(field => field.includes(term))) {
+        hasExactMatch = true;
+        break;
+      }
+    }
+    
+    // Si al menos un término no tiene coincidencia exacta
+    if (!hasExactMatch) {
+      allExactMatches = false;
+      break;
+    }
+  }
+  
+  // Si NO todos tienen coincidencia exacta, pero SÍ hay resultados (fuzzy match)
+  // entonces sugerir verificar la escritura
+  if (!allExactMatches && app.filteredMaps.length > 0) {
+    showTypoWarning();
+  }
+}
+
+/**
+ * Muestra advertencia de posible error de escritura
+ */
+function showTypoWarning() {
+  if (!elements.keywordInput) return;
+  
+  // Buscar o crear elemento de advertencia
+  let warningElement = document.getElementById('search-typo-warning');
+  
+  if (!warningElement) {
+    warningElement = document.createElement('div');
+    warningElement.id = 'search-typo-warning';
+    warningElement.style.cssText = `
+      position: absolute;
+      top: -45px;
+      left: 0;
+      right: 0;
+      color: #856404;
+      font-size: 0.875rem;
+      padding: 0.5rem 0.75rem;
+      background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 2px 8px rgba(255, 193, 7, 0.2);
+      z-index: 1001;
+      animation: slideDown 0.3s ease-out;
+    `;
+    
+    // Insertar dentro del contenedor del input
+    const inputGroup = elements.keywordInput.closest('.input-group') || 
+                      elements.keywordInput.parentElement;
+    if (inputGroup) {
+      inputGroup.style.position = 'relative';
+      inputGroup.appendChild(warningElement);
+    }
+  }
+  
+  warningElement.innerHTML = `
+    <i class='bx bx-info-circle' style='font-size: 1.2rem;'></i>
+    <span>Verifique la ortografía de su búsqueda. Se encontraron resultados aproximados.</span>
+  `;
+  warningElement.style.display = 'flex';
+  
+  // Auto-ocultar después de 5 segundos
+  setTimeout(() => {
+    if (warningElement) {
+      warningElement.style.display = 'none';
+    }
+  }, 5000);
 }
 
 /**
@@ -830,13 +961,14 @@ function levenshteinDistance(str1, str2) {
  * @returns {Object} - {match: boolean, score: number, type: 'exact'|'fuzzy', percentage: number}
  */
 function fuzzyMatch(term, field, threshold = 2) {
-  // Coincidencia exacta (prioridad máxima)
+  // Coincidencia exacta (prioridad máxima) - incluye coincidencias parciales
   if (field.includes(term)) {
     return { match: true, score: 0, type: 'exact', percentage: 100 };
   }
   
-  // Solo aplicar búsqueda difusa a palabras de 5+ caracteres
-  if (term.length < 5) {
+  // Solo aplicar búsqueda difusa a palabras de 3+ caracteres
+  // Palabras muy cortas (1-2 chars) no usan fuzzy match
+  if (term.length < 3) {
     return { match: false, score: Infinity, type: 'none', percentage: 0 };
   }
   
@@ -1019,6 +1151,9 @@ function handleSearch() {
   
   // Actualizar contadores de filtros
   updateFilterCounts();
+  
+  // Detectar si hay resultados por fuzzy match pero posibles errores de escritura
+  detectTypoSuggestion(keyword);
 }
 
 /**
@@ -1101,12 +1236,17 @@ function filterMaps() {
   
   const { keyword, category, advanced } = app.activeFilters;
   
+  // Si hay keyword pero no cumple longitud mínima, mostrar todos los mapas
+  const effectiveKeyword = (keyword && keyword.trim().length >= 3) ? keyword : '';
+  
   // OPTIMIZACIÓN: Si hay búsqueda de texto y el índice está disponible, usar búsqueda indexada
   let candidateMaps = app.allMaps;
   
-  if (keyword && keyword.trim().length >= 3 && Object.keys(app.searchIndex).length > 0) {
+  // Solo usar índice para búsquedas >= 5 caracteres (para palabras más largas)
+  // Búsquedas cortas (3-4 chars) usan búsqueda completa con fuzzy match
+  if (effectiveKeyword && effectiveKeyword.trim().length >= 5 && Object.keys(app.searchIndex).length > 0) {
     // Usar búsqueda indexada O(1) por término
-    candidateMaps = searchUsingIndex(keyword.trim());
+    candidateMaps = searchUsingIndex(effectiveKeyword.trim());
   }
 
   app.filteredMaps = candidateMaps.filter(map => {
@@ -1117,8 +1257,8 @@ function filterMaps() {
       return false;
     }
 
-    // Filtrar por keyword si existe
-    if (keyword) {
+    // Filtrar por keyword si existe y cumple longitud mínima
+    if (effectiveKeyword) {
       // Usar keywords_search normalizado si existe, sino normalizar manualmente
       const searchableFields = [
         map.title_search || normalizeText(normalizedMap.title),
@@ -1126,7 +1266,7 @@ function filterMaps() {
       ];
 
       // Dividir la búsqueda en términos individuales
-      const searchTerms = keyword.trim().split(/\s+/).map(term => normalizeText(term));
+      const searchTerms = effectiveKeyword.trim().split(/\s+/).map(term => normalizeText(term));
 
       // Verificar coincidencias según configuración de búsqueda difusa
       let allTermsMatch;
@@ -1313,11 +1453,14 @@ function searchUsingIndex(searchValue) {
       app.searchIndex[term].mapIndices.forEach(idx => matchingIndices.add(idx));
     }
     
-    // 2. Si fuzzyMatch está activado y el término es largo, buscar similares
-    if (app.fuzzyMatch && term.length >= 5) {
+    // 2. Si fuzzyMatch está activado, buscar similares con umbral adaptativo
+    if (app.fuzzyMatch && term.length >= 3) {
+      // Umbral adaptativo según longitud del término
+      const threshold = term.length <= 4 ? 1 : 2;
+      
       Object.keys(app.searchIndex).forEach(indexedTerm => {
         const distance = levenshteinDistance(term, indexedTerm);
-        if (distance > 0 && distance <= 2) { // threshold = 2
+        if (distance > 0 && distance <= threshold) {
           app.searchIndex[indexedTerm].mapIndices.forEach(idx => matchingIndices.add(idx));
         }
       });
@@ -1396,13 +1539,17 @@ function createMapThumbnail(map, index) {
     let color = '#dc3545'; // Rojo por defecto
     let label = 'Baja';
     
-    if (percentage >= 80) {
-      color = '#28a745'; // Verde
-      label = 'Alta';
+    if (percentage === 100) {
+      color = '#28a745'; // Verde oscuro - Coincidencia perfecta
+      label = 'Perfecta';
+    } else if (percentage >= 80) {
+      color = '#84e184'; // Verde lima - Muy alta
+      label = 'Muy Alta';
     } else if (percentage >= 50) {
-      color = '#ffc107'; // Amarillo
+      color = '#ffc107'; // Amarillo - Media
       label = 'Media';
     }
+    // Else: Rojo - Baja (< 50%)
     
     relevanceIndicator = `
       <div class="relevance-indicator" style="
@@ -1410,7 +1557,7 @@ function createMapThumbnail(map, index) {
         top: 8px;
         right: 8px;
         background: ${color};
-        color: white;
+        color: ${percentage === 100 || percentage >= 80 ? 'white' : percentage >= 50 ? '#856404' : 'white'};
         padding: 4px 8px;
         border-radius: 12px;
         font-size: 0.75rem;
@@ -1598,21 +1745,52 @@ function getFilterResultCount(filterType, filterValue) {
   const currentCategory = app.activeFilters.category;
   const currentAdvanced = app.activeFilters.advanced;
   
+  // Si hay keyword pero no cumple con longitud mínima, no contar (devolver 0)
+  if (currentKeyword && currentKeyword.trim().length > 0 && currentKeyword.trim().length < 3) {
+    return 0;
+  }
+  
   // Filtrar según el tipo
   return app.allMaps.filter(map => {
     const normalizedMap = normalizeMapData(map);
     
-    // Aplicar filtro de keyword si existe
-    if (currentKeyword) {
+    // Aplicar filtro de keyword si existe y cumple longitud mínima
+    if (currentKeyword && currentKeyword.trim().length >= 3) {
       const searchableFields = [
         map.title_search || normalizeText(normalizedMap.title),
         ...(map.keywords_search || normalizedMap.keywords.map(k => normalizeText(k)))
       ];
       const searchTerms = currentKeyword.trim().split(/\s+/).map(term => normalizeText(term));
       
-      const allTermsMatch = searchTerms.every(term => 
-        searchableFields.some(field => field.includes(term))
-      );
+      // Usar la MISMA lógica de búsqueda que filterMaps() - con fuzzy match
+      let allTermsMatch;
+      
+      if (app.fuzzyMatch) {
+        // Usar búsqueda difusa con priorización (IGUAL que filterMaps)
+        allTermsMatch = searchTerms.every(term => {
+          let hasExactMatch = false;
+          let hasFuzzyMatch = false;
+          
+          for (const field of searchableFields) {
+            const result = fuzzyMatch(term, field);
+            
+            if (result.type === 'exact') {
+              hasExactMatch = true;
+              break; // Coincidencia exacta encontrada, no buscar más
+            } else if (result.type === 'fuzzy') {
+              hasFuzzyMatch = true;
+            }
+          }
+          
+          // Priorizar coincidencias exactas, pero aceptar difusas si no hay exactas
+          return hasExactMatch || hasFuzzyMatch;
+        });
+      } else {
+        // Usar búsqueda exacta tradicional
+        allTermsMatch = searchTerms.every(term => 
+          searchableFields.some(field => field.includes(term))
+        );
+      }
       
       if (!allTermsMatch) return false;
     }
