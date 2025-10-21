@@ -87,17 +87,66 @@
     </div>
 
     <section class="content-section">
+      <div class="container">
+        <!-- Introducción -->
+        <div class="section-intro">
+          <p>A través de palabras clave podés buscar, visualizar y descargar los mapas que colecciona el atlas.</p>
+        </div>
+
+        <!-- Buscador -->
+        <form id="search-form" class="search-form">
+          <div class="search-container">
+            <div class="input-group mb-3">
+              <input type="text" id="keyword-input" class="form-control" placeholder="Buscar por palabra clave..." aria-label="Buscar mapas">
+              <button id="clear-keyword-btn" type="button" class="btn btn-secondary" title="Limpiar búsqueda" style="display:none">
+                <i class='bx bx-x-circle'></i>
+              </button>
+              <button class="keyword-input-btn" type="submit">
+                <i class='bx bx-search'></i> Buscar
+              </button>
+            </div>
+          </div>
+
+          <!-- Filtros rápidos (categorías) -->
+          <div class="quick-filters">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-todos" value="Todos" checked>
+              <label class="form-check-label" for="cat-todos">Todos</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-mundo" value="Argentina y el mundo">
+              <label class="form-check-label" for="cat-mundo">Argentina y el mundo</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-fisico" value="Argentina físico-natural">
+              <label class="form-check-label" for="cat-fisico">Argentina físico-natural</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-socio" value="Argentina socio-demográfica">
+              <label class="form-check-label" for="cat-socio">Argentina socio-demográfica</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-econ" value="Argentina económica">
+              <label class="form-check-label" for="cat-econ">Argentina económica</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-amb" value="Argentina ambiental">
+              <label class="form-check-label" for="cat-amb">Argentina ambiental</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
       <div class="maps-layout">
         <!-- Panel lateral izquierdo - Filtros avanzados -->
-        <!-- <aside class="filters-sidebar">
+        <aside class="filters-sidebar">
           <div class="filters-sidebar-header">
             <h4><i class='bx bx-filter-alt'></i> Filtros de búsqueda</h4>
           </div>
 
           <div class="filters-sidebar-content">
-            <form id="search-form" class="search-form">
 
-              
+              <!-- Filtro de Escala Espacial -->
               <div class="filter-section">
                 <h5 class="filter-section-title">Escala espacial</h5>
                 <div class="filter-group">
@@ -140,11 +189,11 @@
                 </div>
               </div>
 
-              
+              <!-- Filtro de Escala Temporal -->
               <div class="filter-section">
                 <h5 class="filter-section-title">Escala temporal</h5>
                 <div class="filter-group">
-                  
+                  <!-- Años censales -->
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-cat-1" value="Años censales">
                     <label class="form-check-label fw-bold" for="temporal-cat-1">Años censales</label>
@@ -168,7 +217,7 @@
                     </div>
                   </div>
 
-                  
+                  <!-- Períodos -->
                   <div class="form-check mt-2">
                     <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-cat-2" value="Periodos">
                     <label class="form-check-label fw-bold" for="temporal-cat-2">Períodos</label>
@@ -212,7 +261,7 @@
                     </div>
                   </div>
 
-                  
+                  <!-- Siglos -->
                   <div class="form-check mt-2">
                     <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-cat-3" value="Siglos">
                     <label class="form-check-label fw-bold" for="temporal-cat-3">Siglos</label>
@@ -257,54 +306,11 @@
               </div>
             </form>
           </div>
-        </aside> -->
+        </aside>
 
         <!-- Contenido principal -->
         <div class="main-content">
           <div class="container-fluid">
-            <!-- Introducción -->
-            <div class="section-intro">
-              <p>A través de palabras clave podés buscar, visualizar y descargar los mapas que colecciona el atlas.</p>
-            </div>
-
-            <!-- Buscador -->
-            <div class="search-container">
-              <div class="input-group mb-3">
-                <input type="text" id="keyword-input" class="form-control" placeholder="Buscar por palabra clave..." aria-label="Buscar mapas">
-                <button id="clear-keyword-btn" type="button" class="btn btn-secondary" title="Limpiar búsqueda" style="display:none">
-                  <i class='bx bx-x-circle'></i>
-                </button>
-                <button class="keyword-input-btn" type="submit">
-                  <i class='bx bx-search'></i> Buscar
-                </button>
-              </div>
-            </div>
-            <div class="quick-filters">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-todos" value="Todos" checked>
-                <label class="form-check-label" for="cat-todos">Todos</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-mundo" value="Argentina y el mundo">
-                <label class="form-check-label" for="cat-mundo">Argentina y el mundo</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-fisico" value="Argentina físico-natural">
-                <label class="form-check-label" for="cat-fisico">Argentina físico-natural</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-socio" value="Argentina socio-demográfica">
-                <label class="form-check-label" for="cat-socio">Argentina socio-demográfica</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-econ" value="Argentina económica">
-                <label class="form-check-label" for="cat-econ">Argentina económica</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-amb" value="Argentina ambiental">
-                <label class="form-check-label" for="cat-amb">Argentina ambiental</label>
-              </div>
-            </div>
             <!-- Filtros activos -->
             <div class="active-filters-container mt-3">
               <div id="active-filters" class="active-filters"></div>
