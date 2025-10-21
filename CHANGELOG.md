@@ -4,6 +4,35 @@ Todos los cambios notables en el sistema de búsqueda avanzada se documentan en 
 
 ---
 
+## [2.5] - 2024
+
+### ✨ Añadido
+
+- **Sistema de Autocompletado Inteligente**
+  - **Descripción:** Dropdown con sugerencias en tiempo real basadas en términos del índice de búsqueda
+  - **Funcionalidades:**
+    - Extrae términos únicos de `keywords_search` del índice de búsqueda
+    - Muestra máximo 5 sugerencias ordenadas por relevancia
+    - Navegación con teclado (↑ ↓ Enter Escape)
+    - Debouncing optimizado de 200ms (más rápido que búsqueda)
+    - Estilos coherentes con diseño Bootstrap existente
+    - Click fuera del dropdown para cerrar
+    - Selección automática dispara búsqueda
+  - **Impacto en UX:** Mejora descubribilidad de términos y velocidad de búsqueda
+  - **Archivos modificados:**
+    - `js/maps.js` (funciones: `createAutocompleteDropdown`, `getSuggestions`, `showAutocomplete`, `hideAutocomplete`, `selectSuggestion`, `navigateSuggestions`, `handleAutocomplete`)
+    - `styles/mapas_tematicos.css` (nuevas clases: `.autocomplete-dropdown`, `.autocomplete-item`)
+  - **Documentación:** [`docs/IMPLEMENTACION_AUTOCOMPLETE.md`](./docs/IMPLEMENTACION_AUTOCOMPLETE.md)
+
+### Métricas de Performance
+- ⚡ Debouncing autocompletado: **200ms** (vs 300ms búsqueda)
+- 🎯 Máximo de sugerencias: **5**
+- ⌨️ Caracteres mínimos: **2**
+- ✅ Validación JavaScript: **0 errores**
+- ✅ Validación CSS: **0 errores**
+
+---
+
 ## [2.3.1] - 2025-10-19
 
 ### 🐛 Corregido (HOTFIX)

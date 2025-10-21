@@ -24,6 +24,9 @@ const app = {
   visualMatch: true, // Mostrar en pantalla el porcentaje de coincidencia segun peso
   searchTimeout: null, // Timer para debouncing de búsqueda
   debounceDelay: 300,  // Delay en ms para debouncing (300ms por defecto)
+  autocompleteTimeout: null, // Timer para debouncing de autocompletado
+  autocompleteDelay: 200, // Delay en ms para autocompletado (200ms)
+  selectedSuggestionIndex: -1, // Índice de sugerencia seleccionada con teclado
   performanceMetrics: { // Métricas de rendimiento
     indexingTime: 0,
     lastSearchTime: 0,
@@ -50,7 +53,8 @@ const elements = {
   loadMoreBtn: null,
   activeFiltersContainer: null,
   clearFiltersBtn: null,
-  modal: null
+  modal: null,
+  autocompleteDropdown: null
 };
 
 /**
@@ -77,6 +81,9 @@ function initApp() {
 
   // Cargar datos
   fetchMapsData();
+
+  // Crear dropdown de autocompletado
+  createAutocompleteDropdown();
 
   // Event Listeners
   setupEventListeners();
@@ -178,6 +185,226 @@ function buildSearchIndex() {
 }
 
 /**
+ * Crea el dropdown de autocompletado si no existe
+ */
+function createAutocompleteDropdown() {
+  if (elements.autocompleteDropdown) return;
+  
+  const dropdown = document.createElement('div');
+  dropdown.id = 'autocomplete-dropdown';
+  dropdown.className = 'autocomplete-dropdown';
+  dropdown.style.cssText = `
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    margin-top: 0;
+  `;
+  
+  // Deshabilitar autocompletado nativo del input
+  if (elements.keywordInput) {
+    elements.keywordInput.setAttribute('autocomplete', 'off');
+    elements.keywordInput.setAttribute('spellcheck', 'false');
+  }
+  
+  // Insertar después del input
+  const inputGroup = elements.keywordInput.closest('.input-group') || 
+                     elements.keywordInput.parentElement;
+  if (inputGroup) {
+    // Asegurar que el contenedor del input-group sea relativo
+    inputGroup.style.position = 'relative';
+    inputGroup.appendChild(dropdown);
+  }
+  
+  elements.autocompleteDropdown = dropdown;
+}
+
+/**
+ * Obtiene sugerencias de autocompletado basadas en el input
+ * @param {string} input - Texto ingresado por el usuario
+ * @returns {Array<string>} - Array de sugerencias (máximo 5)
+ */
+function getSuggestions(input) {
+  if (!input || input.trim().length < 2) return [];
+  
+  const normalized = normalizeText(input.trim());
+  const words = normalized.split(/\s+/);
+  const lastWord = words[words.length - 1];
+  
+  if (lastWord.length < 2) return [];
+  
+  // Obtener términos del índice que comienzan con el último término escrito
+  const suggestions = Object.keys(app.searchIndex)
+    .filter(term => term.startsWith(lastWord) && term !== lastWord)
+    .sort((a, b) => {
+      // Priorizar términos más cortos (más específicos)
+      if (a.length !== b.length) return a.length - b.length;
+      // Luego alfabéticamente
+      return a.localeCompare(b);
+    })
+    .slice(0, 5);
+  
+  return suggestions;
+}
+
+/**
+ * Muestra el dropdown de autocompletado con las sugerencias
+ * @param {Array<string>} suggestions - Array de sugerencias a mostrar
+ */
+function showAutocomplete(suggestions) {
+  if (!elements.autocompleteDropdown || suggestions.length === 0) {
+    hideAutocomplete();
+    return;
+  }
+  
+  // Limpiar dropdown
+  elements.autocompleteDropdown.innerHTML = '';
+  
+  // Crear elementos de sugerencia
+  suggestions.forEach((suggestion, index) => {
+    const item = document.createElement('div');
+    item.className = 'autocomplete-item';
+    item.textContent = suggestion;
+    item.setAttribute('data-index', index);
+    item.style.cssText = `
+      padding: 10px 15px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background-color 0.2s ease;
+    `;
+    
+    // Hover effect
+    item.addEventListener('mouseenter', () => {
+      // Remover selección de otros items
+      document.querySelectorAll('.autocomplete-item').forEach(i => {
+        i.style.backgroundColor = '';
+        i.style.fontWeight = '';
+      });
+      item.style.backgroundColor = '#f5f5f5';
+      item.style.fontWeight = '500';
+      app.selectedSuggestionIndex = index;
+    });
+    
+    item.addEventListener('mouseleave', () => {
+      if (app.selectedSuggestionIndex !== index) {
+        item.style.backgroundColor = '';
+        item.style.fontWeight = '';
+      }
+    });
+    
+    // Click para seleccionar
+    item.addEventListener('click', () => {
+      selectSuggestion(suggestion);
+    });
+    
+    elements.autocompleteDropdown.appendChild(item);
+  });
+  
+  // Mostrar dropdown
+  elements.autocompleteDropdown.style.display = 'block';
+  app.selectedSuggestionIndex = -1;
+}
+
+/**
+ * Oculta el dropdown de autocompletado
+ */
+function hideAutocomplete() {
+  if (elements.autocompleteDropdown) {
+    elements.autocompleteDropdown.style.display = 'none';
+    elements.autocompleteDropdown.innerHTML = '';
+  }
+  app.selectedSuggestionIndex = -1;
+}
+
+/**
+ * Selecciona una sugerencia y actualiza el input
+ * @param {string} suggestion - Sugerencia seleccionada
+ */
+function selectSuggestion(suggestion) {
+  if (!elements.keywordInput) return;
+  
+  const currentValue = elements.keywordInput.value.trim();
+  const words = currentValue.split(/\s+/);
+  
+  // Reemplazar la última palabra con la sugerencia
+  words[words.length - 1] = suggestion;
+  const newValue = words.join(' ') + ' '; // Agregar espacio al final
+  
+  elements.keywordInput.value = newValue;
+  elements.keywordInput.focus();
+  
+  // Ocultar dropdown
+  hideAutocomplete();
+  
+  // Disparar búsqueda automáticamente
+  const event = new Event('input', { bubbles: true });
+  elements.keywordInput.dispatchEvent(event);
+}
+
+/**
+ * Navega por las sugerencias con el teclado
+ * @param {string} direction - 'up' o 'down'
+ */
+function navigateSuggestions(direction) {
+  const items = elements.autocompleteDropdown?.querySelectorAll('.autocomplete-item');
+  if (!items || items.length === 0) return;
+  
+  // Remover selección actual
+  items.forEach(item => {
+    item.style.backgroundColor = '';
+    item.style.fontWeight = '';
+  });
+  
+  // Calcular nuevo índice
+  if (direction === 'down') {
+    app.selectedSuggestionIndex = (app.selectedSuggestionIndex + 1) % items.length;
+  } else if (direction === 'up') {
+    app.selectedSuggestionIndex = app.selectedSuggestionIndex <= 0 
+      ? items.length - 1 
+      : app.selectedSuggestionIndex - 1;
+  }
+  
+  // Aplicar selección
+  if (app.selectedSuggestionIndex >= 0 && app.selectedSuggestionIndex < items.length) {
+    const selectedItem = items[app.selectedSuggestionIndex];
+    selectedItem.style.backgroundColor = '#f5f5f5';
+    selectedItem.style.fontWeight = '500';
+    
+    // Scroll automático si es necesario
+    selectedItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+}
+
+/**
+ * Maneja el autocompletado con debouncing
+ * @param {string} input - Texto del input
+ */
+function handleAutocomplete(input) {
+  // Cancelar timeout anterior
+  clearTimeout(app.autocompleteTimeout);
+  
+  // Si el input está vacío o muy corto, ocultar
+  if (!input || input.trim().length < 2) {
+    hideAutocomplete();
+    return;
+  }
+  
+  // Programar nueva búsqueda de sugerencias con debouncing
+  app.autocompleteTimeout = setTimeout(() => {
+    const suggestions = getSuggestions(input);
+    showAutocomplete(suggestions);
+  }, app.autocompleteDelay); // 200ms de delay
+}
+
+/**
  * Helper: configurar listeners de búsqueda
  */
 function setupSearchListeners() {
@@ -243,6 +470,9 @@ function setupSearchListeners() {
         elements.clearKeywordBtn.style.display = rawValue.length > 0 ? 'inline-block' : 'none';
       }
 
+      // AUTOCOMPLETADO: Manejar sugerencias con debouncing de 200ms
+      handleAutocomplete(rawValue);
+
       // DEBOUNCING: Cancelar búsqueda anterior y programar nueva
       clearTimeout(app.searchTimeout);
       
@@ -256,6 +486,41 @@ function setupSearchListeners() {
         updateActiveFilters();
         updateResultsCount();
       }, app.debounceDelay); // Esperar 300ms (configurable) antes de buscar
+    });
+    
+    // Navegación con teclado en autocompletado
+    elements.keywordInput.addEventListener('keydown', (e) => {
+      const dropdown = elements.autocompleteDropdown;
+      const isDropdownVisible = dropdown && dropdown.style.display === 'block';
+      
+      if (!isDropdownVisible) return;
+      
+      switch(e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          navigateSuggestions('down');
+          break;
+          
+        case 'ArrowUp':
+          e.preventDefault();
+          navigateSuggestions('up');
+          break;
+          
+        case 'Enter':
+          e.preventDefault();
+          const items = dropdown.querySelectorAll('.autocomplete-item');
+          if (app.selectedSuggestionIndex >= 0 && 
+              app.selectedSuggestionIndex < items.length) {
+            const selectedText = items[app.selectedSuggestionIndex].textContent;
+            selectSuggestion(selectedText);
+          }
+          break;
+          
+        case 'Escape':
+          e.preventDefault();
+          hideAutocomplete();
+          break;
+      }
     });
   }
 
@@ -470,23 +735,30 @@ function showInputError(message) {
     errorElement = document.createElement('div');
     errorElement.id = 'search-input-error';
     errorElement.style.cssText = `
-      color: #dc3545;
+      position: absolute;
+      top: -45px;
+      left: 0;
+      right: 0;
+      color: white;
       font-size: 0.875rem;
-      margin-top: 0.25rem;
-      padding: 0.5rem;
-      background: #f8d7da;
-      border: 1px solid #f5c6cb;
+      padding: 0.5rem 0.75rem;
+      background: #dc3545;
       border-radius: 4px;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+      z-index: 1001;
+      animation: slideDown 0.3s ease-out;
     `;
     
-    // Insertar después del contenedor de búsqueda
-    const searchContainer = elements.keywordInput.closest('.search-container') || 
-                           elements.keywordInput.parentElement;
-    if (searchContainer && searchContainer.parentElement) {
-      searchContainer.parentElement.insertBefore(errorElement, searchContainer.nextSibling);
+    // Insertar dentro del contenedor del input (que debe ser relativo)
+    const inputGroup = elements.keywordInput.closest('.input-group') || 
+                      elements.keywordInput.parentElement;
+    if (inputGroup) {
+      // Asegurar que el contenedor sea relativo
+      inputGroup.style.position = 'relative';
+      inputGroup.appendChild(errorElement);
     }
   }
   
@@ -1805,3 +2077,14 @@ function closeModal() {
 
 // Inicializar la aplicación cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', initApp);
+
+// Cerrar autocompletado al hacer click fuera
+document.addEventListener('click', (e) => {
+  if (elements.keywordInput && 
+      elements.autocompleteDropdown && 
+      !elements.keywordInput.contains(e.target) &&
+      !elements.autocompleteDropdown.contains(e.target)) {
+    hideAutocomplete();
+  }
+});
+
