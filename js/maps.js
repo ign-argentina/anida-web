@@ -18,7 +18,9 @@ const app = {
     }
   },
   currentModalIndex: 0, // Índice del mapa actual en modal
-  modalKeyHandler: null // Referencia al handler de teclado del modal
+  modalKeyHandler: null, // Referencia al handler de teclado del modal
+  fuzzyMatch: true, // Referencia a la función de búsqueda difusa
+  visualMatch: true // Mostrar en pantalla el porcentaje de coincidencia segun peso
 };
 
 // Helper: buscar índice en filteredMaps por id
@@ -134,10 +136,28 @@ function setupSearchListeners() {
     }
 
     elements.keywordInput.addEventListener('input', (e) => {
-      const val = (e.target.value || '').trim();
-      // Habilitar solo si hay al menos 3 caracteres
+      const rawValue = e.target.value || '';
+      
+      // Sanitizar el input
+      const sanitizationResult = sanitizeInput(rawValue);
+      const val = sanitizationResult.sanitized;
+      
+      // Si el input fue modificado por la sanitización, actualizar el campo
+      if (rawValue !== val && val !== '') {
+        e.target.value = val;
+      }
+      
+      // Mostrar error si hay
+      if (!sanitizationResult.valid && sanitizationResult.error) {
+        // Mostrar mensaje de error temporal
+        showInputError(sanitizationResult.error);
+      } else {
+        clearInputError();
+      }
+      
+      // Habilitar solo si hay al menos 3 caracteres y es válido
       if (elements.searchButton) {
-        elements.searchButton.disabled = val.length < 3;
+        elements.searchButton.disabled = val.length < 3 || !sanitizationResult.valid;
       }
 
       // Mostrar/ocultar botón limpiar según contenido
@@ -146,12 +166,15 @@ function setupSearchListeners() {
       }
 
       // Búsqueda en vivo: actualizar filtros y resultados en cada cambio
-      app.activeFilters.keyword = val;
-      app.currentBatch = 0;
-      filterMaps();
-      renderMaps(true);
-      updateActiveFilters();
-      updateResultsCount();
+      // Solo si el input es válido
+      if (sanitizationResult.valid || val.length === 0) {
+        app.activeFilters.keyword = val;
+        app.currentBatch = 0;
+        filterMaps();
+        renderMaps(true);
+        updateActiveFilters();
+        updateResultsCount();
+      }
     });
   }
 
@@ -276,10 +299,321 @@ function setupEventListeners() {
  * @returns {string} - Texto normalizado
  */
 function normalizeText(text) {
+  if (!text || typeof text !== 'string') return '';
+  
   return text
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
+    .replace(/[\u0300-\u036f]/g, '') // Remover acentos
+    .replace(/ñ/g, 'n')              // Normalizar ñ
+    .replace(/Ñ/g, 'n')              // Normalizar Ñ
+    .toLowerCase()
+    .trim();
+}
+
+/**
+ * Sanitiza el input del usuario para prevenir comportamientos erráticos
+ * @param {string} input - Texto ingresado por el usuario
+ * @param {number} maxLength - Longitud máxima permitida (por defecto 150)
+ * @returns {Object} - {sanitized: string, valid: boolean, error: string|null}
+ */
+function sanitizeInput(input, maxLength = 150) {
+  // Validar que el input sea string
+  if (typeof input !== 'string') {
+    return {
+      sanitized: '',
+      valid: false,
+      error: 'El texto debe ser una cadena de caracteres válida'
+    };
+  }
+
+  // Paso 1: Limpiar caracteres de control y prevenir inyección
+  // Remover caracteres de control ASCII (0-31 excepto espacios) y DEL (127)
+  let sanitized = input.replace(/[\x00-\x08\x0B-\x0C\x0E-\x1F\x7F]/g, '');
+  
+  // Paso 2: Remover caracteres especiales peligrosos (mantener letras, números, espacios, guiones, paréntesis)
+  // Permite: letras (cualquier idioma), números, espacios, guiones, paréntesis, comas, puntos
+  sanitized = sanitized.replace(/[^\p{L}\p{N}\s\-_(),.áéíóúüñÁÉÍÓÚÜÑ]/gu, '');
+  
+  // Paso 3: Normalizar múltiples espacios a uno solo
+  sanitized = sanitized.replace(/\s+/g, ' ');
+  
+  // Paso 4: Eliminar espacios al inicio y final
+  sanitized = sanitized.trim();
+  
+  // Paso 5: Limitar longitud
+  if (sanitized.length > maxLength) {
+    return {
+      sanitized: sanitized.substring(0, maxLength),
+      valid: false,
+      error: `La búsqueda es demasiado larga. Máximo ${maxLength} caracteres. Se truncó a: "${sanitized.substring(0, maxLength)}"`
+    };
+  }
+  
+  // Validar que el resultado no esté vacío
+  if (sanitized.length === 0 && input.length > 0) {
+    return {
+      sanitized: '',
+      valid: false,
+      error: 'El texto contiene solo caracteres no válidos. Use solo letras, números y espacios.'
+    };
+  }
+  
+  // Paso 6: Validar longitud mínima (opcional, pero recomendado)
+  if (sanitized.length > 0 && sanitized.length < 2) {
+    return {
+      sanitized: sanitized,
+      valid: false,
+      error: 'La búsqueda debe tener al menos 2 caracteres'
+    };
+  }
+  
+  // Todo OK
+  return {
+    sanitized: sanitized,
+    valid: true,
+    error: null
+  };
+}
+
+/**
+ * Muestra un mensaje de error en el campo de búsqueda
+ * @param {string} message - Mensaje de error a mostrar
+ */
+function showInputError(message) {
+  if (!elements.keywordInput || !message) return;
+  
+  // Buscar o crear elemento de error
+  let errorElement = document.getElementById('search-input-error');
+  
+  if (!errorElement) {
+    errorElement = document.createElement('div');
+    errorElement.id = 'search-input-error';
+    errorElement.style.cssText = `
+      color: #dc3545;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      padding: 0.5rem;
+      background: #f8d7da;
+      border: 1px solid #f5c6cb;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    `;
+    
+    // Insertar después del contenedor de búsqueda
+    const searchContainer = elements.keywordInput.closest('.search-container') || 
+                           elements.keywordInput.parentElement;
+    if (searchContainer && searchContainer.parentElement) {
+      searchContainer.parentElement.insertBefore(errorElement, searchContainer.nextSibling);
+    }
+  }
+  
+  errorElement.innerHTML = `
+    <i class='bx bx-error-circle' style='font-size: 1.2rem;'></i>
+    <span>${message}</span>
+  `;
+  errorElement.style.display = 'flex';
+  
+  // Marcar el input como inválido
+  elements.keywordInput.style.borderColor = '#dc3545';
+}
+
+/**
+ * Limpia el mensaje de error del campo de búsqueda
+ */
+function clearInputError() {
+  const errorElement = document.getElementById('search-input-error');
+  
+  if (errorElement) {
+    errorElement.style.display = 'none';
+  }
+  
+  if (elements.keywordInput) {
+    elements.keywordInput.style.borderColor = '';
+  }
+}
+
+/**
+ * Calcula la distancia de Levenshtein entre dos strings
+ * @param {string} str1 - Primer string
+ * @param {string} str2 - Segundo string
+ * @returns {number} - Distancia de Levenshtein
+ */
+function levenshteinDistance(str1, str2) {
+  const len1 = str1.length;
+  const len2 = str2.length;
+  
+  // Crear matriz de distancias
+  const matrix = Array(len1 + 1).fill(null).map(() => Array(len2 + 1).fill(0));
+  
+  // Inicializar primera fila y columna
+  for (let i = 0; i <= len1; i++) matrix[i][0] = i;
+  for (let j = 0; j <= len2; j++) matrix[0][j] = j;
+  
+  // Calcular distancias
+  for (let i = 1; i <= len1; i++) {
+    for (let j = 1; j <= len2; j++) {
+      const cost = str1[i - 1] === str2[j - 1] ? 0 : 1;
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,      // Eliminación
+        matrix[i][j - 1] + 1,      // Inserción
+        matrix[i - 1][j - 1] + cost // Sustitución
+      );
+    }
+  }
+  
+  return matrix[len1][len2];
+}
+
+/**
+ * Verifica si un término coincide con un campo usando búsqueda difusa
+ * @param {string} term - Término de búsqueda normalizado
+ * @param {string} field - Campo de búsqueda normalizado
+ * @param {number} threshold - Umbral de distancia (por defecto 2)
+ * @returns {Object} - {match: boolean, score: number, type: 'exact'|'fuzzy', percentage: number}
+ */
+function fuzzyMatch(term, field, threshold = 2) {
+  // Coincidencia exacta (prioridad máxima)
+  if (field.includes(term)) {
+    return { match: true, score: 0, type: 'exact', percentage: 100 };
+  }
+  
+  // Solo aplicar búsqueda difusa a palabras de 5+ caracteres
+  if (term.length < 5) {
+    return { match: false, score: Infinity, type: 'none', percentage: 0 };
+  }
+  
+  // Dividir el campo en palabras para comparar
+  const words = field.split(/\s+/);
+  let bestMatch = { match: false, score: Infinity, type: 'none', percentage: 0 };
+  
+  for (const word of words) {
+    // Solo comparar con palabras de longitud similar (±2 caracteres)
+    if (Math.abs(word.length - term.length) > threshold) {
+      continue;
+    }
+    
+    const distance = levenshteinDistance(term, word);
+    
+    // Si la distancia está dentro del umbral, es una coincidencia difusa
+    if (distance <= threshold && distance < bestMatch.score) {
+      // Calcular porcentaje de similitud: 100% - (distancia / longitud_max * 100)
+      const maxLength = Math.max(term.length, word.length);
+      const percentage = Math.round(((maxLength - distance) / maxLength) * 100);
+      
+      bestMatch = { match: true, score: distance, type: 'fuzzy', percentage };
+    }
+  }
+  
+  return bestMatch;
+}
+
+/**
+ * Calcula el score de relevancia de un mapa respecto a los términos de búsqueda
+ * @param {Object} map - Objeto mapa
+ * @param {Array<string>} searchTerms - Términos de búsqueda normalizados
+ * @returns {Object} - {score: number, percentage: number, matches: Object}
+ */
+function calculateRelevanceScore(map, searchTerms) {
+  const normalizedMap = normalizeMapData(map);
+  
+  // Pesos por campo (título tiene mayor peso)
+  const WEIGHTS = {
+    title: 5,      // Mayor peso para título (antes era 3)
+    keywords: 2
+  };
+  
+  let totalScore = 0;
+  let totalWeight = 0;
+  let matchDetails = {
+    title: [],
+    keywords: []
+  };
+  
+  // Campos normalizados
+  const titleField = map.title_search || normalizeText(normalizedMap.title);
+  const keywordFields = map.keywords_search || normalizedMap.keywords.map(k => normalizeText(k));
+  
+  // Detectar si el título completo coincide exactamente
+  const fullSearchText = searchTerms.join(' ');
+  const isTitleExactMatch = titleField === fullSearchText || titleField.includes(fullSearchText);
+  
+  // Si el título coincide exactamente con toda la búsqueda, retornar 100%
+  if (isTitleExactMatch && searchTerms.length > 1) {
+    return {
+      score: WEIGHTS.title * 100,
+      percentage: 100,
+      matches: {
+        title: [{
+          term: fullSearchText,
+          type: 'exact',
+          percentage: 100,
+          score: WEIGHTS.title * 100
+        }],
+        keywords: []
+      },
+      hasExactMatch: true
+    };
+  }
+  
+  searchTerms.forEach(term => {
+    // Buscar en título (peso 5x)
+    const titleMatch = fuzzyMatch(term, titleField);
+    if (titleMatch.match) {
+      const fieldScore = titleMatch.percentage * WEIGHTS.title;
+      totalScore += fieldScore;
+      totalWeight += WEIGHTS.title * 100; // 100% máximo por término
+      matchDetails.title.push({
+        term,
+        type: titleMatch.type,
+        percentage: titleMatch.percentage,
+        score: fieldScore
+      });
+    }
+    
+    // Buscar en keywords (peso 2x)
+    let bestKeywordMatch = { match: false, percentage: 0, type: 'none' };
+    for (const keywordField of keywordFields) {
+      const keywordMatch = fuzzyMatch(term, keywordField);
+      if (keywordMatch.match && keywordMatch.percentage > bestKeywordMatch.percentage) {
+        bestKeywordMatch = keywordMatch;
+      }
+    }
+    
+    if (bestKeywordMatch.match) {
+      const fieldScore = bestKeywordMatch.percentage * WEIGHTS.keywords;
+      totalScore += fieldScore;
+      totalWeight += WEIGHTS.keywords * 100;
+      matchDetails.keywords.push({
+        term,
+        type: bestKeywordMatch.type,
+        percentage: bestKeywordMatch.percentage,
+        score: fieldScore
+      });
+    }
+  });
+  
+  // Calcular porcentaje global de relevancia
+  let percentage = totalWeight > 0 ? Math.round((totalScore / totalWeight) * 100) : 0;
+  
+  // Si todos los términos tienen coincidencia exacta en el título, asegurar 100%
+  const allTermsExactInTitle = searchTerms.length > 0 && 
+    searchTerms.every(term => 
+      matchDetails.title.some(m => m.term === term && m.type === 'exact')
+    );
+  
+  if (allTermsExactInTitle) {
+    percentage = 100;
+    totalScore = WEIGHTS.title * 100 * searchTerms.length;
+  }
+  
+  return {
+    score: totalScore,
+    percentage,
+    matches: matchDetails,
+    hasExactMatch: [...matchDetails.title, ...matchDetails.keywords].some(m => m.type === 'exact')
+  };
 }
 
 /**
@@ -287,7 +621,21 @@ function normalizeText(text) {
  */
 function handleSearch() {
   // Capturar valores de búsqueda
-  const keyword = elements.keywordInput.value.trim();
+  const rawKeyword = elements.keywordInput.value || '';
+  
+  // Sanitizar el keyword
+  const sanitizationResult = sanitizeInput(rawKeyword);
+  const keyword = sanitizationResult.sanitized;
+  
+  // Si el input no es válido, mostrar error y no continuar
+  if (!sanitizationResult.valid && keyword.length > 0) {
+    showInputError(sanitizationResult.error);
+    return;
+  }
+  
+  // Limpiar error si todo está bien
+  clearInputError();
+  
   let category = 'Todos';
 
   if (elements.categoryFilters && elements.categoryFilters.length) {
@@ -407,14 +755,49 @@ function filterMaps() {
       // Dividir la búsqueda en términos individuales
       const searchTerms = keyword.trim().split(/\s+/).map(term => normalizeText(term));
 
-      // Verificar si todos los términos aparecen en algún campo
-      const allTermsMatch = searchTerms.every(term => 
-        searchableFields.some(field => field.includes(term))
-      );
+      // Verificar coincidencias según configuración de búsqueda difusa
+      let allTermsMatch;
+      
+      if (app.fuzzyMatch) {
+        // Usar búsqueda difusa con priorización
+        allTermsMatch = searchTerms.every(term => {
+          let hasExactMatch = false;
+          let hasFuzzyMatch = false;
+          
+          for (const field of searchableFields) {
+            const result = fuzzyMatch(term, field);
+            
+            if (result.type === 'exact') {
+              hasExactMatch = true;
+              break; // Coincidencia exacta encontrada, no buscar más
+            } else if (result.type === 'fuzzy') {
+              hasFuzzyMatch = true;
+            }
+          }
+          
+          // Priorizar coincidencias exactas, pero aceptar difusas si no hay exactas
+          return hasExactMatch || hasFuzzyMatch;
+        });
+      } else {
+        // Usar búsqueda exacta tradicional (método original)
+        allTermsMatch = searchTerms.every(term => 
+          searchableFields.some(field => field.includes(term))
+        );
+      }
 
       if (!allTermsMatch) {
         return false;
       }
+      
+      // Si está activado el sistema de ponderación, calcular score de relevancia
+      if (app.visualMatch && app.fuzzyMatch) {
+        const relevance = calculateRelevanceScore(map, searchTerms);
+        map._relevance = relevance; // Guardar temporalmente el score
+      } else {
+        map._relevance = null; // Limpiar score si no está activo
+      }
+    } else {
+      map._relevance = null; // Sin búsqueda, sin relevancia
     }
 
     // Filtrar por escala espacial (usando space_search con lógica OR)
@@ -505,6 +888,21 @@ function filterMaps() {
     // Si pasó todos los filtros, incluir en resultados
     return true;
   });
+  
+  // Ordenar por relevancia si está activo el sistema de ponderación
+  if (app.visualMatch && app.fuzzyMatch && keyword) {
+    app.filteredMaps.sort((a, b) => {
+      const aRel = a._relevance || { score: 0, hasExactMatch: false };
+      const bRel = b._relevance || { score: 0, hasExactMatch: false };
+      
+      // Priorizar coincidencias exactas
+      if (aRel.hasExactMatch && !bRel.hasExactMatch) return -1;
+      if (!aRel.hasExactMatch && bRel.hasExactMatch) return 1;
+      
+      // Luego ordenar por score
+      return bRel.score - aRel.score;
+    });
+  }
 }
 
 /**
@@ -553,9 +951,44 @@ function createMapThumbnail(map, index) {
     miniatura.setAttribute('data-id', map.id);
   }
 
+  // Construir indicador de relevancia si está activo
+  let relevanceIndicator = '';
+  if (app.visualMatch && map._relevance && map._relevance.percentage > 0) {
+    const percentage = map._relevance.percentage;
+    let color = '#dc3545'; // Rojo por defecto
+    let label = 'Baja';
+    
+    if (percentage >= 80) {
+      color = '#28a745'; // Verde
+      label = 'Alta';
+    } else if (percentage >= 50) {
+      color = '#ffc107'; // Amarillo
+      label = 'Media';
+    }
+    
+    relevanceIndicator = `
+      <div class="relevance-indicator" style="
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: ${color};
+        color: white;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        z-index: 10;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      " title="Relevancia: ${label} (${percentage}%)">
+        ${percentage}%
+      </div>
+    `;
+  }
+
   miniatura.innerHTML = `
     <a href="#" title="${normalizedMap.title}" data-tracking-category="maps" data-tracking-action="click" data-tracking-label="${normalizedMap.title}">
-      <div class="icon-box">
+      <div class="icon-box" style="position: relative;">
+        ${relevanceIndicator}
         <div class="icon">
           <img src="${normalizedMap.image}" alt="${normalizedMap.title}" loading="lazy">
         </div>
