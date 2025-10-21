@@ -9,6 +9,7 @@ const app = {
   filteredMaps: [],    // Mapas filtrados según búsqueda actual
   currentBatch: 0,     // Lote actual para infinite scroll
   batchSize: 20,       // Tamaño de cada lote
+  searchIndex: {},     // Índice invertido para búsquedas O(1)
   activeFilters: {     // Filtros activos
     keyword: '',
     category: 'Todos',
@@ -20,7 +21,13 @@ const app = {
   currentModalIndex: 0, // Índice del mapa actual en modal
   modalKeyHandler: null, // Referencia al handler de teclado del modal
   fuzzyMatch: true, // Referencia a la función de búsqueda difusa
-  visualMatch: true // Mostrar en pantalla el porcentaje de coincidencia segun peso
+  visualMatch: true, // Mostrar en pantalla el porcentaje de coincidencia segun peso
+  performanceMetrics: { // Métricas de rendimiento
+    indexingTime: 0,
+    lastSearchTime: 0,
+    totalSearches: 0,
+    averageSearchTime: 0
+  }
 };
 
 // Helper: buscar índice en filteredMaps por id
@@ -85,15 +92,87 @@ async function fetchMapsData() {
 
     app.allMaps = await response.json();
 
+    // Crear índice invertido para búsquedas rápidas
+    console.time('⚡ Indexación de mapas');
+    buildSearchIndex();
+    console.timeEnd('⚡ Indexación de mapas');
+
     // Inicialmente, mostrar todos los mapas
     app.filteredMaps = [...app.allMaps];
     renderMaps();
     updateResultsCount();
 
+    // Mostrar estadísticas de indexación
+    console.log(`📊 Estadísticas de indexación:
+      - Mapas indexados: ${app.allMaps.length}
+      - Términos únicos: ${Object.keys(app.searchIndex).length}
+      - Tiempo de indexación: ${app.performanceMetrics.indexingTime.toFixed(2)}ms
+      - Promedio por mapa: ${(app.performanceMetrics.indexingTime / app.allMaps.length).toFixed(2)}ms
+    `);
+
   } catch (error) {
     console.error('Error cargando mapas:', error);
     elements.resultsGrid.innerHTML = `<p class="error-message">Error cargando mapas. Por favor, intente nuevamente más tarde.</p>`;
   }
+}
+
+/**
+ * Construye el índice invertido para búsquedas O(1)
+ * Crea un diccionario donde cada término apunta a los índices de mapas que lo contienen
+ */
+function buildSearchIndex() {
+  const startTime = performance.now();
+  
+  // Reiniciar índice
+  app.searchIndex = {};
+  
+  app.allMaps.forEach((map, mapIndex) => {
+    const normalizedMap = normalizeMapData(map);
+    
+    // Obtener términos del título
+    const titleField = map.title_search || normalizeText(normalizedMap.title);
+    const titleTerms = titleField.split(/\s+/).filter(term => term.length > 0);
+    
+    // Obtener términos de keywords
+    const keywordFields = map.keywords_search || normalizedMap.keywords.map(k => normalizeText(k));
+    const keywordTerms = keywordFields.flatMap(kw => kw.split(/\s+/)).filter(term => term.length > 0);
+    
+    // Combinar todos los términos únicos
+    const allTerms = [...new Set([...titleTerms, ...keywordTerms])];
+    
+    // Indexar cada término
+    allTerms.forEach(term => {
+      // Ignorar términos muy cortos (< 2 caracteres)
+      if (term.length < 2) return;
+      
+      // Crear entrada si no existe
+      if (!app.searchIndex[term]) {
+        app.searchIndex[term] = {
+          mapIndices: [],
+          inTitle: [],
+          inKeywords: []
+        };
+      }
+      
+      // Agregar índice del mapa
+      if (!app.searchIndex[term].mapIndices.includes(mapIndex)) {
+        app.searchIndex[term].mapIndices.push(mapIndex);
+      }
+      
+      // Marcar si aparece en título
+      if (titleTerms.includes(term)) {
+        app.searchIndex[term].inTitle.push(mapIndex);
+      }
+      
+      // Marcar si aparece en keywords
+      if (keywordTerms.includes(term)) {
+        app.searchIndex[term].inKeywords.push(mapIndex);
+      }
+    });
+  });
+  
+  const endTime = performance.now();
+  app.performanceMetrics.indexingTime = endTime - startTime;
 }
 
 /**
@@ -734,9 +813,20 @@ function normalizeMapData(map) {
  * Filtra los mapas según criterios actuales
  */
 function filterMaps() {
+  console.time('🔍 Tiempo de búsqueda');
+  const searchStartTime = performance.now();
+  
   const { keyword, category, advanced } = app.activeFilters;
+  
+  // OPTIMIZACIÓN: Si hay búsqueda de texto y el índice está disponible, usar búsqueda indexada
+  let candidateMaps = app.allMaps;
+  
+  if (keyword && keyword.trim().length >= 3 && Object.keys(app.searchIndex).length > 0) {
+    // Usar búsqueda indexada O(1) por término
+    candidateMaps = searchUsingIndex(keyword.trim());
+  }
 
-  app.filteredMaps = app.allMaps.filter(map => {
+  app.filteredMaps = candidateMaps.filter(map => {
     const normalizedMap = normalizeMapData(map);
 
     // Filtrar por categoría rápida
@@ -903,6 +993,71 @@ function filterMaps() {
       return bRel.score - aRel.score;
     });
   }
+  
+  // Registrar métricas de rendimiento
+  const searchEndTime = performance.now();
+  const searchTime = searchEndTime - searchStartTime;
+  app.performanceMetrics.lastSearchTime = searchTime;
+  app.performanceMetrics.totalSearches++;
+  app.performanceMetrics.averageSearchTime = 
+    ((app.performanceMetrics.averageSearchTime * (app.performanceMetrics.totalSearches - 1)) + searchTime) / app.performanceMetrics.totalSearches;
+  
+  console.timeEnd('🔍 Tiempo de búsqueda');
+  console.log(`⚡ Búsqueda completada en ${searchTime.toFixed(2)}ms (promedio: ${app.performanceMetrics.averageSearchTime.toFixed(2)}ms) | Resultados: ${app.filteredMaps.length}`);
+}
+
+/**
+ * Realiza búsqueda utilizando el índice invertido (O(1) por término)
+ * @param {string} searchValue - Texto de búsqueda
+ * @returns {Array} Array de mapas candidatos
+ */
+function searchUsingIndex(searchValue) {
+  const normalizedSearch = normalizeText(searchValue);
+  const searchTerms = normalizedSearch.split(/\s+/).filter(term => term.length > 0);
+  
+  if (searchTerms.length === 0) {
+    return app.allMaps;
+  }
+
+  // Conjuntos de índices de mapas que contienen cada término
+  const termSets = [];
+  
+  searchTerms.forEach(term => {
+    const matchingIndices = new Set();
+    
+    // 1. Buscar coincidencia exacta en el índice
+    if (app.searchIndex[term]) {
+      app.searchIndex[term].mapIndices.forEach(idx => matchingIndices.add(idx));
+    }
+    
+    // 2. Si fuzzyMatch está activado y el término es largo, buscar similares
+    if (app.fuzzyMatch && term.length >= 5) {
+      Object.keys(app.searchIndex).forEach(indexedTerm => {
+        const distance = levenshteinDistance(term, indexedTerm);
+        if (distance > 0 && distance <= 2) { // threshold = 2
+          app.searchIndex[indexedTerm].mapIndices.forEach(idx => matchingIndices.add(idx));
+        }
+      });
+    }
+    
+    if (matchingIndices.size > 0) {
+      termSets.push(matchingIndices);
+    }
+  });
+
+  // Si no hay resultados para algún término, retornar vacío
+  if (termSets.length === 0) {
+    return [];
+  }
+  
+  // Intersección: todos los términos deben estar presentes
+  let resultIndices = termSets[0];
+  for (let i = 1; i < termSets.length; i++) {
+    resultIndices = new Set([...resultIndices].filter(idx => termSets[i].has(idx)));
+  }
+
+  // Convertir índices a objetos de mapa
+  return Array.from(resultIndices).map(index => app.allMaps[index]);
 }
 
 /**
