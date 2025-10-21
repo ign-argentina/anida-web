@@ -302,6 +302,9 @@ const MIN_TERM_LENGTH = 2; // Términos mínimos para indexar (actual: 2)
 const MIN_SEARCH_LENGTH = 3;     // Caracteres mínimos para activar índice (actual: 3)
 const FUZZY_MIN_LENGTH = 5;      // Longitud mínima para fuzzy search (actual: 5)
 const FUZZY_THRESHOLD = 2;       // Distancia Levenshtein máxima (actual: 2)
+
+// En app object
+app.debounceDelay = 300;         // Delay en ms para debouncing (actual: 300ms)
 ```
 
 ### Flags de Control
@@ -314,6 +317,8 @@ app.visualMatch = true; // Mostrar badges de relevancia (true/false)
 **El índice invertido está SIEMPRE activo** si:
 - `keyword.length >= 3`
 - `app.searchIndex` tiene términos indexados
+
+**El debouncing está SIEMPRE activo** en el input de búsqueda en vivo
 
 ---
 
@@ -465,13 +470,96 @@ Donde:
 
 ---
 
+## 🎯 Optimización Adicional: Debouncing
+
+### Descripción
+
+El **debouncing** evita ejecutar búsquedas excesivas mientras el usuario escribe, mejorando significativamente la experiencia de usuario y reduciendo la carga del sistema.
+
+### Problema que Resuelve
+
+Sin debouncing, cada tecla presionada dispara una búsqueda completa:
+- Usuario escribe "poblacion" (9 caracteres)
+- Se ejecutan 9 búsquedas (una por cada letra)
+- Desperdicio de recursos y UI inestable
+
+Con debouncing (300ms):
+- Usuario escribe "poblacion"
+- Sistema espera 300ms después de la última tecla
+- Se ejecuta solo 1 búsqueda cuando el usuario termina de escribir
+
+### Implementación
+
+```javascript
+// Agregar a app object
+const app = {
+  searchTimeout: null,  // Timer para debouncing
+  debounceDelay: 300,   // Delay en ms (300ms)
+  // ... resto de propiedades
+};
+
+// En el event listener del input
+elements.keywordInput.addEventListener('input', (e) => {
+  // ... validación y sanitización
+
+  // DEBOUNCING: Cancelar búsqueda anterior
+  clearTimeout(app.searchTimeout);
+  
+  // Programar nueva búsqueda después del delay
+  app.searchTimeout = setTimeout(() => {
+    app.activeFilters.keyword = val;
+    app.currentBatch = 0;
+    filterMaps();
+    renderMaps(true);
+    updateActiveFilters();
+    updateResultsCount();
+  }, app.debounceDelay); // Esperar 300ms
+});
+```
+
+### Beneficios
+
+✅ **Reduce búsquedas:** De N búsquedas (N = caracteres) a 1 búsqueda  
+✅ **Mejora UX:** UI más estable, menos parpadeo en resultados  
+✅ **Ahorra recursos:** Menos llamadas a `filterMaps()` y `renderMaps()`  
+✅ **Combina con índice:** Debouncing + índice invertido = máxima eficiencia  
+
+### Ajuste del Delay
+
+```javascript
+// Delay muy corto (100ms): Más reactivo pero más búsquedas
+app.debounceDelay = 100;
+
+// Delay medio (300ms): Balance óptimo (RECOMENDADO)
+app.debounceDelay = 300;
+
+// Delay largo (500ms): Menos búsquedas pero menos reactivo
+app.debounceDelay = 500;
+```
+
+**Recomendación:** 300ms es el sweet spot para la mayoría de usuarios.
+
+### Comparación de Performance
+
+| Usuario escribe | Sin Debouncing | Con Debouncing (300ms) |
+|----------------|----------------|------------------------|
+| "poblacion" (9 chars) | 9 búsquedas | 1 búsqueda |
+| "poblacion urbana" (17 chars) | 17 búsquedas | 1 búsqueda |
+| "poblacion urbana 2022" (22 chars) | 22 búsquedas | 1 búsqueda |
+
+**Reducción promedio:** 90-95% menos búsquedas
+
+---
+
 ## ✅ Checklist de Implementación
 
 - [x] Crear estructura `app.searchIndex`
 - [x] Crear estructura `app.performanceMetrics`
+- [x] Crear estructura `app.searchTimeout` y `app.debounceDelay`
 - [x] Implementar `buildSearchIndex()` en `fetchMapsData()`
 - [x] Implementar `searchUsingIndex()` para búsqueda O(1)
 - [x] Modificar `filterMaps()` para usar índice cuando `keyword.length >= 3`
+- [x] Implementar debouncing en event listener de input (300ms)
 - [x] Agregar `console.time()` para medir indexación
 - [x] Agregar `console.time()` para medir búsqueda
 - [x] Mostrar estadísticas de indexación en consola
@@ -485,6 +573,6 @@ Donde:
 ---
 
 **Fecha:** 2024  
-**Versión:** 1.0.0  
+**Versión:** 1.1.0 (con debouncing)  
 **Autor:** Sistema de Optimización ANIDA  
 **Estado:** ✅ Implementado y Documentado

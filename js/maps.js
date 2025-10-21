@@ -22,6 +22,8 @@ const app = {
   modalKeyHandler: null, // Referencia al handler de teclado del modal
   fuzzyMatch: true, // Referencia a la función de búsqueda difusa
   visualMatch: true, // Mostrar en pantalla el porcentaje de coincidencia segun peso
+  searchTimeout: null, // Timer para debouncing de búsqueda
+  debounceDelay: 300,  // Delay en ms para debouncing (300ms por defecto)
   performanceMetrics: { // Métricas de rendimiento
     indexingTime: 0,
     lastSearchTime: 0,
@@ -217,43 +219,43 @@ function setupSearchListeners() {
     elements.keywordInput.addEventListener('input', (e) => {
       const rawValue = e.target.value || '';
       
-      // Sanitizar el input
+      // Sanitizar el input SIN modificar el campo mientras el usuario escribe
+      // Solo validamos, no modificamos el valor en tiempo real
       const sanitizationResult = sanitizeInput(rawValue);
       const val = sanitizationResult.sanitized;
       
-      // Si el input fue modificado por la sanitización, actualizar el campo
-      if (rawValue !== val && val !== '') {
-        e.target.value = val;
-      }
-      
-      // Mostrar error si hay
+      // Mostrar error si hay caracteres inválidos
       if (!sanitizationResult.valid && sanitizationResult.error) {
-        // Mostrar mensaje de error temporal
         showInputError(sanitizationResult.error);
       } else {
         clearInputError();
       }
       
-      // Habilitar solo si hay al menos 3 caracteres y es válido
+      // Habilitar botón solo si hay al menos 3 caracteres
+      // Usamos rawValue.trim() para contar caracteres reales
+      const trimmedValue = rawValue.trim();
       if (elements.searchButton) {
-        elements.searchButton.disabled = val.length < 3 || !sanitizationResult.valid;
+        elements.searchButton.disabled = trimmedValue.length < 3;
       }
 
       // Mostrar/ocultar botón limpiar según contenido
       if (elements.clearKeywordBtn) {
-        elements.clearKeywordBtn.style.display = val.length > 0 ? 'inline-block' : 'none';
+        elements.clearKeywordBtn.style.display = rawValue.length > 0 ? 'inline-block' : 'none';
       }
 
-      // Búsqueda en vivo: actualizar filtros y resultados en cada cambio
-      // Solo si el input es válido
-      if (sanitizationResult.valid || val.length === 0) {
+      // DEBOUNCING: Cancelar búsqueda anterior y programar nueva
+      clearTimeout(app.searchTimeout);
+      
+      // Búsqueda en vivo con debouncing
+      // Usamos el valor sanitizado para la búsqueda, pero NO modificamos el input
+      app.searchTimeout = setTimeout(() => {
         app.activeFilters.keyword = val;
         app.currentBatch = 0;
         filterMaps();
         renderMaps(true);
         updateActiveFilters();
         updateResultsCount();
-      }
+      }, app.debounceDelay); // Esperar 300ms (configurable) antes de buscar
     });
   }
 

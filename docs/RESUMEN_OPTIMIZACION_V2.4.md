@@ -169,6 +169,7 @@ function filterMaps() {
 
 ✅ **Velocidad:** O(1) lookup por término vs O(n) iteración completa  
 ✅ **Escalabilidad:** Rendimiento constante con datasets grandes  
+✅ **Debouncing:** Evita búsquedas excesivas durante escritura (300ms delay)  
 ✅ **Compatible:** Funciona con búsqueda difusa, ponderación y sanitización  
 ✅ **Medición:** Métricas en tiempo real en consola  
 ✅ **Activación automática:** Se activa con búsquedas ≥ 3 caracteres  
@@ -177,7 +178,8 @@ function filterMaps() {
 
 ⚠️ **Memoria:** Usa ~O(n × m) espacio adicional (aceptable para 500-1000 mapas)  
 ⚠️ **Indexación:** Toma 10-20ms al cargar (una sola vez)  
-⚠️ **Búsqueda difusa:** Sigue siendo O(k × t) donde t = términos indexados (pero k y t son pequeños)
+⚠️ **Búsqueda difusa:** Sigue siendo O(k × t) donde t = términos indexados (pero k y t son pequeños)  
+⚠️ **Delay de búsqueda:** 300ms de espera antes de ejecutar búsqueda en vivo
 
 ---
 
@@ -345,10 +347,12 @@ const results = indices.map(i => app.allMaps[i]);
 
 - [x] Agregar `searchIndex` a objeto `app`
 - [x] Agregar `performanceMetrics` a objeto `app`
+- [x] Agregar `searchTimeout` y `debounceDelay` para debouncing
 - [x] Crear función `buildSearchIndex()`
 - [x] Crear función `searchUsingIndex()`
 - [x] Modificar `fetchMapsData()` para construir índice
 - [x] Modificar `filterMaps()` para usar índice
+- [x] Implementar debouncing en event listener de input (300ms)
 - [x] Agregar medición de tiempo con `performance.now()`
 - [x] Agregar logs de consola con estadísticas
 - [x] Calcular promedio móvil de tiempos de búsqueda
