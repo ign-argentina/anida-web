@@ -419,6 +419,154 @@ Indica una situación que requiere atención:
 
 ---
 
+## Sugerencias de Búsqueda
+
+### ¿Qué son las Sugerencias de Búsqueda?
+
+Cuando una búsqueda **no encuentra resultados**, el sistema automáticamente muestra sugerencias inteligentes de términos alternativos que podrían ayudarte a encontrar lo que buscas.
+
+### Cómo Funcionan
+
+1. **Realizas una búsqueda** que no tiene resultados
+2. **El sistema analiza** tu término de búsqueda
+3. **Genera sugerencias** basadas en:
+   - **Correcciones de errores ortográficos** (typos)
+   - **Términos similares** en el índice de mapas
+   - **Búsquedas populares** (términos más frecuentes)
+4. **Muestra hasta 5 sugerencias** con un solo click
+
+### Tipos de Sugerencias
+
+#### 1. Corrección de Errores Ortográficos
+
+Si escribiste mal una palabra, el sistema sugiere la corrección:
+
+**Ejemplo**:
+- Buscas: `poblasion` (error de ortografía)
+- Sugerencias: **poblacion**, poblaciones, población
+- **Resultado**: Click en "poblacion" → encuentra 45 mapas ✅
+
+#### 2. Términos Similares
+
+Sugiere palabras parecidas que existen en los mapas:
+
+**Ejemplo**:
+- Buscas: `econmia` (falta una 'o')
+- Sugerencias: **economia**, economica, economias
+- **Resultado**: Corrección automática de tu búsqueda
+
+#### 3. Búsquedas Populares
+
+Si tu término no tiene similares, muestra los términos más buscados:
+
+**Ejemplo**:
+- Buscas: `xyz123` (término inexistente)
+- Sugerencias: poblacion, economia, transporte, clima, energia
+- **Resultado**: Explora temas populares disponibles
+
+### Cómo Usar las Sugerencias
+
+#### Paso 1: Realizar Búsqueda sin Resultados
+
+```text
+Escribe "poblasion" → Presiona Enter
+```
+
+#### Paso 2: Ver Mensaje de Sugerencias
+
+Aparece un mensaje centrado:
+
+```
+🔍
+
+No se encontraron resultados para "poblasion"
+
+¿Quizás buscabas?
+
+[poblacion] [poblaciones] [economia] [transporte] [clima]
+```
+
+#### Paso 3: Click en una Sugerencia
+
+- **Haz click** en cualquier término sugerido
+- **Se ejecuta** automáticamente la búsqueda
+- **Muestra resultados** para ese término
+
+### Características
+
+✅ **Automático**: No necesitas hacer nada especial  
+✅ **Inteligente**: Detecta errores y sugiere correcciones  
+✅ **Rápido**: Un solo click para ejecutar búsqueda alternativa  
+✅ **Personalizado**: Basado en el contenido real de los mapas  
+✅ **Limitado**: Máximo 5 sugerencias para no abrumar  
+
+### Ejemplos Prácticos
+
+#### Ejemplo 1: Error de Teclado
+
+```
+Búsqueda: "transporte"  (escribiste mal la 'o')
+↓
+Sistema detecta: No hay resultados
+↓
+Sugerencias: [transporte] [transportes] [infraestructura]
+↓
+Click en "transporte" → 25 resultados encontrados ✅
+```
+
+#### Ejemplo 2: Término en Otro Idioma
+
+```
+Búsqueda: "economy"  (en inglés)
+↓
+Sistema detecta: No hay resultados
+↓
+Sugerencias: [economia] [economica] [poblacion] [energia]
+↓
+Click en "economia" → 38 resultados encontrados ✅
+```
+
+#### Ejemplo 3: Búsqueda Muy Específica
+
+```
+Búsqueda: "hidroelectricidad"
+↓
+Sistema detecta: No hay resultados
+↓
+Sugerencias: [hidroelectrica] [energia] [electrica] [renovable]
+↓
+Click en "hidroelectrica" → 12 resultados encontrados ✅
+```
+
+### Diferencias con Otras Funcionalidades
+
+| Característica | Sugerencias sin Resultados | Autocompletado | Historial |
+|----------------|---------------------------|----------------|-----------|
+| **Cuándo aparece** | Solo con 0 resultados | Mientras escribes | Después de buscar |
+| **Propósito** | Corregir/guiar búsqueda | Completar palabras | Reutilizar búsquedas previas |
+| **Interacción** | Click en sugerencia | Click o Enter | Click en búsqueda previa |
+| **Fuente** | Análisis inteligente + índice | Índice de mapas | Tus búsquedas guardadas |
+
+### Consejos para Aprovechar las Sugerencias
+
+#### 1. Lee las Sugerencias Antes de Modificar
+
+Antes de reescribir tu búsqueda, revisa las sugerencias. Puede que haya una solución inmediata.
+
+#### 2. Prueba Sugerencias Similares
+
+Si la primera sugerencia no es exactamente lo que buscas, prueba las otras. Pueden llevarte a mapas relacionados.
+
+#### 3. Aprende Términos Correctos
+
+Las sugerencias te ayudan a conocer cómo están denominados los mapas en el sistema.
+
+#### 4. Usa con Filtros
+
+Después de hacer click en una sugerencia, puedes refinar con filtros de categoría o avanzados.
+
+---
+
 ## Consejos y Buenas Prácticas
 
 ### Para Búsquedas Efectivas
@@ -440,6 +588,7 @@ Si no encuentras resultados, prueba:
 - Sinónimos: "población" → "habitantes" → "demográfico"
 - Singular/plural: "río" → "ríos"
 - Palabras relacionadas: "agricultura" → "cultivo" → "producción agrícola"
+- **NUEVO**: O simplemente usa las sugerencias automáticas del sistema ✨
 
 #### 4. Combina Filtros
 

@@ -960,6 +960,170 @@ function setupEventListeners() {
   }
 }
 
+// ==================== SUGERENCIAS DE BÚSQUEDA ====================
+
+/**
+ * Obtiene los términos más populares del índice de búsqueda
+ * @param {number} limit - Cantidad máxima de términos a retornar
+ * @returns {Array<{term: string, count: number}>} - Array de términos ordenados por popularidad
+ */
+function getPopularTerms(limit = 10) {
+  if (!app.searchIndex || Object.keys(app.searchIndex).length === 0) {
+    return [];
+  }
+
+  const terms = Object.keys(app.searchIndex)
+    .filter(term => term.length >= 4) // Solo términos de 4+ caracteres
+    .map(term => ({
+      term: term,
+      count: app.searchIndex[term].mapIndices.length
+    }))
+    .sort((a, b) => b.count - a.count) // Ordenar por popularidad (más mapas primero)
+    .slice(0, limit);
+
+  return terms;
+}
+
+/**
+ * Encuentra términos similares usando distancia de Levenshtein
+ * @param {string} searchTerm - Término de búsqueda original
+ * @param {number} maxDistance - Distancia máxima de Levenshtein permitida
+ * @param {number} limit - Cantidad máxima de sugerencias
+ * @returns {Array<{term: string, distance: number, count: number}>} - Array de términos similares
+ */
+function getSimilarTerms(searchTerm, maxDistance = 2, limit = 5) {
+  if (!searchTerm || !app.searchIndex || Object.keys(app.searchIndex).length === 0) {
+    return [];
+  }
+
+  const normalized = normalizeText(searchTerm);
+  const similar = [];
+
+  // Buscar términos similares en el índice
+  for (const term in app.searchIndex) {
+    // Evitar sugerir el término exacto
+    if (term === normalized) continue;
+
+    const distance = levenshteinDistance(normalized, term);
+    
+    if (distance > 0 && distance <= maxDistance) {
+      similar.push({
+        term: term,
+        distance: distance,
+        count: app.searchIndex[term].mapIndices.length
+      });
+    }
+  }
+
+  // Ordenar por: menor distancia primero, luego por popularidad
+  similar.sort((a, b) => {
+    if (a.distance !== b.distance) {
+      return a.distance - b.distance;
+    }
+    return b.count - a.count;
+  });
+
+  return similar.slice(0, limit);
+}
+
+/**
+ * Genera sugerencias de búsqueda alternativas
+ * @param {string} searchTerm - Término de búsqueda que no tuvo resultados
+ * @param {number} maxSuggestions - Cantidad máxima de sugerencias
+ * @returns {Array<string>} - Array de términos sugeridos
+ */
+function generateSearchSuggestions(searchTerm, maxSuggestions = 5) {
+  const suggestions = [];
+  
+  // 1. Buscar términos similares (typos, variaciones)
+  const similar = getSimilarTerms(searchTerm, 2, 3);
+  similar.forEach(item => {
+    if (suggestions.length < maxSuggestions) {
+      suggestions.push(item.term);
+    }
+  });
+
+  // 2. Si aún hay espacio, agregar términos populares
+  if (suggestions.length < maxSuggestions) {
+    const popular = getPopularTerms(10);
+    for (const item of popular) {
+      if (suggestions.length >= maxSuggestions) break;
+      // No agregar si ya está en sugerencias
+      if (!suggestions.includes(item.term)) {
+        suggestions.push(item.term);
+      }
+    }
+  }
+
+  // Limitar a maxSuggestions
+  return suggestions.slice(0, maxSuggestions);
+}
+
+/**
+ * Muestra sugerencias de búsqueda cuando no hay resultados
+ * @param {string} searchTerm - Término de búsqueda original
+ */
+function showSearchSuggestions(searchTerm) {
+  if (!elements.resultsGrid) return;
+
+  const suggestions = generateSearchSuggestions(searchTerm, 5);
+  
+  if (suggestions.length === 0) {
+    // Sin sugerencias, solo mostrar mensaje básico
+    elements.resultsGrid.innerHTML = `
+      <div class="no-results-message">
+        <i class='bx bx-search-alt' style="font-size: 48px; color: #999; margin-bottom: 16px;"></i>
+        <p style="font-size: 18px; color: #333; margin-bottom: 8px;">No se encontraron resultados para "<strong>${escapeHTML(searchTerm)}</strong>"</p>
+        <p style="font-size: 14px; color: #666;">Intenta con otros términos de búsqueda o utiliza los filtros.</p>
+      </div>
+    `;
+    return;
+  }
+
+  // Crear HTML con sugerencias clickeables
+  const suggestionLinks = suggestions.map(term => {
+    return `<a href="#" class="suggestion-link" data-suggestion="${escapeHTML(term)}">${escapeHTML(term)}</a>`;
+  }).join('');
+
+  elements.resultsGrid.innerHTML = `
+    <div class="no-results-message">
+      <i class='bx bx-search-alt' style="font-size: 48px; color: #999; margin-bottom: 16px;"></i>
+      <p style="font-size: 18px; color: #333; margin-bottom: 8px;">No se encontraron resultados para "<strong>${escapeHTML(searchTerm)}</strong>"</p>
+      <p style="font-size: 14px; color: #666; margin-bottom: 16px;">¿Quizás buscabas?</p>
+      <div class="suggestions-container">
+        ${suggestionLinks}
+      </div>
+    </div>
+  `;
+
+  // Agregar event listeners a las sugerencias
+  const suggestionElements = elements.resultsGrid.querySelectorAll('.suggestion-link');
+  suggestionElements.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const suggestedTerm = link.getAttribute('data-suggestion');
+      
+      // Cargar el término en el input y ejecutar búsqueda
+      elements.keywordInput.value = suggestedTerm;
+      handleSearch();
+      
+      // Scroll al inicio de resultados
+      elements.resultsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+/**
+ * Helper para escapar HTML y prevenir XSS
+ * @param {string} text - Texto a escapar
+ * @returns {string} - Texto escapado
+ */
+function escapeHTML(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 /**
  * Normaliza texto (quita acentos, convierte a minúsculas)
  * @param {string} text - Texto a normalizar
@@ -1927,6 +2091,11 @@ function loadMoreMaps() {
 function updateResultsCount() {
   if (!elements.resultsCount) return;
   elements.resultsCount.textContent = `${app.filteredMaps.length} resultados`;
+  
+  // Si no hay resultados y hay búsqueda activa, mostrar sugerencias
+  if (app.filteredMaps.length === 0 && app.activeFilters.keyword) {
+    showSearchSuggestions(app.activeFilters.keyword);
+  }
 }
 
 /**

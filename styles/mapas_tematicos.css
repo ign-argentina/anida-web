@@ -919,3 +919,72 @@ a.download-btn:hover, a.view-btn:hover, #load-more-btn:hover {
   }
 }
 
+/* ==================== SUGERENCIAS DE BÚSQUEDA ==================== */
+
+.no-results-message {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.no-results-message i {
+  display: block;
+}
+
+.no-results-message p {
+  margin: 0;
+}
+
+.suggestions-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.suggestion-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #157DB9;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(21, 125, 185, 0.2);
+}
+
+.suggestion-link:hover {
+  background: #0f5f8f;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(21, 125, 185, 0.3);
+}
+
+.suggestion-link:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(21, 125, 185, 0.2);
+}
+
+/* Responsive para sugerencias */
+@media (max-width: 768px) {
+  .no-results-message {
+    padding: 3rem 1.5rem;
+  }
+  
+  .suggestions-container {
+    gap: 0.5rem;
+  }
+  
+  .suggestion-link {
+    font-size: 13px;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+

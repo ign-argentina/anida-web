@@ -1074,6 +1074,578 @@ function handleAutocomplete(input) {
 
 ---
 
+## Sugerencias de Búsqueda
+
+### Descripción General
+
+Cuando una búsqueda retorna **0 resultados** (`app.filteredMaps.length === 0`), el sistema automáticamente genera y muestra sugerencias de términos alternativos para ayudar al usuario a encontrar mapas relevantes.
+
+### Flujo de Activación
+
+```javascript
+// 1. Usuario busca término sin resultados
+filterMaps() 
+  → app.filteredMaps.length === 0
+
+// 2. Se actualiza contador
+updateResultsCount()
+  → Detecta 0 resultados + keyword activo
+  → Llama a showSearchSuggestions(keyword)
+
+// 3. Se generan sugerencias
+generateSearchSuggestions(keyword, 5)
+  → getSimilarTerms() // Términos con Levenshtein ≤ 2
+  → getPopularTerms() // Términos frecuentes del índice
+  
+// 4. Se muestra UI
+showSearchSuggestions()
+  → Renderiza HTML con links clickeables
+  → Agrega event listeners
+```
+
+### Función getPopularTerms() - Línea ~953
+
+```javascript
+function getPopularTerms(limit = 10) {
+  if (!app.searchIndex || Object.keys(app.searchIndex).length === 0) {
+    return [];
+  }
+
+  const terms = Object.keys(app.searchIndex)
+    .filter(term => term.length >= 4) // Solo términos de 4+ caracteres
+    .map(term => ({
+      term: term,
+      count: app.searchIndex[term].mapIndices.length
+    }))
+    .sort((a, b) => b.count - a.count) // Ordenar por popularidad
+    .slice(0, limit);
+
+  return terms;
+}
+```
+
+**Parámetros**:
+- `limit` (number, default: 10): Cantidad máxima de términos
+
+**Retorna**: `Array<{term: string, count: number}>`
+
+**Propósito**: Obtener los términos más frecuentes del índice invertido.
+
+**Criterios**:
+- Solo términos con longitud ≥ 4 caracteres
+- Ordenados por cantidad de mapas que los contienen
+- Límite configurable
+
+---
+
+### Función getSimilarTerms() - Línea ~972
+
+```javascript
+function getSimilarTerms(searchTerm, maxDistance = 2, limit = 5) {
+  if (!searchTerm || !app.searchIndex || Object.keys(app.searchIndex).length === 0) {
+    return [];
+  }
+
+  const normalized = normalizeText(searchTerm);
+  const similar = [];
+
+  // Buscar términos similares en el índice
+  for (const term in app.searchIndex) {
+    // Evitar sugerir el término exacto
+    if (term === normalized) continue;
+
+    const distance = levenshteinDistance(normalized, term);
+    
+    if (distance > 0 && distance <= maxDistance) {
+      similar.push({
+        term: term,
+        distance: distance,
+        count: app.searchIndex[term].mapIndices.length
+      });
+    }
+  }
+
+  // Ordenar por: menor distancia primero, luego por popularidad
+  similar.sort((a, b) => {
+    if (a.distance !== b.distance) {
+      return a.distance - b.distance;
+    }
+    return b.count - a.count;
+  });
+
+  return similar.slice(0, limit);
+}
+```
+
+**Parámetros**:
+- `searchTerm` (string): Término de búsqueda original
+- `maxDistance` (number, default: 2): Distancia Levenshtein máxima
+- `limit` (number, default: 5): Cantidad máxima de sugerencias
+
+**Retorna**: `Array<{term: string, distance: number, count: number}>`
+
+**Propósito**: Encontrar términos similares usando el algoritmo de Levenshtein existente.
+
+**Algoritmo**:
+1. Normalizar término de búsqueda
+2. Para cada término en `app.searchIndex`:
+   - Calcular distancia de Levenshtein
+   - Si distancia ≤ maxDistance: agregar a resultados
+3. Ordenar por:
+   - **Primera prioridad**: Menor distancia (más similar)
+   - **Segunda prioridad**: Mayor popularidad (más mapas)
+
+**Ejemplos**:
+```javascript
+getSimilarTerms('poblasion', 2, 5)
+// Retorna: [
+//   {term: 'poblacion', distance: 1, count: 45},
+//   {term: 'poblaciones', distance: 2, count: 12}
+// ]
+
+getSimilarTerms('econmia', 2, 5)
+// Retorna: [
+//   {term: 'economia', distance: 1, count: 38}
+// ]
+```
+
+---
+
+### Función generateSearchSuggestions() - Línea ~1009
+
+```javascript
+function generateSearchSuggestions(searchTerm, maxSuggestions = 5) {
+  const suggestions = [];
+  
+  // 1. Buscar términos similares (typos, variaciones)
+  const similar = getSimilarTerms(searchTerm, 2, 3);
+  similar.forEach(item => {
+    if (suggestions.length < maxSuggestions) {
+      suggestions.push(item.term);
+    }
+  });
+
+  // 2. Si aún hay espacio, agregar términos populares
+  if (suggestions.length < maxSuggestions) {
+    const popular = getPopularTerms(10);
+    for (const item of popular) {
+      if (suggestions.length >= maxSuggestions) break;
+      // No agregar si ya está en sugerencias
+      if (!suggestions.includes(item.term)) {
+        suggestions.push(item.term);
+      }
+    }
+  }
+
+  // Limitar a maxSuggestions
+  return suggestions.slice(0, maxSuggestions);
+}
+```
+
+**Parámetros**:
+- `searchTerm` (string): Término de búsqueda sin resultados
+- `maxSuggestions` (number, default: 5): Cantidad máxima de sugerencias
+
+**Retorna**: `Array<string>` - Array de términos sugeridos
+
+**Estrategia de generación**:
+1. Obtener hasta 3 términos similares (correcciones de typos)
+2. Si quedan espacios (< 5), complementar con términos populares
+3. Evitar duplicados
+4. Limitar a maxSuggestions (5 por defecto)
+
+**Prioridades**:
+- **Alta**: Términos similares (distancia Levenshtein ≤ 2)
+- **Media**: Términos populares (complemento)
+
+**Ejemplo**:
+```javascript
+generateSearchSuggestions('poblasion', 5)
+// Retorna: ['poblacion', 'poblaciones', 'economia', 'transporte', 'clima']
+//           ^^^^^^^^^^  ^^^^^^^^^^^^   ^^^^^^^^  ^^^^^^^^^^^  ^^^^^
+//           similares (dist 1-2)       populares (complemento)
+```
+
+---
+
+### Función showSearchSuggestions() - Línea ~1034
+
+```javascript
+function showSearchSuggestions(searchTerm) {
+  if (!elements.resultsGrid) return;
+
+  const suggestions = generateSearchSuggestions(searchTerm, 5);
+  
+  if (suggestions.length === 0) {
+    // Sin sugerencias, solo mostrar mensaje básico
+    elements.resultsGrid.innerHTML = `
+      <div class="no-results-message">
+        <i class='bx bx-search-alt' style="font-size: 48px; color: #999; margin-bottom: 16px;"></i>
+        <p style="font-size: 18px; color: #333; margin-bottom: 8px;">No se encontraron resultados para "<strong>${escapeHTML(searchTerm)}</strong>"</p>
+        <p style="font-size: 14px; color: #666;">Intenta con otros términos de búsqueda o utiliza los filtros.</p>
+      </div>
+    `;
+    return;
+  }
+
+  // Crear HTML con sugerencias clickeables
+  const suggestionLinks = suggestions.map(term => {
+    return `<a href="#" class="suggestion-link" data-suggestion="${escapeHTML(term)}">${escapeHTML(term)}</a>`;
+  }).join('');
+
+  elements.resultsGrid.innerHTML = `
+    <div class="no-results-message">
+      <i class='bx bx-search-alt' style="font-size: 48px; color: #999; margin-bottom: 16px;"></i>
+      <p style="font-size: 18px; color: #333; margin-bottom: 8px;">No se encontraron resultados para "<strong>${escapeHTML(searchTerm)}</strong>"</p>
+      <p style="font-size: 14px; color: #666; margin-bottom: 16px;">¿Quizás buscabas?</p>
+      <div class="suggestions-container">
+        ${suggestionLinks}
+      </div>
+    </div>
+  `;
+
+  // Agregar event listeners a las sugerencias
+  const suggestionElements = elements.resultsGrid.querySelectorAll('.suggestion-link');
+  suggestionElements.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const suggestedTerm = link.getAttribute('data-suggestion');
+      
+      // Cargar el término en el input y ejecutar búsqueda
+      elements.keywordInput.value = suggestedTerm;
+      handleSearch();
+      
+      // Scroll al inicio de resultados
+      elements.resultsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+```
+
+**Parámetros**:
+- `searchTerm` (string): Término de búsqueda original
+
+**Comportamiento**:
+
+#### Caso 1: Sin sugerencias disponibles
+- Muestra mensaje básico sin sugerencias
+- Indica que no hay resultados
+- Sugiere usar otros términos o filtros
+
+#### Caso 2: Con sugerencias disponibles
+- Muestra mensaje con término buscado (escapado HTML)
+- Renderiza hasta 5 sugerencias como links clickeables
+- Cada sugerencia tiene event listener
+
+**Event listeners**:
+Al hacer click en una sugerencia:
+1. Prevenir comportamiento default del link
+2. Obtener término sugerido del atributo `data-suggestion`
+3. Cargar término en `elements.keywordInput`
+4. Ejecutar `handleSearch()`
+5. Scroll suave al grid de resultados
+
+**Seguridad**: Usa `escapeHTML()` para prevenir XSS
+
+---
+
+### Función escapeHTML() - Línea ~1070
+
+```javascript
+function escapeHTML(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+```
+
+**Parámetros**:
+- `text` (string): Texto a escapar
+
+**Retorna**: `string` - Texto con caracteres HTML escapados
+
+**Propósito**: Prevenir ataques XSS al mostrar términos de búsqueda y sugerencias.
+
+**Ejemplos**:
+```javascript
+escapeHTML('población')  // 'población'
+escapeHTML('<script>alert("xss")</script>')  // '&lt;script&gt;alert("xss")&lt;/script&gt;'
+escapeHTML('A&B')  // 'A&amp;B'
+```
+
+---
+
+### Función updateResultsCount() - Línea 2091 [MODIFICADA]
+
+**Cambios realizados**:
+
+```javascript
+// ANTES:
+function updateResultsCount() {
+  if (!elements.resultsCount) return;
+  elements.resultsCount.textContent = `${app.filteredMaps.length} resultados`;
+}
+
+// DESPUÉS:
+function updateResultsCount() {
+  if (!elements.resultsCount) return;
+  elements.resultsCount.textContent = `${app.filteredMaps.length} resultados`;
+  
+  // Si no hay resultados y hay búsqueda activa, mostrar sugerencias
+  if (app.filteredMaps.length === 0 && app.activeFilters.keyword) {
+    showSearchSuggestions(app.activeFilters.keyword);
+  }
+}
+```
+
+**Nueva lógica**:
+1. Actualizar contador de resultados (comportamiento original)
+2. **NUEVO**: Si `filteredMaps.length === 0` Y hay `keyword` activo:
+   - Llamar `showSearchSuggestions(keyword)` automáticamente
+
+---
+
+### Estilos CSS - mapas_tematicos.css
+
+**Líneas agregadas**: ~925-995 (70 líneas)
+
+#### Clase `.no-results-message`
+
+```css
+.no-results-message {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+```
+
+**Propósito**: Contenedor del mensaje de "sin resultados" con sugerencias.
+
+#### Clase `.suggestions-container`
+
+```css
+.suggestions-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 8px;
+}
+```
+
+**Propósito**: Contenedor flexible de los links de sugerencias.
+
+#### Clase `.suggestion-link`
+
+```css
+.suggestion-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #157DB9;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(21, 125, 185, 0.2);
+}
+
+.suggestion-link:hover {
+  background: #0f5f8f;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(21, 125, 185, 0.3);
+}
+
+.suggestion-link:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(21, 125, 185, 0.2);
+}
+```
+
+**Efectos**:
+- **Hover**: Color más oscuro, elevación visual con transform
+- **Active**: Efecto de "presión" al hacer click
+
+#### Responsive Design
+
+```css
+@media (max-width: 768px) {
+  .no-results-message {
+    padding: 3rem 1.5rem;
+  }
+  
+  .suggestions-container {
+    gap: 0.5rem;
+  }
+  
+  .suggestion-link {
+    font-size: 13px;
+    padding: 0.4rem 0.8rem;
+  }
+}
+```
+
+**Breakpoint**: 768px para tablets y móviles
+
+---
+
+### Integración con Sistema Existente
+
+#### Componentes Reutilizados
+
+✅ **Algoritmo de Levenshtein** (`levenshteinDistance()`)
+- Ya existente en el código (Línea 930)
+- Usado para fuzzy matching
+- Reutilizado para encontrar términos similares
+
+✅ **Índice de búsqueda** (`app.searchIndex`)
+- Estructura optimizada con Uint16Array
+- Contiene todos los términos indexados
+- Fuente de términos populares y similares
+
+✅ **Función handleSearch()**
+- Ya existente para ejecutar búsquedas
+- Reutilizada al hacer click en sugerencias
+
+✅ **Iconos Boxicons** (`bx-search-alt`)
+- Librería ya incluida en el proyecto
+- Usado para ícono de "sin resultados"
+
+---
+
+### Configuración
+
+#### Ajustar cantidad de sugerencias
+
+```javascript
+// En showSearchSuggestions()
+const suggestions = generateSearchSuggestions(searchTerm, 5); 
+//                                                        ↑ Cambiar aquí (recomendado: 3-7)
+```
+
+#### Ajustar distancia Levenshtein
+
+```javascript
+// En getSimilarTerms()
+function getSimilarTerms(searchTerm, maxDistance = 2, limit = 5) {
+//                                               ↑ Cambiar aquí
+// 1 = muy estricto, 2 = balanceado (recomendado), 3 = permisivo
+```
+
+#### Ajustar longitud mínima de términos populares
+
+```javascript
+// En getPopularTerms()
+.filter(term => term.length >= 4)
+//                          ↑ Cambiar aquí (recomendado: 4)
+```
+
+#### Cambiar proporción similares/populares
+
+```javascript
+// En generateSearchSuggestions()
+const similar = getSimilarTerms(searchTerm, 2, 3); // 3 similares
+//                                              ↑
+const popular = getPopularTerms(10); // Pool de 10 populares
+
+// Estrategias:
+// - Más similares: getSimilarTerms(term, 2, 4) → 4 similares + 1 popular
+// - Más populares: getSimilarTerms(term, 2, 2) → 2 similares + 3 populares
+// - Balanceado: getSimilarTerms(term, 2, 3) → 3 similares + 2 populares (actual)
+```
+
+---
+
+### Casos de Uso
+
+#### Caso 1: Typo Simple
+
+**Input**: Usuario busca `poblasion`  
+**Proceso**:
+1. `filterMaps()` → 0 resultados
+2. `updateResultsCount()` detecta 0 + keyword activo
+3. `generateSearchSuggestions('poblasion', 5)`
+   - `getSimilarTerms()` → `['poblacion', 'poblaciones']` (distancia 1-2)
+   - Complementa con populares → `['economia', 'transporte', 'clima']`
+4. Muestra: `[poblacion] [poblaciones] [economia] [transporte] [clima]`
+
+**Resultado**: Usuario hace click en "poblacion" → 45 mapas encontrados ✅
+
+#### Caso 2: Término Inexistente
+
+**Input**: Usuario busca `xyz123`  
+**Proceso**:
+1. `filterMaps()` → 0 resultados
+2. `generateSearchSuggestions('xyz123', 5)`
+   - `getSimilarTerms()` → `[]` (sin similares)
+   - `getPopularTerms()` → `['poblacion', 'economia', 'transporte', 'clima', 'energia']`
+4. Muestra solo términos populares
+
+**Resultado**: Usuario explora términos disponibles en el sistema ✅
+
+#### Caso 3: Término Muy Específico
+
+**Input**: Usuario busca `hidroelectricidad`  
+**Proceso**:
+1. `filterMaps()` → 0 resultados (palabra no indexada)
+2. `generateSearchSuggestions('hidroelectricidad', 5)`
+   - `getSimilarTerms()` → `['hidroelectrica']` (distancia ~3, no incluido con threshold=2)
+   - O `getPopularTerms()` si no hay similares cercanos
+3. Muestra sugerencias alternativas
+
+**Resultado**: Usuario encuentra término correcto usado en los mapas ✅
+
+---
+
+### Métricas y Testing
+
+#### Verificar en consola del navegador
+
+```javascript
+// Ver términos populares
+getPopularTerms(10)
+// [{term: 'poblacion', count: 45}, {term: 'economia', count: 38}, ...]
+
+// Ver similares a un término
+getSimilarTerms('poblasion', 2, 5)
+// [{term: 'poblacion', distance: 1, count: 45}, ...]
+
+// Generar sugerencias completas
+generateSearchSuggestions('econmia', 5)
+// ['economia', 'economica', 'poblacion', 'transporte', 'clima']
+```
+
+#### Testing Manual
+
+**Test 1: Búsqueda con typo**
+1. Buscar: `poblasion`
+2. ✅ Verificar mensaje "No se encontraron resultados"
+3. ✅ Verificar sugerencia "poblacion" aparece primero
+4. ✅ Click en "poblacion" → debe ejecutar búsqueda y mostrar ~45 resultados
+
+**Test 2: Búsqueda sin similares**
+1. Buscar: `xyz123`
+2. ✅ Verificar mensaje "No se encontraron resultados"
+3. ✅ Verificar sugerencias son términos populares
+4. ✅ Click en cualquier sugerencia → debe funcionar
+
+**Test 3: Búsqueda con resultados**
+1. Buscar: `poblacion`
+2. ✅ Verificar que NO aparece mensaje de sugerencias
+3. ✅ Verificar que se muestran resultados normalmente
+
+**Test 4: XSS Prevention**
+1. Buscar: `<script>alert('test')</script>`
+2. ✅ Verificar que NO se ejecuta el script
+3. ✅ Verificar que se muestra texto escapado en el mensaje
+
+---
+
 ## Filtros Inteligentes
 
 ### Función getFilterResultCount() - Línea 1743
@@ -1908,6 +2480,15 @@ Estas funciones SÍ existen y están documentadas correctamente:
 - `saveSearchToHistory(query)` - Línea 897 - Guarda búsqueda si cumple validación (3+ chars)
 - `setupSearchHistoryListeners()` - Línea 910 - Configura event listeners del historial
 
+**Funciones de Sugerencias de Búsqueda (Nuevas - Oct 2025):**
+
+- `getPopularTerms(limit)` - Línea ~953 - Obtiene términos más frecuentes del índice
+- `getSimilarTerms(searchTerm, maxDistance, limit)` - Línea ~972 - Encuentra términos similares usando Levenshtein
+- `generateSearchSuggestions(searchTerm, maxSuggestions)` - Línea ~1009 - Combina similares + populares (máx 5)
+- `showSearchSuggestions(searchTerm)` - Línea ~1034 - Muestra UI con sugerencias clickeables
+- `escapeHTML(text)` - Línea ~1070 - Previene XSS en sugerencias
+- `updateResultsCount()` - Línea 2091 - [MODIFICADA] Detecta 0 resultados y llama a showSearchSuggestions()
+
 **Módulo SearchHistory (js/utils/searchHistory.js):**
 
 - `SearchHistory.save(query)` - Guarda búsqueda en localStorage (máx 5, FIFO)
@@ -2082,6 +2663,54 @@ selectSuggestion('clima patagonia')
 
 ---
 
+### Octubre 2025 - Sugerencias de Búsqueda
+
+**Nueva funcionalidad:**
+1. ✅ Detección automática de búsquedas sin resultados
+2. ✅ Generación de sugerencias inteligentes (similares + populares)
+3. ✅ UI con links clickeables para re-ejecutar búsquedas
+4. ✅ Corrección de typos usando algoritmo Levenshtein
+5. ✅ Prevención de XSS con función `escapeHTML()`
+6. ✅ Estilos CSS responsive incluidos
+7. ✅ Integración automática en `updateResultsCount()`
+
+**Detalles técnicos:**
+- **Funciones nuevas**: 6 funciones implementadas
+- **Función modificada**: `updateResultsCount()` - Línea 2091
+- **Líneas agregadas**: ~180 líneas JS + ~70 líneas CSS
+- **Límite de sugerencias**: 5 máximo (configurable)
+- **Distancia Levenshtein**: ≤ 2 para términos similares
+- **Términos populares**: Filtrados por longitud ≥ 4 caracteres
+
+**Funciones implementadas:**
+- `getPopularTerms(limit)` - Línea ~953 - Obtiene términos frecuentes del índice
+- `getSimilarTerms(searchTerm, maxDistance, limit)` - Línea ~972 - Encuentra similares con Levenshtein
+- `generateSearchSuggestions(searchTerm, maxSuggestions)` - Línea ~1009 - Combina similares + populares
+- `showSearchSuggestions(searchTerm)` - Línea ~1034 - Renderiza UI con event listeners
+- `escapeHTML(text)` - Línea ~1070 - Previene XSS
+- `updateResultsCount()` - Línea 2091 - [MODIFICADA] Detecta 0 resultados y activa sugerencias
+
+**Estilos CSS (mapas_tematicos.css):**
+- `.no-results-message` - Contenedor centrado con fondo gris claro
+- `.suggestions-container` - Flexbox para sugerencias
+- `.suggestion-link` - Botones estilo píldora con efectos hover/active
+- Responsive design (breakpoint 768px)
+
+**Estrategia de sugerencias:**
+1. **Primera prioridad**: Términos similares (Levenshtein ≤ 2) - hasta 3
+2. **Segunda prioridad**: Términos populares (complemento) - hasta 2
+3. **Total**: Máximo 5 sugerencias
+
+**Componentes reutilizados:**
+- ✅ `levenshteinDistance()` - Algoritmo ya existente
+- ✅ `app.searchIndex` - Índice invertido optimizado
+- ✅ `handleSearch()` - Ejecución de búsqueda
+- ✅ Boxicons - Iconos (`bx-search-alt`)
+
+**Ver documentación detallada:** [SUGERENCIAS_BUSQUEDA.md](./SUGERENCIAS_BUSQUEDA.md)
+
+---
+
 ### Octubre 2025 - Optimización del Índice
 
 **Cambios implementados:**
@@ -2102,6 +2731,6 @@ selectSuggestion('clima patagonia')
 ---
 
 **Última actualización**: 22 de enero de 2024  
-**Versión del código**: `js/maps.js` (2967 líneas)  
+**Versión del código**: `js/maps.js` (3131 líneas)  
 **Módulos adicionales**: `js/utils/searchHistory.js` (111 líneas)  
 **Rama**: `buscador`
