@@ -38,6 +38,151 @@ const app = {
   }
 };
 
+// ============================================================================
+// GOOGLE ANALYTICS 4 - TRACKING DE EVENTOS
+// ============================================================================
+
+/**
+ * Envía un evento a Google Analytics 4 via Google Tag Manager
+ * @param {string} eventName - Nombre del evento
+ * @param {Object} eventParams - Parámetros del evento
+ */
+function trackEvent(eventName, eventParams = {}) {
+  try {
+    // Verificar que dataLayer existe (Google Tag Manager)
+    if (typeof window.dataLayer !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: eventName,
+        ...eventParams
+      });
+      
+      // Log en desarrollo (comentar en producción si se desea)
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('📊 GA4 Event:', eventName, eventParams);
+      }
+    }
+  } catch (error) {
+    console.error('Error al enviar evento a GA4:', error);
+  }
+}
+
+/**
+ * Tracking: Búsqueda realizada
+ * @param {string} query - Término de búsqueda
+ * @param {number} resultsCount - Cantidad de resultados
+ * @param {string} category - Categoría seleccionada
+ * @param {Object} advancedFilters - Filtros avanzados aplicados
+ */
+function trackSearch(query, resultsCount, category = 'Todos', advancedFilters = {}) {
+  const hasAdvancedFilters = (advancedFilters.escalaEspacial?.length > 0) || 
+                             (advancedFilters.escalaTemporal?.length > 0);
+  
+  trackEvent('search_query', {
+    search_term: query || '(búsqueda vacía)',
+    search_results_count: resultsCount,
+    search_category: category,
+    has_advanced_filters: hasAdvancedFilters,
+    advanced_filters_spatial: advancedFilters.escalaEspacial?.join(', ') || 'ninguno',
+    advanced_filters_temporal: advancedFilters.escalaTemporal?.join(', ') || 'ninguno',
+    search_timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Tracking: Visualización de mapa en modal
+ * @param {Object} map - Objeto del mapa
+ * @param {string} source - Fuente de la visualización ('grid', 'navigation', 'direct')
+ */
+function trackMapView(map, source = 'grid') {
+  trackEvent('map_view', {
+    map_id: map.id || 'sin_id',
+    map_title: map.title || map.titulo || 'sin_título',
+    map_category: map.category || map.categoria || 'sin_categoría',
+    map_section: map.section || map.categoria || 'sin_sección',
+    map_publication: map.publication || map.publicacion || 'sin_publicación',
+    map_author: map.author || map.autor || 'sin_autor',
+    map_year: map.year || map.año || 'sin_año',
+    view_source: source,
+    view_timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Tracking: Descarga de mapa
+ * @param {Object} map - Objeto del mapa
+ * @param {string} downloadType - Tipo de descarga ('modal_desktop', 'modal_mobile')
+ */
+function trackMapDownload(map, downloadType = 'modal') {
+  trackEvent('map_download', {
+    map_id: map.id || 'sin_id',
+    map_title: map.title || map.titulo || 'sin_título',
+    map_category: map.category || map.categoria || 'sin_categoría',
+    map_section: map.section || map.categoria || 'sin_sección',
+    map_publication: map.publication || map.publicacion || 'sin_publicación',
+    download_type: downloadType,
+    download_url: map.download || map.download_link || map.ruta_descarga || 'sin_url',
+    download_timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Tracking: Aplicación de filtros
+ * @param {string} filterType - Tipo de filtro ('category', 'escalaEspacial', 'escalaTemporal', 'keyword')
+ * @param {string|Array} filterValue - Valor(es) del filtro
+ * @param {number} resultsCount - Cantidad de resultados después del filtro
+ */
+function trackFilterApplied(filterType, filterValue, resultsCount) {
+  const valueString = Array.isArray(filterValue) ? filterValue.join(', ') : filterValue;
+  
+  trackEvent('filter_applied', {
+    filter_type: filterType,
+    filter_value: valueString || 'ninguno',
+    results_count: resultsCount,
+    filter_timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Tracking: Interacción con sugerencias de búsqueda
+ * @param {string} originalQuery - Término original que no dio resultados
+ * @param {string} suggestedTerm - Término sugerido que fue clickeado
+ * @param {string} suggestionType - Tipo de sugerencia ('similar', 'popular')
+ */
+function trackSearchSuggestion(originalQuery, suggestedTerm, suggestionType = 'similar') {
+  trackEvent('search_suggestion_click', {
+    original_query: originalQuery,
+    suggested_term: suggestedTerm,
+    suggestion_type: suggestionType,
+    suggestion_timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Tracking: Uso del historial de búsqueda
+ * @param {string} action - Acción realizada ('view', 'click', 'clear')
+ * @param {string} term - Término del historial (opcional)
+ */
+function trackSearchHistory(action, term = '') {
+  trackEvent('search_history_interaction', {
+    action: action,
+    search_term: term,
+    history_timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Tracking: Uso del autocompletado
+ * @param {string} selectedTerm - Término seleccionado del autocompletado
+ * @param {string} partialQuery - Consulta parcial que activó el autocompletado
+ */
+function trackAutocomplete(selectedTerm, partialQuery) {
+  trackEvent('autocomplete_selection', {
+    selected_term: selectedTerm,
+    partial_query: partialQuery,
+    autocomplete_timestamp: new Date().toISOString()
+  });
+}
+
 // Helper: buscar índice en filteredMaps por id
 function findIndexById(id) {
   if (!id) return -1;
@@ -462,6 +607,10 @@ function selectSuggestion(suggestion) {
   const currentValue = elements.keywordInput.value.trim();
   const words = currentValue.split(/\s+/);
   
+  // 📊 TRACKING: Autocompletado seleccionado
+  const partialQuery = words[words.length - 1] || currentValue;
+  trackAutocomplete(suggestion, partialQuery);
+  
   // Reemplazar la última palabra con la sugerencia
   words[words.length - 1] = suggestion;
   const newValue = words.join(' ') + ' '; // Agregar espacio al final
@@ -683,7 +832,11 @@ function setupSearchListeners() {
   // Radio buttons de categoría
   if (elements.categoryFilters && elements.categoryFilters.length) {
     elements.categoryFilters.forEach(radio => {
-      radio.addEventListener('change', handleSearch);
+      radio.addEventListener('change', () => {
+        handleSearch();
+        // 📊 TRACKING: Filtro de categoría aplicado
+        trackFilterApplied('category', radio.value, app.filteredMaps.length);
+      });
     });
   }
 }
@@ -708,6 +861,12 @@ function setupAdvancedFiltersListeners() {
         // Obtener filtros actualizados y aplicar búsqueda automáticamente
         getAdvancedFilters();
         handleSearch();
+        
+        // 📊 TRACKING: Filtro espacial aplicado
+        const activeFilters = Array.from(elements.advancedFilters.escalaEspacial)
+          .filter(cb => cb.checked)
+          .map(cb => cb.value);
+        trackFilterApplied('escalaEspacial', activeFilters, app.filteredMaps.length);
       });
     });
   }
@@ -745,6 +904,11 @@ function setupCascadingTemporalFilters() {
       // Aplicar filtros automáticamente después de la cascada
       getAdvancedFilters();
       handleSearch();
+      
+      // 📊 TRACKING: Filtro temporal (padre) aplicado
+      const activeFilters = Array.from(document.querySelectorAll('input[name="escalaTemporal"]:checked'))
+        .map(cb => cb.value);
+      trackFilterApplied('escalaTemporal', activeFilters, app.filteredMaps.length);
     });
 
     // Listeners para los hijos: deselecciona el padre si algún hijo cambia
@@ -771,6 +935,11 @@ function setupCascadingTemporalFilters() {
           // Aplicar filtros automáticamente después del cambio
           getAdvancedFilters();
           handleSearch();
+          
+          // 📊 TRACKING: Filtro temporal (hijo) aplicado
+          const activeFilters = Array.from(document.querySelectorAll('input[name="escalaTemporal"]:checked'))
+            .map(cb => cb.value);
+          trackFilterApplied('escalaTemporal', activeFilters, app.filteredMaps.length);
         });
       }
     });
@@ -832,6 +1001,9 @@ function renderSearchHistory() {
       elements.keywordInput.value = query;
       hideSearchHistory();
       handleSearch();
+      
+      // 📊 TRACKING: Click en historial de búsqueda
+      trackSearchHistory('click', query);
     });
     
     elements.searchHistoryList.appendChild(li);
@@ -850,6 +1022,9 @@ function showSearchHistory() {
   if (elements.historyBtn) {
     elements.historyBtn.classList.add('active');
   }
+  
+  // 📊 TRACKING: Ver historial de búsqueda
+  trackSearchHistory('view');
 }
 
 /**
@@ -892,6 +1067,9 @@ function clearSearchHistory() {
   SearchHistory.clear();
   renderSearchHistory();
   updateHistoryButtonVisibility();
+  
+  // 📊 TRACKING: Limpiar historial
+  trackSearchHistory('clear');
 }
 
 /**
@@ -1102,6 +1280,12 @@ function showSearchSuggestions(searchTerm) {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const suggestedTerm = link.getAttribute('data-suggestion');
+      
+      // 📊 TRACKING: Click en sugerencia de búsqueda
+      // Determinar tipo de sugerencia basándose en distancia Levenshtein
+      const similarTerms = getSimilarTerms(searchTerm, 2, 5);
+      const suggestionType = similarTerms.some(t => t.term === suggestedTerm) ? 'similar' : 'popular';
+      trackSearchSuggestion(searchTerm, suggestedTerm, suggestionType);
       
       // Cargar el término en el input y ejecutar búsqueda
       elements.keywordInput.value = suggestedTerm;
@@ -1634,6 +1818,11 @@ function handleSearch() {
   // Guardar en historial si la búsqueda fue exitosa y tiene keyword
   if (keyword && keyword.length >= 3) {
     saveSearchToHistory(keyword);
+  }
+  
+  // 📊 TRACKING: Enviar evento de búsqueda a Google Analytics
+  if (keyword && keyword.length >= 3) {
+    trackSearch(keyword, app.filteredMaps.length, category, app.activeFilters.advanced);
   }
 }
 
@@ -2606,6 +2795,9 @@ function updateModalContent(idx) {
 
   // Actualizar índice actual
   app.currentModalIndex = idx;
+  
+  // 📊 TRACKING: Navegación entre mapas en modal
+  trackMapView(map, 'navigation');
 
   // Determinar si estamos en viewport móvil
   const isMobile = window.innerWidth < 900;
@@ -2643,6 +2835,9 @@ function updateModalContent(idx) {
         closeModal();
       });
     }
+    
+    // 📊 TRACKING: Configurar listeners para descargas después de actualizar contenido
+    setupDownloadTracking(map, isMobile);
 
   } catch (error) {
     console.error('Error al actualizar contenido del modal:', error);
@@ -2883,6 +3078,9 @@ function openMapModal(index) {
     console.error('Mapa no encontrado en índice:', idx);
     return;
   }
+  
+  // 📊 TRACKING: Visualización de mapa en modal
+  trackMapView(map, 'grid');
 
   // Si el modal ya existe, solo actualizar contenido
   if (elements.modal) {
@@ -2930,6 +3128,9 @@ function openMapModal(index) {
         closeModal();
       });
     }
+    
+    // 📊 TRACKING: Configurar listeners para descargas
+    setupDownloadTracking(map, isMobile);
 
     // Bloquear scroll en el body
     document.body.style.overflow = 'hidden';
@@ -2938,6 +3139,23 @@ function openMapModal(index) {
     console.error('Error al crear contenido del modal:', error);
     closeModal();
   }
+}
+
+/**
+ * Configura tracking para botones de descarga en el modal
+ * @param {Object} map - Objeto del mapa actual
+ * @param {boolean} isMobile - Si es versión móvil
+ */
+function setupDownloadTracking(map, isMobile) {
+  const downloadBtns = elements.modal?.querySelectorAll('.download-btn');
+  if (!downloadBtns || downloadBtns.length === 0) return;
+  
+  downloadBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const downloadType = isMobile ? 'modal_mobile' : 'modal_desktop';
+      trackMapDownload(map, downloadType);
+    });
+  });
 }
 
 /**
