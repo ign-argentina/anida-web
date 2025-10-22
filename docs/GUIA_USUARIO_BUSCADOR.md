@@ -496,3 +496,153 @@ Los números entre paréntesis te indican si vale la pena aplicar un filtro.
 - **Tab**: Siguiente campo
 
 ---
+
+## Historial de Búsquedas
+
+### ¿Qué es el Historial?
+
+El **historial de búsquedas** guarda automáticamente tus últimas 5 búsquedas realizadas. Esto te permite:
+
+✅ **Reutilizar búsquedas anteriores** sin escribir nuevamente  
+✅ **Ahorrar tiempo** al acceder rápidamente a términos usados  
+✅ **Mantener contexto** de tus búsquedas durante la sesión  
+
+### Cómo Usar el Historial
+
+#### 1. **Realizar Búsquedas**
+
+El historial se construye automáticamente cuando buscas:
+
+```text
+1. Escribe "población argentina" → presiona Enter o selecciona sugerencia
+2. Escribe "clima patagonia" → presiona Enter o selecciona sugerencia
+3. Escribe "ríos principales" → presiona Enter o selecciona sugerencia
+```
+
+Cada búsqueda válida (3+ caracteres) se guarda automáticamente, incluyendo las búsquedas realizadas mediante selección de sugerencias del autocompletado.
+
+#### 2. **Ver el Historial**
+
+Después de realizar al menos una búsqueda:
+
+1. Aparecerá un **botón con ícono de reloj** (🕐) junto al campo de búsqueda
+2. Haz **click en el botón de reloj**
+3. Se despliega una lista con tus búsquedas recientes
+
+#### 3. **Reutilizar una Búsqueda**
+
+Para ejecutar nuevamente una búsqueda del historial:
+
+1. Abre el dropdown del historial (botón de reloj)
+2. Haz **click en la búsqueda** que quieres repetir
+3. El término se carga automáticamente y se ejecuta la búsqueda
+
+#### 4. **Limpiar el Historial**
+
+Si quieres borrar todas las búsquedas guardadas:
+
+1. Abre el dropdown del historial
+2. Haz click en el **ícono de basura** (🗑️) en la esquina superior derecha
+3. Todo el historial se eliminará inmediatamente (sin confirmación)
+
+### Características del Historial
+
+#### ✅ Persistencia
+
+- Las búsquedas se guardan en tu navegador (localStorage)
+- El historial persiste incluso después de cerrar la página
+- Solo tú puedes ver tu historial (no se comparte)
+
+#### ✅ Límite Inteligente
+
+- Se guardan **máximo 5 búsquedas**
+- Si haces una 6ta búsqueda, se elimina la más antigua
+- Sistema FIFO (First In, First Out)
+
+#### ✅ Sin Duplicados
+
+- Si buscas un término que ya existe en el historial
+- Se elimina de su posición actual
+- Se agrega al inicio de la lista
+- Mantiene las búsquedas más recientes arriba
+
+#### ✅ Validación Automática
+
+- Solo se guardan búsquedas de **3+ caracteres**
+- Se eliminan espacios al inicio/final
+- No se guardan búsquedas vacías o inválidas
+- Se guardan tanto búsquedas manuales como selecciones del autocompletado
+
+### Ejemplos de Uso
+
+#### Ejemplo 1: Comparar Búsquedas
+
+```text
+Situación: Quieres comparar datos de población entre diferentes provincias
+
+1. Busca "población Buenos Aires" → 12 resultados
+2. Busca "población Córdoba" → 8 resultados
+3. Busca "población Santa Fe" → 6 resultados
+
+Ahora puedes volver rápidamente a cualquiera usando el historial.
+```
+
+#### Ejemplo 2: Refinar Búsqueda
+
+```text
+Situación: Quieres mejorar gradualmente una búsqueda
+
+1. Busca "agua" → 45 resultados (demasiados)
+2. Busca "agua subterránea" → 12 resultados (mejor)
+3. Busca "acuífero" → 8 resultados (preciso)
+
+Si quieres volver a "agua subterránea", usa el historial.
+```
+
+#### Ejemplo 3: Trabajo por Sesiones
+
+```text
+Situación: Trabajas en un informe sobre energía
+
+Sesión 1:
+- "energía renovable"
+- "hidroeléctrica"
+- "parques eólicos"
+
+Sesión 2 (días después):
+- Abres el buscador
+- El historial conserva tus búsquedas
+- Continúas desde donde dejaste
+```
+
+### Diferencias con el Autocompletado
+
+| Característica | Historial | Autocompletado |
+|----------------|-----------|----------------|
+| **Fuente** | Tus búsquedas previas | Base de datos de mapas |
+| **Límite** | 5 búsquedas | Hasta 10 sugerencias |
+| **Activación** | Click en botón reloj | Escribir 3+ caracteres |
+| **Persistencia** | Se guarda en navegador | Se calcula en tiempo real |
+| **Contenido** | Términos completos | Palabras clave sugeridas |
+
+### Preguntas Frecuentes
+
+**¿Cuánto tiempo se guarda el historial?**  
+Indefinidamente, hasta que limpies los datos del navegador o uses el botón de limpiar historial.
+
+**¿Puedo ver el historial de otro dispositivo?**  
+No, el historial es local a cada navegador/dispositivo.
+
+**¿Qué pasa si busco lo mismo dos veces?**  
+La búsqueda se mueve al tope de la lista (sin duplicados).
+
+**¿Cómo se limpia el historial?**  
+Haz click en el ícono de basura dentro del dropdown del historial. El borrado es inmediato sin confirmación.
+
+**¿Se guardan las sugerencias del autocompletado?**  
+Sí, cuando seleccionas una sugerencia del autocompletado (por click o Enter), esta se guarda automáticamente en el historial antes de ejecutar la búsqueda.
+
+**¿Ocupa mucho espacio en mi navegador?**  
+No, ~200 bytes por búsqueda (máximo 1KB total).
+
+---

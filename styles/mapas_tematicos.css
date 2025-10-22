@@ -769,3 +769,153 @@ a.download-btn:hover, a.view-btn:hover, #load-more-btn:hover {
     opacity: 1;
   }
 }
+
+/* ===== Historial de Búsquedas ===== */
+#history-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+#history-btn:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+#history-btn.active {
+  background-color: #157DB9;
+  border-color: #157DB9;
+}
+
+.search-history-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  margin-top: 0.5rem;
+  max-width: 100%;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.search-history-title {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.btn-clear-history {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn-clear-history:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.search-history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.search-history-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-history-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.search-history-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.search-history-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #495057;
+}
+
+.search-history-item:last-child {
+  border-bottom: none;
+}
+
+.search-history-item:hover {
+  background-color: #e7f3f9;
+  color: #157DB9;
+}
+
+.search-history-item i {
+  font-size: 1.1rem;
+  opacity: 0.6;
+}
+
+.search-history-item:hover i {
+  opacity: 1;
+}
+
+.search-container {
+  position: relative;
+}
+
+/* Responsive: ocultar historial en móviles pequeños */
+@media (max-width: 576px) {
+  #history-btn {
+    padding: 0.5rem;
+  }
+  
+  .search-history-dropdown {
+    left: -15px;
+    right: -15px;
+    border-radius: 0;
+  }
+}
+

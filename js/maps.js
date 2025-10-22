@@ -21,7 +21,7 @@ const app = {
   currentModalIndex: 0, // Índice del mapa actual en modal
   modalKeyHandler: null, // Referencia al handler de teclado del modal
   fuzzyMatch: true, // Referencia a la función de búsqueda difusa
-  visualMatch: true, // Mostrar en pantalla el porcentaje de coincidencia segun peso
+  visualMatch: false, // Mostrar en pantalla el porcentaje de coincidencia segun peso
   searchTimeout: null, // Timer para debouncing de búsqueda
   debounceDelay: 300,  // Delay en ms para debouncing (300ms por defecto)
   autocompleteTimeout: null, // Timer para debouncing de autocompletado
@@ -50,6 +50,10 @@ const elements = {
   keywordInput: null,
   searchButton: null,
   clearKeywordBtn: null,
+  historyBtn: null,
+  searchHistoryDropdown: null,
+  searchHistoryList: null,
+  clearHistoryBtn: null,
   categoryFilters: null,
   resultsCount: null,
   resultsGrid: null,
@@ -69,6 +73,10 @@ function initApp() {
   elements.keywordInput = document.getElementById('keyword-input');
   elements.searchButton = document.querySelector('#search-form button[type="submit"]');
   elements.clearKeywordBtn = document.getElementById('clear-keyword-btn');
+  elements.historyBtn = document.getElementById('history-btn');
+  elements.searchHistoryDropdown = document.getElementById('search-history-dropdown');
+  elements.searchHistoryList = document.getElementById('search-history-list');
+  elements.clearHistoryBtn = document.getElementById('clear-history-btn');
   elements.categoryFilters = document.querySelectorAll('input[name="category"]');
   elements.resultsCount = document.getElementById('results-count');
   elements.resultsGrid = document.getElementById('results-grid');
@@ -464,6 +472,12 @@ function selectSuggestion(suggestion) {
   // Ocultar dropdown
   hideAutocomplete();
   
+  // Guardar en historial si cumple validaciones
+  const trimmedValue = newValue.trim();
+  if (trimmedValue.length >= 3) {
+    saveSearchToHistory(trimmedValue);
+  }
+  
   // Disparar búsqueda automáticamente
   const event = new Event('input', { bubbles: true });
   elements.keywordInput.dispatchEvent(event);
@@ -763,12 +777,177 @@ function setupCascadingTemporalFilters() {
   });
 }
 
+// ==================== HISTORIAL DE BÚSQUEDAS ====================
+
+/**
+ * Actualiza la visualización del botón de historial según si hay búsquedas guardadas
+ */
+function updateHistoryButtonVisibility() {
+  if (!elements.historyBtn || !SearchHistory) return;
+  
+  if (SearchHistory.hasHistory()) {
+    elements.historyBtn.style.display = 'inline-flex';
+  } else {
+    elements.historyBtn.style.display = 'none';
+    hideSearchHistory();
+  }
+}
+
+/**
+ * Renderiza la lista de búsquedas recientes
+ */
+function renderSearchHistory() {
+  if (!elements.searchHistoryList || !SearchHistory) return;
+  
+  const history = SearchHistory.get();
+  
+  // Limpiar lista actual
+  elements.searchHistoryList.innerHTML = '';
+  
+  if (history.length === 0) {
+    const emptyItem = document.createElement('li');
+    emptyItem.className = 'search-history-item';
+    emptyItem.style.cssText = 'cursor: default; color: #999; font-style: italic;';
+    emptyItem.textContent = 'No hay búsquedas recientes';
+    elements.searchHistoryList.appendChild(emptyItem);
+    return;
+  }
+  
+  // Crear items para cada búsqueda
+  history.forEach(query => {
+    const li = document.createElement('li');
+    li.className = 'search-history-item';
+    
+    const icon = document.createElement('i');
+    icon.className = 'bx bx-search-alt';
+    
+    const text = document.createElement('span');
+    text.textContent = query;
+    
+    li.appendChild(icon);
+    li.appendChild(text);
+    
+    // Al hacer click, ejecutar esa búsqueda
+    li.addEventListener('click', () => {
+      elements.keywordInput.value = query;
+      hideSearchHistory();
+      handleSearch();
+    });
+    
+    elements.searchHistoryList.appendChild(li);
+  });
+}
+
+/**
+ * Muestra el dropdown del historial
+ */
+function showSearchHistory() {
+  if (!elements.searchHistoryDropdown) return;
+  
+  renderSearchHistory();
+  elements.searchHistoryDropdown.style.display = 'block';
+  
+  if (elements.historyBtn) {
+    elements.historyBtn.classList.add('active');
+  }
+}
+
+/**
+ * Oculta el dropdown del historial
+ */
+function hideSearchHistory() {
+  if (!elements.searchHistoryDropdown) return;
+  
+  elements.searchHistoryDropdown.style.display = 'none';
+  
+  if (elements.historyBtn) {
+    elements.historyBtn.classList.remove('active');
+  }
+}
+
+/**
+ * Toggle del dropdown del historial
+ */
+function toggleSearchHistory() {
+  if (!elements.searchHistoryDropdown) return;
+  
+  const isVisible = elements.searchHistoryDropdown.style.display === 'block';
+  
+  if (isVisible) {
+    hideSearchHistory();
+  } else {
+    showSearchHistory();
+  }
+}
+
+/**
+ * Limpia todo el historial de búsquedas
+ */
+/**
+ * Limpia todo el historial de búsquedas
+ */
+function clearSearchHistory() {
+  if (!SearchHistory) return;
+  
+  SearchHistory.clear();
+  renderSearchHistory();
+  updateHistoryButtonVisibility();
+}
+
+/**
+ * Guarda la búsqueda actual en el historial
+ * @param {string} query - Término de búsqueda a guardar
+ */
+function saveSearchToHistory(query) {
+  if (!SearchHistory || !query || query.trim().length < 3) return;
+  
+  SearchHistory.save(query.trim());
+  updateHistoryButtonVisibility();
+}
+
+/**
+ * Configura los event listeners del historial de búsquedas
+ */
+function setupSearchHistoryListeners() {
+  if (!elements.historyBtn || !SearchHistory) return;
+  
+  // Botón para mostrar/ocultar historial
+  elements.historyBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleSearchHistory();
+  });
+  
+  // Botón para limpiar historial
+  if (elements.clearHistoryBtn) {
+    elements.clearHistoryBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      clearSearchHistory();
+    });
+  }
+  
+  // Cerrar dropdown al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (!elements.searchHistoryDropdown) return;
+    
+    const isClickInside = elements.searchHistoryDropdown.contains(e.target) ||
+                         elements.historyBtn.contains(e.target);
+    
+    if (!isClickInside) {
+      hideSearchHistory();
+    }
+  });
+  
+  // Inicializar visibilidad del botón
+  updateHistoryButtonVisibility();
+}
+
 /**
  * Configura todos los event listeners
  */
 function setupEventListeners() {
   setupSearchListeners();
   setupAdvancedFiltersListeners();
+  setupSearchHistoryListeners();
 
   // Botón cargar más
   if (elements.loadMoreBtn) {
@@ -963,8 +1142,8 @@ function detectTypoSuggestion(keyword) {
         ...(map.keywords_search || normalizeMapData(map).keywords.map(k => normalizeText(k)))
       ];
       
-      // Si encontramos coincidencia exacta en cualquier campo, este término está OK
-      if (searchableFields.some(field => field.includes(term))) {
+      // Verificar si el término existe como PALABRA COMPLETA en algún campo
+      if (searchableFields.some(field => isWholeWordMatch(term, field))) {
         hasExactMatch = true;
         break;
       }
@@ -1071,25 +1250,41 @@ function levenshteinDistance(str1, str2) {
 }
 
 /**
+ * Verifica si un término existe como palabra completa en un campo
+ * Usa límites de palabra para evitar coincidencias parciales (ej: "rio" no coincide con "frio")
+ * @param {string} term - Término de búsqueda normalizado
+ * @param {string} field - Campo de búsqueda normalizado
+ * @returns {boolean} - true si el término existe como palabra completa
+ */
+function isWholeWordMatch(term, field) {
+  // Crear regex que busque el término como palabra completa
+  // \b es límite de palabra, escapamos caracteres especiales del término
+  const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`\\b${escapedTerm}\\b`, 'i');
+  return regex.test(field);
+}
+
+/**
  * Verifica si un término coincide con un campo usando búsqueda difusa
+ * ACTUALIZADO: Busca palabras completas, no fragmentos dentro de otras palabras
  * @param {string} term - Término de búsqueda normalizado
  * @param {string} field - Campo de búsqueda normalizado
  * @param {number} threshold - Umbral de distancia (por defecto 2)
  * @returns {Object} - {match: boolean, score: number, type: 'exact'|'fuzzy', percentage: number}
  */
 function fuzzyMatch(term, field, threshold = 2) {
-  // Coincidencia exacta (prioridad máxima) - incluye coincidencias parciales
-  if (field.includes(term)) {
+  // 1. Verificar coincidencia exacta como PALABRA COMPLETA (no fragmento)
+  if (isWholeWordMatch(term, field)) {
     return { match: true, score: 0, type: 'exact', percentage: 100 };
   }
   
-  // Solo aplicar búsqueda difusa a palabras de 3+ caracteres
-  // Palabras muy cortas (1-2 chars) no usan fuzzy match
-  if (term.length < 3) {
+  // 2. Solo aplicar búsqueda difusa a palabras de 5+ caracteres
+  // Palabras cortas (1-4 chars) requieren coincidencia exacta
+  if (term.length < 5) {
     return { match: false, score: Infinity, type: 'none', percentage: 0 };
   }
   
-  // Dividir el campo en palabras para comparar
+  // 3. Dividir el campo en palabras para comparar
   const words = field.split(/\s+/);
   let bestMatch = { match: false, score: Infinity, type: 'none', percentage: 0 };
   
@@ -1271,6 +1466,11 @@ function handleSearch() {
   
   // Detectar si hay resultados por fuzzy match pero posibles errores de escritura
   detectTypoSuggestion(keyword);
+  
+  // Guardar en historial si la búsqueda fue exitosa y tiene keyword
+  if (keyword && keyword.length >= 3) {
+    saveSearchToHistory(keyword);
+  }
 }
 
 /**
@@ -1409,9 +1609,9 @@ function filterMaps() {
           return hasExactMatch || hasFuzzyMatch;
         });
       } else {
-        // Usar búsqueda exacta tradicional (método original)
+        // Usar búsqueda exacta tradicional con palabras completas
         allTermsMatch = searchTerms.every(term => 
-          searchableFields.some(field => field.includes(term))
+          searchableFields.some(field => isWholeWordMatch(term, field))
         );
       }
 
@@ -1905,9 +2105,9 @@ function getFilterResultCount(filterType, filterValue) {
           return hasExactMatch || hasFuzzyMatch;
         });
       } else {
-        // Usar búsqueda exacta tradicional
+        // Usar búsqueda exacta tradicional con palabras completas
         allTermsMatch = searchTerms.every(term => 
-          searchableFields.some(field => field.includes(term))
+          searchableFields.some(field => isWholeWordMatch(term, field))
         );
       }
       
@@ -2710,14 +2910,14 @@ function benchmarkSearch(searchTerm = 'argentina') {
   const indexEnd = performance.now();
   const indexTime = indexEnd - indexStart;
   
-  // 2. Búsqueda lineal (sin índice)
+  // 2. Búsqueda lineal (sin índice) con palabras completas
   const linearStart = performance.now();
   const normalizedSearch = normalizeText(searchTerm);
   const linearResults = app.allMaps.filter(map => {
     const normalizedMap = normalizeMapData(map);
     const titleField = normalizeText(normalizedMap.title);
     const keywordFields = normalizedMap.keywords.map(k => normalizeText(k)).join(' ');
-    return titleField.includes(normalizedSearch) || keywordFields.includes(normalizedSearch);
+    return isWholeWordMatch(normalizedSearch, titleField) || isWholeWordMatch(normalizedSearch, keywordFields);
   });
   const linearEnd = performance.now();
   const linearTime = linearEnd - linearStart;

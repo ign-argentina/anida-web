@@ -101,9 +101,24 @@
               <button id="clear-keyword-btn" type="button" class="btn btn-secondary" title="Limpiar búsqueda" style="display:none">
                 <i class='bx bx-x-circle'></i>
               </button>
+              <button id="history-btn" type="button" class="btn btn-secondary" title="Ver historial de búsquedas" style="display:none">
+                <i class='bx bx-time'></i>
+              </button>
               <button class="keyword-input-btn" type="submit">
                 <i class='bx bx-search'></i> Buscar
               </button>
+            </div>
+            <!-- Dropdown del historial de búsquedas -->
+            <div id="search-history-dropdown" class="search-history-dropdown" style="display:none">
+              <div class="search-history-header">
+                <span class="search-history-title">Búsquedas recientes</span>
+                <button id="clear-history-btn" type="button" class="btn-clear-history" title="Limpiar historial">
+                  <i class='bx bx-trash'></i>
+                </button>
+              </div>
+              <ul id="search-history-list" class="search-history-list">
+                <!-- Las búsquedas se insertarán aquí dinámicamente -->
+              </ul>
             </div>
           </div>
 
@@ -347,6 +362,7 @@
       });
   </script>
   <script src="/js/main.js"></script>
+  <script src="/js/utils/searchHistory.js"></script>
   <script src="/js/maps.js"></script>
 </body>
 

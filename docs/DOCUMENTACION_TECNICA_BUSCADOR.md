@@ -1,9 +1,9 @@
 # Documentación Técnica - Buscador de Mapas ANIDA
 
-**Fecha**: 22 de octubre de 2025 (Actualizado con optimización de índice)  
+**Fecha**: 22 de enero de 2024 (Actualizado con historial de búsquedas)  
 **Repositorio**: ign-argentina/anida-web  
-**Archivo principal**: `js/maps.js` (2719 líneas)  
-**Última optimización**: Índice invertido optimizado (reducción 30-40% de memoria)
+**Archivo principal**: `js/maps.js` (2967 líneas)  
+**Última optimización**: Índice invertido optimizado + historial de búsquedas
 
 ---
 
@@ -20,7 +20,9 @@ Todo el contenido ha sido verificado contra el código fuente actual.
 2. [Estructura de Datos](#estructura-de-datos)
 3. [Flujo de Búsqueda](#flujo-de-búsqueda)
 4. [Sistema de Índices](#sistema-de-índices)
- - [Optimización del Índice (Oct 2025)](#optimización-del-índice-oct-2025)
+
+   - [Optimización del Índice (Oct 2025)](#optimización-del-índice-oct-2025)
+
 5. [Fuzzy Matching](#fuzzy-matching)
 6. [Sistema de Relevancia](#sistema-de-relevancia)
 7. [Autocompletado](#autocompletado)
@@ -1599,6 +1601,97 @@ function calculateRelevanceScore(map, searchTerms) {
 }
 ```
 
+### Funciones de Historial de Búsquedas
+
+```javascript
+// Línea 785 - Actualiza visibilidad del botón de historial
+function updateHistoryButtonVisibility() {
+  if (!elements.historyBtn || !SearchHistory) return;
+  
+  if (SearchHistory.hasHistory()) {
+    elements.historyBtn.style.display = 'inline-flex';
+  } else {
+    elements.historyBtn.style.display = 'none';
+    hideSearchHistory();
+  }
+}
+
+// Línea 799 - Renderiza lista de búsquedas recientes
+function renderSearchHistory() {
+  if (!elements.searchHistoryList || !SearchHistory) return;
+  
+  const history = SearchHistory.get();
+  elements.searchHistoryList.innerHTML = '';
+  
+  if (history.length === 0) {
+    // Mostrar mensaje "No hay búsquedas recientes"
+    return;
+  }
+  
+  history.forEach(query => {
+    // Crear item <li> con ícono y texto
+    // Al hacer click → ejecutar búsqueda
+  });
+}
+
+// Línea 844 - Muestra dropdown del historial
+function showSearchHistory() {
+  if (!elements.searchHistoryDropdown) return;
+  renderSearchHistory();
+  elements.searchHistoryDropdown.style.display = 'block';
+  elements.historyBtn.classList.add('active');
+}
+
+// Línea 859 - Oculta dropdown del historial
+function hideSearchHistory() {
+  if (!elements.searchHistoryDropdown) return;
+  elements.searchHistoryDropdown.style.display = 'none';
+  elements.historyBtn.classList.remove('active');
+}
+
+// Línea 871 - Toggle de visibilidad del dropdown
+function toggleSearchHistory() {
+  const isVisible = elements.searchHistoryDropdown.style.display === 'block';
+  isVisible ? hideSearchHistory() : showSearchHistory();
+}
+
+// Línea 886 - Limpia todo el historial (sin confirmación)
+function clearSearchHistory() {
+  if (!SearchHistory) return;
+  SearchHistory.clear();
+  renderSearchHistory();
+  updateHistoryButtonVisibility();
+}
+
+// Línea 897 - Guarda búsqueda en historial (validación 3+ chars)
+function saveSearchToHistory(query) {
+  if (!SearchHistory || !query || query.trim().length < 3) return;
+  SearchHistory.save(query.trim());
+  updateHistoryButtonVisibility();
+}
+
+// Línea 910 - Configura event listeners del historial
+function setupSearchHistoryListeners() {
+  if (!elements.historyBtn || !SearchHistory) return;
+  
+  // Botón toggle historial
+  elements.historyBtn.addEventListener('click', toggleSearchHistory);
+  
+  // Botón limpiar historial
+  elements.clearHistoryBtn.addEventListener('click', clearSearchHistory);
+  
+  // Cerrar al hacer click fuera
+  document.addEventListener('click', (e) => {
+    const isClickInside = elements.searchHistoryDropdown.contains(e.target) ||
+                         elements.historyBtn.contains(e.target);
+    if (!isClickInside) hideSearchHistory();
+  });
+  
+  // Inicializar visibilidad
+  updateHistoryButtonVisibility();
+}
+```
+
 ### Funciones de Renderizado
 
 ```javascript
@@ -1795,6 +1888,7 @@ Estas funciones SÍ existen y están documentadas correctamente:
 - `updateFilterCounts()` - Línea 1874
 
 **Funciones de Optimización (Nuevas - Oct 2025):**
+
 - `compressIndex(tempIndex)` - Comprime índice a arrays tipados
 - `isTermInTitle(term, mapIndex)` - Consulta on-demand si término en título
 - `isTermInKeywords(term, mapIndex)` - Consulta on-demand si término en keywords
@@ -1802,6 +1896,25 @@ Estas funciones SÍ existen y están documentadas correctamente:
 - `validateIndexIntegrity()` - Valida estructura del índice comprimido
 - `benchmarkSearch(searchTerm)` - Compara rendimiento índice vs lineal
 - `runPostIndexValidation()` - Ejecuta validaciones en desarrollo (localhost)
+
+**Funciones de Historial de Búsquedas (Nuevas - Ene 2024):**
+
+- `updateHistoryButtonVisibility()` - Línea 785 - Muestra/oculta botón de historial
+- `renderSearchHistory()` - Línea 799 - Renderiza lista de búsquedas recientes
+- `showSearchHistory()` - Línea 844 - Muestra dropdown del historial
+- `hideSearchHistory()` - Línea 859 - Oculta dropdown del historial
+- `toggleSearchHistory()` - Línea 871 - Alterna visibilidad del dropdown
+- `clearSearchHistory()` - Línea 886 - Limpia historial (sin confirmación)
+- `saveSearchToHistory(query)` - Línea 897 - Guarda búsqueda si cumple validación (3+ chars)
+- `setupSearchHistoryListeners()` - Línea 910 - Configura event listeners del historial
+
+**Módulo SearchHistory (js/utils/searchHistory.js):**
+
+- `SearchHistory.save(query)` - Guarda búsqueda en localStorage (máx 5, FIFO)
+- `SearchHistory.get()` - Retorna array de búsquedas guardadas
+- `SearchHistory.clear()` - Elimina todo el historial
+- `SearchHistory.count()` - Retorna cantidad de búsquedas guardadas
+- `SearchHistory.hasHistory()` - Verifica si hay al menos una búsqueda guardada
 
 ### Estructura Real del JSON
 
@@ -1880,6 +1993,95 @@ Para información detallada sobre la optimización del índice invertido:
 
 ## 🔄 Historial de Cambios
 
+### Enero 2024 - Historial de Búsquedas
+
+**Nueva funcionalidad:**
+1. ✅ Módulo `searchHistory.js` para gestión de historial
+2. ✅ Persistencia en localStorage (últimas 5 búsquedas)
+3. ✅ Botón de historial con ícono de reloj (bx-time)
+4. ✅ Dropdown interactivo con re-ejecución de búsquedas
+5. ✅ Botón de limpiar historial (sin confirmación - UX mejorada)
+6. ✅ Eliminación automática de duplicados
+7. ✅ Cierre automático del dropdown al hacer click fuera
+8. ✅ Estilos CSS completos y responsive
+9. ✅ Integración con autocompletado (guarda sugerencias seleccionadas)
+
+**Detalles técnicos:**
+- **Módulo**: `js/utils/searchHistory.js`
+- **API**: `save(query)`, `get()`, `clear()`, `count()`, `hasHistory()`
+- **Storage Key**: `'anida_search_history'`
+- **Límite**: 5 búsquedas (FIFO)
+- **Validación**: Mínimo 3 caracteres
+- **Integración**: 
+  - `handleSearch()` → `saveSearchToHistory()` (búsqueda manual)
+  - `selectSuggestion()` → `saveSearchToHistory()` (autocompletado)
+
+**Archivos modificados:**
+- `js/maps.js`: +175 líneas (funciones de historial)
+- `js/utils/searchHistory.js`: Nuevo módulo (111 líneas)
+- `mapas_tematicos.html`: Botón + dropdown HTML
+- `styles/mapas_tematicos.css`: +180 líneas de estilos
+- `docs/HISTORIAL_BUSQUEDAS.md`: Documentación completa
+
+**Funciones implementadas (Líneas 780-941 en maps.js):**
+
+- `updateHistoryButtonVisibility()` - Muestra/oculta botón según haya historial
+- `renderSearchHistory()` - Renderiza lista de búsquedas en dropdown
+- `showSearchHistory()` - Muestra dropdown del historial
+- `hideSearchHistory()` - Oculta dropdown del historial
+- `toggleSearchHistory()` - Alterna visibilidad del dropdown
+- `clearSearchHistory()` - Limpia historial (sin confirmación)
+- `saveSearchToHistory(query)` - Guarda búsqueda si cumple validación (3+ chars)
+- `setupSearchHistoryListeners()` - Configura event listeners del historial
+
+**Elementos DOM nuevos:**
+
+```javascript
+elements.historyBtn            // Botón con ícono de reloj
+elements.clearHistoryBtn       // Botón de limpiar (ícono basura)
+elements.searchHistoryDropdown // Contenedor del dropdown
+elements.searchHistoryList     // Lista <ul> de búsquedas
+```
+
+**Ver documentación detallada:** [HISTORIAL_BUSQUEDAS.md](./HISTORIAL_BUSQUEDAS.md)
+
+**Ejemplo de uso del módulo SearchHistory:**
+
+```javascript
+// Guardar una búsqueda
+SearchHistory.save('población argentina'); // Retorna: true
+
+// Obtener historial
+const history = SearchHistory.get(); 
+// Retorna: ['población argentina', 'clima patagonia', 'ríos', ...]
+
+// Verificar si hay historial
+if (SearchHistory.hasHistory()) {
+  console.log(`Hay ${SearchHistory.count()} búsquedas guardadas`);
+}
+
+// Limpiar historial
+SearchHistory.clear(); // Retorna: true
+```
+
+**Flujo de guardado automático:**
+
+```javascript
+// 1. Usuario escribe "población" y presiona Enter
+handleSearch() 
+  → sanitizeInput('población')
+  → saveSearchToHistory('población')  // Se guarda aquí
+  → filterMaps()
+
+// 2. Usuario selecciona sugerencia del autocompletado
+selectSuggestion('clima patagonia')
+  → saveSearchToHistory('clima patagonia')  // Se guarda aquí
+  → handleSearch()
+  → filterMaps()
+```
+
+---
+
 ### Octubre 2025 - Optimización del Índice
 
 **Cambios implementados:**
@@ -1899,6 +2101,7 @@ Para información detallada sobre la optimización del índice invertido:
 
 ---
 
-**Última actualización**: 22 de octubre de 2025  
-**Versión del código**: `js/maps.js` (2719 líneas)  
+**Última actualización**: 22 de enero de 2024  
+**Versión del código**: `js/maps.js` (2967 líneas)  
+**Módulos adicionales**: `js/utils/searchHistory.js` (111 líneas)  
 **Rama**: `buscador`
