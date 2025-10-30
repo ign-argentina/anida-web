@@ -258,9 +258,9 @@ async function fetchMapsData() {
     app.allMaps = await response.json();
 
     // Crear índice invertido para búsquedas rápidas
-    console.time('⚡ Indexación de mapas');
+    /* console.time('⚡ Indexación de mapas'); */
     buildSearchIndex();
-    console.timeEnd('⚡ Indexación de mapas');
+    /* console.timeEnd('⚡ Indexación de mapas'); */
     
     // Ejecutar validaciones en desarrollo
     runPostIndexValidation();
@@ -1901,7 +1901,7 @@ function normalizeMapData(map) {
  * Filtra los mapas según criterios actuales
  */
 function filterMaps() {
-  console.time('🔍 Tiempo de búsqueda');
+  /* console.time('🔍 Tiempo de búsqueda'); */
   const searchStartTime = performance.now();
   
   const { keyword, category, advanced } = app.activeFilters;
@@ -2094,8 +2094,8 @@ function filterMaps() {
   app.performanceMetrics.totalSearches++;
   app.performanceMetrics.averageSearchTime = 
     ((app.performanceMetrics.averageSearchTime * (app.performanceMetrics.totalSearches - 1)) + searchTime) / app.performanceMetrics.totalSearches;
-  
-  console.timeEnd('🔍 Tiempo de búsqueda');
+
+  /* console.timeEnd('🔍 Tiempo de búsqueda'); */
   /* console.log(`⚡ Búsqueda completada en ${searchTime.toFixed(2)}ms (promedio: ${app.performanceMetrics.averageSearchTime.toFixed(2)}ms) | Resultados: ${app.filteredMaps.length}`); */
 }
 
