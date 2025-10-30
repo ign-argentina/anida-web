@@ -58,7 +58,7 @@ function trackEvent(eventName, eventParams = {}) {
       
       // Log en desarrollo (comentar en producción si se desea)
       if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        console.log('📊 GA4 Event:', eventName, eventParams);
+        /* console.log('📊 GA4 Event:', eventName, eventParams); */
       }
     }
   } catch (error) {
@@ -275,7 +275,7 @@ async function fetchMapsData() {
 
     // Mostrar estadísticas de indexación
     const indexStats = getIndexStats();
-    console.log(`📊 Estadísticas de indexación:
+    /* console.log(`📊 Estadísticas de indexación:
       - Mapas indexados: ${app.allMaps.length}
       - Términos únicos: ${Object.keys(app.searchIndex).length}
       - Tiempo de indexación: ${app.performanceMetrics.indexingTime.toFixed(2)}ms
@@ -285,7 +285,7 @@ async function fetchMapsData() {
       ${performance.memory ? `- Memoria antes: ${(app.performanceMetrics.memoryBefore / 1024 / 1024).toFixed(2)} MB` : ''}
       ${performance.memory ? `- Memoria después: ${(app.performanceMetrics.memoryAfter / 1024 / 1024).toFixed(2)} MB` : ''}
       ${performance.memory ? `- Optimización: ${Math.abs(app.performanceMetrics.memoryReduction)}% ${app.performanceMetrics.memoryReduction > 0 ? 'reducción' : 'incremento'}` : ''}
-    `);
+    `); */
 
   } catch (error) {
     console.error('Error cargando mapas:', error);
@@ -2096,7 +2096,7 @@ function filterMaps() {
     ((app.performanceMetrics.averageSearchTime * (app.performanceMetrics.totalSearches - 1)) + searchTime) / app.performanceMetrics.totalSearches;
   
   console.timeEnd('🔍 Tiempo de búsqueda');
-  console.log(`⚡ Búsqueda completada en ${searchTime.toFixed(2)}ms (promedio: ${app.performanceMetrics.averageSearchTime.toFixed(2)}ms) | Resultados: ${app.filteredMaps.length}`);
+  /* console.log(`⚡ Búsqueda completada en ${searchTime.toFixed(2)}ms (promedio: ${app.performanceMetrics.averageSearchTime.toFixed(2)}ms) | Resultados: ${app.filteredMaps.length}`); */
 }
 
 /**
@@ -3201,7 +3201,7 @@ document.addEventListener('click', (e) => {
  * @returns {Object} Resultado de la validación
  */
 function validateIndexIntegrity() {
-  console.log('🔍 Validando integridad del índice optimizado...');
+  /* console.log('🔍 Validando integridad del índice optimizado...'); */
   
   const validation = {
     passed: true,
@@ -3257,13 +3257,13 @@ function validateIndexIntegrity() {
       }
     });
     
-    console.log(`✅ Validación completada:
+    /* console.log(`✅ Validación completada:
       - Términos validados: ${validation.stats.termsChecked}
       - Referencias a mapas: ${validation.stats.totalMapReferences}
       - Flags validados: ${validation.stats.flagsValidated}
       - Errores: ${validation.errors.length}
       - Advertencias: ${validation.warnings.length}
-    `);
+    `); */
     
     if (validation.errors.length > 0) {
       console.error('❌ Errores encontrados:', validation.errors);
@@ -3289,7 +3289,7 @@ function validateIndexIntegrity() {
  * @returns {Object} Comparación de tiempos
  */
 function benchmarkSearch(searchTerm = 'argentina') {
-  console.log(`⚡ Benchmark de búsqueda para: "${searchTerm}"`);
+  /* console.log(`⚡ Benchmark de búsqueda para: "${searchTerm}"`); */
   
   // 1. Búsqueda con índice optimizado
   const indexStart = performance.now();
@@ -3311,12 +3311,12 @@ function benchmarkSearch(searchTerm = 'argentina') {
   
   const speedup = (linearTime / indexTime).toFixed(2);
   
-  console.log(`📊 Resultados del benchmark:
+  /* console.log(`📊 Resultados del benchmark:
     - Búsqueda con índice: ${indexTime.toFixed(2)}ms (${indexResults.length} resultados)
     - Búsqueda lineal: ${linearTime.toFixed(2)}ms (${linearResults.length} resultados)
     - Speedup: ${speedup}x más rápido
     - Diferencia: ${(linearTime - indexTime).toFixed(2)}ms
-  `);
+  `); */
   
   return {
     indexTime,
@@ -3333,7 +3333,7 @@ function benchmarkSearch(searchTerm = 'argentina') {
  */
 function runPostIndexValidation() {
   if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-    console.log('🔧 Modo desarrollo: ejecutando validaciones...');
+    /* console.log('🔧 Modo desarrollo: ejecutando validaciones...'); */
     
     // Validar integridad del índice
     const validation = validateIndexIntegrity();
@@ -3341,7 +3341,7 @@ function runPostIndexValidation() {
     if (!validation.passed) {
       console.error('❌ ALERTA: El índice tiene errores. Revisar inmediatamente.');
     } else {
-      console.log('✅ Índice validado correctamente');
+      /* console.log('✅ Índice validado correctamente'); */
     }
     
     // Ejecutar benchmark de ejemplo
