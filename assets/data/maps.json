@@ -2424,7 +2424,8 @@
       "física",
       "recurso",
       "natural",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -2442,7 +2443,8 @@
       "fisica",
       "recurso",
       "natural",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Cuenca de Claromecó",
     "title_search": "cuenca de claromeco",
@@ -2494,7 +2496,10 @@
       "hidrología",
       "ciencias de la tierra",
       "física",
-      "geografía física"
+      "geografía física",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -2513,7 +2518,10 @@
       "hidrologia",
       "ciencias de la tierra",
       "fisica",
-      "geografia fisica"
+      "geografia fisica",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "title": "Cuencas sedimentarias de la Llanura oriental",
     "title_search": "cuencas sedimentarias de la llanura oriental",
@@ -3302,7 +3310,10 @@
       "ciencias de la tierra",
       "recursos de suelos",
       "geografía física",
-      "geografía regional"
+      "geografía regional",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -3322,7 +3333,10 @@
       "ciencias de la tierra",
       "recursos de suelos",
       "geografia fisica",
-      "geografia regional"
+      "geografia regional",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "title": "Regiones hidrogeológicas",
     "title_search": "regiones hidrogeologicas",
@@ -3394,7 +3408,10 @@
       "natural",
       "recursos de suelos",
       "geografía física",
-      "geografía regional"
+      "geografía regional",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -3431,7 +3448,10 @@
       "natural",
       "recursos de suelos",
       "geografia fisica",
-      "geografia regional"
+      "geografia regional",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "title": "Cuencas y regiones hídricas superficiales",
     "title_search": "cuencas y regiones hidricas superficiales",
@@ -3495,7 +3515,10 @@
       "natural",
       "recursos de suelos",
       "geografía física",
-      "geografía regional"
+      "geografía regional",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "keywords_search": [
       "cuenca",
@@ -3524,7 +3547,10 @@
       "natural",
       "recursos de suelos",
       "geografia fisica",
-      "geografia regional"
+      "geografia regional",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "title": "Cuencas exorreicas y cerradas",
     "title_search": "cuencas exorreicas y cerradas",
@@ -3577,7 +3603,10 @@
       "agua del suelo",
       "física",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -3595,7 +3624,10 @@
       "agua del suelo",
       "fisica",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "title": "Espejos de agua",
     "title_search": "espejos de agua",
@@ -3653,7 +3685,10 @@
       "recurso",
       "natural",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -3676,7 +3711,10 @@
       "recurso",
       "natural",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "title": "Lagos principales",
     "title_search": "lagos principales",
@@ -3736,7 +3774,10 @@
       "ríos de Argentina",
       "ciencias de la tierra",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -3761,7 +3802,10 @@
       "rios de argentina",
       "ciencias de la tierra",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "title": "Cursos de agua",
     "title_search": "cursos de agua",
@@ -3817,7 +3861,10 @@
       "natural",
       "ciencias de la tierra",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "keywords_search": [
       "cuenca del plata",
@@ -3838,7 +3885,10 @@
       "natural",
       "ciencias de la tierra",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recurso",
+      "natural",
+      "recursos naturales"
     ],
     "title": "Cuenca del Plata",
     "title_search": "cuenca del plata",
@@ -5699,7 +5749,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -5719,7 +5770,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Órdenes de suelo",
     "title_search": "ordenes de suelo",
@@ -5772,7 +5824,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -5792,7 +5845,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Alfisol",
     "title_search": "suelos del orden alfisol",
@@ -5847,7 +5901,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -5867,7 +5922,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos de orden Andisol",
     "title_search": "suelos de orden andisol",
@@ -5921,7 +5977,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -5940,7 +5997,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Aridisol",
     "title_search": "suelos del orden aridisol",
@@ -5994,7 +6052,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -6013,7 +6072,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Entisol",
     "title_search": "suelos del orden entisol",
@@ -6068,7 +6128,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -6088,7 +6149,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Histosol",
     "title_search": "suelos del orden histosol",
@@ -6143,7 +6205,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -6163,7 +6226,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Inceptisol",
     "title_search": "suelos del orden inceptisol",
@@ -6218,7 +6282,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -6238,7 +6303,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Molisol",
     "title_search": "suelos del orden molisol",
@@ -6293,7 +6359,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -6313,7 +6380,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Órdenes de suelo",
     "title_search": "ordenes de suelo",
@@ -6368,7 +6436,8 @@
       "edafología de suelos",
       "e suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -6388,7 +6457,8 @@
       "edafologia de suelos",
       "e suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Oxisol",
     "title_search": "suelos del orden oxisol",
@@ -6442,7 +6512,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -6461,7 +6532,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Spodosol",
     "title_search": "suelos del orden spodosol",
@@ -6515,7 +6587,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -6534,7 +6607,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Ultisol",
     "title_search": "suelos del orden ultisol",
@@ -6588,7 +6662,8 @@
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
-      "geografía física"
+      "geografía física",
+      "recursos naturales"
     ],
     "keywords_search": [
       "suelo",
@@ -6607,7 +6682,8 @@
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
-      "geografia fisica"
+      "geografia fisica",
+      "recursos naturales"
     ],
     "title": "Suelos del orden Vertisol",
     "title_search": "suelos del orden vertisol",
@@ -14521,7 +14597,9 @@
       "departamento",
       "calidad",
       "vida",
+      "recurso",
       "recursos",
+      "recreativo",
       "recreativos",
       "índice",
       "base",
@@ -14552,7 +14630,9 @@
       "departamento",
       "calidad",
       "vida",
+      "recurso",
       "recursos",
+      "recreativo",
       "recreativos",
       "indice",
       "base",
@@ -16569,7 +16649,10 @@
       "extensivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -16596,7 +16679,10 @@
       "extensivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de algodón. Campaña 2018",
     "title_search": "produccion de algodon campana 2018",
@@ -16660,7 +16746,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -16687,7 +16776,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de alpiste. Campana 2017-2018",
     "title_search": "produccion de alpiste campana 2017-2018",
@@ -16749,7 +16841,10 @@
       "extensivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -16776,7 +16871,10 @@
       "extensivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de arroz. Campaña 2018",
     "title_search": "produccion de arroz campana 2018",
@@ -16841,7 +16939,10 @@
       "cultivos",
       "extensivos",
       "ecoómica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -16869,7 +16970,10 @@
       "cultivos",
       "extensivos",
       "ecoomica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de avena. Campaña 2017-2018",
     "title_search": "produccion de avena campana 2017-2018",
@@ -16933,7 +17037,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -16962,7 +17069,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de cebada cervecera. Campaña 2017-2018",
     "title_search": "produccion de cebada cervecera campana 2017-2018",
@@ -17025,7 +17135,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17053,7 +17166,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de centeno. Campaña 2017-2018",
     "title_search": "produccion de centeno campana 2017-2018",
@@ -17115,7 +17231,10 @@
       "extensivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17142,7 +17261,10 @@
       "extensivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de colza. Campaña 2018",
     "title_search": "produccion de colza campana 2018",
@@ -17206,7 +17328,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17233,7 +17358,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de girasol. Campaña 2017-2018",
     "title_search": "produccion de girasol campana 2017-2018",
@@ -17296,7 +17424,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17324,7 +17455,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de lino. Campaña 2017-2018",
     "title_search": "produccion de lino campana 2017-2018",
@@ -17383,7 +17517,10 @@
       "tierra",
       "uso de la tierra",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17407,7 +17544,10 @@
       "tierra",
       "uso de la tierra",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de maíz. Campaña 2017-2018",
     "title_search": "produccion de maiz campana 2017-2018",
@@ -17470,7 +17610,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17498,7 +17641,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción de maní. Campaña 2017-2018",
     "title_search": "produccion de mani campana 2017-2018",
@@ -17560,7 +17706,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17587,7 +17736,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Produccion de mijo. Campaña 2017-2018",
     "title_search": "produccion de mijo campana 2017-2018",
@@ -17724,7 +17876,10 @@
       "uso de la tierra",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17749,7 +17904,10 @@
       "uso de la tierra",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Producción del poroto seco. Campaña 2018",
     "title_search": "produccion del poroto seco campana 2018",
@@ -17813,7 +17971,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17840,7 +18001,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Produccion de soja. Campaña 2017-2018",
     "title_search": "produccion de soja campana 2017-2018",
@@ -17902,7 +18066,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -17929,7 +18096,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Produccion de sorgo. Campaña 2017-2018",
     "title_search": "produccion de sorgo campana 2017-2018",
@@ -17990,7 +18160,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18016,7 +18189,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Produccion de Trigo. Campaña 2017-2018",
     "title_search": "produccion de trigo campana 2017-2018",
@@ -18079,7 +18255,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18107,7 +18286,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Produccion de yerba mate. Campaña 2016-2017",
     "title_search": "produccion de yerba mate campana 2016-2017",
@@ -18169,7 +18351,10 @@
       "extensivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18194,7 +18379,10 @@
       "extensivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del algodón. Campaña 2018",
     "title_search": "rendimiento del algodon campana 2018",
@@ -18256,7 +18444,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18281,7 +18472,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del alpiste. Campaña 2017-2018",
     "title_search": "rendimiento del alpiste campana 2017-2018",
@@ -18342,7 +18536,10 @@
       "extensivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18368,7 +18565,10 @@
       "extensivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del arroz. Campaña 2018",
     "title_search": "rendimiento del arroz campana 2018",
@@ -18431,7 +18631,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18457,7 +18660,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento de la avena. Campaña 2017-2018",
     "title_search": "rendimiento de la avena campana 2017-2018",
@@ -18519,7 +18725,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18546,7 +18755,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento de la cebada cervecera. Campaña 2017-2018",
     "title_search": "rendimiento de la cebada cervecera campana 2017-2018",
@@ -18608,7 +18820,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18635,7 +18850,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del centeno. Campaña 2017-2018",
     "title_search": "rendimiento del centeno campana 2017-2018",
@@ -18696,7 +18914,10 @@
       "extensivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18722,7 +18943,10 @@
       "extensivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento de la colza. Campaña 2018",
     "title_search": "rendimiento de la colza campana 2018",
@@ -18784,7 +19008,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18809,7 +19036,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del girasol. Campaña 2017-2018",
     "title_search": "rendimiento del girasol campana 2017-2018",
@@ -18870,7 +19100,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18896,7 +19129,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del Lino. Campaña 2017-2018",
     "title_search": "rendimiento del lino campana 2017-2018",
@@ -18958,7 +19194,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -18985,7 +19224,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del maíz. Campaña 2017-2018",
     "title_search": "rendimiento del maiz campana 2017-2018",
@@ -19046,7 +19288,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19072,7 +19317,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del maní. Campaña 2017-2018",
     "title_search": "rendimiento del mani campana 2017-2018",
@@ -19133,7 +19381,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19159,7 +19410,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del mijo. Campaña 2017-2018",
     "title_search": "rendimiento del mijo campana 2017-2018",
@@ -19220,7 +19474,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19246,7 +19503,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del poroto seco. Campaña 2018",
     "title_search": "rendimiento del poroto seco campana 2018",
@@ -19309,7 +19569,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19335,7 +19598,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento de la soja. Campaña 2017-2018",
     "title_search": "rendimiento de la soja campana 2017-2018",
@@ -19396,7 +19662,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19422,7 +19691,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del sorgo. Campaña 2017-2018",
     "title_search": "rendimiento del sorgo campana 2017-2018",
@@ -19482,7 +19754,10 @@
       "cultivos",
       "extensivos",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19507,7 +19782,10 @@
       "cultivos",
       "extensivos",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento del trigo. Campaña 2017-2018",
     "title_search": "rendimiento del trigo campana 2017-2018",
@@ -19568,7 +19846,10 @@
       "cultivos",
       "regionales",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19594,7 +19875,10 @@
       "cultivos",
       "regionales",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Rendimiento de la yerba mate. Campaña 2016-2017",
     "title_search": "rendimiento de la yerba mate campana 2016-2017",
@@ -19659,7 +19943,9 @@
       "regionales",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19687,7 +19973,9 @@
       "regionales",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con algodón. Campaña 2018",
     "title_search": "superficie sembrada con algodon campana 2018",
@@ -19753,7 +20041,9 @@
       "regionales",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19782,7 +20072,9 @@
       "regionales",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con alpiste. Campaña 2017-2018",
     "title_search": "superficie sembrada con alpiste campana 2017-2018",
@@ -19846,7 +20138,9 @@
       "regionales",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19875,7 +20169,9 @@
       "regionales",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con arroz. Campaña 2018",
     "title_search": "superficie sembrada con arroz campana 2018",
@@ -19941,7 +20237,9 @@
       "extensivos",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -19970,7 +20268,9 @@
       "extensivos",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con avena. Campaña 2017-2018",
     "title_search": "superficie sembrada con avena campana 2017-2018",
@@ -20035,7 +20335,9 @@
       "extensivos",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20065,7 +20367,9 @@
       "extensivos",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con cebada cervecera. Campaña 2017-2018",
     "title_search": "superficie sembrada con cebada cervecera campana 2017-2018",
@@ -20129,7 +20433,9 @@
       "cultivos",
       "regionales",
       "geografía económica",
-      "recursos de suelos"
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20158,7 +20464,9 @@
       "cultivos",
       "regionales",
       "geografia economica",
-      "recursos de suelos"
+      "recursos de suelos",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con centeno. Campaña 2017-2018",
     "title_search": "superficie sembrada con centeno campana 2017-2018",
@@ -20222,7 +20530,9 @@
       "regionales",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20251,7 +20561,9 @@
       "regionales",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con colza. Campaña 2018",
     "title_search": "superficie sembrada con colza campana 2018",
@@ -20316,7 +20628,9 @@
       "extensivos",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20344,7 +20658,9 @@
       "extensivos",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada del girasol. Campaña 2017-2018",
     "title_search": "superficie sembrada del girasol campana 2017-2018",
@@ -20408,7 +20724,9 @@
       "regionales",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20437,7 +20755,9 @@
       "regionales",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada del lino. Campaña 2017-2018",
     "title_search": "superficie sembrada del lino campana 2017-2018",
@@ -20501,7 +20821,9 @@
       "extensivos",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20530,7 +20852,9 @@
       "extensivos",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con maíz. Campaña 2017-2018",
     "title_search": "superficie sembrada con maiz campana 2017-2018",
@@ -20594,7 +20918,9 @@
       "regionales",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20623,7 +20949,9 @@
       "regionales",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con maní. Campaña 2017-2018",
     "title_search": "superficie sembrada con mani campana 2017-2018",
@@ -20687,7 +21015,9 @@
       "regionales",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20716,7 +21046,9 @@
       "regionales",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con mijo. Campaña 2017-2018",
     "title_search": "superficie sembrada con mijo campana 2017-2018",
@@ -20781,7 +21113,9 @@
       "regionales",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20811,7 +21145,9 @@
       "regionales",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con poroto seco. Campaña 2017-2018",
     "title_search": "superficie sembrada con poroto seco campana 2017-2018",
@@ -20877,7 +21213,9 @@
       "extensivos",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20906,7 +21244,9 @@
       "extensivos",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con soja. Campaña 2017-2018",
     "title_search": "superficie sembrada con soja campana 2017-2018",
@@ -20970,7 +21310,9 @@
       "extensivos",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -20999,7 +21341,9 @@
       "extensivos",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con sorgo. Campaña 2017-2018",
     "title_search": "superficie sembrada con sorgo campana 2017-2018",
@@ -21062,7 +21406,9 @@
       "extensivos",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -21090,7 +21436,9 @@
       "extensivos",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con trigo. Campaña 2017-2018",
     "title_search": "superficie sembrada con trigo campana 2017-2018",
@@ -21155,7 +21503,9 @@
       "regionales",
       "económica",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recurso",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -21185,7 +21535,9 @@
       "regionales",
       "economica",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recurso",
+      "suelo"
     ],
     "title": "Superficie sembrada con yerba mate. Campaña 2016-2017",
     "title_search": "superficie sembrada con yerba mate campana 2016-2017",
@@ -21247,7 +21599,9 @@
       "aprovechamiento de recursos",
       "ciencias ambientales",
       "recursos de suelos",
-      "geografía económica"
+      "geografía económica",
+      "recursos naturales",
+      "suelo"
     ],
     "keywords_search": [
       "argentina",
@@ -21272,7 +21626,9 @@
       "aprovechamiento de recursos",
       "ciencias ambientales",
       "recursos de suelos",
-      "geografia economica"
+      "geografia economica",
+      "recursos naturales",
+      "suelo"
     ],
     "title": "Sistema de usos de la de la tierra",
     "title_search": "sistema de usos de la de la tierra",
@@ -21340,7 +21696,8 @@
       "geografía económica",
       "aprovechamiento de recursos",
       "fuente de energía no renovable",
-      "fuente de energía renovable"
+      "fuente de energía renovable",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -21373,7 +21730,8 @@
       "geografia economica",
       "aprovechamiento de recursos",
       "fuente de energia no renovable",
-      "fuente de energia renovable"
+      "fuente de energia renovable",
+      "recursos energeticos"
     ],
     "title": "Biocombustibles",
     "title_search": "biocombustibles",
@@ -21444,7 +21802,8 @@
       "geografía económica",
       "fuente de energía no renovable",
       "fuente de energía renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -21480,7 +21839,8 @@
       "geografia economica",
       "fuente de energia no renovable",
       "fuente de energia renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energeticos"
     ],
     "title": "Generación y transporte de energía eléctrica",
     "title_search": "generacion y transporte de energia electrica",
@@ -21545,7 +21905,8 @@
       "abastecimiento",
       "fuente de energía no renovable",
       "fuente de energía renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -21575,7 +21936,8 @@
       "abastecimiento",
       "fuente de energia no renovable",
       "fuente de energia renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energeticos"
     ],
     "title": "Producción de gas por cuenca. Año 2019",
     "title_search": "produccion de gas por cuenca ano 2019",
@@ -21636,7 +21998,8 @@
       "abastecimiento",
       "fuente de energía no renovable",
       "fuente de energía renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -21662,7 +22025,8 @@
       "abastecimiento",
       "fuente de energia no renovable",
       "fuente de energia renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energeticos"
     ],
     "title": "Producción de gas por provincia. Año 2019",
     "title_search": "produccion de gas por provincia ano 2019",
@@ -21726,7 +22090,8 @@
       "abastecimiento",
       "fuente de energía no renovable",
       "fuente de energía renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -21755,7 +22120,8 @@
       "abastecimiento",
       "fuente de energia no renovable",
       "fuente de energia renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energeticos"
     ],
     "title": "Reservas de gas por cuenca. Año 2018",
     "title_search": "reservas de gas por cuenca ano 2018",
@@ -21812,7 +22178,8 @@
       "geografía económica",
       "fuente de energía",
       "aprovechamiento de recursos",
-      "abastecimiento"
+      "abastecimiento",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -21834,7 +22201,8 @@
       "geografia economica",
       "fuente de energia",
       "aprovechamiento de recursos",
-      "abastecimiento"
+      "abastecimiento",
+      "recursos energeticos"
     ],
     "title": "Cuencas hidrocarburíferas",
     "title_search": "cuencas hidrocarburiferas",
@@ -21894,7 +22262,8 @@
       "fuente de energía",
       "aprovechamiento de recursos",
       "abastecimiento",
-      "exploración de recursos"
+      "exploración de recursos",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -21919,7 +22288,8 @@
       "fuente de energia",
       "aprovechamiento de recursos",
       "abastecimiento",
-      "exploracion de recursos"
+      "exploracion de recursos",
+      "recursos energeticos"
     ],
     "title": "Exploración y explotación de hidrocarburos",
     "title_search": "exploracion y explotacion de hidrocarburos",
@@ -21989,7 +22359,8 @@
       "abastecimiento",
       "fuente de energía no renovable",
       "fuente de energía renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -22024,7 +22395,8 @@
       "abastecimiento",
       "fuente de energia no renovable",
       "fuente de energia renovable",
-      "recursos de gas"
+      "recursos de gas",
+      "recursos energeticos"
     ],
     "title": "Producción y transporte de hidrocarburos",
     "title_search": "produccion y transporte de hidrocarburos",
@@ -22092,7 +22464,8 @@
       "abastecimiento",
       "ciencias sociales y humanas",
       "recursos de gas",
-      "geografía humana"
+      "geografía humana",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -22125,7 +22498,8 @@
       "abastecimiento",
       "ciencias sociales y humanas",
       "recursos de gas",
-      "geografia humana"
+      "geografia humana",
+      "recursos energeticos"
     ],
     "title": "Hogares según combustible utilizado para cocinar por provincia. Año 2010",
     "title_search": "hogares segun combustible utilizado para cocinar por provincia ano 2010",
@@ -22192,7 +22566,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "ciencias sociales y humanas",
-      "geografía humana"
+      "geografía humana",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -22220,7 +22595,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "ciencias sociales y humanas",
-      "geografia humana"
+      "geografia humana",
+      "recursos energeticos"
     ],
     "title": "Hogares según tenencia de electricidad por provincia. Año 2010",
     "title_search": "hogares segun tenencia de electricidad por provincia ano 2010",
@@ -22287,7 +22663,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "ciencias sociales y humanas",
-      "geografía humana"
+      "geografía humana",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -22315,7 +22692,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "ciencias sociales y humanas",
-      "geografia humana"
+      "geografia humana",
+      "recursos energeticos"
     ],
     "title": "Empleo de leña para cocción por provincia",
     "title_search": "empleo de lena para coccion por provincia",
@@ -22383,7 +22761,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable"
+      "fuente de energía renovable",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -22412,7 +22791,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable"
+      "fuente de energia renovable",
+      "recursos energeticos"
     ],
     "title": "Producción de petróleo por cuenca. Año 2019",
     "title_search": "produccion de petroleo por cuenca ano 2019",
@@ -22473,7 +22853,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable"
+      "fuente de energía renovable",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -22499,7 +22880,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable"
+      "fuente de energia renovable",
+      "recursos energeticos"
     ],
     "title": "Producción de petróleo por provincia. Año 2019",
     "title_search": "produccion de petroleo por provincia ano 2019",
@@ -22565,7 +22947,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable"
+      "fuente de energía renovable",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -22596,7 +22979,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable"
+      "fuente de energia renovable",
+      "recursos energeticos"
     ],
     "title": "Reservas de petróleo por cuenca. Año 2018",
     "title_search": "reservas de petroleo por cuenca ano 2018",
@@ -22659,7 +23043,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable"
+      "fuente de energía renovable",
+      "recursos energéticos"
     ],
     "keywords_search": [
       "argentina",
@@ -22687,7 +23072,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable"
+      "fuente de energia renovable",
+      "recursos energeticos"
     ],
     "title": "Actividades e instalaciones del sector nuclear",
     "title_search": "actividades e instalaciones del sector nuclear",
