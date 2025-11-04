@@ -90,14 +90,14 @@ a:hover {
   font-size: 6rem;
   color: #FFF;
 }
-#hero > div > picture > img {
+#hero>div>picture>img {
   width: -webkit-fill-available;
   max-width: 950px;
 }
 .scrollto {
   position: relative;
   top: 200px;
-}	
+}
 @media (max-width: 500px) {
   #hero {
     background-image: none;
@@ -113,9 +113,9 @@ a:hover {
     font-size: 4rem;
   }
   .scrollto {
-  position: relative;
-  top: 100px;
-}	
+    position: relative;
+    top: 100px;
+  }
 }
 #hero h1 {
   margin: 0 0 10px 0;
@@ -182,7 +182,7 @@ section {
 }
 section#ejes {
   padding: 3rem 0;
-}	
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -201,6 +201,7 @@ section#ejes {
   text-align: center;
   transition: transform 0.3s ease;
   background-color: #f4f4f4;
+  border-radius: 8px;
 }
 .flex-item:hover {
   transform: translateY(-3px);
@@ -210,6 +211,7 @@ section#ejes {
   padding: 1.5rem;
   background-color: #f4f4f4;
   transition: box-shadow 0.3s ease;
+  border-radius: 8px;
 }
 .no-bg {
   background-color: transparent;
@@ -222,6 +224,7 @@ section#ejes {
   max-width: 250px;
   width: 100%;
   height: auto;
+  max-height: 337px;
   display: block;
   margin: 0 auto;
 }
@@ -295,11 +298,6 @@ ul li {
 .content-section {
   padding: 2rem 1rem;
   background-color: #fafafa;
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
 }
 .section-intro {
   margin-bottom: 3rem;

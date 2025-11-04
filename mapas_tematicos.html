@@ -83,286 +83,269 @@
 
   <main>
     <div id="menusup_titlezone" class="jumbotron text-center">
-      <h2>Mapas temáticos</h2>
+      <h2>Mapas</h2>
     </div>
 
     <section class="content-section">
       <div class="container">
         <!-- Introducción -->
         <div class="section-intro">
-          <p>Explora nuestra colección de mapas temáticos, visualiza y descarga mapas sobre Argentina.</p>
+          <p>A través de palabras clave podés buscar, visualizar y descargar los mapas que colecciona el atlas.</p>
         </div>
 
         <!-- Buscador -->
-        <div class="search-container">
-          <form id="search-form" class="search-form">
+        <form id="search-form" class="search-form">
+          <div class="search-container">
             <div class="input-group mb-3">
-              <input type="text" id="keyword-input" class="form-control" placeholder="Buscar por palabra clave..." aria-label="Buscar mapas">
-              <button class="btn btn-primary" type="submit">
+              <input type="text" id="keyword-input" class="form-control" placeholder="Buscar por palabra clave (mínimo 3 caracteres)..." aria-label="Buscar mapas">
+              <button id="clear-keyword-btn" type="button" class="btn btn-secondary" title="Limpiar búsqueda" style="display:none">
+                <i class='bx bx-x-circle'></i>
+              </button>
+              <button id="history-btn" type="button" class="btn btn-secondary" title="Ver historial de búsquedas" style="display:none">
+                <i class='bx bx-time'></i>
+              </button>
+              <button class="keyword-input-btn" type="submit">
                 <i class='bx bx-search'></i> Buscar
               </button>
             </div>
-            
-            <!-- Filtros rápidos (categorías) -->
-            <div class="quick-filters">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-todos" value="Todos" checked>
-                <label class="form-check-label" for="cat-todos">Todos</label>
+            <!-- Dropdown del historial de búsquedas -->
+            <div id="search-history-dropdown" class="search-history-dropdown" style="display:none">
+              <div class="search-history-header">
+                <span class="search-history-title">Búsquedas recientes</span>
+                <button id="clear-history-btn" type="button" class="btn-clear-history" title="Limpiar historial">
+                  <i class='bx bx-trash'></i>
+                </button>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-mundo" value="Argentina y el mundo">
-                <label class="form-check-label" for="cat-mundo">Argentina y el mundo</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-fisico" value="Argentina físico-natural">
-                <label class="form-check-label" for="cat-fisico">Argentina físico-natural</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-socio" value="Argentina socio-demográfica">
-                <label class="form-check-label" for="cat-socio">Argentina socio-demográfica</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-econ" value="Argentina económica">
-                <label class="form-check-label" for="cat-econ">Argentina económica</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="cat-amb" value="Argentina ambiental">
-                <label class="form-check-label" for="cat-amb">Argentina ambiental</label>
-              </div>
+              <ul id="search-history-list" class="search-history-list">
+                <!-- Las búsquedas se insertarán aquí dinámicamente -->
+              </ul>
             </div>
-            
-            <!-- Búsqueda avanzada (acordeón) -->
-            <div class="accordion mt-3" id="advanced-search-accordion">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdvanced" aria-expanded="false" aria-controls="collapseAdvanced">
-                    <i class='bx bx-filter-alt me-2'></i> Búsqueda avanzada
-                  </button>
-                </h2>
-                <div id="collapseAdvanced" class="accordion-collapse collapse" data-bs-parent="#advanced-search-accordion">
-                  <div class="accordion-body">
-                    <p class="text-muted mb-3">Filtrar por múltiples criterios. Seleccione una o más opciones en cada categoría.</p>
-                    
-                    <div class="row">
-                      <!-- Estructura temática -->
-                      <div class="col-md-6 mb-3">
-                        <h5 class="filter-title">Estructura temática</h5>
-                        <div class="filter-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="estructuraTematica" id="estructura-1" value="Argentina y el mundo">
-                            <label class="form-check-label" for="estructura-1">Argentina y el mundo</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="estructuraTematica" id="estructura-2" value="Argentina físico-natural">
-                            <label class="form-check-label" for="estructura-2">Argentina físico-natural</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="estructuraTematica" id="estructura-3" value="Argentina socio-demográfica">
-                            <label class="form-check-label" for="estructura-3">Argentina socio-demográfica</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="estructuraTematica" id="estructura-4" value="Argentina económica">
-                            <label class="form-check-label" for="estructura-4">Argentina económica</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="estructuraTematica" id="estructura-5" value="Argentina ambiental">
-                            <label class="form-check-label" for="estructura-5">Argentina ambiental</label>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <!-- Escala espacial -->
-                      <div class="col-md-6 mb-3">
-                        <h5 class="filter-title">Escala espacial</h5>
-                        <div class="filter-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-1" value="Escala regional o subnacional">
-                            <label class="form-check-label" for="espacial-1">Escala regional o subnacional</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-2" value="Escala nacional">
-                            <label class="form-check-label" for="espacial-2">Escala nacional</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-3" value="Parte Continental Americana">
-                            <label class="form-check-label" for="espacial-3">Parte Continental Americana</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-4" value="Antártida e Islas del Atlántico Sur">
-                            <label class="form-check-label" for="espacial-4">Antártida e Islas del Atlántico Sur</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-5" value="País por provincia">
-                            <label class="form-check-label" for="espacial-5">País por provincia</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-6" value="País por departamento">
-                            <label class="form-check-label" for="espacial-6">País por departamento</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-7" value="País por área">
-                            <label class="form-check-label" for="espacial-7">País por área</label>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <!-- Escala temporal -->
-                      <div class="col-md-6 mb-3">
-                        <h5 class="filter-title">Escala temporal</h5>
-                        <div class="filter-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-1" value="Años puntuales">
-                            <label class="form-check-label" for="temporal-1">Años puntuales</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2" value="Decenios">
-                            <label class="form-check-label" for="temporal-2">Decenios</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-3" value="Siglos">
-                            <label class="form-check-label" for="temporal-3">Siglos</label>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <!-- Tipo de fenómeno -->
-                      <div class="col-md-6 mb-3">
-                        <h5 class="filter-title">Tipo de fenómeno</h5>
-                        <div class="filter-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoFenomeno" id="fenomeno-1" value="Continuo">
-                            <label class="form-check-label" for="fenomeno-1">Continuo</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoFenomeno" id="fenomeno-2" value="Discreto">
-                            <label class="form-check-label" for="fenomeno-2">Discreto</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoFenomeno" id="fenomeno-3" value="Puntual">
-                            <label class="form-check-label" for="fenomeno-3">Puntual</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoFenomeno" id="fenomeno-4" value="Superficial">
-                            <label class="form-check-label" for="fenomeno-4">Superficial</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoFenomeno" id="fenomeno-5" value="Lineal">
-                            <label class="form-check-label" for="fenomeno-5">Lineal</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoFenomeno" id="fenomeno-6" value="Volumétrico">
-                            <label class="form-check-label" for="fenomeno-6">Volumétrico</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoFenomeno" id="fenomeno-7" value="Espacio-temporal">
-                            <label class="form-check-label" for="fenomeno-7">Espacio-temporal</label>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <!-- Tipo de escala -->
-                      <div class="col-md-4 mb-3">
-                        <h5 class="filter-title">Tipo de escala</h5>
-                        <div class="filter-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoEscala" id="escala-1" value="Nominal">
-                            <label class="form-check-label" for="escala-1">Nominal</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoEscala" id="escala-2" value="Ordinal">
-                            <label class="form-check-label" for="escala-2">Ordinal</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoEscala" id="escala-3" value="Cuantitativa">
-                            <label class="form-check-label" for="escala-3">Cuantitativa</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoEscala" id="escala-4" value="De intervalo">
-                            <label class="form-check-label" for="escala-4">De intervalo</label>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <!-- Tipo de datos -->
-                      <div class="col-md-4 mb-3">
-                        <h5 class="filter-title">Tipo de datos</h5>
-                        <div class="filter-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoDatos" id="datos-1" value="Puntuales">
-                            <label class="form-check-label" for="datos-1">Puntuales</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoDatos" id="datos-2" value="Superficiales">
-                            <label class="form-check-label" for="datos-2">Superficiales</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoDatos" id="datos-3" value="Lineales">
-                            <label class="form-check-label" for="datos-3">Lineales</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoDatos" id="datos-4" value="Símbolos proporcionales">
-                            <label class="form-check-label" for="datos-4">Símbolos proporcionales</label>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <!-- Tipo de mapa -->
-                      <div class="col-md-4 mb-3">
-                        <h5 class="filter-title">Tipo de mapa</h5>
-                        <div class="filter-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoMapa" id="mapa-1" value="Puntos">
-                            <label class="form-check-label" for="mapa-1">Puntos</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoMapa" id="mapa-2" value="Isolíneas">
-                            <label class="form-check-label" for="mapa-2">Isolíneas</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoMapa" id="mapa-3" value="Flujos">
-                            <label class="form-check-label" for="mapa-3">Flujos</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoMapa" id="mapa-4" value="Coropletas">
-                            <label class="form-check-label" for="mapa-4">Coropletas</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tipoMapa" id="mapa-5" value="Cartograma">
-                            <label class="form-check-label" for="mapa-5">Cartograma</label>
-                          </div>
-                        </div>
-                      </div>
+          </div>
+
+          <!-- Filtros rápidos (categorías) -->
+          <div class="quick-filters">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-todos" value="Todos" checked>
+              <label class="form-check-label" for="cat-todos">Todos</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-mundo" value="Argentina y el mundo">
+              <label class="form-check-label" for="cat-mundo">Argentina y el mundo</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-fisico" value="Argentina físico-natural">
+              <label class="form-check-label" for="cat-fisico">Argentina físico-natural</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-socio" value="Argentina socio-demográfica">
+              <label class="form-check-label" for="cat-socio">Argentina socio-demográfica</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-econ" value="Argentina económica">
+              <label class="form-check-label" for="cat-econ">Argentina económica</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="category" id="cat-amb" value="Argentina ambiental">
+              <label class="form-check-label" for="cat-amb">Argentina ambiental</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="maps-layout">
+        <!-- Panel lateral izquierdo - Filtros avanzados -->
+        <aside class="filters-sidebar">
+          <div class="filters-sidebar-header">
+            <h4><i class='bx bx-filter-alt'></i> Filtros de búsqueda</h4>
+          </div>
+
+          <div class="filters-sidebar-content">
+
+              <!-- Filtro de Escala Espacial -->
+              <div class="filter-section">
+                <h5 class="filter-section-title">Escala espacial</h5>
+                <div class="filter-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-1" value="Global">
+                    <label class="form-check-label" for="espacial-1">Global</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-2" value="Regional o subnacional">
+                    <label class="form-check-label" for="espacial-2">Regional o subnacional</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-3" value="País Bicontinental">
+                    <label class="form-check-label" for="espacial-3">País Bicontinental</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-4" value="País Parte Continental Americana">
+                    <label class="form-check-label" for="espacial-4">País Parte Continental Americana</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-5" value="País Antártida e Islas del Atlántico Sur">
+                    <label class="form-check-label" for="espacial-5">País Antártida e Islas del Atlántico Sur</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-6" value="País Islas Malvinas">
+                    <label class="form-check-label" for="espacial-6">País Islas Malvinas</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-7" value="País por departamento">
+                    <label class="form-check-label" for="espacial-7">País por departamento</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-8" value="País por provincia">
+                    <label class="form-check-label" for="espacial-8">País por provincia</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaEspacial" id="espacial-9" value="País por área">
+                    <label class="form-check-label" for="espacial-9">País por área</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Filtro de Escala Temporal -->
+              <div class="filter-section">
+                <h5 class="filter-section-title">Escala temporal</h5>
+                <div class="filter-group">
+                  <!-- Años censales -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-cat-1" value="Años censales">
+                    <label class="form-check-label fw-bold" for="temporal-cat-1">Años censales</label>
+                  </div>
+                  <div class="ms-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-1-1" value="2001">
+                      <label class="form-check-label" for="temporal-1-1">2001</label>
                     </div>
-                    
-                    <div class="d-flex justify-content-end mt-3">
-                      <button type="button" id="clear-advanced-btn" class="btn btn-outline-secondary me-2">Limpiar filtros avanzados</button>
-                      <button type="button" id="apply-advanced-btn" class="btn btn-primary">Aplicar filtros</button>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-1-2" value="2010">
+                      <label class="form-check-label" for="temporal-1-2">2010</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-1-3" value="2022">
+                      <label class="form-check-label" for="temporal-1-3">2022</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-1-4" value="Años anteriores">
+                      <label class="form-check-label" for="temporal-1-4">Años anteriores</label>
+                    </div>
+                  </div>
+
+                  <!-- Períodos -->
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-cat-2" value="Periodos">
+                    <label class="form-check-label fw-bold" for="temporal-cat-2">Períodos</label>
+                  </div>
+                  <div class="ms-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2-1" value="1900-1950">
+                      <label class="form-check-label" for="temporal-2-1">1900-1950</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2-2" value="1950-1990">
+                      <label class="form-check-label" for="temporal-2-2">1950-1990</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2-3" value="1960-1970">
+                      <label class="form-check-label" for="temporal-2-3">1960-1970</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2-4" value="1970-1980">
+                      <label class="form-check-label" for="temporal-2-4">1970-1980</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2-5" value="1980-1990">
+                      <label class="form-check-label" for="temporal-2-5">1980-1990</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2-6" value="1990-2000">
+                      <label class="form-check-label" for="temporal-2-6">1990-2000</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2-7" value="2000-2010">
+                      <label class="form-check-label" for="temporal-2-7">2000-2010</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2-8" value="2010-2020">
+                      <label class="form-check-label" for="temporal-2-8">2010-2020</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-2-9" value="2020-2030">
+                      <label class="form-check-label" for="temporal-2-9">2020-2030</label>
+                    </div>
+                  </div>
+
+                  <!-- Siglos -->
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-cat-3" value="Siglos">
+                    <label class="form-check-label fw-bold" for="temporal-cat-3">Siglos</label>
+                  </div>
+                  <div class="ms-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-3-1" value="XV">
+                      <label class="form-check-label" for="temporal-3-1">XV</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-3-2" value="XVI">
+                      <label class="form-check-label" for="temporal-3-2">XVI</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-3-3" value="XVII">
+                      <label class="form-check-label" for="temporal-3-3">XVII</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-3-4" value="XVIII">
+                      <label class="form-check-label" for="temporal-3-4">XVIII</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-3-5" value="XIX">
+                      <label class="form-check-label" for="temporal-3-5">XIX</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-3-6" value="XX">
+                      <label class="form-check-label" for="temporal-3-6">XX</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="escalaTemporal" id="temporal-3-7" value="XXI">
+                      <label class="form-check-label" for="temporal-3-7">XXI</label>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </form>
-        </div>
 
-        <!-- Filtros activos -->
-        <div class="active-filters-container mt-3">
-          <div id="active-filters" class="active-filters"></div>
-          <button id="clear-filters-btn" class="btn btn-sm btn-outline-secondary">Limpiar todos</button>
-        </div>
-
-        <!-- Resultados -->
-        <div class="results-container mt-4">
-          <div class="results-header">
-            <h3 id="results-count">0 resultados</h3>
+              <div class="filter-section">
+                <button type="button" id="clear-advanced-btn" class="btn btn-outline-secondary w-100">
+                  <i class='bx bx-trash'></i> Limpiar filtros avanzados
+                </button>
+              </div>
+            </form>
           </div>
-          
-          <!-- Grid de miniaturas -->
-          <div id="results-grid" class="grid-miniaturas"></div>
-          
-          <!-- Botón "Cargar más" -->
-          <div class="text-center mt-4 mb-5">
-            <button id="load-more-btn" class="btn btn-outline-primary">Cargar más</button>
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+          <div class="container-fluid">
+            <!-- Filtros activos -->
+            <div class="active-filters-container mt-3">
+              <div id="active-filters" class="active-filters"></div>
+              <button id="clear-filters-btn" class="btn btn-sm btn-outline-secondary">Limpiar todos</button>
+            </div>
+
+            <!-- Resultados -->
+            <div class="results-container mt-4">
+              <div class="results-header">
+                <h3 id="results-count">0 resultados</h3>
+              </div>
+
+              <!-- Grid de miniaturas -->
+              <div id="results-grid" class="flex-container"></div>
+
+              <!-- Botón "Cargar más" -->
+              <div class="d-flex justify-content-center mt-4 mb-5">
+                <button id="load-more-btn" class="btn">Cargar más</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -379,6 +362,7 @@
       });
   </script>
   <script src="/js/main.js"></script>
+  <script src="/js/utils/searchHistory.js"></script>
   <script src="/js/maps.js"></script>
 </body>
 
