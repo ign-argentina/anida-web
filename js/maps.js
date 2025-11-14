@@ -12,7 +12,7 @@ const app = {
   searchIndex: {},     // Índice invertido para búsquedas O(1)
   activeFilters: {     // Filtros activos
     keyword: '',
-    category: 'Todos',
+    category: ['Todos'], // Array de categorías seleccionadas
     advanced: {
       escalaEspacial: [],
       escalaTemporal: []
@@ -792,16 +792,69 @@ function setupSearchListeners() {
     });
   }
 
-  // Radio buttons de categoría
+  // Checkboxes de categoría
   if (elements.categoryFilters && elements.categoryFilters.length) {
-    elements.categoryFilters.forEach(radio => {
-      radio.addEventListener('change', () => {
+    elements.categoryFilters.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        handleCategoryFilterChange(checkbox);
         handleSearch();
         // 📊 TRACKING: Filtro de categoría aplicado
-        trackFilterApplied('category', radio.value, app.filteredMaps.length);
+        const selectedCategories = getSelectedCategories();
+        trackFilterApplied('category', selectedCategories.join(', '), app.filteredMaps.length);
       });
     });
   }
+}
+
+/**
+ * Maneja el cambio de estado de los checkboxes de categoría
+ * Implementa la lógica: "Todos" = todas las categorías
+ * @param {HTMLElement} checkbox - Checkbox que cambió
+ */
+function handleCategoryFilterChange(checkbox) {
+  const allCheckboxes = Array.from(elements.categoryFilters);
+  const todosCheckbox = document.getElementById('cat-todos');
+  const categoryCheckboxes = allCheckboxes.filter(cb => cb.id !== 'cat-todos');
+  
+  if (checkbox.id === 'cat-todos') {
+    // Si se marca "Todos", desmarcar todas las categorías individuales
+    if (checkbox.checked) {
+      categoryCheckboxes.forEach(cb => cb.checked = false);
+    }
+  } else {
+    // Si se marca una categoría individual, desmarcar "Todos"
+    if (checkbox.checked && todosCheckbox) {
+      todosCheckbox.checked = false;
+    }
+    
+    // Si se desmarcan todas las categorías individuales, marcar automáticamente "Todos"
+    const anyChecked = categoryCheckboxes.some(cb => cb.checked);
+    if (!anyChecked && todosCheckbox) {
+      todosCheckbox.checked = true;
+    }
+  }
+}
+
+/**
+ * Obtiene las categorías seleccionadas
+ * @returns {Array<string>} Array de categorías seleccionadas
+ */
+function getSelectedCategories() {
+  const allCheckboxes = Array.from(elements.categoryFilters);
+  const todosCheckbox = document.getElementById('cat-todos');
+  
+  // Si "Todos" está marcado, devolver array con "Todos"
+  if (todosCheckbox && todosCheckbox.checked) {
+    return ['Todos'];
+  }
+  
+  // Obtener categorías individuales marcadas
+  const selected = allCheckboxes
+    .filter(cb => cb.checked && cb.id !== 'cat-todos')
+    .map(cb => cb.value);
+  
+  // Si no hay ninguna seleccionada, comportarse como "Todos"
+  return selected.length > 0 ? selected : ['Todos'];
 }
 
 /**
@@ -1747,19 +1800,12 @@ function handleSearch() {
   // Limpiar error si todo está bien
   clearInputError();
   
-  let category = 'Todos';
-
-  if (elements.categoryFilters && elements.categoryFilters.length) {
-    elements.categoryFilters.forEach(radio => {
-      if (radio.checked) {
-        category = radio.value;
-      }
-    });
-  }
+  // Obtener categorías seleccionadas
+  const selectedCategories = getSelectedCategories();
 
   // Actualizar filtros activos
   app.activeFilters.keyword = keyword;
-  app.activeFilters.category = category;
+  app.activeFilters.category = selectedCategories;
 
   // Resetear lote actual
   app.currentBatch = 0;
@@ -1785,7 +1831,8 @@ function handleSearch() {
   
   // 📊 TRACKING: Enviar evento de búsqueda a Google Analytics
   if (keyword && keyword.length >= 3) {
-    trackSearch(keyword, app.filteredMaps.length, category, app.activeFilters.advanced);
+    const categoryString = Array.isArray(category) ? category.join(', ') : category;
+    trackSearch(keyword, app.filteredMaps.length, categoryString, app.activeFilters.advanced);
   }
 }
 
@@ -1885,10 +1932,14 @@ function filterMaps() {
   app.filteredMaps = candidateMaps.filter(map => {
     const normalizedMap = normalizeMapData(map);
 
-    // Filtrar por categoría rápida
-    if (category !== 'Todos' && normalizedMap.category !== category) {
-      return false;
+    // Filtrar por categorías rápidas (OR lógico entre categorías)
+    if (Array.isArray(category) && category.length > 0 && !category.includes('Todos')) {
+      // Si no incluye 'Todos', verificar si el mapa pertenece a alguna de las categorías seleccionadas
+      if (!category.includes(normalizedMap.category)) {
+        return false;
+      }
     }
+    // Si category incluye 'Todos' o está vacío, no filtrar por categoría
 
     // Filtrar por keyword si existe y cumple longitud mínima
     if (effectiveKeyword) {
@@ -2272,8 +2323,19 @@ function setupRemoveFilterListener(tag, type, value) {
       elements.keywordInput.value = '';
       handleSearch();
     } else if (type === 'category') {
-      const todosRadio = document.querySelector('input[value="Todos"]');
-      if (todosRadio) todosRadio.checked = true;
+      // Desmarcar el checkbox de la categoría específica
+      const categoryCheckbox = Array.from(elements.categoryFilters).find(cb => cb.value === value);
+      if (categoryCheckbox) {
+        categoryCheckbox.checked = false;
+      }
+      
+      // Si no queda ninguna categoría marcada, marcar "Todos"
+      const anyChecked = Array.from(elements.categoryFilters).some(cb => cb.checked && cb.id !== 'cat-todos');
+      if (!anyChecked) {
+        const todosCheckbox = document.getElementById('cat-todos');
+        if (todosCheckbox) todosCheckbox.checked = true;
+      }
+      
       handleSearch();
     } else {
       // Filtro avanzado
@@ -2315,8 +2377,16 @@ function updateActiveFilters() {
     setupRemoveFilterListener(keywordTag, 'keyword', keyword);
   }
 
-  // Mostrar categoría como filtro activo si no es "Todos"
-  if (category !== 'Todos') {
+  // Mostrar categorías como filtros activos si no es solo "Todos"
+  if (Array.isArray(category) && category.length > 0 && !category.includes('Todos')) {
+    hasActiveFilters = true;
+    category.forEach(cat => {
+      const categoryTag = createFilterTag('category', cat, 'Categoría');
+      elements.activeFiltersContainer.appendChild(categoryTag);
+      setupRemoveFilterListener(categoryTag, 'category', cat);
+    });
+  } else if (typeof category === 'string' && category !== 'Todos') {
+    // Mantener compatibilidad con código antiguo (por si acaso)
     hasActiveFilters = true;
     const categoryTag = createFilterTag('category', category, 'Categoría');
     elements.activeFiltersContainer.appendChild(categoryTag);
@@ -2355,8 +2425,13 @@ function clearAllFilters() {
   // Resetear input de keyword
   elements.keywordInput.value = '';
 
-  // Resetear radio button a "Todos"
-  document.querySelector('input[value="Todos"]').checked = true;
+  // Desmarcar todos los checkboxes de categoría y marcar solo "Todos"
+  const allCheckboxes = Array.from(elements.categoryFilters);
+  allCheckboxes.forEach(cb => cb.checked = false);
+  const todosCheckbox = document.getElementById('cat-todos');
+  if (todosCheckbox) {
+    todosCheckbox.checked = true;
+  }
 
   // Limpiar filtros avanzados
   clearAdvancedFilters();
@@ -2456,8 +2531,10 @@ function getFilterResultCount(filterType, filterValue) {
     }
     
     // Aplicar categoría activa (excepto si estamos evaluando categorías)
-    if (filterType !== 'category' && currentCategory !== 'Todos') {
-      if (normalizedMap.category !== currentCategory) return false;
+    if (filterType !== 'category') {
+      if (Array.isArray(currentCategory) && currentCategory.length > 0 && !currentCategory.includes('Todos')) {
+        if (!currentCategory.includes(normalizedMap.category)) return false;
+      }
     }
     
     // Aplicar filtro específico que estamos evaluando
