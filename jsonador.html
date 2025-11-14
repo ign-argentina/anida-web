@@ -95,15 +95,15 @@
        * Keeps original display values trimmed.
        */
       function splitToArray(cellValue) {
-        if (cellValue === undefined || cellValue === null) return [];
+        if (cellValue === undefined || cellValue === null || cellValue === '') return [];
         // If it's already an array (unlikely from xlsx sheet_to_json header:1) map to strings
         if (Array.isArray(cellValue)) {
-          return cellValue.map(v => (v === null || v === undefined) ? '' : String(v).trim()).filter((v, i, a) => true);
+          return cellValue.map(v => (v === null || v === undefined) ? '' : String(v).trim()).filter(v => v !== '');
         }
         const str = String(cellValue).trim();
-        if (str === '') return [];
+        if (str === '' || str === 'undefined' || str === 'null') return [];
         // split by semicolon; also accept commas as fallback but prefer semicolon
-        const parts = str.split(';').map(p => p.trim()).filter(p => p !== '');
+        const parts = str.split(';').map(p => p.trim()).filter(p => p !== '' && p !== 'undefined' && p !== 'null');
         return parts;
       }
 
@@ -115,20 +115,23 @@
         // Map headers to values (row may be shorter)
         const obj = {};
         headers.forEach((h, idx) => {
-          obj[h] = row[idx] !== undefined ? row[idx] : '';
+          const val = row[idx];
+          // Convert to string and handle null/undefined
+          obj[h] = (val === undefined || val === null || val === '') ? '' : String(val);
         });
 
         // Construct final structure
-        const id = obj.id !== undefined && obj.id !== null ? String(obj.id).trim() : '';
+        const id = obj.id ? String(obj.id).trim() : '';
         const image = obj.image ? String(obj.image).trim() : '';
         const download = obj.download ? String(obj.download).trim() : '';
         const title = obj.title ? String(obj.title).trim() : '';
         const author = obj.author ? String(obj.author).trim() : '';
         // Year: try to parse integer, otherwise null
         let year = null;
-        if (obj.year !== undefined && obj.year !== null && String(obj.year).toString().trim() !== '') {
-          const yNum = parseInt(String(obj.year).replace(/[^0-9]/g, ''), 10);
-          year = isNaN(yNum) ? null : yNum;
+        if (obj.year && String(obj.year).trim() !== '') {
+          const yStr = String(obj.year).trim().replace(/[^0-9]/g, '');
+          const yNum = parseInt(yStr, 10);
+          year = (isNaN(yNum) || yNum === 0) ? null : yNum;
         }
 
         const section = obj.section ? String(obj.section).trim() : '';
@@ -220,19 +223,39 @@
           reader.onload = (e) => {
             try {
               const data = new Uint8Array(e.target.result);
-              const workbook = XLSX.read(data, { type: 'array' });
+              const workbook = XLSX.read(data, { 
+                type: 'array',
+                cellDates: true,
+                cellNF: false,
+                cellText: false
+              });
+              
+              if (!workbook.SheetNames || workbook.SheetNames.length === 0) {
+                showError('El archivo XLSX no contiene hojas válidas.');
+                return;
+              }
+              
               const firstSheetName = workbook.SheetNames[0];
               const worksheet = workbook.Sheets[firstSheetName];
+              
               // header: 1 returns array of arrays (first row is headers)
-              const jsonRows = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: '' });
+              // defval: '' ensures empty cells are represented as empty strings
+              // raw: false converts values to display format
+              const jsonRows = XLSX.utils.sheet_to_json(worksheet, { 
+                header: 1, 
+                defval: '',
+                raw: false,
+                blankrows: false
+              });
+              
               processAndDisplay(jsonRows);
             } catch (err) {
-              console.error(err);
-              showError('Error al leer el archivo XLSX. Asegúrate que el archivo sea válido.');
+              console.error('XLSX parsing error:', err);
+              showError('Error al leer el archivo XLSX: ' + err.message);
             }
           };
           reader.onerror = (e) => {
-            console.error(e);
+            console.error('FileReader error:', e);
             showError('Error al cargar el archivo.');
           };
           reader.readAsArrayBuffer(file);
@@ -336,18 +359,35 @@
 
         // Build records from rows 1..n
         const dataRows = rows.slice(1);
-        const result = dataRows.map(row => {
-          // Build a temporary arrays of values aligned to headerMap length
-          const alignedRow = [];
-          for (let c = 0; c < headerMap.length; c++) {
-            alignedRow.push(row[c] !== undefined ? row[c] : '');
-          }
-          // For buildRecordFromRow we require headers names to match expected keys.
-          // We'll convert headerMap entries to expected-like keys for those that match,
-          // and pass alignedRow as values in the same order.
-          // buildRecordFromRow expects headers array where each header is the exact key name (id,image,download,...).
-          return buildRecordFromRow(headerMap, alignedRow);
-        });
+        const result = dataRows
+          .filter(row => {
+            // Filter out completely empty rows
+            if (!row || row.length === 0) return false;
+            const hasData = row.some(cell => {
+              if (cell === undefined || cell === null || cell === '') return false;
+              const str = String(cell).trim();
+              return str !== '' && str !== 'undefined' && str !== 'null';
+            });
+            return hasData;
+          })
+          .map(row => {
+            // Build a temporary arrays of values aligned to headerMap length
+            const alignedRow = [];
+            for (let c = 0; c < headerMap.length; c++) {
+              const val = row[c];
+              // Normalize empty values
+              alignedRow.push((val === undefined || val === null) ? '' : val);
+            }
+            // For buildRecordFromRow we require headers names to match expected keys.
+            // We'll convert headerMap entries to expected-like keys for those that match,
+            // and pass alignedRow as values in the same order.
+            // buildRecordFromRow expects headers array where each header is the exact key name (id,image,download,...).
+            return buildRecordFromRow(headerMap, alignedRow);
+          })
+          .filter(record => {
+            // Filter out records with empty id or title (required fields)
+            return record.id && record.id !== '' && record.title && record.title !== '';
+          });
 
         // Final JSON string
         const pretty = JSON.stringify(result, null, 2);

@@ -26,16 +26,7 @@ const app = {
   debounceDelay: 300,  // Delay en ms para debouncing (300ms por defecto)
   autocompleteTimeout: null, // Timer para debouncing de autocompletado
   autocompleteDelay: 200, // Delay en ms para autocompletado (200ms)
-  selectedSuggestionIndex: -1, // Índice de sugerencia seleccionada con teclado
-  performanceMetrics: { // Métricas de rendimiento
-    indexingTime: 0,
-    lastSearchTime: 0,
-    totalSearches: 0,
-    averageSearchTime: 0,
-    memoryBefore: 0,
-    memoryAfter: 0,
-    memoryReduction: 0
-  }
+  selectedSuggestionIndex: -1 // Índice de sugerencia seleccionada con teclado
 };
 
 // ============================================================================
@@ -275,17 +266,6 @@ async function fetchMapsData() {
 
     // Mostrar estadísticas de indexación
     const indexStats = getIndexStats();
-    /* console.log(`📊 Estadísticas de indexación:
-      - Mapas indexados: ${app.allMaps.length}
-      - Términos únicos: ${Object.keys(app.searchIndex).length}
-      - Tiempo de indexación: ${app.performanceMetrics.indexingTime.toFixed(2)}ms
-      - Promedio por mapa: ${(app.performanceMetrics.indexingTime / app.allMaps.length).toFixed(2)}ms
-      - Mapas promedio por término: ${indexStats.averageMapsPerTerm}
-      - Memoria estimada del índice: ${indexStats.memoryEstimate}
-      ${performance.memory ? `- Memoria antes: ${(app.performanceMetrics.memoryBefore / 1024 / 1024).toFixed(2)} MB` : ''}
-      ${performance.memory ? `- Memoria después: ${(app.performanceMetrics.memoryAfter / 1024 / 1024).toFixed(2)} MB` : ''}
-      ${performance.memory ? `- Optimización: ${Math.abs(app.performanceMetrics.memoryReduction)}% ${app.performanceMetrics.memoryReduction > 0 ? 'reducción' : 'incremento'}` : ''}
-    `); */
 
   } catch (error) {
     console.error('Error cargando mapas:', error);
@@ -299,12 +279,6 @@ async function fetchMapsData() {
  * Optimizado para reducir consumo de memoria usando arrays tipados y flags de bits
  */
 function buildSearchIndex() {
-  const startTime = performance.now();
-  
-  // Medir memoria antes de indexar (solo en Chrome)
-  if (performance.memory) {
-    app.performanceMetrics.memoryBefore = performance.memory.usedJSHeapSize;
-  }
   
   // Reiniciar índice
   app.searchIndex = {};
@@ -354,17 +328,6 @@ function buildSearchIndex() {
   
   // Comprimir el índice convirtiendo a arrays tipados
   compressIndex(tempIndex);
-  
-  const endTime = performance.now();
-  app.performanceMetrics.indexingTime = endTime - startTime;
-  
-  // Medir memoria después de indexar y comprimir
-  if (performance.memory) {
-    app.performanceMetrics.memoryAfter = performance.memory.usedJSHeapSize;
-    app.performanceMetrics.memoryReduction = 
-      ((app.performanceMetrics.memoryBefore - app.performanceMetrics.memoryAfter) / 
-       app.performanceMetrics.memoryBefore * 100).toFixed(2);
-  }
 }
 
 /**
@@ -1617,10 +1580,10 @@ function isWholeWordMatch(term, field) {
  * ACTUALIZADO: Busca palabras completas, no fragmentos dentro de otras palabras
  * @param {string} term - Término de búsqueda normalizado
  * @param {string} field - Campo de búsqueda normalizado
- * @param {number} threshold - Umbral de distancia (por defecto 2)
+ * @param {number} threshold - Umbral de distancia (por defecto 1)
  * @returns {Object} - {match: boolean, score: number, type: 'exact'|'fuzzy', percentage: number}
  */
-function fuzzyMatch(term, field, threshold = 2) {
+function fuzzyMatch(term, field, threshold = 1) {
   // 1. Verificar coincidencia exacta como PALABRA COMPLETA (no fragmento)
   if (isWholeWordMatch(term, field)) {
     return { match: true, score: 0, type: 'exact', percentage: 100 };
@@ -2087,16 +2050,7 @@ function filterMaps() {
     });
   }
   
-  // Registrar métricas de rendimiento
-  const searchEndTime = performance.now();
-  const searchTime = searchEndTime - searchStartTime;
-  app.performanceMetrics.lastSearchTime = searchTime;
-  app.performanceMetrics.totalSearches++;
-  app.performanceMetrics.averageSearchTime = 
-    ((app.performanceMetrics.averageSearchTime * (app.performanceMetrics.totalSearches - 1)) + searchTime) / app.performanceMetrics.totalSearches;
-
   /* console.timeEnd('🔍 Tiempo de búsqueda'); */
-  /* console.log(`⚡ Búsqueda completada en ${searchTime.toFixed(2)}ms (promedio: ${app.performanceMetrics.averageSearchTime.toFixed(2)}ms) | Resultados: ${app.filteredMaps.length}`); */
 }
 
 /**

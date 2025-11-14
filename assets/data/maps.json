@@ -2194,7 +2194,6 @@
       "orogénico",
       "geología",
       "afloramiento",
-      "límite",
       "ciencias de la tierra",
       "física",
       "geografía física"
@@ -2206,7 +2205,6 @@
       "orogenico",
       "geologia",
       "afloramiento",
-      "limite",
       "ciencias de la tierra",
       "fisica",
       "geografia fisica"
@@ -2422,10 +2420,7 @@
       "hidrología",
       "ciencias de la tierra",
       "física",
-      "recurso",
-      "natural",
-      "geografía física",
-      "recursos naturales"
+      "geografía física"
     ],
     "keywords_search": [
       "argentina",
@@ -2441,10 +2436,7 @@
       "hidrologia",
       "ciencias de la tierra",
       "fisica",
-      "recurso",
-      "natural",
-      "geografia fisica",
-      "recursos naturales"
+      "geografia fisica"
     ],
     "title": "Cuenca de Claromecó",
     "title_search": "cuenca de claromeco",
@@ -2496,10 +2488,7 @@
       "hidrología",
       "ciencias de la tierra",
       "física",
-      "geografía física",
-      "recurso",
-      "natural",
-      "recursos naturales"
+      "geografía física"
     ],
     "keywords_search": [
       "argentina",
@@ -2518,10 +2507,7 @@
       "hidrologia",
       "ciencias de la tierra",
       "fisica",
-      "geografia fisica",
-      "recurso",
-      "natural",
-      "recursos naturales"
+      "geografia fisica"
     ],
     "title": "Cuencas sedimentarias de la Llanura oriental",
     "title_search": "cuencas sedimentarias de la llanura oriental",
@@ -2851,7 +2837,9 @@
       "montaña",
       "regional",
       "geografía física",
-      "geografía regional"
+      "geografía regional",
+      "geología",
+      "paisaje"
     ],
     "keywords_search": [
       "argentina",
@@ -2872,7 +2860,9 @@
       "montana",
       "regional",
       "geografia fisica",
-      "geografia regional"
+      "geografia regional",
+      "geologia",
+      "paisaje"
     ],
     "title": "Regiones geomorfológicas",
     "title_search": "regiones geomorfologicas",
@@ -2932,7 +2922,9 @@
       "regional",
       "íslas del Atlántico sur",
       "geografía física",
-      "geografía regional"
+      "geografía regional",
+      "geología",
+      "paisaje"
     ],
     "keywords_search": [
       "argentina",
@@ -2957,7 +2949,9 @@
       "regional",
       "islas del atlantico sur",
       "geografia fisica",
-      "geografia regional"
+      "geografia regional",
+      "geologia",
+      "paisaje"
     ],
     "title": "Regiones geomorfológicas",
     "title_search": "regiones geomorfologicas",
@@ -3213,7 +3207,7 @@
       "patagonia",
       "patagónica",
       "glaciología",
-      "geomorflogía",
+      "geomorfología",
       "Parte continental americana",
       "campo",
       "hielo",
@@ -3239,7 +3233,7 @@
       "patagonia",
       "patagonica",
       "glaciologia",
-      "geomorflogia",
+      "geomorfologia",
       "parte continental americana",
       "campo",
       "hielo",
@@ -3296,46 +3290,38 @@
       "Argentina",
       "Parte continental americana",
       "agua",
-      "subterranea",
-      "superficial",
+      "agua subterranea",
+      "agua superficial",
       "región",
       "hidrogeológica",
       "hidrogeología",
       "pozo",
       "subterráneo",
-      "dulce",
       "agua del suelo",
-      "regional",
-      "física",
       "ciencias de la tierra",
       "recursos de suelos",
       "geografía física",
       "geografía regional",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
       "agua",
-      "subterranea",
-      "superficial",
+      "agua subterranea",
+      "agua superficial",
       "region",
       "hidrogeologica",
       "hidrogeologia",
       "pozo",
       "subterraneo",
-      "dulce",
       "agua del suelo",
-      "regional",
-      "fisica",
       "ciencias de la tierra",
       "recursos de suelos",
       "geografia fisica",
       "geografia regional",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos naturales"
     ],
     "title": "Regiones hidrogeológicas",
@@ -3375,83 +3361,79 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_cuencas_buscador_300.jpg",
     "keywords": [
       "Argentina",
+      "Parte continental americana",
       "cuenca",
       "cuencas",
       "hidrica",
+      "hidricas",
       "hidrográfica",
+      "hidrográficas",
       "hidrografía",
       "hidrología",
       "región",
       "hidrológica",
       "agua",
-      "superficial",
+      "agua superficial",
       "río",
       "ríos",
       "lago",
       "lagos",
       "espejos de agua",
-      "espejo",
       "curso",
       "cursos",
-      "Parte continental americana",
       "vertiente",
       "atlántica",
       "pacífica",
       "cuenca de drenaje",
-      "fluvial",
+      "cuenca fluvial",
       "ciencias de la tierra",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "regional",
-      "física",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos de suelos",
       "geografía física",
       "geografía regional",
-      "recurso",
-      "natural",
-      "recursos naturales"
+      "recursos naturales",
+      "regiones hídricas",
+      "superficiales"
     ],
     "keywords_search": [
       "argentina",
+      "parte continental americana",
       "cuenca",
       "cuencas",
       "hidrica",
+      "hidricas",
       "hidrografica",
+      "hidrograficas",
       "hidrografia",
       "hidrologia",
       "region",
       "hidrologica",
       "agua",
-      "superficial",
+      "agua superficial",
       "rio",
       "rios",
       "lago",
       "lagos",
       "espejos de agua",
-      "espejo",
       "curso",
       "cursos",
-      "parte continental americana",
       "vertiente",
       "atlantica",
       "pacifica",
       "cuenca de drenaje",
-      "fluvial",
+      "cuenca fluvial",
       "ciencias de la tierra",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "regional",
-      "fisica",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos de suelos",
       "geografia fisica",
       "geografia regional",
-      "recurso",
-      "natural",
-      "recursos naturales"
+      "recursos naturales",
+      "regiones hidricas",
+      "superficiales"
     ],
     "title": "Cuencas y regiones hídricas superficiales",
     "title_search": "cuencas y regiones hidricas superficiales",
@@ -3489,67 +3471,59 @@
     "image": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_cuencasexoycerradas_96.jpg",
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_cuencasexoycerradas_300.jpg",
     "keywords": [
+      "Argentina",
+      "Parte continental americana",
       "cuenca",
       "cuencas",
       "hidrográfica",
-      "exorreica",
-      "endorreica",
-      "cerrada",
+      "hidrográficas",
+      "cuencas exorreicas",
+      "cuencas endorreicas",
+      "cuencas cerradas",
       "vertiente",
       "atlántica",
       "pacífica",
       "hidrología",
       "hidrografía",
       "agua",
-      "superficial",
+      "agua superficial",
       "cuenca de drenaje",
-      "Parte continental americana",
-      "Argentina",
-      "fluvial",
+      "cuenca fluvial",
       "ciencias de la tierra",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "regional",
-      "física",
-      "recurso",
-      "natural",
       "recursos de suelos",
       "geografía física",
       "geografía regional",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos naturales"
     ],
     "keywords_search": [
+      "argentina",
+      "parte continental americana",
       "cuenca",
       "cuencas",
       "hidrografica",
-      "exorreica",
-      "endorreica",
-      "cerrada",
+      "hidrograficas",
+      "cuencas exorreicas",
+      "cuencas endorreicas",
+      "cuencas cerradas",
       "vertiente",
       "atlantica",
       "pacifica",
       "hidrologia",
       "hidrografia",
       "agua",
-      "superficial",
+      "agua superficial",
       "cuenca de drenaje",
-      "parte continental americana",
-      "argentina",
-      "fluvial",
+      "cuenca fluvial",
       "ciencias de la tierra",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "regional",
-      "fisica",
-      "recurso",
-      "natural",
       "recursos de suelos",
       "geografia fisica",
       "geografia regional",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos naturales"
     ],
     "title": "Cuencas exorreicas y cerradas",
@@ -3589,44 +3563,38 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_esp_agua_300.jpg",
     "keywords": [
       "Argentina",
-      "espejo",
+      "Parte continental americana",
       "agua",
       "espejos de agua",
-      "acumulada",
-      "cuerpo",
-      "superficial",
-      "Parte continental americana",
+      "agua acumulada",
+      "cuerpos de agua",
+      "agua superficial",
       "hidrología",
       "hidrografía",
       "ciencias de la tierra",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "física",
       "recursos de suelos",
       "geografía física",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
-      "espejo",
+      "parte continental americana",
       "agua",
       "espejos de agua",
-      "acumulada",
-      "cuerpo",
-      "superficial",
-      "parte continental americana",
+      "agua acumulada",
+      "cuerpos de agua",
+      "agua superficial",
       "hidrologia",
       "hidrografia",
       "ciencias de la tierra",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "fisica",
       "recursos de suelos",
       "geografia fisica",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos naturales"
     ],
     "title": "Espejos de agua",
@@ -3666,54 +3634,44 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_lagosppales_300.jpg",
     "keywords": [
       "Argentina",
+      "Parte continental americana",
       "cuerpo",
       "agua",
-      "cuerpos",
       "cuerpos de agua",
       "lago",
       "lagos",
       "principal",
       "principales",
-      "superficial",
+      "agua superficial",
       "hidrología",
       "hidrografía",
-      "Parte continental americana",
       "ciencias de la tierra",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "física",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos de suelos",
       "geografía física",
-      "recurso",
-      "natural",
       "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
+      "parte continental americana",
       "cuerpo",
       "agua",
-      "cuerpos",
       "cuerpos de agua",
       "lago",
       "lagos",
       "principal",
       "principales",
-      "superficial",
+      "agua superficial",
       "hidrologia",
       "hidrografia",
-      "parte continental americana",
       "ciencias de la tierra",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "fisica",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos de suelos",
       "geografia fisica",
-      "recurso",
-      "natural",
       "recursos naturales"
     ],
     "title": "Lagos principales",
@@ -3753,58 +3711,50 @@
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_arg_riosppales_300.jpg",
     "keywords": [
       "Argentina",
+      "Parte continental americana",
       "curso",
-      "cursos",
+      "agua",
       "cursos de agua",
       "río",
       "ríos",
       "corriente",
-      "superficial",
+      "agua superficial",
       "hidrología",
       "hidrografía",
       "afluente",
       "principal",
-      "Parte continental americana",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
       "fluvial",
-      "física",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ríos de Argentina",
       "ciencias de la tierra",
       "recursos de suelos",
       "geografía física",
-      "recurso",
-      "natural",
       "recursos naturales"
     ],
     "keywords_search": [
       "argentina",
+      "parte continental americana",
       "curso",
-      "cursos",
+      "agua",
       "cursos de agua",
       "rio",
       "rios",
       "corriente",
-      "superficial",
+      "agua superficial",
       "hidrologia",
       "hidrografia",
       "afluente",
       "principal",
-      "parte continental americana",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
       "fluvial",
-      "fisica",
-      "recurso",
-      "natural",
+      "recurso natural",
       "rios de argentina",
       "ciencias de la tierra",
       "recursos de suelos",
       "geografia fisica",
-      "recurso",
-      "natural",
       "recursos naturales"
     ],
     "title": "Cursos de agua",
@@ -3843,51 +3793,45 @@
     "image": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_hidro_cuencadelplata_96.jpg",
     "download": "https://static.ign.gob.ar/anida/02AFN/aguassup/m_afn_aguassuperf_hidro_cuencadelplata_300.jpg",
     "keywords": [
+      "Argentina",
       "cuenca del plata",
-      "cuenca: río",
+      "cuenca",
+      "río",
       "ríos",
       "subcuenca",
       "afluente",
-      "Argentina",
-      "superficial",
+      "agua superficial",
       "agua",
       "hidrología",
       "hidrografía",
       "transfronteriza",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "física",
-      "recurso",
-      "natural",
       "ciencias de la tierra",
       "recursos de suelos",
       "geografía física",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos naturales"
     ],
     "keywords_search": [
+      "argentina",
       "cuenca del plata",
-      "cuenca rio",
+      "cuenca",
+      "rio",
       "rios",
       "subcuenca",
       "afluente",
-      "argentina",
-      "superficial",
+      "agua superficial",
       "agua",
       "hidrologia",
       "hidrografia",
       "transfronteriza",
-      "dulce",
+      "agua dulce",
       "agua del suelo",
-      "fisica",
-      "recurso",
-      "natural",
       "ciencias de la tierra",
       "recursos de suelos",
       "geografia fisica",
-      "recurso",
-      "natural",
+      "recurso natural",
       "recursos naturales"
     ],
     "title": "Cuenca del Plata",
@@ -4135,8 +4079,8 @@
       "ciencias fisicas",
       "geografia fisica"
     ],
-    "title": "Promedio de la presión atmosférica a nivel edl mar. Diciembre, enero y febrero. Periodo 1960-2000",
-    "title_search": "promedio de la presion atmosferica a nivel edl mar diciembre enero y febrero periodo 1960-2000",
+    "title": "Promedio de la presión atmosférica a nivel del mar. Diciembre, enero y febrero. Periodo 1960-2000",
+    "title_search": "promedio de la presion atmosferica a nivel del mar diciembre enero y febrero periodo 1960-2000",
     "author": "Gentile, E., Martin, P., y Gatti, I.",
     "author_search": "gentile e martin p y gatti i",
     "year": 2019,
@@ -4193,7 +4137,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "geografía física"
+      "geografía física",
+      "humedad"
     ],
     "keywords_search": [
       "clima",
@@ -4214,7 +4159,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "geografia fisica"
+      "geografia fisica",
+      "humedad"
     ],
     "title": "Precipitación anual. Periodo 1981-2010",
     "title_search": "precipitacion anual periodo 1981-2010",
@@ -4276,7 +4222,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "geografía física"
+      "geografía física",
+      "humedad"
     ],
     "keywords_search": [
       "clima",
@@ -4297,7 +4244,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "geografia fisica"
+      "geografia fisica",
+      "humedad"
     ],
     "title": "Precipitación de invierno. Periodo 1981-2010",
     "title_search": "precipitacion de invierno periodo 1981-2010",
@@ -4359,7 +4307,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "geografía física"
+      "geografía física",
+      "humedad"
     ],
     "keywords_search": [
       "clima",
@@ -4380,7 +4329,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "geografia fisica"
+      "geografia fisica",
+      "humedad"
     ],
     "title": "Precipitación de otoño. Periodo 1981-2010",
     "title_search": "precipitacion de otono periodo 1981-2010",
@@ -4442,7 +4392,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "geografía física"
+      "geografía física",
+      "humedad"
     ],
     "keywords_search": [
       "clima",
@@ -4463,7 +4414,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "geografia fisica"
+      "geografia fisica",
+      "humedad"
     ],
     "title": "Precipitación de primavera. Periodo 1981-2010",
     "title_search": "precipitacion de primavera periodo 1981-2010",
@@ -4525,7 +4477,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "geografía física"
+      "geografía física",
+      "humedad"
     ],
     "keywords_search": [
       "clima",
@@ -4546,7 +4499,8 @@
       "ciencias de la tierra",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "geografia fisica"
+      "geografia fisica",
+      "humedad"
     ],
     "title": "Precipitación de verano. Periodo 1981-2010",
     "title_search": "precipitacion de verano periodo 1981-2010",
@@ -5048,7 +5002,6 @@
       "zoogeografía",
       "ecología",
       "biogeografía",
-      "territorio",
       "grupo",
       "faunístico",
       "ambiental",
@@ -5072,7 +5025,6 @@
       "zoogeografia",
       "ecologia",
       "biogeografia",
-      "territorio",
       "grupo",
       "faunistico",
       "ambiental",
@@ -5588,7 +5540,11 @@
       "geofísica",
       "zona",
       "ciencias de la tierra",
-      "geografía física"
+      "geografía física",
+      "amenaza",
+      "natural",
+      "amenazas",
+      "naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -5609,7 +5565,11 @@
       "geofisica",
       "zona",
       "ciencias de la tierra",
-      "geografia fisica"
+      "geografia fisica",
+      "amenaza",
+      "natural",
+      "amenazas",
+      "naturales"
     ],
     "title": "Sismos",
     "title_search": "sismos",
@@ -5670,7 +5630,11 @@
       "zona",
       "ciencias de la tierra",
       "íslas del Atlántico sur",
-      "geografía física"
+      "geografía física",
+      "amenaza",
+      "natural",
+      "amenazas",
+      "naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -5694,7 +5658,11 @@
       "zona",
       "ciencias de la tierra",
       "islas del atlantico sur",
-      "geografia fisica"
+      "geografia fisica",
+      "amenaza",
+      "natural",
+      "amenazas",
+      "naturales"
     ],
     "title": "Sismos",
     "title_search": "sismos",
@@ -5739,13 +5707,11 @@
       "Antartida",
       "distribución",
       "tipo",
-      "territorio",
       "agricultura",
       "gelisol",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
@@ -5760,13 +5726,11 @@
       "antartida",
       "distribucion",
       "tipo",
-      "territorio",
       "agricultura",
       "gelisol",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
@@ -5814,12 +5778,10 @@
       "Parte continental americana",
       "distribución",
       "Alfisol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafología de suelos",
@@ -5835,12 +5797,10 @@
       "parte continental americana",
       "distribucion",
       "alfisol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafologia de suelos",
@@ -5891,12 +5851,10 @@
       "Parte continental americana",
       "distribución",
       "andisol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafología de suelos",
@@ -5912,12 +5870,10 @@
       "parte continental americana",
       "distribucion",
       "andisol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafologia de suelos",
@@ -5968,12 +5924,10 @@
       "Parte continental americana",
       "distribución",
       "aridisol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
@@ -5988,12 +5942,10 @@
       "parte continental americana",
       "distribucion",
       "aridisol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
@@ -6043,12 +5995,10 @@
       "Parte continental americana",
       "distribución",
       "entisol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
@@ -6063,12 +6013,10 @@
       "parte continental americana",
       "distribucion",
       "entisol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
@@ -6118,12 +6066,10 @@
       "Parte continental americana",
       "distribución",
       "histosol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafología de suelos",
@@ -6139,12 +6085,10 @@
       "parte continental americana",
       "distribucion",
       "histosol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafologia de suelos",
@@ -6195,12 +6139,10 @@
       "Parte continental americana",
       "distribución",
       "inceptisol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafología de suelos",
@@ -6216,12 +6158,10 @@
       "parte continental americana",
       "distribucion",
       "inceptisol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafologia de suelos",
@@ -6272,12 +6212,10 @@
       "Parte continental americana",
       "distribución",
       "molisol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafología de suelos",
@@ -6293,12 +6231,10 @@
       "parte continental americana",
       "distribucion",
       "molisol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafologia de suelos",
@@ -6349,12 +6285,10 @@
       "Parte continental americana",
       "distribución",
       "tipo",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafología de suelos",
@@ -6370,12 +6304,10 @@
       "parte continental americana",
       "distribucion",
       "tipo",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "de suelos",
       "ciencias de la tierra",
       "edafologia de suelos",
@@ -6426,12 +6358,10 @@
       "Parte continental americana",
       "distribución",
       "oxisol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafología de suelos",
       "e suelos",
@@ -6447,12 +6377,10 @@
       "parte continental americana",
       "distribucion",
       "oxisol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafologia de suelos",
       "e suelos",
@@ -6503,12 +6431,10 @@
       "Parte continental americana",
       "distribución",
       "spodosol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
@@ -6523,12 +6449,10 @@
       "parte continental americana",
       "distribucion",
       "spodosol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
@@ -6578,12 +6502,10 @@
       "Parte continental americana",
       "distribución",
       "ultisol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
@@ -6598,12 +6520,10 @@
       "parte continental americana",
       "distribucion",
       "ultisol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
@@ -6653,12 +6573,10 @@
       "Parte continental americana",
       "distribución",
       "vertisol",
-      "territorio",
       "agricultura",
       "edafología",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafología de suelos",
       "recursos de suelos",
@@ -6673,12 +6591,10 @@
       "parte continental americana",
       "distribucion",
       "vertisol",
-      "territorio",
       "agricultura",
       "edafologia",
       "cultivable",
-      "recurso",
-      "natural",
+      "recurso natural",
       "ciencias de la tierra",
       "edafologia de suelos",
       "recursos de suelos",
@@ -6819,7 +6735,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -6843,7 +6760,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Índice de envejecimiento por departamento. Año 2010",
     "title_search": "indice de envejecimiento por departamento ano 2010",
@@ -6903,7 +6821,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por sexo"
+      "distribución por sexo",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -6924,7 +6843,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por sexo"
+      "distribucion por sexo",
+      "distribucion de la poblacion"
     ],
     "title": "Índice de masculinidad por departamento. Año 2010",
     "title_search": "indice de masculinidad por departamento ano 2010",
@@ -6988,7 +6908,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7013,7 +6934,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Porcentaje de población de 0 a 14 años por departamento. Año 2010",
     "title_search": "porcentaje de poblacion de 0 a 14 anos por departamento ano 2010",
@@ -7077,7 +6999,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7102,7 +7025,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Porcentaje de población de 65 años y más por departamento. Año 2010",
     "title_search": "porcentaje de poblacion de 65 anos y mas por departamento ano 2010",
@@ -7169,7 +7093,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7197,7 +7122,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Índice de sobreenvejecimiento por departamento. Año 2010",
     "title_search": "indice de sobreenvejecimiento por departamento ano 2010",
@@ -7260,7 +7186,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7284,7 +7211,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Índice de envejecimiento por departamento. Año 2010",
     "title_search": "indice de envejecimiento por departamento ano 2010",
@@ -7342,7 +7270,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por sexo"
+      "distribución por sexo",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7363,7 +7292,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por sexo"
+      "distribucion por sexo",
+      "distribucion de la poblacion"
     ],
     "title": "Índice de masculinidad por departamento. Año 2010",
     "title_search": "indice de masculinidad por departamento ano 2010",
@@ -7425,7 +7355,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7450,7 +7381,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Porcentaje de población de 0 a 14 años por departamento. Año 2010",
     "title_search": "porcentaje de poblacion de 0 a 14 anos por departamento ano 2010",
@@ -7513,7 +7445,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7539,7 +7472,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Porcentaje de población de 65 años y más por departamento. Año 2010",
     "title_search": "porcentaje de poblacion de 65 anos y mas por departamento ano 2010",
@@ -7604,7 +7538,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7632,7 +7567,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Índice de sobreenvejecimiento por departamento. Año 2010",
     "title_search": "indice de sobreenvejecimiento por departamento ano 2010",
@@ -7697,7 +7633,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7725,7 +7662,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Índice de envejecimiento por provincia. Año 2010",
     "title_search": "indice de envejecimiento por provincia ano 2010",
@@ -7785,7 +7723,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por sexo"
+      "distribución por sexo",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7806,7 +7745,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por sexo"
+      "distribucion por sexo",
+      "distribucion de la poblacion"
     ],
     "title": "Índice de masculinidad por provincia. Año 2010",
     "title_search": "indice de masculinidad por provincia ano 2010",
@@ -7870,7 +7810,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7895,7 +7836,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Porcentaje de población de 0 a 14 años por provincia. Año 2010",
     "title_search": "porcentaje de poblacion de 0 a 14 anos por provincia ano 2010",
@@ -7960,7 +7902,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "distribución de la población"
     ],
     "keywords_search": [
       "argentina",
@@ -7986,7 +7929,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "distribucion de la poblacion"
     ],
     "title": "Porcentaje de población de 65 años y más por provincia. Año 2010",
     "title_search": "porcentaje de poblacion de 65 anos y mas por provincia ano 2010",
@@ -9293,6 +9237,7 @@
       "distribución",
       "porcentual",
       "población",
+      "zona",
       "urbana",
       "residencia",
       "residentes",
@@ -9308,7 +9253,7 @@
       "demografía",
       "asentamiento",
       "humano",
-      "zona",
+      "zona urbana",
       "urbanizacion",
       "ciudad",
       "habitantes",
@@ -9324,6 +9269,7 @@
       "distribucion",
       "porcentual",
       "poblacion",
+      "zona",
       "urbana",
       "residencia",
       "residentes",
@@ -9339,7 +9285,7 @@
       "demografia",
       "asentamiento",
       "humano",
-      "zona",
+      "zona urbana",
       "urbanizacion",
       "ciudad",
       "habitantes",
@@ -9516,7 +9462,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -9550,7 +9497,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "zona urbana"
     ],
     "title": "Índice de primacia urbana. Año 2010",
     "title_search": "indice de primacia urbana ano 2010",
@@ -10076,7 +10024,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -10106,7 +10055,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "zona urbana"
     ],
     "title": "Población urbana, por aglomerado. Año 2010",
     "title_search": "poblacion urbana por aglomerado ano 2010",
@@ -10173,7 +10123,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -10201,7 +10152,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "zona urbana"
     ],
     "title": "Población urbana por tamaño de localidad, según provincia de residencia. Año 2010",
     "title_search": "poblacion urbana por tamano de localidad segun provincia de residencia ano 2010",
@@ -10267,7 +10219,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -10294,7 +10247,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "zona urbana"
     ],
     "title": "Porcentaje de población en localidades de 100.000 y más habitantes. Año 2010",
     "title_search": "porcentaje de poblacion en localidades de 100000 y mas habitantes ano 2010",
@@ -10902,7 +10856,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -10929,7 +10884,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "zona urbana"
     ],
     "title": "Porcentaje de población urbana por departamento. Año 2010",
     "title_search": "porcentaje de poblacion urbana por departamento ano 2010",
@@ -10995,7 +10951,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -11022,7 +10979,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "zona urbana"
     ],
     "title": "Porcentaje de población urbana por provincia. Año 2010",
     "title_search": "porcentaje de poblacion urbana por provincia ano 2010",
@@ -11398,7 +11356,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -11434,7 +11393,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "zona urbana"
     ],
     "title": "Variación intercensal de la población urbana 2001-2010, por provincia",
     "title_search": "variacion intercensal de la poblacion urbana 2001-2010 por provincia",
@@ -11496,7 +11456,6 @@
       "demografía",
       "habitantes",
       "ciencias sociales y humanas",
-      "distribución de la población",
       "geografía de la población",
       "geografía humana"
     ],
@@ -11519,7 +11478,6 @@
       "demografia",
       "habitantes",
       "ciencias sociales y humanas",
-      "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana"
     ],
@@ -11584,7 +11542,6 @@
       "territorial",
       "demografía",
       "ciencias sociales y humanas",
-      "distribución de la población",
       "geografía de la población",
       "geografía humana"
     ],
@@ -11610,7 +11567,6 @@
       "territorial",
       "demografia",
       "ciencias sociales y humanas",
-      "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana"
     ],
@@ -11674,7 +11630,6 @@
       "demografía",
       "habitantes",
       "ciencias sociales y humanas",
-      "distribución de la población",
       "geografía de la población",
       "geografía humana"
     ],
@@ -11699,7 +11654,6 @@
       "demografia",
       "habitantes",
       "ciencias sociales y humanas",
-      "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana"
     ],
@@ -11763,7 +11717,6 @@
       "migrante",
       "habitantes",
       "ciencias sociales y humanas",
-      "distribución de la población",
       "geografía de la población",
       "geografía humana"
     ],
@@ -11788,7 +11741,6 @@
       "migrante",
       "habitantes",
       "ciencias sociales y humanas",
-      "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana"
     ],
@@ -11851,7 +11803,6 @@
       "territorial",
       "demografía",
       "ciencias sociales y humanas",
-      "distribución de la población",
       "geografía de la población",
       "geografía humana"
     ],
@@ -11875,7 +11826,6 @@
       "territorial",
       "demografia",
       "ciencias sociales y humanas",
-      "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana"
     ],
@@ -11940,9 +11890,9 @@
       "período",
       "determinado",
       "ciencias sociales y humanas",
-      "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "demografía"
     ],
     "keywords_search": [
       "argentina",
@@ -11966,9 +11916,9 @@
       "periodo",
       "determinado",
       "ciencias sociales y humanas",
-      "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "demografia"
     ],
     "title": "Saldo migratorio, por provincia. Año 2010",
     "title_search": "saldo migratorio por provincia ano 2010",
@@ -12031,7 +11981,6 @@
       "saldo",
       "demografía",
       "ciencias sociales y humanas",
-      "distribución de la población",
       "geografía de la población",
       "geografía humana"
     ],
@@ -12057,7 +12006,6 @@
       "saldo",
       "demografia",
       "ciencias sociales y humanas",
-      "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana"
     ],
@@ -12527,7 +12475,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -12562,7 +12511,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "zona urbana"
     ],
     "title": "Contaminación, ruido y congestionamiento por departamento. Año 2010",
     "title_search": "contaminacion ruido y congestionamiento por departamento ano 2010",
@@ -13841,7 +13791,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "vivienda"
     ],
     "keywords_search": [
       "argentina",
@@ -13871,7 +13822,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "vivienda"
     ],
     "title": "Población en hogares hacinados por departamento. Año 2001",
     "title_search": "poblacion en hogares hacinados por departamento ano 2001",
@@ -13939,7 +13891,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "vivienda"
     ],
     "keywords_search": [
       "argentina",
@@ -13968,7 +13921,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "vivienda"
     ],
     "title": "Población en hogares hacinados por departamento. Año 2010",
     "title_search": "poblacion en hogares hacinados por departamento ano 2010",
@@ -14395,10 +14349,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "balneario",
       "peso",
       "relativo",
@@ -14419,7 +14371,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -14427,10 +14380,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "balneario",
       "peso",
       "relativo",
@@ -14451,7 +14402,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Balnearios. Año 2010",
     "title_search": "balnearios ano 2010",
@@ -14494,10 +14446,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "espejos de agua",
       "cursos de agua",
       "cursos",
@@ -14520,7 +14470,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -14528,10 +14479,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "espejos de agua",
       "cursos de agua",
       "cursos",
@@ -14554,7 +14503,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Espejos y cursos de agua. Año 2010",
     "title_search": "espejos y cursos de agua ano 2010",
@@ -14597,10 +14547,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "índice",
       "base",
       "natural",
@@ -14622,7 +14570,8 @@
       "de base natural",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -14630,10 +14579,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "indice",
       "base",
       "natural",
@@ -14655,7 +14602,8 @@
       "de base natural",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Índice resumen de los recursos recreativos de base natural. Año 2010",
     "title_search": "indice resumen de los recursos recreativos de base natural ano 2010",
@@ -14698,10 +14646,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "deporte",
       "invernal",
       "deportes",
@@ -14724,7 +14670,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -14732,10 +14679,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "deporte",
       "invernal",
       "deportes",
@@ -14758,7 +14703,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Nieve y hielo. Año 2010",
     "title_search": "nieve y hielo ano 2010",
@@ -14801,10 +14747,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "bosque",
       "selva",
       "reserva",
@@ -14832,7 +14776,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -14840,10 +14785,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "bosque",
       "selva",
       "reserva",
@@ -14871,7 +14814,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Parques y espacios verdes. Año 2010",
     "title_search": "parques y espacios verdes ano 2010",
@@ -14914,10 +14858,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "playa",
       "peso",
       "relativo",
@@ -14937,7 +14879,8 @@
       "de base natural",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -14945,10 +14888,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "playa",
       "peso",
       "relativo",
@@ -14968,7 +14909,8 @@
       "de base natural",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Playas. Año 2010",
     "title_search": "playas ano 2010",
@@ -15011,10 +14953,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "principal",
       "base",
       "natural",
@@ -15035,7 +14975,8 @@
       "de base natural",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -15043,10 +14984,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "principal",
       "base",
       "natural",
@@ -15067,7 +15006,8 @@
       "de base natural",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Principal recurso recreativo de base natural. Año 2010",
     "title_search": "principal recurso recreativo de base natural ano 2010",
@@ -15110,10 +15050,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "relieve",
       "sierras",
       "montañas",
@@ -15136,7 +15074,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -15144,10 +15083,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "relieve",
       "sierras",
       "montanas",
@@ -15170,7 +15107,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Relieve. Año 2010",
     "title_search": "relieve ano 2010",
@@ -15213,10 +15151,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "centro",
       "centros",
       "termales",
@@ -15241,7 +15177,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -15249,10 +15186,8 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
+      "recurso recreativo",
+      "recursos recreativos",
       "centro",
       "centros",
       "termales",
@@ -15277,7 +15212,8 @@
       "natural",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Centros termales. Año 2010",
     "title_search": "centros termales ano 2010",
@@ -15320,11 +15256,9 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
-      "construidos",
+      "recurso recreativo",
+      "recursos recreativos",
+      "socialmente construidos",
       "comercios",
       "entretenimiento",
       "shoppings",
@@ -15345,7 +15279,9 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -15353,11 +15289,9 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
-      "construidos",
+      "recurso recreativo",
+      "recursos recreativos",
+      "socialmente construidos",
       "comercios",
       "entretenimiento",
       "shoppings",
@@ -15378,7 +15312,9 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos",
+      "zona urbana"
     ],
     "title": "Centros comerciales y de esparcimiento. Año 2010",
     "title_search": "centros comerciales y de esparcimiento ano 2010",
@@ -15421,11 +15357,9 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
-      "construidos",
+      "recurso recreativo",
+      "recursos recreativos",
+      "socialmente construidos",
       "cines",
       "teatros",
       "museos",
@@ -15447,7 +15381,10 @@
       "calidad de vida",
       "condición",
       "ciencias sociales y humanas",
-      "geografía de la población"
+      "geografía de la población",
+      "aprovechamiento de recursos",
+      "geografía humana",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -15455,11 +15392,9 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
-      "construidos",
+      "recurso recreativo",
+      "recursos recreativos",
+      "socialmente construidos",
       "cines",
       "teatros",
       "museos",
@@ -15481,7 +15416,10 @@
       "calidad de vida",
       "condicion",
       "ciencias sociales y humanas",
-      "geografia de la poblacion"
+      "geografia de la poblacion",
+      "aprovechamiento de recursos",
+      "geografia humana",
+      "zona urbana"
     ],
     "title": "Centros culturales. Año 2010",
     "title_search": "centros culturales ano 2010",
@@ -15524,11 +15462,9 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
-      "construidos",
+      "recurso recreativo",
+      "recursos recreativos",
+      "socialmente construidos",
       "polideportivos",
       "públicos",
       "centros",
@@ -15546,7 +15482,9 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -15554,11 +15492,9 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
-      "construidos",
+      "recurso recreativo",
+      "recursos recreativos",
+      "socialmente construidos",
       "polideportivos",
       "publicos",
       "centros",
@@ -15576,7 +15512,9 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos",
+      "zona urbana"
     ],
     "title": "Centros deportivos. Año 2010",
     "title_search": "centros deportivos ano 2010",
@@ -15619,11 +15557,9 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
-      "construidos",
+      "recurso recreativo",
+      "recursos recreativos",
+      "socialmente construidos",
       "patrimonio",
       "relevante",
       "edificios",
@@ -15646,7 +15582,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos"
     ],
     "keywords_search": [
       "argentina",
@@ -15654,11 +15591,9 @@
       "departamento",
       "calidad",
       "vida",
-      "recurso",
-      "recursos",
-      "recreativo",
-      "recreativos",
-      "construidos",
+      "recurso recreativo",
+      "recursos recreativos",
+      "socialmente construidos",
       "patrimonio",
       "relevante",
       "edificios",
@@ -15681,7 +15616,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos"
     ],
     "title": "Estética y patrimonio urbano. Año 2010",
     "title_search": "estetica y patrimonio urbano ano 2010",
@@ -15745,7 +15681,9 @@
       "calidad de vida",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "aprovechamiento de recursos",
+      "zona urbana"
     ],
     "keywords_search": [
       "argentina",
@@ -15774,7 +15712,9 @@
       "calidad de vida",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "aprovechamiento de recursos",
+      "zona urbana"
     ],
     "title": "Índice resumen de los recursos recreativos socialmente construidos. Año 2010",
     "title_search": "indice resumen de los recursos recreativos socialmente construidos ano 2010",
@@ -15842,8 +15782,15 @@
       "geografía humana",
       "amenaza",
       "peligro",
+      "peligros",
       "vulcanología",
-      "sismología"
+      "sismología",
+      "volcán",
+      "volcanes",
+      "natural",
+      "amenazas",
+      "naturales",
+      "sismos"
     ],
     "keywords_search": [
       "argentina",
@@ -15876,8 +15823,15 @@
       "geografia humana",
       "amenaza",
       "peligro",
+      "peligros",
       "vulcanologia",
-      "sismologia"
+      "sismologia",
+      "volcan",
+      "volcanes",
+      "natural",
+      "amenazas",
+      "naturales",
+      "sismos"
     ],
     "title": "Sismicidad y vulcanismo por departamento. Año 2010",
     "title_search": "sismicidad y vulcanismo por departamento ano 2010",
@@ -16098,6 +16052,7 @@
       "ambiental",
       "tornado",
       "peligro",
+      "peligros",
       "fenómeno",
       "atmosférico",
       "demografía",
@@ -16111,7 +16066,10 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "amenaza"
+      "amenaza",
+      "natural",
+      "amenazas",
+      "naturales"
     ],
     "keywords_search": [
       "argentina",
@@ -16123,6 +16081,7 @@
       "ambiental",
       "tornado",
       "peligro",
+      "peligros",
       "fenomeno",
       "atmosferico",
       "demografia",
@@ -16136,7 +16095,10 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "amenaza"
+      "amenaza",
+      "natural",
+      "amenazas",
+      "naturales"
     ],
     "title": "Tornados por departamento. Año 2010",
     "title_search": "tornados por departamento ano 2010",
@@ -16192,7 +16154,9 @@
       "producción",
       "periodo",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -16213,7 +16177,9 @@
       "produccion",
       "periodo",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Intensificación y expansión de la agricultura 1980-2018",
     "title_search": "intensificacion y expansion de la agricultura 1980-2018",
@@ -16265,6 +16231,7 @@
       "Parte continental americana",
       "departamento",
       "actividad",
+      "actividad ganadera",
       "ganadería: ganado",
       "caprino",
       "ovino",
@@ -16278,13 +16245,16 @@
       "ganadero",
       "ganadera",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
       "departamento",
       "actividad",
+      "actividad ganadera",
       "ganaderia ganado",
       "caprino",
       "ovino",
@@ -16298,7 +16268,9 @@
       "ganadero",
       "ganadera",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Ganado caprino, ovino, equino y porcino. Año 2017",
     "title_search": "ganado caprino ovino equino y porcino ano 2017",
@@ -16359,7 +16331,10 @@
       "asentamiento",
       "humano",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "aprovechamiento de recursos",
+      "zona rural",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -16385,7 +16360,10 @@
       "asentamiento",
       "humano",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "aprovechamiento de recursos",
+      "zona rural",
+      "geografia humana"
     ],
     "title": "Tasa de crecimiento anual de la población rural agrupada 1991-2010. Región Pampeana",
     "title_search": "tasa de crecimiento anual de la poblacion rural agrupada 1991-2010 region pampeana",
@@ -16456,7 +16434,10 @@
       "asentamiento",
       "humano",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "aprovechamiento de recursos",
+      "zona rural",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -16482,7 +16463,10 @@
       "asentamiento",
       "humano",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "aprovechamiento de recursos",
+      "zona rural",
+      "geografia humana"
     ],
     "title": "Tasa de crecimiento anual de la población rural dispersa 1991-2010. Región Pampeana",
     "title_search": "tasa de crecimiento anual de la poblacion rural dispersa 1991-2010 region pampeana",
@@ -16552,7 +16536,10 @@
       "asentamiento",
       "humano",
       "económica",
-      "geografía económica"
+      "geografía económica",
+      "aprovechamiento de recursos",
+      "zona rural",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -16577,7 +16564,10 @@
       "asentamiento",
       "humano",
       "economica",
-      "geografia economica"
+      "geografia economica",
+      "aprovechamiento de recursos",
+      "zona rural",
+      "geografia humana"
     ],
     "title": "Tasa de crecimiento anual de la población en localidades rurales 1991-2010",
     "title_search": "tasa de crecimiento anual de la poblacion en localidades rurales 1991-2010",
@@ -16646,13 +16636,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -16676,13 +16667,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de algodón. Campaña 2018",
     "title_search": "produccion de algodon campana 2018",
@@ -16744,12 +16736,14 @@
       "uso de la tierra",
       "cereal",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -16774,12 +16768,14 @@
       "uso de la tierra",
       "cereal",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de alpiste. Campana 2017-2018",
     "title_search": "produccion de alpiste campana 2017-2018",
@@ -16838,13 +16834,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -16868,13 +16865,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de arroz. Campaña 2018",
     "title_search": "produccion de arroz campana 2018",
@@ -16942,7 +16940,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -16973,7 +16973,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de avena. Campaña 2017-2018",
     "title_search": "produccion de avena campana 2017-2018",
@@ -17040,7 +17042,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17072,7 +17076,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de cebada cervecera. Campaña 2017-2018",
     "title_search": "produccion de cebada cervecera campana 2017-2018",
@@ -17133,12 +17139,14 @@
       "uso de la tierra",
       "forraje",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17164,12 +17172,14 @@
       "uso de la tierra",
       "forraje",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de centeno. Campaña 2017-2018",
     "title_search": "produccion de centeno campana 2017-2018",
@@ -17229,12 +17239,13 @@
       "uso de la tierra",
       "cultivos",
       "extensivos",
-      "regionales",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17259,12 +17270,13 @@
       "uso de la tierra",
       "cultivos",
       "extensivos",
-      "regionales",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de colza. Campaña 2018",
     "title_search": "produccion de colza campana 2018",
@@ -17331,7 +17343,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17361,7 +17375,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de girasol. Campaña 2017-2018",
     "title_search": "produccion de girasol campana 2017-2018",
@@ -17422,12 +17438,14 @@
       "uso de la tierra",
       "oleaginosa",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17453,12 +17471,14 @@
       "uso de la tierra",
       "oleaginosa",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de lino. Campaña 2017-2018",
     "title_search": "produccion de lino campana 2017-2018",
@@ -17516,11 +17536,15 @@
       "agricultura",
       "tierra",
       "uso de la tierra",
+      "cultivos",
+      "extensivos",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17543,11 +17567,15 @@
       "agricultura",
       "tierra",
       "uso de la tierra",
+      "cultivos",
+      "extensivos",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de maíz. Campaña 2017-2018",
     "title_search": "produccion de maiz campana 2017-2018",
@@ -17613,7 +17641,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17644,7 +17674,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción de maní. Campaña 2017-2018",
     "title_search": "produccion de mani campana 2017-2018",
@@ -17704,12 +17736,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17734,12 +17768,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Produccion de mijo. Campaña 2017-2018",
     "title_search": "produccion de mijo campana 2017-2018",
@@ -17795,7 +17831,9 @@
       "económica",
       "geografía económica",
       "uso de la tierra",
-      "agricultura"
+      "agricultura",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17816,7 +17854,9 @@
       "economica",
       "geografia economica",
       "uso de la tierra",
-      "agricultura"
+      "agricultura",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Distribución provincial de los establecimientos bajo producción orgánica. Año 2018",
     "title_search": "distribucion provincial de los establecimientos bajo produccion organica ano 2018",
@@ -17879,7 +17919,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -17907,7 +17949,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Producción del poroto seco. Campaña 2018",
     "title_search": "produccion del poroto seco campana 2018",
@@ -17974,7 +18018,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18004,7 +18050,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Produccion de soja. Campaña 2017-2018",
     "title_search": "produccion de soja campana 2017-2018",
@@ -18069,7 +18117,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18099,7 +18149,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Produccion de sorgo. Campaña 2017-2018",
     "title_search": "produccion de sorgo campana 2017-2018",
@@ -18163,7 +18215,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18192,7 +18246,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Produccion de Trigo. Campaña 2017-2018",
     "title_search": "produccion de trigo campana 2017-2018",
@@ -18258,7 +18314,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18289,7 +18347,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Produccion de yerba mate. Campaña 2016-2017",
     "title_search": "produccion de yerba mate campana 2016-2017",
@@ -18348,13 +18408,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18376,13 +18437,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del algodón. Campaña 2018",
     "title_search": "rendimiento del algodon campana 2018",
@@ -18442,12 +18504,14 @@
       "uso de la tierra",
       "cereal",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18470,12 +18534,14 @@
       "uso de la tierra",
       "cereal",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del alpiste. Campaña 2017-2018",
     "title_search": "rendimiento del alpiste campana 2017-2018",
@@ -18533,13 +18599,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18562,13 +18629,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del arroz. Campaña 2018",
     "title_search": "rendimiento del arroz campana 2018",
@@ -18634,7 +18702,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18663,7 +18733,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento de la avena. Campaña 2017-2018",
     "title_search": "rendimiento de la avena campana 2017-2018",
@@ -18728,7 +18800,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18758,7 +18832,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento de la cebada cervecera. Campaña 2017-2018",
     "title_search": "rendimiento de la cebada cervecera campana 2017-2018",
@@ -18818,12 +18894,14 @@
       "uso de la tierra",
       "forraje",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18848,12 +18926,14 @@
       "uso de la tierra",
       "forraje",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del centeno. Campaña 2017-2018",
     "title_search": "rendimiento del centeno campana 2017-2018",
@@ -18912,12 +18992,13 @@
       "uso de la tierra",
       "cultivos",
       "extensivos",
-      "regionales",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -18941,12 +19022,13 @@
       "uso de la tierra",
       "cultivos",
       "extensivos",
-      "regionales",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento de la colza. Campaña 2018",
     "title_search": "rendimiento de la colza campana 2018",
@@ -19011,7 +19093,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19039,7 +19123,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del girasol. Campaña 2017-2018",
     "title_search": "rendimiento del girasol campana 2017-2018",
@@ -19098,12 +19184,14 @@
       "uso de la tierra",
       "oleaginosa",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19127,12 +19215,14 @@
       "uso de la tierra",
       "oleaginosa",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del Lino. Campaña 2017-2018",
     "title_search": "rendimiento del lino campana 2017-2018",
@@ -19197,7 +19287,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19227,7 +19319,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del maíz. Campaña 2017-2018",
     "title_search": "rendimiento del maiz campana 2017-2018",
@@ -19291,7 +19385,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19320,7 +19416,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del maní. Campaña 2017-2018",
     "title_search": "rendimiento del mani campana 2017-2018",
@@ -19379,12 +19477,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19408,12 +19508,14 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del mijo. Campaña 2017-2018",
     "title_search": "rendimiento del mijo campana 2017-2018",
@@ -19477,7 +19579,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19506,7 +19610,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del poroto seco. Campaña 2018",
     "title_search": "rendimiento del poroto seco campana 2018",
@@ -19572,7 +19678,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19601,7 +19709,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento de la soja. Campaña 2017-2018",
     "title_search": "rendimiento de la soja campana 2017-2018",
@@ -19665,7 +19775,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19694,7 +19806,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del sorgo. Campaña 2017-2018",
     "title_search": "rendimiento del sorgo campana 2017-2018",
@@ -19757,7 +19871,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19785,7 +19901,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento del trigo. Campaña 2017-2018",
     "title_search": "rendimiento del trigo campana 2017-2018",
@@ -19849,7 +19967,9 @@
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19878,7 +19998,9 @@
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "geografia humana"
     ],
     "title": "Rendimiento de la yerba mate. Campaña 2016-2017",
     "title_search": "rendimiento de la yerba mate campana 2016-2017",
@@ -19939,13 +20061,15 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "económica",
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -19969,13 +20093,15 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "economica",
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con algodón. Campaña 2018",
     "title_search": "superficie sembrada con algodon campana 2018",
@@ -20038,12 +20164,15 @@
       "uso de la tierra",
       "cereal",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20069,12 +20198,15 @@
       "uso de la tierra",
       "cereal",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con alpiste. Campaña 2017-2018",
     "title_search": "superficie sembrada con alpiste campana 2017-2018",
@@ -20134,13 +20266,15 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "económica",
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20165,13 +20299,15 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "extensivos",
       "regionales",
       "economica",
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con arroz. Campaña 2018",
     "title_search": "superficie sembrada con arroz campana 2018",
@@ -20239,7 +20375,10 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20270,7 +20409,10 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con avena. Campaña 2017-2018",
     "title_search": "superficie sembrada con avena campana 2017-2018",
@@ -20337,7 +20479,10 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20369,7 +20514,10 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con cebada cervecera. Campaña 2017-2018",
     "title_search": "superficie sembrada con cebada cervecera campana 2017-2018",
@@ -20431,11 +20579,14 @@
       "uso de la tierra",
       "forraje",
       "cultivos",
-      "regionales",
+      "extensivos",
       "geografía económica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20462,11 +20613,14 @@
       "uso de la tierra",
       "forraje",
       "cultivos",
-      "regionales",
+      "extensivos",
       "geografia economica",
       "recursos de suelos",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con centeno. Campaña 2017-2018",
     "title_search": "superficie sembrada con centeno campana 2017-2018",
@@ -20527,12 +20681,14 @@
       "uso de la tierra",
       "cultivos",
       "extensivos",
-      "regionales",
       "económica",
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20558,12 +20714,14 @@
       "uso de la tierra",
       "cultivos",
       "extensivos",
-      "regionales",
       "economica",
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con colza. Campaña 2018",
     "title_search": "superficie sembrada con colza campana 2018",
@@ -20630,7 +20788,10 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20660,7 +20821,10 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada del girasol. Campaña 2017-2018",
     "title_search": "superficie sembrada del girasol campana 2017-2018",
@@ -20721,12 +20885,15 @@
       "uso de la tierra",
       "oleaginosa",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20752,12 +20919,15 @@
       "uso de la tierra",
       "oleaginosa",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada del lino. Campaña 2017-2018",
     "title_search": "superficie sembrada del lino campana 2017-2018",
@@ -20823,7 +20993,10 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20854,7 +21027,10 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con maíz. Campaña 2017-2018",
     "title_search": "superficie sembrada con maiz campana 2017-2018",
@@ -20920,7 +21096,10 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -20951,7 +21130,10 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con maní. Campaña 2017-2018",
     "title_search": "superficie sembrada con mani campana 2017-2018",
@@ -21012,12 +21194,15 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "regionales",
+      "extensivos",
       "económica",
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -21043,12 +21228,15 @@
       "tierra",
       "uso de la tierra",
       "cultivos",
-      "regionales",
+      "extensivos",
       "economica",
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con mijo. Campaña 2017-2018",
     "title_search": "superficie sembrada con mijo campana 2017-2018",
@@ -21115,7 +21303,10 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -21147,7 +21338,10 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con poroto seco. Campaña 2017-2018",
     "title_search": "superficie sembrada con poroto seco campana 2017-2018",
@@ -21215,7 +21409,10 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -21246,7 +21443,10 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con soja. Campaña 2017-2018",
     "title_search": "superficie sembrada con soja campana 2017-2018",
@@ -21312,7 +21512,9 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -21343,7 +21545,9 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con sorgo. Campaña 2017-2018",
     "title_search": "superficie sembrada con sorgo campana 2017-2018",
@@ -21408,7 +21612,10 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -21438,7 +21645,10 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con trigo. Campaña 2017-2018",
     "title_search": "superficie sembrada con trigo campana 2017-2018",
@@ -21505,7 +21715,10 @@
       "recursos de suelos",
       "geografía económica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -21537,7 +21750,10 @@
       "recursos de suelos",
       "geografia economica",
       "recurso",
-      "suelo"
+      "suelo",
+      "aprovechamiento de recursos",
+      "suelo cultivable",
+      "geografia humana"
     ],
     "title": "Superficie sembrada con yerba mate. Campaña 2016-2017",
     "title_search": "superficie sembrada con yerba mate campana 2016-2017",
@@ -21574,8 +21790,8 @@
   },
   {
     "id": "242",
-    "image": "https://static.ign.gob.ar/anida/04AE/agrop/m_ae_agrop_arg_usos_de la tierra_96.jpg",
-    "download": "https://static.ign.gob.ar/anida/04AE/agrop/m_ae_agrop_arg_usos_de la tierra_300.jpg",
+    "image": "https://static.ign.gob.ar/anida/04AE/agrop/m_ae_agrop_arg_usos_tierra_96.jpg",
+    "download": "https://static.ign.gob.ar/anida/04AE/agrop/m_ae_agrop_arg_usos_tierra_300.jpg",
     "keywords": [
       "Argentina",
       "Parte continental americana",
@@ -21601,7 +21817,9 @@
       "recursos de suelos",
       "geografía económica",
       "recursos naturales",
-      "suelo"
+      "suelo",
+      "suelo cultivable",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -21628,10 +21846,12 @@
       "recursos de suelos",
       "geografia economica",
       "recursos naturales",
-      "suelo"
+      "suelo",
+      "suelo cultivable",
+      "geografia humana"
     ],
-    "title": "Sistema de usos de la de la tierra",
-    "title_search": "sistema de usos de la de la tierra",
+    "title": "Sistema de usos de la tierra",
+    "title_search": "sistema de usos de la tierra",
     "author": "Conte, A., Etchepareborda, M., y Marino M.",
     "author_search": "conte a etchepareborda m y marino m",
     "year": 2020,
@@ -21676,7 +21896,6 @@
       "tonelada",
       "empresa",
       "energía",
-      "recursos no renovables",
       "recursos renovables",
       "combustribles",
       "alternativos",
@@ -21684,20 +21903,20 @@
       "industrias",
       "cooperativas",
       "agroindustrial",
-      "natural",
+      "recurso natural",
+      "recursos naturales",
       "aprovechamiento",
       "abastecimiento",
       "abastecimiento de energía",
-      "recurso",
-      "energético",
       "eléctrica",
       "fuente de energía",
       "biomasa",
       "geografía económica",
       "aprovechamiento de recursos",
-      "fuente de energía no renovable",
       "fuente de energía renovable",
-      "recursos energéticos"
+      "recursos energéticos",
+      "energía de la biomasa",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -21710,7 +21929,6 @@
       "tonelada",
       "empresa",
       "energia",
-      "recursos no renovables",
       "recursos renovables",
       "combustribles",
       "alternativos",
@@ -21718,20 +21936,20 @@
       "industrias",
       "cooperativas",
       "agroindustrial",
-      "natural",
+      "recurso natural",
+      "recursos naturales",
       "aprovechamiento",
       "abastecimiento",
       "abastecimiento de energia",
-      "recurso",
-      "energetico",
       "electrica",
       "fuente de energia",
       "biomasa",
       "geografia economica",
       "aprovechamiento de recursos",
-      "fuente de energia no renovable",
       "fuente de energia renovable",
-      "recursos energeticos"
+      "recursos energeticos",
+      "energia de la biomasa",
+      "geografia humana"
     ],
     "title": "Biocombustibles",
     "title_search": "biocombustibles",
@@ -21785,11 +22003,7 @@
       "alta",
       "tensión",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "abastecimiento de energía",
-      "recurso",
-      "energético",
       "eléctrica",
       "fuente de energía",
       "eólica",
@@ -21801,9 +22015,12 @@
       "nuclear",
       "geografía económica",
       "fuente de energía no renovable",
-      "fuente de energía renovable",
       "recursos de gas",
-      "recursos energéticos"
+      "recursos energéticos",
+      "recurso natural",
+      "recursos naturales",
+      "energia natural",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -21822,11 +22039,7 @@
       "alta",
       "tension",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "abastecimiento de energia",
-      "recurso",
-      "energetico",
       "electrica",
       "fuente de energia",
       "eolica",
@@ -21838,9 +22051,12 @@
       "nuclear",
       "geografia economica",
       "fuente de energia no renovable",
-      "fuente de energia renovable",
       "recursos de gas",
-      "recursos energeticos"
+      "recursos energeticos",
+      "recurso natural",
+      "recursos naturales",
+      "energia natural",
+      "geografia humana"
     ],
     "title": "Generación y transporte de energía eléctrica",
     "title_search": "generacion y transporte de energia electrica",
@@ -21881,21 +22097,15 @@
       "Argentina",
       "Parte continental americana",
       "provincia",
-      "producción",
-      "gas",
-      "natural",
+      "producción de gas natural",
       "cuenca",
       "hidrocarburífera",
-      "recurso",
       "energía",
       "productiva",
       "yacimiento",
       "hidrocarburo",
-      "natural",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "abastecimiento",
       "energético",
       "eléctrica",
@@ -21904,29 +22114,26 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable",
       "recursos de gas",
-      "recursos energéticos"
+      "recursos energéticos",
+      "recurso natural",
+      "recursos naturales",
+      "energia natural",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
       "provincia",
-      "produccion",
-      "gas",
-      "natural",
+      "produccion de gas natural",
       "cuenca",
       "hidrocarburifera",
-      "recurso",
       "energia",
       "productiva",
       "yacimiento",
       "hidrocarburo",
-      "natural",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "abastecimiento",
       "energetico",
       "electrica",
@@ -21935,9 +22142,12 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable",
       "recursos de gas",
-      "recursos energeticos"
+      "recursos energeticos",
+      "recurso natural",
+      "recursos naturales",
+      "energia natural",
+      "geografia humana"
     ],
     "title": "Producción de gas por cuenca. Año 2019",
     "title_search": "produccion de gas por cuenca ano 2019",
@@ -21983,12 +22193,9 @@
       "volumen",
       "producido",
       "energía",
-      "recurso",
-      "natural",
+      "recurso natural",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "abastecimiento de energía",
       "energético",
       "eléctrica",
@@ -21997,9 +22204,10 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable",
       "recursos de gas",
-      "recursos energéticos"
+      "recursos energéticos",
+      "energia natural",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -22010,12 +22218,9 @@
       "volumen",
       "producido",
       "energia",
-      "recurso",
-      "natural",
+      "recurso natural",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "abastecimiento de energia",
       "energetico",
       "electrica",
@@ -22024,9 +22229,10 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable",
       "recursos de gas",
-      "recursos energeticos"
+      "recursos energeticos",
+      "energia natural",
+      "geografia humana"
     ],
     "title": "Producción de gas por provincia. Año 2019",
     "title_search": "produccion de gas por provincia ano 2019",
@@ -22072,15 +22278,13 @@
       "cuenca",
       "volumen",
       "total",
-      "recurso",
       "hidrocarburífera",
       "energía",
       "hidrocarburo",
-      "natural",
+      "recurso natural",
+      "recursos naturales",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "abastecimiento de energía",
       "energético",
       "eléctrica",
@@ -22089,9 +22293,10 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable",
       "recursos de gas",
-      "recursos energéticos"
+      "recursos energéticos",
+      "energia natural",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -22102,15 +22307,13 @@
       "cuenca",
       "volumen",
       "total",
-      "recurso",
       "hidrocarburifera",
       "energia",
       "hidrocarburo",
-      "natural",
+      "recurso natural",
+      "recursos naturales",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "abastecimiento de energia",
       "energetico",
       "electrica",
@@ -22119,9 +22322,10 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable",
       "recursos de gas",
-      "recursos energeticos"
+      "recursos energeticos",
+      "energia natural",
+      "geografia humana"
     ],
     "title": "Reservas de gas por cuenca. Año 2018",
     "title_search": "reservas de gas por cuenca ano 2018",
@@ -22165,12 +22369,13 @@
       "cuenca",
       "cuencas",
       "hidrocarburífera",
+      "hidrocarburíferas",
       "producción",
       "productiva",
       "energía",
-      "recurso, hidrocarburo",
+      "recurso natural, recursos naturales",
+      "hidrocarburo",
       "petroleo",
-      "natural",
       "aprovechamiento",
       "abastecimiento de energía",
       "energético",
@@ -22179,7 +22384,8 @@
       "fuente de energía",
       "aprovechamiento de recursos",
       "abastecimiento",
-      "recursos energéticos"
+      "recursos energéticos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -22188,12 +22394,13 @@
       "cuenca",
       "cuencas",
       "hidrocarburifera",
+      "hidrocarburiferas",
       "produccion",
       "productiva",
       "energia",
-      "recurso hidrocarburo",
+      "recurso natural recursos naturales",
+      "hidrocarburo",
       "petroleo",
-      "natural",
       "aprovechamiento",
       "abastecimiento de energia",
       "energetico",
@@ -22202,7 +22409,8 @@
       "fuente de energia",
       "aprovechamiento de recursos",
       "abastecimiento",
-      "recursos energeticos"
+      "recursos energeticos",
+      "geografia humana"
     ],
     "title": "Cuencas hidrocarburíferas",
     "title_search": "cuencas hidrocarburiferas",
@@ -22252,8 +22460,8 @@
       "productivo",
       "energía",
       "petroleo",
-      "recurso",
-      "natural",
+      "recurso natural",
+      "recursos naturales",
       "aprovechamiento",
       "abastecimiento de energía",
       "energético",
@@ -22263,7 +22471,9 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "exploración de recursos",
-      "recursos energéticos"
+      "explotación de recursos",
+      "recursos energéticos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -22278,8 +22488,8 @@
       "productivo",
       "energia",
       "petroleo",
-      "recurso",
-      "natural",
+      "recurso natural",
+      "recursos naturales",
       "aprovechamiento",
       "abastecimiento de energia",
       "energetico",
@@ -22289,7 +22499,9 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "exploracion de recursos",
-      "recursos energeticos"
+      "explotacion de recursos",
+      "recursos energeticos",
+      "geografia humana"
     ],
     "title": "Exploración y explotación de hidrocarburos",
     "title_search": "exploracion y explotacion de hidrocarburos",
@@ -22344,12 +22556,10 @@
       "productiva",
       "energía",
       "petroleo",
-      "recurso",
-      "natural",
+      "recurso natural",
       "aprovechamiento",
       "recursos no renovables",
       "recursos renovables",
-      "renovable",
       "abastecimiento de energía",
       "energético",
       "eléctrica",
@@ -22360,7 +22570,9 @@
       "fuente de energía no renovable",
       "fuente de energía renovable",
       "recursos de gas",
-      "recursos energéticos"
+      "recursos energéticos",
+      "energía natural",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -22380,12 +22592,10 @@
       "productiva",
       "energia",
       "petroleo",
-      "recurso",
-      "natural",
+      "recurso natural",
       "aprovechamiento",
       "recursos no renovables",
       "recursos renovables",
-      "renovable",
       "abastecimiento de energia",
       "energetico",
       "electrica",
@@ -22396,7 +22606,9 @@
       "fuente de energia no renovable",
       "fuente de energia renovable",
       "recursos de gas",
-      "recursos energeticos"
+      "recursos energeticos",
+      "energia natural",
+      "geografia humana"
     ],
     "title": "Producción y transporte de hidrocarburos",
     "title_search": "produccion y transporte de hidrocarburos",
@@ -22448,8 +22660,7 @@
       "energía",
       "total",
       "población",
-      "recurso",
-      "natural",
+      "recursos naturales",
       "aprovechamiento",
       "abastecimiento de energía",
       "energético",
@@ -22465,7 +22676,8 @@
       "ciencias sociales y humanas",
       "recursos de gas",
       "geografía humana",
-      "recursos energéticos"
+      "recursos energéticos",
+      "vivienda"
     ],
     "keywords_search": [
       "argentina",
@@ -22482,8 +22694,7 @@
       "energia",
       "total",
       "poblacion",
-      "recurso",
-      "natural",
+      "recursos naturales",
       "aprovechamiento",
       "abastecimiento de energia",
       "energetico",
@@ -22499,7 +22710,8 @@
       "ciencias sociales y humanas",
       "recursos de gas",
       "geografia humana",
-      "recursos energeticos"
+      "recursos energeticos",
+      "vivienda"
     ],
     "title": "Hogares según combustible utilizado para cocinar por provincia. Año 2010",
     "title_search": "hogares segun combustible utilizado para cocinar por provincia ano 2010",
@@ -22551,9 +22763,8 @@
       "electrificación",
       "servicios",
       "acceso",
-      "recurso",
       "aprovechamiento",
-      "natural",
+      "recursos naturales",
       "energía",
       "abastecimiento de energía",
       "energético",
@@ -22567,7 +22778,8 @@
       "abastecimiento",
       "ciencias sociales y humanas",
       "geografía humana",
-      "recursos energéticos"
+      "recursos energéticos",
+      "vivienda"
     ],
     "keywords_search": [
       "argentina",
@@ -22580,9 +22792,8 @@
       "electrificacion",
       "servicios",
       "acceso",
-      "recurso",
       "aprovechamiento",
-      "natural",
+      "recursos naturales",
       "energia",
       "abastecimiento de energia",
       "energetico",
@@ -22596,7 +22807,8 @@
       "abastecimiento",
       "ciencias sociales y humanas",
       "geografia humana",
-      "recursos energeticos"
+      "recursos energeticos",
+      "vivienda"
     ],
     "title": "Hogares según tenencia de electricidad por provincia. Año 2010",
     "title_search": "hogares segun tenencia de electricidad por provincia ano 2010",
@@ -22649,9 +22861,8 @@
       "combustible",
       "principal",
       "población",
-      "recurso",
+      "recursos naturales",
       "aprovechamiento",
-      "natural",
       "energía",
       "abastecimiento de energía",
       "energético",
@@ -22664,7 +22875,8 @@
       "abastecimiento",
       "ciencias sociales y humanas",
       "geografía humana",
-      "recursos energéticos"
+      "recursos energéticos",
+      "vivienda"
     ],
     "keywords_search": [
       "argentina",
@@ -22678,9 +22890,8 @@
       "combustible",
       "principal",
       "poblacion",
-      "recurso",
+      "recursos naturales",
       "aprovechamiento",
-      "natural",
       "energia",
       "abastecimiento de energia",
       "energetico",
@@ -22693,7 +22904,8 @@
       "abastecimiento",
       "ciencias sociales y humanas",
       "geografia humana",
-      "recursos energeticos"
+      "recursos energeticos",
+      "vivienda"
     ],
     "title": "Empleo de leña para cocción por provincia",
     "title_search": "empleo de lena para coccion por provincia",
@@ -22745,12 +22957,9 @@
       "volumen",
       "producido",
       "hidrocarburo",
-      "recurso",
-      "natural",
+      "recursos naturales",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "energía",
       "abastecimiento de energía",
       "energético",
@@ -22761,8 +22970,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable",
-      "recursos energéticos"
+      "recursos energéticos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -22775,12 +22984,9 @@
       "volumen",
       "producido",
       "hidrocarburo",
-      "recurso",
-      "natural",
+      "recursos naturales",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "energia",
       "abastecimiento de energia",
       "energetico",
@@ -22791,8 +22997,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable",
-      "recursos energeticos"
+      "recursos energeticos",
+      "geografia humana"
     ],
     "title": "Producción de petróleo por cuenca. Año 2019",
     "title_search": "produccion de petroleo por cuenca ano 2019",
@@ -22837,12 +23043,9 @@
       "petróleo",
       "volumen",
       "producido",
-      "recurso",
+      "recursos naturales",
       "aprovechamiento",
-      "natural",
       "recursos no renovables",
-      "renovables",
-      "recursos renovables",
       "energía",
       "abastecimiento de energía",
       "energético",
@@ -22853,8 +23056,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable",
-      "recursos energéticos"
+      "recursos energéticos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -22864,12 +23067,9 @@
       "petroleo",
       "volumen",
       "producido",
-      "recurso",
+      "recursos naturales",
       "aprovechamiento",
-      "natural",
       "recursos no renovables",
-      "renovables",
-      "recursos renovables",
       "energia",
       "abastecimiento de energia",
       "energetico",
@@ -22880,8 +23080,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable",
-      "recursos energeticos"
+      "recursos energeticos",
+      "geografia humana"
     ],
     "title": "Producción de petróleo por provincia. Año 2019",
     "title_search": "produccion de petroleo por provincia ano 2019",
@@ -22928,15 +23128,12 @@
       "volumen",
       "total",
       "tipo",
-      "recurso",
+      "recursos naturales",
       "hidrocarburífera",
       "productiva",
       "hidrocarburo",
-      "natural",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "energía",
       "abastecimiento de energía",
       "energético",
@@ -22947,8 +23144,9 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable",
-      "recursos energéticos"
+      "recursos energéticos",
+      "energía natural",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -22960,15 +23158,12 @@
       "volumen",
       "total",
       "tipo",
-      "recurso",
+      "recursos naturales",
       "hidrocarburifera",
       "productiva",
       "hidrocarburo",
-      "natural",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "energia",
       "abastecimiento de energia",
       "energetico",
@@ -22979,8 +23174,9 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable",
-      "recursos energeticos"
+      "recursos energeticos",
+      "energia natural",
+      "geografia humana"
     ],
     "title": "Reservas de petróleo por cuenca. Año 2018",
     "title_search": "reservas de petroleo por cuenca ano 2018",
@@ -23032,8 +23228,6 @@
       "recurso",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "energía",
       "abastecimiento de energía",
       "energético",
@@ -23043,8 +23237,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energía no renovable",
-      "fuente de energía renovable",
-      "recursos energéticos"
+      "recursos energéticos",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23061,8 +23255,6 @@
       "recurso",
       "aprovechamiento",
       "recursos no renovables",
-      "recursos renovables",
-      "renovable",
       "energia",
       "abastecimiento de energia",
       "energetico",
@@ -23072,8 +23264,8 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "fuente de energia no renovable",
-      "fuente de energia renovable",
-      "recursos energeticos"
+      "recursos energeticos",
+      "geografia humana"
     ],
     "title": "Actividades e instalaciones del sector nuclear",
     "title_search": "actividades e instalaciones del sector nuclear",
@@ -23129,7 +23321,8 @@
       "política",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23150,7 +23343,8 @@
       "politica",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Las privatizaciones y concesiones de la década de 1990",
     "title_search": "las privatizaciones y concesiones de la decada de 1990",
@@ -23200,7 +23394,8 @@
       "tráfico",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23219,7 +23414,8 @@
       "trafico",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Movimiento de cargas contenedorizadas",
     "title_search": "movimiento de cargas contenedorizadas",
@@ -23274,7 +23470,8 @@
       "tráfico",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23294,7 +23491,8 @@
       "trafico",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Movimiento de cargas no contenedorizadas",
     "title_search": "movimiento de cargas no contenedorizadas",
@@ -23355,7 +23553,8 @@
       "tráfico",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23381,7 +23580,8 @@
       "trafico",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Movimiento de cargas de combustibles y granos no contenedorizadas",
     "title_search": "movimiento de cargas de combustibles y granos no contenedorizadas",
@@ -23439,7 +23639,8 @@
       "tráfico",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23462,7 +23663,8 @@
       "trafico",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Movimiento de cargas de combustibles no contenedorizadas",
     "title_search": "movimiento de cargas de combustibles no contenedorizadas",
@@ -23520,7 +23722,8 @@
       "tráfico",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23543,7 +23746,8 @@
       "trafico",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Movimiento de cargas de granos no contenedorizadas",
     "title_search": "movimiento de cargas de granos no contenedorizadas",
@@ -23599,7 +23803,8 @@
       "tráfico",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23620,7 +23825,8 @@
       "trafico",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Movimiento de cargas",
     "title_search": "movimiento de cargas",
@@ -23679,7 +23885,9 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "transporte aereo",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23703,7 +23911,9 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "transporte aereo",
+      "geografia humana"
     ],
     "title": "Pasajeros aéreos por ciudad. Año 2019",
     "title_search": "pasajeros aereos por ciudad ano 2019",
@@ -23768,7 +23978,8 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23798,7 +24009,8 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Evolución de la red ferroviaria, valorización económica del territorio y sistema de asentamientos. Año 1895",
     "title_search": "evolucion de la red ferroviaria valorizacion economica del territorio y sistema de asentamientos ano 1895",
@@ -23860,7 +24072,8 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23891,7 +24104,8 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Evolución de la red ferroviaria, valorización económica del territorio y sistema de asentamientos. Año 1914",
     "title_search": "evolucion de la red ferroviaria valorizacion economica del territorio y sistema de asentamientos ano 1914",
@@ -23957,7 +24171,8 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -23988,7 +24203,8 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Evolución de la red ferroviaria, valorización económica del territorio y sistema de asentamientos. Año 1947",
     "title_search": "evolucion de la red ferroviaria valorizacion economica del territorio y sistema de asentamientos ano 1947",
@@ -24058,7 +24274,8 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24093,7 +24310,8 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Evolución de la red ferroviaria, valorización económica del territorio y sistema de asentamientos",
     "title_search": "evolucion de la red ferroviaria valorizacion economica del territorio y sistema de asentamientos",
@@ -24153,7 +24371,8 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24176,7 +24395,8 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Desarrollo de la red vial hacia 1970",
     "title_search": "desarrollo de la red vial hacia 1970",
@@ -24238,7 +24458,9 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "transporte aereo",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24261,7 +24483,9 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "transporte aereo",
+      "geografia humana"
     ],
     "title": "Redes aéreas de cabotaje",
     "title_search": "redes aereas de cabotaje",
@@ -24317,7 +24541,9 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "transporte aereo",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24338,7 +24564,9 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "transporte aereo",
+      "geografia humana"
     ],
     "title": "Rutas aéreas operadas por Aerolíneas Argentinas en 1950",
     "title_search": "rutas aereas operadas por aerolineas argentinas en 1950",
@@ -24393,7 +24621,8 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24413,7 +24642,8 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Servicios ferroviarios de larga distancia",
     "title_search": "servicios ferroviarios de larga distancia",
@@ -24468,7 +24698,8 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24486,7 +24717,8 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Servicios ferroviarios regionales e internacional",
     "title_search": "servicios ferroviarios regionales e internacional",
@@ -24542,7 +24774,9 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "transporte por carretera",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24561,7 +24795,9 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "transporte por carretera",
+      "geografia humana"
     ],
     "title": "Tránsito medio diario anual en rutas nacionales",
     "title_search": "transito medio diario anual en rutas nacionales",
@@ -24619,7 +24855,8 @@
       "modo de transporte",
       "política de transporte",
       "geografía histórica",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24642,7 +24879,8 @@
       "modo de transporte",
       "politica de transporte",
       "geografia historica",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "La circulación en el Imperio inca",
     "title_search": "la circulacion en el imperio inca",
@@ -24698,7 +24936,8 @@
       "modo de transporte",
       "política de transporte",
       "geografía histórica",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24721,7 +24960,8 @@
       "modo de transporte",
       "politica de transporte",
       "geografia historica",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "La circulación en el Imperio inca en el noroeste del actual territorio argentino",
     "title_search": "la circulacion en el imperio inca en el noroeste del actual territorio argentino",
@@ -24775,7 +25015,8 @@
       "modo de transporte",
       "política de transporte",
       "geografía histórica",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24794,7 +25035,8 @@
       "modo de transporte",
       "politica de transporte",
       "geografia historica",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "La circulación en el periodo colonial",
     "title_search": "la circulacion en el periodo colonial",
@@ -24847,7 +25089,8 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24867,7 +25110,8 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "geografia humana"
     ],
     "title": "Servicios ferroviarios de la Región Metropolitana de Buenos Aires",
     "title_search": "servicios ferroviarios de la region metropolitana de buenos aires",
@@ -24924,7 +25168,9 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "transporte aereo",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -24944,7 +25190,9 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "transporte aereo",
+      "geografia humana"
     ],
     "title": "Vuelos internacionales",
     "title_search": "vuelos internacionales",
@@ -24997,7 +25245,9 @@
       "economía del transporte",
       "modo de transporte",
       "política de transporte",
-      "geografía política"
+      "geografía política",
+      "transporte aereo",
+      "geografía humana"
     ],
     "keywords_search": [
       "argentina",
@@ -25017,7 +25267,9 @@
       "economia del transporte",
       "modo de transporte",
       "politica de transporte",
-      "geografia politica"
+      "geografia politica",
+      "transporte aereo",
+      "geografia humana"
     ],
     "title": "Vuelos regionales",
     "title_search": "vuelos regionales",
@@ -25072,7 +25324,16 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "humedad",
+      "meteorología",
+      "precipitación"
     ],
     "keywords_search": [
       "argentina",
@@ -25094,7 +25355,16 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "humedad",
+      "meteorologia",
+      "precipitacion"
     ],
     "title": "Frecuencia de días con nieve anual. Periodo 1991-2020",
     "title_search": "frecuencia de dias con nieve anual periodo 1991-2020",
@@ -25156,7 +25426,16 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "humedad",
+      "meteorología",
+      "precipitación"
     ],
     "keywords_search": [
       "argentina",
@@ -25177,7 +25456,16 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "humedad",
+      "meteorologia",
+      "precipitacion"
     ],
     "title": "Frecuencia de días con nieve anual. Periodo 1991-2020",
     "title_search": "frecuencia de dias con nieve anual periodo 1991-2020",
@@ -25238,7 +25526,15 @@
       "ola de calor",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología",
+      "olas de calor"
     ],
     "keywords_search": [
       "argentina",
@@ -25260,7 +25556,15 @@
       "ola de calor",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia",
+      "olas de calor"
     ],
     "title": "Ola de calor: umbral temperatura máxima. Periodo 1961-2010",
     "title_search": "ola de calor umbral temperatura maxima periodo 1961-2010",
@@ -25326,7 +25630,15 @@
       "ola de calor",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología",
+      "olas de calor"
     ],
     "keywords_search": [
       "argentina",
@@ -25349,7 +25661,15 @@
       "ola de calor",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia",
+      "olas de calor"
     ],
     "title": "Ola de calor: umbral temperatura mínima. Periodo 1961-2010",
     "title_search": "ola de calor umbral temperatura minima periodo 1961-2010",
@@ -25415,7 +25735,15 @@
       "ola de frío",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología",
+      "olas de frío"
     ],
     "keywords_search": [
       "argentina",
@@ -25438,7 +25766,15 @@
       "ola de frio",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia",
+      "olas de frio"
     ],
     "title": "Ola de frío: umbral temperatura máxima. Periodo 1961-2010",
     "title_search": "ola de frio umbral temperatura maxima periodo 1961-2010",
@@ -25504,7 +25840,15 @@
       "ola de frío",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología",
+      "olas de frío"
     ],
     "keywords_search": [
       "argentina",
@@ -25527,7 +25871,15 @@
       "ola de frio",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia",
+      "olas de frio"
     ],
     "title": "Ola de frío: umbral temperatura mínima. Periodo 1961-2010",
     "title_search": "ola de frio umbral temperatura minima periodo 1961-2010",
@@ -25592,7 +25944,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -25614,7 +25973,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "índice de precipitación estandarizado. Diciembre 2020",
     "title_search": "indice de precipitacion estandarizado diciembre 2020",
@@ -25671,7 +26037,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -25693,7 +26066,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "índice de precipitación estandarizado. Diciembre 2021",
     "title_search": "indice de precipitacion estandarizado diciembre 2021",
@@ -25750,7 +26130,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -25772,7 +26159,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "índice de precipitación estandarizado. Diciembre 2022",
     "title_search": "indice de precipitacion estandarizado diciembre 2022",
@@ -25829,7 +26223,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -25851,7 +26252,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "índice de precipitación estandarizado. Diciembre 2023",
     "title_search": "indice de precipitacion estandarizado diciembre 2023",
@@ -25907,7 +26315,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -25928,7 +26343,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "Frecuencia de días con tormenta anual. Periodo 2008-2017",
     "title_search": "frecuencia de dias con tormenta anual periodo 2008-2017",
@@ -25987,7 +26409,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -26009,7 +26438,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "Frecuencia de días con tormenta en invierno. Periodo 2008-2017",
     "title_search": "frecuencia de dias con tormenta en invierno periodo 2008-2017",
@@ -26068,7 +26504,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -26090,7 +26533,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "Frecuencia de días con tormenta en otoño. Periodo 2008-2017",
     "title_search": "frecuencia de dias con tormenta en otono periodo 2008-2017",
@@ -26149,7 +26599,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -26171,7 +26628,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "Frecuencia de días con tormenta en primavera. Periodo 2008-2017",
     "title_search": "frecuencia de dias con tormenta en primavera periodo 2008-2017",
@@ -26230,7 +26694,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -26252,7 +26723,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "Frecuencia de días con tormenta en verano. Periodo 2008-2017",
     "title_search": "frecuencia de dias con tormenta en verano periodo 2008-2017",
@@ -26309,7 +26787,16 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "humedad",
+      "meteorología",
+      "precipitación"
     ],
     "keywords_search": [
       "argentina",
@@ -26329,7 +26816,16 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "humedad",
+      "meteorologia",
+      "precipitacion"
     ],
     "title": "Eventos de granizo anual. Periodo 1960-2008",
     "title_search": "eventos de granizo anual periodo 1960-2008",
@@ -26395,7 +26891,16 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "humedad",
+      "meteorología",
+      "precipitación"
     ],
     "keywords_search": [
       "argentina",
@@ -26416,7 +26921,16 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "humedad",
+      "meteorologia",
+      "precipitacion"
     ],
     "title": "Eventos de granizo en invierno. Periodo 1960-2008",
     "title_search": "eventos de granizo en invierno periodo 1960-2008",
@@ -26482,7 +26996,16 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "humedad",
+      "meteorología",
+      "precipitación"
     ],
     "keywords_search": [
       "argentina",
@@ -26503,7 +27026,16 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "humedad",
+      "meteorologia",
+      "precipitacion"
     ],
     "title": "Eventos de granizo en otoño. Periodo 1960-2008",
     "title_search": "eventos de granizo en otono periodo 1960-2008",
@@ -26569,7 +27101,16 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "humedad",
+      "meteorología",
+      "precipitación"
     ],
     "keywords_search": [
       "argentina",
@@ -26590,7 +27131,16 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "humedad",
+      "meteorologia",
+      "precipitacion"
     ],
     "title": "Eventos de granizo en primavera. Periodo 1960-2008",
     "title_search": "eventos de granizo en primavera periodo 1960-2008",
@@ -26656,7 +27206,16 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "humedad",
+      "meteorología",
+      "precipitación"
     ],
     "keywords_search": [
       "argentina",
@@ -26677,7 +27236,16 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "humedad",
+      "meteorologia",
+      "precipitacion"
     ],
     "title": "Eventos de granizo en verano. Periodo 1960-2008",
     "title_search": "eventos de granizo en verano periodo 1960-2008",
@@ -26740,7 +27308,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -26758,7 +27333,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "Frecuencia de tornados. Periodo 1930-1987",
     "title_search": "frecuencia de tornados periodo 1930-1987",
@@ -26822,7 +27404,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -26841,7 +27430,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "Cantidad de muertes por rayo por provincia. Periodo 2005-2023",
     "title_search": "cantidad de muertes por rayo por provincia periodo 2005-2023",
@@ -26903,7 +27499,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -26926,7 +27529,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "Frecuencia de días con viento fuerte. Periodo 1991-2020",
     "title_search": "frecuencia de dias con viento fuerte periodo 1991-2020",
@@ -26990,7 +27600,14 @@
       "ciencias atmosféricas",
       "ciencias de la atmosfera",
       "ciencias físicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatología",
+      "meteorología"
     ],
     "keywords_search": [
       "argentina",
@@ -27013,7 +27630,14 @@
       "ciencias atmosfericas",
       "ciencias de la atmosfera",
       "ciencias fisicas",
-      "peligro"
+      "peligro",
+      "peligros",
+      "natural",
+      "amenazas",
+      "naturales",
+      "clima",
+      "climatologia",
+      "meteorologia"
     ],
     "title": "Frecuencia de días con viento fuerte. Periodo 1991-2020",
     "title_search": "frecuencia de dias con viento fuerte periodo 1991-2020",
