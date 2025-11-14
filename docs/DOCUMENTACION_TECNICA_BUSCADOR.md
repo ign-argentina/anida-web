@@ -106,17 +106,7 @@ const app = {
   debounceDelay: 300,                // Number: ms de espera (búsqueda)
   autocompleteTimeout: null,         // Number: ID del timer de autocompletado
   autocompleteDelay: 200,            // Number: ms de espera (autocomplete)
-  selectedSuggestionIndex: -1,       // Number: índice de sugerencia seleccionada
-  
-  performanceMetrics: {
-    indexingTime: 0,        // Number: ms que tomó construir el índice
-    lastSearchTime: 0,      // Number: ms de la última búsqueda
-    totalSearches: 0,       // Number: cantidad total de búsquedas
-    averageSearchTime: 0,   // Number: promedio de tiempo de búsqueda
-    memoryBefore: 0,        // Number: memoria en bytes antes de indexar (Chrome)
-    memoryAfter: 0,         // Number: memoria en bytes después de indexar (Chrome)
-    memoryReduction: 0      // Number: porcentaje de reducción de memoria
-  }
+  selectedSuggestionIndex: -1        // Number: índice de sugerencia seleccionada
 };
 ```
 
@@ -331,13 +321,6 @@ async function fetchMapsData() {
 
 ```javascript
 function buildSearchIndex() {
-  const startTime = performance.now();
-  
-  // Medir memoria antes de indexar (solo en Chrome)
-  if (performance.memory) {
-    app.performanceMetrics.memoryBefore = performance.memory.usedJSHeapSize;
-  }
-  
   // Reiniciar índice
   app.searchIndex = {};
   
@@ -386,25 +369,12 @@ function buildSearchIndex() {
   
   // Comprimir el índice convirtiendo a arrays tipados
   compressIndex(tempIndex);
-  
-  const endTime = performance.now();
-  app.performanceMetrics.indexingTime = endTime - startTime;
-  
-  // Medir memoria después de indexar y comprimir
-  if (performance.memory) {
-    app.performanceMetrics.memoryAfter = performance.memory.usedJSHeapSize;
-    app.performanceMetrics.memoryReduction = 
-      ((app.performanceMetrics.memoryBefore - app.performanceMetrics.memoryAfter) / 
-       app.performanceMetrics.memoryBefore * 100).toFixed(2);
-  }
 }
 ```
 
 **Características**:
 
 - **Complejidad**: O(n * m) donde n = mapas, m = términos promedio por mapa
-- **Tiempo típico**: ~100-150ms para 300 mapas (sin cambios vs versión anterior)
-- **Memoria**: ~30-40% menos que versión anterior (~30KB vs ~160KB en 1000 términos)
 - **Términos indexados**: Solo términos de 2+ caracteres
 - **Estructura**: Arrays tipados + flags de bits (más eficiente)
 - **Optimización**: Usa `compressIndex()` post-construcción
@@ -2045,39 +2015,6 @@ function renderMaps(reset = false) {
 - Renderiza solo 20 mapas a la vez
 - Botón "Cargar más" para mostrar siguiente lote
 - Mejora significativa en rendimiento inicial
-
-### Métricas de Rendimiento REALES (Actualizadas Oct 2025)
-
-```javascript
-// app.performanceMetrics - Línea 32
-performanceMetrics: {
-  indexingTime: 0,        // Tiempo de construcción del índice
-  lastSearchTime: 0,      // Última búsqueda
-  totalSearches: 0,       // Contador de búsquedas
-  averageSearchTime: 0,   // Promedio de búsquedas
-  memoryBefore: 0,        // Memoria antes de indexar (Chrome)
-  memoryAfter: 0,         // Memoria después de indexar (Chrome)
-  memoryReduction: 0      // Porcentaje de reducción de memoria
-}
-
-// En filterMaps() - Línea 1233
-console.time('🔍 Tiempo de búsqueda');
-const searchStartTime = performance.now();
-
-// ... lógica de búsqueda ...
-
-const searchEndTime = performance.now();
-const searchTime = searchEndTime - searchStartTime;
-app.performanceMetrics.lastSearchTime = searchTime;
-app.performanceMetrics.totalSearches++;
-app.performanceMetrics.averageSearchTime = 
-  ((app.performanceMetrics.averageSearchTime * (app.performanceMetrics.totalSearches - 1)) + searchTime) / app.performanceMetrics.totalSearches;
-
-console.timeEnd('🔍 Tiempo de búsqueda');
-console.log(`⚡ Búsqueda completada en ${searchTime.toFixed(2)}ms (promedio: ${app.performanceMetrics.averageSearchTime.toFixed(2)}ms) | Resultados: ${app.filteredMaps.length}`);
-```
-
-**Métricas visibles en consola**:
 
 ```bash
 ⚡ Indexación de mapas: 124.56ms
