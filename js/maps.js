@@ -1580,10 +1580,10 @@ function isWholeWordMatch(term, field) {
  * ACTUALIZADO: Busca palabras completas, no fragmentos dentro de otras palabras
  * @param {string} term - Término de búsqueda normalizado
  * @param {string} field - Campo de búsqueda normalizado
- * @param {number} threshold - Umbral de distancia (por defecto 2)
+ * @param {number} threshold - Umbral de distancia (por defecto 1)
  * @returns {Object} - {match: boolean, score: number, type: 'exact'|'fuzzy', percentage: number}
  */
-function fuzzyMatch(term, field, threshold = 2) {
+function fuzzyMatch(term, field, threshold = 1) {
   // 1. Verificar coincidencia exacta como PALABRA COMPLETA (no fragmento)
   if (isWholeWordMatch(term, field)) {
     return { match: true, score: 0, type: 'exact', percentage: 100 };
