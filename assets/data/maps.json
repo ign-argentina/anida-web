@@ -2416,6 +2416,7 @@
       "sierra",
       "curva",
       "localidad",
+      "localidades",
       "hidrogeología",
       "hidrología",
       "ciencias de la tierra",
@@ -2432,6 +2433,7 @@
       "sierra",
       "curva",
       "localidad",
+      "localidades",
       "hidrogeologia",
       "hidrologia",
       "ciencias de la tierra",
@@ -2557,9 +2559,7 @@
       "hidrología",
       "ciencias de la tierra",
       "física",
-      "geografía física",
-      "provincias geológicas",
-      "provincia geologica"
+      "geografía física"
     ],
     "keywords_search": [
       "argentina",
@@ -2576,9 +2576,7 @@
       "hidrologia",
       "ciencias de la tierra",
       "fisica",
-      "geografia fisica",
-      "provincias geológicas",
-      "provincia geologica"
+      "geografia fisica"
     ],
     "title": "Zonas morfoestructurales de la Llanura oriental",
     "title_search": "zonas morfoestructurales de la llanura oriental",
@@ -3399,7 +3397,13 @@
       "geografía regional",
       "recursos naturales",
       "regiones hídricas",
-      "superficiales"
+      "superficiales",
+      "recurso hídrico",
+      "recursos hídricos",
+      "recurso hidrográfico",
+      "recursos hidrográficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "keywords_search": [
       "argentina",
@@ -3437,7 +3441,13 @@
       "geografia regional",
       "recursos naturales",
       "regiones hidricas",
-      "superficiales"
+      "superficiales",
+      "recurso hidrico",
+      "recursos hidricos",
+      "recurso hidrografico",
+      "recursos hidrograficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "title": "Cuencas y regiones hídricas superficiales",
     "title_search": "cuencas y regiones hidricas superficiales",
@@ -3479,6 +3489,8 @@
       "Parte continental americana",
       "cuenca",
       "cuencas",
+      "hidrica",
+      "hidricas",
       "hidrográfica",
       "hidrográficas",
       "cuencas exorreicas",
@@ -3500,13 +3512,21 @@
       "geografía física",
       "geografía regional",
       "recurso natural",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hídrico",
+      "recursos hídricos",
+      "recurso hidrográfico",
+      "recursos hidrográficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
       "cuenca",
       "cuencas",
+      "hidrica",
+      "hidricas",
       "hidrografica",
       "hidrograficas",
       "cuencas exorreicas",
@@ -3528,7 +3548,13 @@
       "geografia fisica",
       "geografia regional",
       "recurso natural",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hidrico",
+      "recursos hidricos",
+      "recurso hidrografico",
+      "recursos hidrograficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "title": "Cuencas exorreicas y cerradas",
     "title_search": "cuencas exorreicas y cerradas",
@@ -3581,7 +3607,13 @@
       "recursos de suelos",
       "geografía física",
       "recurso natural",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hídrico",
+      "recursos hídricos",
+      "recurso hidrográfico",
+      "recursos hidrográficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "keywords_search": [
       "argentina",
@@ -3599,7 +3631,13 @@
       "recursos de suelos",
       "geografia fisica",
       "recurso natural",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hidrico",
+      "recursos hidricos",
+      "recurso hidrografico",
+      "recursos hidrograficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "title": "Espejos de agua",
     "title_search": "espejos de agua",
@@ -3655,7 +3693,13 @@
       "recurso natural",
       "recursos de suelos",
       "geografía física",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hídrico",
+      "recursos hídricos",
+      "recurso hidrográfico",
+      "recursos hidrográficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "keywords_search": [
       "argentina",
@@ -3676,7 +3720,13 @@
       "recurso natural",
       "recursos de suelos",
       "geografia fisica",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hidrico",
+      "recursos hidricos",
+      "recurso hidrografico",
+      "recursos hidrograficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "title": "Lagos principales",
     "title_search": "lagos principales",
@@ -3735,7 +3785,13 @@
       "ciencias de la tierra",
       "recursos de suelos",
       "geografía física",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hídrico",
+      "recursos hídricos",
+      "recurso hidrográfico",
+      "recursos hidrográficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "keywords_search": [
       "argentina",
@@ -3759,7 +3815,13 @@
       "ciencias de la tierra",
       "recursos de suelos",
       "geografia fisica",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hidrico",
+      "recursos hidricos",
+      "recurso hidrografico",
+      "recursos hidrograficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "title": "Cursos de agua",
     "title_search": "cursos de agua",
@@ -3800,14 +3862,21 @@
       "Argentina",
       "cuenca del plata",
       "cuenca",
+      "cuencas",
+      "hídrica",
+      "hídricas",
+      "hidrográfica",
+      "hidrográficas",
+      "hidrografía",
+      "hidrología",
+      "cuenca de drenaje",
+      "cuenca fluvial",
       "río",
       "ríos",
       "subcuenca",
       "afluente",
       "agua superficial",
       "agua",
-      "hidrología",
-      "hidrografía",
       "transfronteriza",
       "agua dulce",
       "agua del suelo",
@@ -3815,20 +3884,33 @@
       "recursos de suelos",
       "geografía física",
       "recurso natural",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hídrico",
+      "recursos hídricos",
+      "recurso hidrográfico",
+      "recursos hidrográficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "keywords_search": [
       "argentina",
       "cuenca del plata",
       "cuenca",
+      "cuencas",
+      "hidrica",
+      "hidricas",
+      "hidrografica",
+      "hidrograficas",
+      "hidrografia",
+      "hidrologia",
+      "cuenca de drenaje",
+      "cuenca fluvial",
       "rio",
       "rios",
       "subcuenca",
       "afluente",
       "agua superficial",
       "agua",
-      "hidrologia",
-      "hidrografia",
       "transfronteriza",
       "agua dulce",
       "agua del suelo",
@@ -3836,7 +3918,13 @@
       "recursos de suelos",
       "geografia fisica",
       "recurso natural",
-      "recursos naturales"
+      "recursos naturales",
+      "recurso hidrico",
+      "recursos hidricos",
+      "recurso hidrografico",
+      "recursos hidrograficos",
+      "recurso fluvial",
+      "recursos fluviales"
     ],
     "title": "Cuenca del Plata",
     "title_search": "cuenca del plata",
@@ -4126,6 +4214,7 @@
       "clima",
       "Argentina",
       "precipitación",
+      "precipitaciones",
       "lluvia",
       "Parte continental americana",
       "anual",
@@ -4148,6 +4237,7 @@
       "clima",
       "argentina",
       "precipitacion",
+      "precipitaciones",
       "lluvia",
       "parte continental americana",
       "anual",
@@ -4211,6 +4301,7 @@
       "clima",
       "Argentina",
       "precipitación",
+      "precipitaciones",
       "lluvia",
       "Parte continental americana",
       "invierno",
@@ -4233,6 +4324,7 @@
       "clima",
       "argentina",
       "precipitacion",
+      "precipitaciones",
       "lluvia",
       "parte continental americana",
       "invierno",
@@ -4296,6 +4388,7 @@
       "clima",
       "Argentina",
       "precipitación",
+      "precipitaciones",
       "lluvia",
       "Parte continental americana",
       "otoño",
@@ -4318,6 +4411,7 @@
       "clima",
       "argentina",
       "precipitacion",
+      "precipitaciones",
       "lluvia",
       "parte continental americana",
       "otono",
@@ -4381,6 +4475,7 @@
       "clima",
       "Argentina",
       "precipitación",
+      "precipitaciones",
       "lluvia",
       "Parte continental americana",
       "primavera",
@@ -4403,6 +4498,7 @@
       "clima",
       "argentina",
       "precipitacion",
+      "precipitaciones",
       "lluvia",
       "parte continental americana",
       "primavera",
@@ -4466,6 +4562,7 @@
       "clima",
       "Argentina",
       "precipitación",
+      "precipitaciones",
       "lluvia",
       "Parte continental americana",
       "verano",
@@ -4488,6 +4585,7 @@
       "clima",
       "argentina",
       "precipitacion",
+      "precipitaciones",
       "lluvia",
       "parte continental americana",
       "verano",
@@ -6368,7 +6466,7 @@
       "recurso natural",
       "ciencias de la tierra",
       "edafología de suelos",
-      "e suelos",
+      "de suelos",
       "recursos de suelos",
       "geografía física",
       "recursos naturales"
@@ -6387,7 +6485,7 @@
       "recurso natural",
       "ciencias de la tierra",
       "edafologia de suelos",
-      "e suelos",
+      "de suelos",
       "recursos de suelos",
       "geografia fisica",
       "recursos naturales"
@@ -6826,7 +6924,9 @@
       "geografía de la población",
       "geografía humana",
       "distribución por sexo",
-      "distribución de la población"
+      "distribución de la población",
+      "población",
+      "masculina"
     ],
     "keywords_search": [
       "argentina",
@@ -6848,7 +6948,9 @@
       "geografia de la poblacion",
       "geografia humana",
       "distribucion por sexo",
-      "distribucion de la poblacion"
+      "distribucion de la poblacion",
+      "poblacion",
+      "masculina"
     ],
     "title": "Índice de masculinidad por departamento. Año 2010",
     "title_search": "indice de masculinidad por departamento ano 2010",
@@ -7098,7 +7200,8 @@
       "geografía de la población",
       "geografía humana",
       "distribución por edad",
-      "distribución de la población"
+      "distribución de la población",
+      "Población envejecida"
     ],
     "keywords_search": [
       "argentina",
@@ -7127,7 +7230,8 @@
       "geografia de la poblacion",
       "geografia humana",
       "distribucion por edad",
-      "distribucion de la poblacion"
+      "distribucion de la poblacion",
+      "poblacion envejecida"
     ],
     "title": "Índice de sobreenvejecimiento por departamento. Año 2010",
     "title_search": "indice de sobreenvejecimiento por departamento ano 2010",
@@ -7191,7 +7295,8 @@
       "geografía de la población",
       "geografía humana",
       "distribución por edad",
-      "distribución de la población"
+      "distribución de la población",
+      "Población envejecida"
     ],
     "keywords_search": [
       "argentina",
@@ -7216,7 +7321,8 @@
       "geografia de la poblacion",
       "geografia humana",
       "distribucion por edad",
-      "distribucion de la poblacion"
+      "distribucion de la poblacion",
+      "poblacion envejecida"
     ],
     "title": "Índice de envejecimiento por departamento. Año 2010",
     "title_search": "indice de envejecimiento por departamento ano 2010",
@@ -7275,7 +7381,9 @@
       "geografía de la población",
       "geografía humana",
       "distribución por sexo",
-      "distribución de la población"
+      "distribución de la población",
+      "población",
+      "masculina"
     ],
     "keywords_search": [
       "argentina",
@@ -7297,7 +7405,9 @@
       "geografia de la poblacion",
       "geografia humana",
       "distribucion por sexo",
-      "distribucion de la poblacion"
+      "distribucion de la poblacion",
+      "poblacion",
+      "masculina"
     ],
     "title": "Índice de masculinidad por departamento. Año 2010",
     "title_search": "indice de masculinidad por departamento ano 2010",
@@ -7450,7 +7560,8 @@
       "geografía de la población",
       "geografía humana",
       "distribución por edad",
-      "distribución de la población"
+      "distribución de la población",
+      "Población envejecida"
     ],
     "keywords_search": [
       "argentina",
@@ -7477,7 +7588,8 @@
       "geografia de la poblacion",
       "geografia humana",
       "distribucion por edad",
-      "distribucion de la poblacion"
+      "distribucion de la poblacion",
+      "poblacion envejecida"
     ],
     "title": "Porcentaje de población de 65 años y más por departamento. Año 2010",
     "title_search": "porcentaje de poblacion de 65 anos y mas por departamento ano 2010",
@@ -7543,7 +7655,8 @@
       "geografía de la población",
       "geografía humana",
       "distribución por edad",
-      "distribución de la población"
+      "distribución de la población",
+      "Población envejecida"
     ],
     "keywords_search": [
       "argentina",
@@ -7572,7 +7685,8 @@
       "geografia de la poblacion",
       "geografia humana",
       "distribucion por edad",
-      "distribucion de la poblacion"
+      "distribucion de la poblacion",
+      "poblacion envejecida"
     ],
     "title": "Índice de sobreenvejecimiento por departamento. Año 2010",
     "title_search": "indice de sobreenvejecimiento por departamento ano 2010",
@@ -7638,7 +7752,8 @@
       "geografía de la población",
       "geografía humana",
       "distribución por edad",
-      "distribución de la población"
+      "distribución de la población",
+      "Población envejecida"
     ],
     "keywords_search": [
       "argentina",
@@ -7667,7 +7782,8 @@
       "geografia de la poblacion",
       "geografia humana",
       "distribucion por edad",
-      "distribucion de la poblacion"
+      "distribucion de la poblacion",
+      "poblacion envejecida"
     ],
     "title": "Índice de envejecimiento por provincia. Año 2010",
     "title_search": "indice de envejecimiento por provincia ano 2010",
@@ -7728,7 +7844,9 @@
       "geografía de la población",
       "geografía humana",
       "distribución por sexo",
-      "distribución de la población"
+      "distribución de la población",
+      "población",
+      "masculina"
     ],
     "keywords_search": [
       "argentina",
@@ -7750,7 +7868,9 @@
       "geografia de la poblacion",
       "geografia humana",
       "distribucion por sexo",
-      "distribucion de la poblacion"
+      "distribucion de la poblacion",
+      "poblacion",
+      "masculina"
     ],
     "title": "Índice de masculinidad por provincia. Año 2010",
     "title_search": "indice de masculinidad por provincia ano 2010",
@@ -7907,7 +8027,8 @@
       "geografía de la población",
       "geografía humana",
       "distribución por edad",
-      "distribución de la población"
+      "distribución de la población",
+      "Población envejecida"
     ],
     "keywords_search": [
       "argentina",
@@ -7934,7 +8055,8 @@
       "geografia de la poblacion",
       "geografia humana",
       "distribucion por edad",
-      "distribucion de la poblacion"
+      "distribucion de la poblacion",
+      "poblacion envejecida"
     ],
     "title": "Porcentaje de población de 65 años y más por provincia. Año 2010",
     "title_search": "porcentaje de poblacion de 65 anos y mas por provincia ano 2010",
@@ -8086,7 +8208,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "distribución por edad"
+      "distribución por edad",
+      "Población envejecida"
     ],
     "keywords_search": [
       "argentina",
@@ -8114,7 +8237,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "distribucion por edad"
+      "distribucion por edad",
+      "poblacion envejecida"
     ],
     "title": "Índice de sobreenvejecimiento por provincia. Año 2010",
     "title_search": "indice de sobreenvejecimiento por provincia ano 2010",
@@ -8182,7 +8306,8 @@
       "crecimiento",
       "demográfico",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "Población envejecida"
     ],
     "keywords_search": [
       "argentina",
@@ -8211,7 +8336,8 @@
       "crecimiento",
       "demografico",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "poblacion envejecida"
     ],
     "title": "Variación intercensal de la población 2001-2010, por departamento-valores relativos",
     "title_search": "variacion intercensal de la poblacion 2001-2010 por departamento-valores relativos",
@@ -9448,6 +9574,7 @@
       "urbanos",
       "ciudadanos",
       "localidad",
+      "localidades",
       "poblada",
       "poblado",
       "tamaño",
@@ -9467,7 +9594,8 @@
       "distribución de la población",
       "geografía de la población",
       "geografía humana",
-      "zona urbana"
+      "zona urbana",
+      "población en localidades"
     ],
     "keywords_search": [
       "argentina",
@@ -9483,6 +9611,7 @@
       "urbanos",
       "ciudadanos",
       "localidad",
+      "localidades",
       "poblada",
       "poblado",
       "tamano",
@@ -9502,7 +9631,8 @@
       "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana",
-      "zona urbana"
+      "zona urbana",
+      "poblacion en localidades"
     ],
     "title": "Índice de primacia urbana. Año 2010",
     "title_search": "indice de primacia urbana ano 2010",
@@ -9566,7 +9696,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "población en localidades"
     ],
     "keywords_search": [
       "argentina",
@@ -9591,7 +9722,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "poblacion en localidades"
     ],
     "title": "Localidades censales. Año 2010",
     "title_search": "localidades censales ano 2010",
@@ -9637,6 +9769,7 @@
       "Parte continental americana",
       "Provincia",
       "localidades",
+      "localidad",
       "censo",
       "2010",
       "distribución",
@@ -9654,13 +9787,15 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "población en localidades"
     ],
     "keywords_search": [
       "argentina",
       "parte continental americana",
       "provincia",
       "localidades",
+      "localidad",
       "censo",
       "2010",
       "distribucion",
@@ -9678,7 +9813,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "poblacion en localidades"
     ],
     "title": "Localidades según cantidad de habitantes. Año 2010",
     "title_search": "localidades segun cantidad de habitantes ano 2010",
@@ -9731,6 +9867,7 @@
       "gente",
       "habitantes",
       "localidades",
+      "localidad",
       "pobladas",
       "distribución",
       "asentamientos",
@@ -9742,7 +9879,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "población en localidades"
     ],
     "keywords_search": [
       "argentina",
@@ -9756,6 +9894,7 @@
       "gente",
       "habitantes",
       "localidades",
+      "localidad",
       "pobladas",
       "distribucion",
       "asentamientos",
@@ -9767,7 +9906,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "poblacion en localidades"
     ],
     "title": "Porcentaje de población en 4 localidades más pobladas. Año 2010",
     "title_search": "porcentaje de poblacion en 4 localidades mas pobladas ano 2010",
@@ -9913,6 +10053,7 @@
       "rural",
       "agrupada",
       "localidades",
+      "localidad",
       "censo",
       "2010",
       "habitante",
@@ -9931,7 +10072,8 @@
       "ciencias sociales y humanas",
       "distribución de la población",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "población en localidades"
     ],
     "keywords_search": [
       "argentina",
@@ -9941,6 +10083,7 @@
       "rural",
       "agrupada",
       "localidades",
+      "localidad",
       "censo",
       "2010",
       "habitante",
@@ -9959,7 +10102,8 @@
       "ciencias sociales y humanas",
       "distribucion de la poblacion",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "poblacion en localidades"
     ],
     "title": "Población rural agrupada, en localidades. Año 2010",
     "title_search": "poblacion rural agrupada en localidades ano 2010",
@@ -10018,6 +10162,8 @@
       "aglomerados",
       "aglomeración",
       "aglomeraciones",
+      "localidad",
+      "localidades",
       "distribución",
       "demografía",
       "asentamiento",
@@ -10029,7 +10175,8 @@
       "distribución de la población",
       "geografía de la población",
       "geografía humana",
-      "zona urbana"
+      "zona urbana",
+      "población en localidades"
     ],
     "keywords_search": [
       "argentina",
@@ -10049,6 +10196,8 @@
       "aglomerados",
       "aglomeracion",
       "aglomeraciones",
+      "localidad",
+      "localidades",
       "distribucion",
       "demografia",
       "asentamiento",
@@ -10060,7 +10209,8 @@
       "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana",
-      "zona urbana"
+      "zona urbana",
+      "poblacion en localidades"
     ],
     "title": "Población urbana, por aglomerado. Año 2010",
     "title_search": "poblacion urbana por aglomerado ano 2010",
@@ -10115,6 +10265,7 @@
       "urbanos",
       "ciudadanos",
       "localidades",
+      "localidad",
       "tamaño",
       "residencia",
       "distribución",
@@ -10128,7 +10279,8 @@
       "distribución de la población",
       "geografía de la población",
       "geografía humana",
-      "zona urbana"
+      "zona urbana",
+      "población en localidades"
     ],
     "keywords_search": [
       "argentina",
@@ -10144,6 +10296,7 @@
       "urbanos",
       "ciudadanos",
       "localidades",
+      "localidad",
       "tamano",
       "residencia",
       "distribucion",
@@ -10157,7 +10310,8 @@
       "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana",
-      "zona urbana"
+      "zona urbana",
+      "poblacion en localidades"
     ],
     "title": "Población urbana por tamaño de localidad, según provincia de residencia. Año 2010",
     "title_search": "poblacion urbana por tamano de localidad segun provincia de residencia ano 2010",
@@ -10211,6 +10365,7 @@
       "gente",
       "porcentaje",
       "localidades",
+      "localidad",
       "habitantes",
       "centros",
       "urbanos",
@@ -10224,7 +10379,8 @@
       "distribución de la población",
       "geografía de la población",
       "geografía humana",
-      "zona urbana"
+      "zona urbana",
+      "población en localidades"
     ],
     "keywords_search": [
       "argentina",
@@ -10239,6 +10395,7 @@
       "gente",
       "porcentaje",
       "localidades",
+      "localidad",
       "habitantes",
       "centros",
       "urbanos",
@@ -10252,7 +10409,8 @@
       "distribucion de la poblacion",
       "geografia de la poblacion",
       "geografia humana",
-      "zona urbana"
+      "zona urbana",
+      "poblacion en localidades"
     ],
     "title": "Porcentaje de población en localidades de 100.000 y más habitantes. Año 2010",
     "title_search": "porcentaje de poblacion en localidades de 100000 y mas habitantes ano 2010",
@@ -12201,7 +12359,8 @@
       "ciencias ambientales",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "salud"
     ],
     "keywords_search": [
       "argentina",
@@ -12233,7 +12392,8 @@
       "ciencias ambientales",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "salud"
     ],
     "title": "Índice de basurales a cielo abierto por departamento. Año 2010",
     "title_search": "indice de basurales a cielo abierto por departamento ano 2010",
@@ -12480,7 +12640,8 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "zona urbana"
+      "zona urbana",
+      "salud"
     ],
     "keywords_search": [
       "argentina",
@@ -12516,7 +12677,8 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "zona urbana"
+      "zona urbana",
+      "salud"
     ],
     "title": "Contaminación, ruido y congestionamiento por departamento. Año 2010",
     "title_search": "contaminacion ruido y congestionamiento por departamento ano 2010",
@@ -13399,7 +13561,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "Educación"
     ],
     "keywords_search": [
       "argentina",
@@ -13429,7 +13592,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "educacion"
     ],
     "title": "Población con instrucción menor que primaria por departamento. Año 2001",
     "title_search": "poblacion con instruccion menor que primaria por departamento ano 2001",
@@ -13498,7 +13662,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "Educación"
     ],
     "keywords_search": [
       "argentina",
@@ -13528,7 +13693,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "educacion"
     ],
     "title": "Población con instrucción menor que primaria por departamento. Año 2010",
     "title_search": "poblacion con instruccion menor que primaria por departamento ano 2010",
@@ -13596,7 +13762,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "Educación"
     ],
     "keywords_search": [
       "argentina",
@@ -13625,7 +13792,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "educacion"
     ],
     "title": "Población con nivel de instrucción universitario por departamento. Año 2001",
     "title_search": "poblacion con nivel de instruccion universitario por departamento ano 2001",
@@ -13694,7 +13862,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "Educación"
     ],
     "keywords_search": [
       "argentina",
@@ -13724,7 +13893,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "educacion"
     ],
     "title": "Población con nivel de instrucción universitario por departamento. Año 2010",
     "title_search": "poblacion con nivel de instruccion universitario por departamento ano 2010",
@@ -13778,6 +13948,7 @@
       "personas",
       "residentes",
       "habitantes",
+      "hacinada",
       "hacinados",
       "porcentaje",
       "unidades",
@@ -13796,7 +13967,9 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "vivienda"
+      "vivienda",
+      "hacinadas",
+      "hacinamiento"
     ],
     "keywords_search": [
       "argentina",
@@ -13809,6 +13982,7 @@
       "personas",
       "residentes",
       "habitantes",
+      "hacinada",
       "hacinados",
       "porcentaje",
       "unidades",
@@ -13827,7 +14001,9 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "vivienda"
+      "vivienda",
+      "hacinadas",
+      "hacinamiento"
     ],
     "title": "Población en hogares hacinados por departamento. Año 2001",
     "title_search": "poblacion en hogares hacinados por departamento ano 2001",
@@ -13877,8 +14053,10 @@
       "población",
       "residentes",
       "habitantes",
+      "personas",
       "hogares",
       "hacinados",
+      "hacinada",
       "porcentaje",
       "unidades",
       "deficientes",
@@ -13896,7 +14074,9 @@
       "ciencias sociales y humanas",
       "geografía de la población",
       "geografía humana",
-      "vivienda"
+      "vivienda",
+      "hacinadas",
+      "hacinamiento"
     ],
     "keywords_search": [
       "argentina",
@@ -13907,8 +14087,10 @@
       "poblacion",
       "residentes",
       "habitantes",
+      "personas",
       "hogares",
       "hacinados",
+      "hacinada",
       "porcentaje",
       "unidades",
       "deficientes",
@@ -13926,7 +14108,9 @@
       "ciencias sociales y humanas",
       "geografia de la poblacion",
       "geografia humana",
-      "vivienda"
+      "vivienda",
+      "hacinadas",
+      "hacinamiento"
     ],
     "title": "Población en hogares hacinados por departamento. Año 2010",
     "title_search": "poblacion en hogares hacinados por departamento ano 2010",
@@ -14183,7 +14367,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "salud"
     ],
     "keywords_search": [
       "argentina",
@@ -14211,7 +14396,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "salud"
     ],
     "title": "Población en hogares sin retrete por departamento. Año 2001",
     "title_search": "poblacion en hogares sin retrete por departamento ano 2001",
@@ -14278,7 +14464,8 @@
       "condición",
       "ciencias sociales y humanas",
       "geografía de la población",
-      "geografía humana"
+      "geografía humana",
+      "salud"
     ],
     "keywords_search": [
       "argentina",
@@ -14306,7 +14493,8 @@
       "condicion",
       "ciencias sociales y humanas",
       "geografia de la poblacion",
-      "geografia humana"
+      "geografia humana",
+      "salud"
     ],
     "title": "Población en hogares sin retrete por departamento. Año 2010",
     "title_search": "poblacion en hogares sin retrete por departamento ano 2010",
@@ -16543,7 +16731,8 @@
       "geografía económica",
       "aprovechamiento de recursos",
       "zona rural",
-      "geografía humana"
+      "geografía humana",
+      "población en localidades"
     ],
     "keywords_search": [
       "argentina",
@@ -16571,7 +16760,8 @@
       "geografia economica",
       "aprovechamiento de recursos",
       "zona rural",
-      "geografia humana"
+      "geografia humana",
+      "poblacion en localidades"
     ],
     "title": "Tasa de crecimiento anual de la población en localidades rurales 1991-2010",
     "title_search": "tasa de crecimiento anual de la poblacion en localidades rurales 1991-2010",
@@ -16739,6 +16929,7 @@
       "tierra",
       "uso de la tierra",
       "cereal",
+      "cereales",
       "cultivos",
       "extensivos",
       "económica",
@@ -16771,6 +16962,7 @@
       "tierra",
       "uso de la tierra",
       "cereal",
+      "cereales",
       "cultivos",
       "extensivos",
       "economica",
@@ -16834,6 +17026,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -16865,6 +17058,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -16934,6 +17128,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -16967,6 +17162,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17036,6 +17232,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17070,6 +17267,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17138,6 +17336,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17171,6 +17370,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17238,6 +17438,7 @@
       "2018",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17269,6 +17470,7 @@
       "2018",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17338,6 +17540,7 @@
       "2018",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17370,6 +17573,7 @@
       "2018",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17441,6 +17645,7 @@
       "tierra",
       "uso de la tierra",
       "oleaginosa",
+      "oleaginosas",
       "cultivos",
       "extensivos",
       "económica",
@@ -17474,6 +17679,7 @@
       "tierra",
       "uso de la tierra",
       "oleaginosa",
+      "oleaginosas",
       "cultivos",
       "extensivos",
       "economica",
@@ -17639,6 +17845,7 @@
       "tierra",
       "uso de la tierra",
       "leguminosa",
+      "leguminosas",
       "cultivos",
       "regionales",
       "económica",
@@ -17672,6 +17879,7 @@
       "tierra",
       "uso de la tierra",
       "leguminosa",
+      "leguminosas",
       "cultivos",
       "regionales",
       "economica",
@@ -17736,6 +17944,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17768,6 +17977,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -17914,6 +18124,7 @@
       "2018",
       "producto",
       "leguminosa",
+      "leguminosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -17944,6 +18155,7 @@
       "2018",
       "producto",
       "leguminosa",
+      "leguminosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -18011,7 +18223,9 @@
       "2018",
       "producto",
       "leguminosa",
+      "leguminosas",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -18043,7 +18257,9 @@
       "2018",
       "producto",
       "leguminosa",
+      "leguminosas",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -18110,6 +18326,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -18142,6 +18359,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -18209,6 +18427,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -18240,6 +18459,7 @@
       "2018",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -18507,6 +18727,7 @@
       "tierra",
       "uso de la tierra",
       "cereal",
+      "cereales",
       "cultivos",
       "extensivos",
       "económica",
@@ -18537,6 +18758,7 @@
       "tierra",
       "uso de la tierra",
       "cereal",
+      "cereales",
       "cultivos",
       "extensivos",
       "economica",
@@ -18599,6 +18821,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -18629,6 +18852,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -18696,6 +18920,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -18727,6 +18952,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -18794,6 +19020,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -18826,6 +19053,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -18884,15 +19112,16 @@
       "cultivo",
       "cosechado",
       "hectarea",
-      "cctividad",
+      "actividad",
       "regional",
-      "cgrícola",
+      "agrícola",
       "campaña",
       "2017",
       "2018",
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -18916,15 +19145,16 @@
       "cultivo",
       "cosechado",
       "hectarea",
-      "cctividad",
+      "actividad",
       "regional",
-      "cgricola",
+      "agricola",
       "campana",
       "2017",
       "2018",
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -18991,6 +19221,7 @@
       "producción",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19021,6 +19252,7 @@
       "produccion",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19088,6 +19320,7 @@
       "producción",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19118,6 +19351,7 @@
       "produccion",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19187,6 +19421,7 @@
       "tierra",
       "uso de la tierra",
       "oleaginosa",
+      "oleaginosas",
       "cultivos",
       "extensivos",
       "económica",
@@ -19218,6 +19453,7 @@
       "tierra",
       "uso de la tierra",
       "oleaginosa",
+      "oleaginosas",
       "cultivos",
       "extensivos",
       "economica",
@@ -19280,7 +19516,9 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19312,7 +19550,9 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19383,6 +19623,7 @@
       "tierra",
       "uso de la tierra",
       "leguminosa",
+      "leguminosas",
       "cultivos",
       "regionales",
       "económica",
@@ -19414,6 +19655,7 @@
       "tierra",
       "uso de la tierra",
       "leguminosa",
+      "leguminosas",
       "cultivos",
       "regionales",
       "economica",
@@ -19477,6 +19719,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19508,6 +19751,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19574,6 +19818,7 @@
       "producción",
       "producto",
       "leguminosa",
+      "leguminosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19605,6 +19850,7 @@
       "produccion",
       "producto",
       "leguminosa",
+      "leguminosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19672,7 +19918,9 @@
       "producción",
       "producto",
       "leguminosa",
+      "leguminosas",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19703,7 +19951,9 @@
       "produccion",
       "producto",
       "leguminosa",
+      "leguminosas",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19769,6 +20019,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19800,6 +20051,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19866,6 +20118,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -19896,6 +20149,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "tierra",
       "uso de la tierra",
@@ -20167,6 +20421,7 @@
       "tierra",
       "uso de la tierra",
       "cereal",
+      "cereales",
       "cultivos",
       "extensivos",
       "económica",
@@ -20201,6 +20456,7 @@
       "tierra",
       "uso de la tierra",
       "cereal",
+      "cereales",
       "cultivos",
       "extensivos",
       "economica",
@@ -20265,6 +20521,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20298,6 +20555,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20368,6 +20626,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20402,6 +20661,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20472,6 +20732,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20507,6 +20768,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20577,6 +20839,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20611,6 +20874,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20679,6 +20943,7 @@
       "producción",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20712,6 +20977,7 @@
       "produccion",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20782,6 +21048,7 @@
       "producción",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20815,6 +21082,7 @@
       "produccion",
       "producto",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -20888,6 +21156,7 @@
       "tierra",
       "uso de la tierra",
       "oleaginosa",
+      "oleaginosas",
       "cultivos",
       "extensivos",
       "económica",
@@ -20922,6 +21191,7 @@
       "tierra",
       "uso de la tierra",
       "oleaginosa",
+      "oleaginosas",
       "cultivos",
       "extensivos",
       "economica",
@@ -20986,6 +21256,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21020,6 +21291,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21094,6 +21366,7 @@
       "tierra",
       "uso de la tierra",
       "leguminosa",
+      "leguminosas",
       "cultivos",
       "regionales",
       "económica",
@@ -21128,6 +21401,7 @@
       "tierra",
       "uso de la tierra",
       "leguminosa",
+      "leguminosas",
       "cultivos",
       "regionales",
       "economica",
@@ -21193,6 +21467,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21227,6 +21502,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21297,6 +21573,7 @@
       "producción",
       "producto",
       "leguminosa",
+      "leguminosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21332,6 +21609,7 @@
       "produccion",
       "producto",
       "leguminosa",
+      "leguminosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21402,7 +21680,9 @@
       "producción",
       "producto",
       "leguminosa",
+      "leguminosas",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21436,7 +21716,9 @@
       "produccion",
       "producto",
       "leguminosa",
+      "leguminosas",
       "oleaginosa",
+      "oleaginosas",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21505,6 +21787,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21538,6 +21821,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21606,6 +21890,7 @@
       "producción",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -21639,6 +21924,7 @@
       "produccion",
       "producto",
       "cereal",
+      "cereales",
       "agricultura",
       "cultivo",
       "tierra",
@@ -22123,7 +22409,11 @@
       "recurso natural",
       "recursos naturales",
       "energia natural",
-      "geografía humana"
+      "geografía humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "keywords_search": [
       "argentina",
@@ -22151,7 +22441,11 @@
       "recurso natural",
       "recursos naturales",
       "energia natural",
-      "geografia humana"
+      "geografia humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "title": "Producción de gas por cuenca. Año 2019",
     "title_search": "produccion de gas por cuenca ano 2019",
@@ -22211,7 +22505,11 @@
       "recursos de gas",
       "recursos energéticos",
       "energia natural",
-      "geografía humana"
+      "geografía humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "keywords_search": [
       "argentina",
@@ -22236,7 +22534,11 @@
       "recursos de gas",
       "recursos energeticos",
       "energia natural",
-      "geografia humana"
+      "geografia humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "title": "Producción de gas por provincia. Año 2019",
     "title_search": "produccion de gas por provincia ano 2019",
@@ -22300,7 +22602,11 @@
       "recursos de gas",
       "recursos energéticos",
       "energia natural",
-      "geografía humana"
+      "geografía humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "keywords_search": [
       "argentina",
@@ -22329,7 +22635,11 @@
       "recursos de gas",
       "recursos energeticos",
       "energia natural",
-      "geografia humana"
+      "geografia humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "title": "Reservas de gas por cuenca. Año 2018",
     "title_search": "reservas de gas por cuenca ano 2018",
@@ -22389,7 +22699,11 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "recursos energéticos",
-      "geografía humana"
+      "geografía humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "keywords_search": [
       "argentina",
@@ -22414,7 +22728,11 @@
       "aprovechamiento de recursos",
       "abastecimiento",
       "recursos energeticos",
-      "geografia humana"
+      "geografia humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "title": "Cuencas hidrocarburíferas",
     "title_search": "cuencas hidrocarburiferas",
@@ -22681,7 +22999,11 @@
       "recursos de gas",
       "geografía humana",
       "recursos energéticos",
-      "vivienda"
+      "vivienda",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "keywords_search": [
       "argentina",
@@ -22715,7 +23037,11 @@
       "recursos de gas",
       "geografia humana",
       "recursos energeticos",
-      "vivienda"
+      "vivienda",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "title": "Hogares según combustible utilizado para cocinar por provincia. Año 2010",
     "title_search": "hogares segun combustible utilizado para cocinar por provincia ano 2010",
@@ -22975,7 +23301,11 @@
       "abastecimiento",
       "fuente de energía no renovable",
       "recursos energéticos",
-      "geografía humana"
+      "geografía humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "keywords_search": [
       "argentina",
@@ -23002,7 +23332,11 @@
       "abastecimiento",
       "fuente de energia no renovable",
       "recursos energeticos",
-      "geografia humana"
+      "geografia humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "title": "Producción de petróleo por cuenca. Año 2019",
     "title_search": "produccion de petroleo por cuenca ano 2019",
@@ -23061,7 +23395,11 @@
       "abastecimiento",
       "fuente de energía no renovable",
       "recursos energéticos",
-      "geografía humana"
+      "geografía humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "keywords_search": [
       "argentina",
@@ -23085,7 +23423,11 @@
       "abastecimiento",
       "fuente de energia no renovable",
       "recursos energeticos",
-      "geografia humana"
+      "geografia humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "title": "Producción de petróleo por provincia. Año 2019",
     "title_search": "produccion de petroleo por provincia ano 2019",
@@ -23150,7 +23492,11 @@
       "fuente de energía no renovable",
       "recursos energéticos",
       "energía natural",
-      "geografía humana"
+      "geografía humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "keywords_search": [
       "argentina",
@@ -23180,7 +23526,11 @@
       "fuente de energia no renovable",
       "recursos energeticos",
       "energia natural",
-      "geografia humana"
+      "geografia humana",
+      "combustible",
+      "fosil",
+      "combustibles",
+      "fosiles"
     ],
     "title": "Reservas de petróleo por cuenca. Año 2018",
     "title_search": "reservas de petroleo por cuenca ano 2018",
@@ -23976,6 +24326,7 @@
       "ferrocarril",
       "área",
       "cereal",
+      "cereales",
       "geografía económica",
       "tráfico",
       "servicio",
@@ -24007,6 +24358,7 @@
       "ferrocarril",
       "area",
       "cereal",
+      "cereales",
       "geografia economica",
       "trafico",
       "servicio",
@@ -24068,6 +24420,7 @@
       "ferrocarril",
       "área",
       "cereal",
+      "cereales",
       "movimiento",
       "portuario",
       "geografía económica",
@@ -24100,6 +24453,7 @@
       "ferrocarril",
       "area",
       "cereal",
+      "cereales",
       "movimiento",
       "portuario",
       "geografia economica",
@@ -24167,6 +24521,7 @@
       "ferrocarril",
       "área",
       "cereal",
+      "cereales",
       "camino",
       "pavimentado",
       "geografía económica",
@@ -24199,6 +24554,7 @@
       "ferrocarril",
       "area",
       "cereal",
+      "cereales",
       "camino",
       "pavimentado",
       "geografia economica",
