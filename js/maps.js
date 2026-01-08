@@ -249,9 +249,7 @@ async function fetchMapsData() {
     app.allMaps = await response.json();
 
     // Crear índice invertido para búsquedas rápidas
-    /* console.time('⚡ Indexación de mapas'); */
     buildSearchIndex();
-    /* console.timeEnd('⚡ Indexación de mapas'); */
     
     // Ejecutar validaciones en desarrollo
     runPostIndexValidation();
@@ -332,7 +330,6 @@ function buildSearchIndex() {
 
 /**
  * Comprime el índice temporal convirtiendo arrays JavaScript a arrays tipados
- * Esto reduce el consumo de memoria en un 30-40%
  * @param {Object} tempIndex - Índice temporal con arrays normales
  */
 function compressIndex(tempIndex) {
@@ -340,8 +337,6 @@ function compressIndex(tempIndex) {
     const entry = tempIndex[term];
     
     // Convertir arrays a arrays tipados
-    // Uint16Array soporta hasta 65,535 mapas (suficiente para este caso)
-    // Cada índice ocupa 2 bytes en lugar de ~8 bytes (Number)
     const mapIndices = new Uint16Array(entry.indices);
     
     // Uint8Array para flags (1 byte por mapa)
@@ -921,7 +916,7 @@ function setupCascadingTemporalFilters() {
       getAdvancedFilters();
       handleSearch();
       
-      // 📊 TRACKING: Filtro temporal (padre) aplicado
+      // TRACKING: Filtro temporal (padre) aplicado
       const activeFilters = Array.from(document.querySelectorAll('input[name="escalaTemporal"]:checked'))
         .map(cb => cb.value);
       trackFilterApplied('escalaTemporal', activeFilters, app.filteredMaps.length);
@@ -952,7 +947,7 @@ function setupCascadingTemporalFilters() {
           getAdvancedFilters();
           handleSearch();
           
-          // 📊 TRACKING: Filtro temporal (hijo) aplicado
+          // TRACKING: Filtro temporal (hijo) aplicado
           const activeFilters = Array.from(document.querySelectorAll('input[name="escalaTemporal"]:checked'))
             .map(cb => cb.value);
           trackFilterApplied('escalaTemporal', activeFilters, app.filteredMaps.length);
@@ -1039,7 +1034,7 @@ function showSearchHistory() {
     elements.historyBtn.classList.add('active');
   }
   
-  // 📊 TRACKING: Ver historial de búsqueda
+  // TRACKING: Ver historial de búsqueda
   trackSearchHistory('view');
 }
 
@@ -1084,7 +1079,7 @@ function clearSearchHistory() {
   renderSearchHistory();
   updateHistoryButtonVisibility();
   
-  // 📊 TRACKING: Limpiar historial
+  // TRACKING: Limpiar historial
   trackSearchHistory('clear');
 }
 
