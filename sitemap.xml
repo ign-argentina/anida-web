@@ -1,58 +1,382 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Página Principal -->
   <url>
-    <loc>https://www.anida.ign.gob.ar/</loc>
-    <lastmod>2025-06-05</lastmod>
+    <loc>https://anida.ign.gob.ar/</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- Páginas Institucionales -->
   <url>
-    <loc>https://www.anida.ign.gob.ar/acercade.html</loc>
-    <lastmod>2025-06-01</lastmod>
+    <loc>https://anida.ign.gob.ar/acercade.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/contacto.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.anida.ign.gob.ar/contacto.html</loc>
-    <lastmod>2025-05-30</lastmod>
+    <loc>https://anida.ign.gob.ar/equipo.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Herramientas y Recursos -->
+  <url>
+    <loc>https://anida.ign.gob.ar/mapas_tematicos.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/otros_recursos.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.anida.ign.gob.ar/equipo.html</loc>
-    <lastmod>2025-05-25</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.anida.ign.gob.ar/arg_ambiental.html</loc>
-    <lastmod>2025-06-02</lastmod>
+    <loc>https://anida.ign.gob.ar/tutoriales.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.anida.ign.gob.ar/arg_econ.html</loc>
-    <lastmod>2025-05-28</lastmod>
+    <loc>https://anida.ign.gob.ar/jsonador.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Estructura del Atlas -->
+  <url>
+    <loc>https://anida.ign.gob.ar/estructura.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/estructura/index.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.anida.ign.gob.ar/arg_fisico_natural.html</loc>
-    <lastmod>2025-05-29</lastmod>
+    <loc>https://anida.ign.gob.ar/estructura/arg_ambiental.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.anida.ign.gob.ar/arg_mundo.html</loc>
-    <lastmod>2025-06-01</lastmod>
+    <loc>https://anida.ign.gob.ar/estructura/arg_econ.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.anida.ign.gob.ar/arg_socio_demo.html</loc>
-    <lastmod>2025-06-01</lastmod>
+    <loc>https://anida.ign.gob.ar/estructura/arg_fisico_natural.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.anida.ign.gob.ar/otros_recursos.html</loc>
-    <lastmod>2025-05-27</lastmod>
+    <loc>https://anida.ign.gob.ar/estructura/arg_mundo.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/estructura/arg_socio_demo.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Argentina Ambiental -->
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_ambiental/index.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.anida.ign.gob.ar/tutoriales.html</loc>
-    <lastmod>2025-05-31</lastmod>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_ambiental/actividades_humanas_e_implicancias_ambientales.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_ambiental/amenazas_hidrometeorologicas.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_ambiental/areas_naturales_protegidas.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_ambiental/recursos_naturales.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_ambiental/riesgo_de_desastres.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Argentina Económica -->
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_economica/index.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_economica/actividad_agricola_ganadera.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_economica/comercio_exterior.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_economica/energia.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_economica/industria.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_economica/mineria.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_economica/pesca_y_acuicultura.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_economica/transporte.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_economica/turismo.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Argentina Físico-Natural -->
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/index.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/aguas_subterraneas.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/aguas_superficiales.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/clima.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/clima_de_argentina.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/ecologia_y_biogeografia.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/geologia.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/geologia_de_argentina.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/geomorfologia.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/sismologia.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/suelo.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_fisico-natural/volcanologia.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Argentina en el Mundo -->
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_mundo/index.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_mundo/antartida.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_mundo/formacion_del_territorio.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_mundo/insercion_internacional.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_mundo/limites_y_fronteras_internacionales.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_mundo/malvinas_y_otras_islas_del_atlantico_sur.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_mundo/organizacion_politica.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_mundo/rasgos_basicos_y_territorio.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Argentina Socio-Demográfica -->
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/index.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/calidad_de_vida.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion_2010.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/composicion_de_la_poblacion_2022.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/crecimiento_demografico_2010.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/crecimiento_demografico_2022.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/movilidad_territorial.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/tamano_y_peso_demografico_2010.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://anida.ign.gob.ar/publicacion/argentina_socio-demografica/tamano_y_peso_demografico_2022.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 </urlset>

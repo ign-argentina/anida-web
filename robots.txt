@@ -1,8 +1,33 @@
+# Robots.txt para ANIDA - Atlas del IGN
+# Actualizado: Marzo 2026
+
 User-agent: *
+
+# Bloquear carpetas internas y no públicas
 Disallow: /old/
-Disallow: /old/disabled/
 Disallow: /components/
+Disallow: /docs/
+
+# Permitir acceso a recursos públicos
 Allow: /assets/
 Allow: /js/
 Allow: /styles/
+Allow: /publicacion/
+Allow: /estructura/
+
+# Permitir motores de búsqueda comunes
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl-delay para bots más agresivos
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap
 Sitemap: https://anida.ign.gob.ar/sitemap.xml
