@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Procesador XLSX a JSON (para buscador)</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.min.js"></script>
+  <style>
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl">
+    <h1 class="text-2xl font-bold text-center mb-4 text-gray-800">Procesador .xlsx → JSON (formato buscador)</h1>
+
+    <p class="text-sm text-gray-600 mb-4">
+      Carga el archivo <strong>.xlsx</strong> (columnas esperadas: <code>id,image,download,keywords,title,author,year,section,publication,link,time,space</code>).
+    </p>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-medium mb-2" for="fileInput">Seleccionar archivo .xlsx</label>
+      <input id="fileInput" type="file" accept=".xlsx,.xls,.csv" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 p-2 focus:outline-none" />
+    </div>
+
+    <div id="errorMessage" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+      <strong class="font-bold">Error: </strong>
+      <span id="errorText" class="block sm:inline"></span>
+    </div>
+
+    <div id="jsonOutputContainer" class="hidden mb-4">
+      <h2 class="text-lg font-semibold text-gray-800 mb-2">JSON resultante</h2>
+      <pre id="jsonOutput" class="bg-gray-50 p-4 rounded-md text-sm text-gray-800 border border-gray-200 overflow-auto max-h-96"></pre>
+      <div class="flex mt-4 gap-2">
+        <button id="copyJsonBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Copiar JSON</button>
+        <button id="downloadJsonBtn" class="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded">Descargar JSON</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * Utility functions and main processing logic
+     * - Reads .xlsx (preferred) or .csv (fallback)
+     * - Converts specified columns to arrays (split by ';')
+     * - Produces *_search normalized fields (lowercase, no diacritics, punctuation removed)
+     * - Shows JSON on screen and allows copy / download
+     *
+     * Comments in English for code blocks as requested.
+     */
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const fileInput = document.getElementById('fileInput');
+      const jsonOutputContainer = document.getElementById('jsonOutputContainer');
+      const jsonOutput = document.getElementById('jsonOutput');
+      const copyJsonBtn = document.getElementById('copyJsonBtn');
+      const downloadJsonBtn = document.getElementById('downloadJsonBtn');
+      const errorMessage = document.getElementById('errorMessage');
+      const errorText = document.getElementById('errorText');
+
+      fileInput.addEventListener('change', handleFileUpload);
+      copyJsonBtn.addEventListener('click', copyJsonToClipboard);
+      downloadJsonBtn.addEventListener('click', downloadJsonFile);
+
+      /**
+       * Normalize string for search:
+       * - trim, collapse spaces
+       * - lowercase
+       * - remove diacritics (accents)
+       * - remove most punctuation (keep letters, numbers, spaces and hyphen)
+       */
+      function normalizeForSearch(str) {
+        if (typeof str !== 'string') return '';
+        // Trim and collapse spaces
+        let s = str.trim().replace(/\s+/g, ' ');
+        // Remove diacritics
+        s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        // Lowercase
+        s = s.toLowerCase();
+        // Remove characters that are not a-z, 0-9, space or hyphen
+        s = s.replace(/[^a-z0-9\s-]/g, '');
+        // Collapse multiple spaces again (in case)
+        s = s.replace(/\s+/g, ' ').trim();
+        return s;
+      }
+
+      /**
+       * Split a cell that contains semicolon-delimited values into array.
+       * Always returns an array (empty if no content).
+       * Keeps original display values trimmed.
+       */
+      function splitToArray(cellValue) {
+        if (cellValue === undefined || cellValue === null || cellValue === '') return [];
+        // If it's already an array (unlikely from xlsx sheet_to_json header:1) map to strings
+        if (Array.isArray(cellValue)) {
+          return cellValue.map(v => (v === null || v === undefined) ? '' : String(v).trim()).filter(v => v !== '');
+        }
+        const str = String(cellValue).trim();
+        if (str === '' || str === 'undefined' || str === 'null') return [];
+        // split by semicolon; also accept commas as fallback but prefer semicolon
+        const parts = str.split(';').map(p => p.trim()).filter(p => p !== '' && p !== 'undefined' && p !== 'null');
+        return parts;
+      }
+
+      /**
+       * Build single record object according to the agreed schema.
+       * Expects headers present in the Excel exactly as: id,image,download,keywords,title,author,year,section,publication,link,time,space
+       */
+      function buildRecordFromRow(headers, row) {
+        // Map headers to values (row may be shorter)
+        const obj = {};
+        headers.forEach((h, idx) => {
+          const val = row[idx];
+          // Convert to string and handle null/undefined
+          obj[h] = (val === undefined || val === null || val === '') ? '' : String(val);
+        });
+
+        // Construct final structure
+        const id = obj.id ? String(obj.id).trim() : '';
+        const image = obj.image ? String(obj.image).trim() : '';
+        const download = obj.download ? String(obj.download).trim() : '';
+        const title = obj.title ? String(obj.title).trim() : '';
+        const author = obj.author ? String(obj.author).trim() : '';
+        // Year: try to parse integer, otherwise null
+        let year = null;
+        if (obj.year && String(obj.year).trim() !== '') {
+          const yStr = String(obj.year).trim().replace(/[^0-9]/g, '');
+          const yNum = parseInt(yStr, 10);
+          year = (isNaN(yNum) || yNum === 0) ? null : yNum;
+        }
+
+        const section = obj.section ? String(obj.section).trim() : '';
+        const publication = obj.publication ? String(obj.publication).trim() : '';
+        const link = obj.link ? String(obj.link).trim() : '';
+
+        const keywordsArr = splitToArray(obj.keywords);
+        const timeArr = splitToArray(obj.time);
+        const spaceArr = splitToArray(obj.space);
+
+        // Build _search fields
+        const title_search = normalizeForSearch(title);
+        const author_search = normalizeForSearch(author);
+        const section_search = normalizeForSearch(section);
+        const publication_search = normalizeForSearch(publication);
+
+        const keywords_search = keywordsArr.map(k => normalizeForSearch(k)).filter(k => k !== '');
+        const time_search = timeArr.map(t => normalizeForSearch(t)).filter(t => t !== '');
+        const space_search = spaceArr.map(s => normalizeForSearch(s)).filter(s => s !== '');
+
+        // Always follow requested structure: arrays remain arrays; empty -> []
+        return {
+          id: id,
+          image: image,
+          download: download,
+          keywords: keywordsArr,
+          keywords_search: keywords_search,
+          title: title,
+          title_search: title_search,
+          author: author,
+          author_search: author_search,
+          year: year,
+          section: section,
+          section_search: section_search,
+          publication: publication,
+          publication_search: publication_search,
+          link: link,
+          time: timeArr,
+          time_search: time_search,
+          space: spaceArr,
+          space_search: space_search
+        };
+      }
+
+      /**
+       * Handle file upload (xlsx preferred; csv fallback)
+       */
+      function handleFileUpload(event) {
+        const file = event.target.files && event.target.files[0];
+        if (!file) {
+          showError('No se seleccionó ningún archivo.');
+          return;
+        }
+
+        hideError();
+        jsonOutputContainer.classList.add('hidden');
+        jsonOutput.textContent = '';
+
+        const name = (file.name || '').toLowerCase();
+
+        if (name.endsWith('.csv')) {
+          // Fallback: parse CSV using simple parser (comma or semicolon detection)
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            try {
+              const text = e.target.result;
+              // Try to detect delimiter: count commas vs semicolons in first 5 lines
+              const sample = text.split(/\r?\n/).slice(0, 5).join('\n');
+              const commaCount = (sample.match(/,/g) || []).length;
+              const semiCount = (sample.match(/;/g) || []).length;
+              const delimiter = semiCount > commaCount ? ';' : ',';
+              const data = parseCSV(text, delimiter); // returns array of rows
+              processAndDisplay(data);
+            } catch (err) {
+              console.error(err);
+              showError('Error al procesar CSV.');
+            }
+          };
+          reader.onerror = (e) => {
+            console.error(e);
+            showError('Error al leer el archivo CSV.');
+          };
+          reader.readAsText(file, 'utf-8');
+          return;
+        }
+
+        if (name.endsWith('.xlsx') || name.endsWith('.xls')) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            try {
+              const data = new Uint8Array(e.target.result);
+              const workbook = XLSX.read(data, { 
+                type: 'array',
+                cellDates: true,
+                cellNF: false,
+                cellText: false
+              });
+              
+              if (!workbook.SheetNames || workbook.SheetNames.length === 0) {
+                showError('El archivo XLSX no contiene hojas válidas.');
+                return;
+              }
+              
+              const firstSheetName = workbook.SheetNames[0];
+              const worksheet = workbook.Sheets[firstSheetName];
+              
+              // header: 1 returns array of arrays (first row is headers)
+              // defval: '' ensures empty cells are represented as empty strings
+              // raw: false converts values to display format
+              const jsonRows = XLSX.utils.sheet_to_json(worksheet, { 
+                header: 1, 
+                defval: '',
+                raw: false,
+                blankrows: false
+              });
+              
+              processAndDisplay(jsonRows);
+            } catch (err) {
+              console.error('XLSX parsing error:', err);
+              showError('Error al leer el archivo XLSX: ' + err.message);
+            }
+          };
+          reader.onerror = (e) => {
+            console.error('FileReader error:', e);
+            showError('Error al cargar el archivo.');
+          };
+          reader.readAsArrayBuffer(file);
+          return;
+        }
+
+        showError('Formato no soportado. Usa .xlsx o .csv');
+      }
+
+      /**
+       * CSV parser (simple) that supports quoted fields and configurable delimiter.
+       * Returns array of rows (each row is array of values).
+       */
+      function parseCSV(text, delimiter = ',') {
+        const rows = [];
+        let cur = '';
+        let row = [];
+        let inQuotes = false;
+        for (let i = 0; i < text.length; i++) {
+          const ch = text[i];
+          if (inQuotes) {
+            if (ch === '"') {
+              if (i + 1 < text.length && text[i + 1] === '"') {
+                cur += '"';
+                i++;
+              } else {
+                inQuotes = false;
+              }
+            } else {
+              cur += ch;
+            }
+          } else {
+            if (ch === '"') {
+              inQuotes = true;
+            } else if (ch === delimiter) {
+              row.push(cur);
+              cur = '';
+            } else if (ch === '\r') {
+              // handle CRLF
+              if (i + 1 < text.length && text[i + 1] === '\n') i++;
+              row.push(cur);
+              rows.push(row);
+              row = [];
+              cur = '';
+            } else if (ch === '\n') {
+              row.push(cur);
+              rows.push(row);
+              row = [];
+              cur = '';
+            } else {
+              cur += ch;
+            }
+          }
+        }
+        // remaining
+        if (cur.length > 0 || inQuotes || row.length > 0) {
+          row.push(cur);
+          rows.push(row);
+        }
+        // remove trailing empty lines
+        while (rows.length && rows[rows.length - 1].length === 1 && rows[rows.length - 1][0] === '') rows.pop();
+        return rows;
+      }
+
+      /**
+       * Process rows (array of arrays). First row = headers expected.
+       * Build final JSON array and display it.
+       */
+      function processAndDisplay(rows) {
+        if (!Array.isArray(rows) || rows.length === 0) {
+          showError('El archivo está vacío o no tiene contenido legible.');
+          return;
+        }
+
+        // Extract headers, normalize to exact expected header names by trimming
+        const rawHeaders = rows[0].map(h => (h === undefined || h === null) ? '' : String(h).trim());
+        // Expected headers list (in lowercase for comparison)
+        const expectedHeaders = ['id', 'image', 'download', 'keywords', 'title', 'author', 'year', 'section', 'publication', 'link', 'time', 'space'];
+
+        // Try to map headers to expected: create mapping of index => normalized header name
+        const headersNormalized = rawHeaders.map(h => h.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, ''));
+
+        // If headers don't match expected exactly, try to find positions for each expected header
+        const headerMap = []; // will store actual header names (expected) in order of columns
+        for (let i = 0; i < rawHeaders.length; i++) {
+          // find matching expected header
+          const found = expectedHeaders.find(e => headersNormalized[i] === e);
+          if (found) headerMap.push(found);
+          else {
+            // keep raw header as-is (but cleaned) so buildRecordFromRow won't break; this keeps unknown columns but they won't be used
+            headerMap.push(String(rawHeaders[i]).trim());
+          }
+        }
+
+        // Check if required fields (id,title) exist in headerMap
+        const lowerHeaderMap = headerMap.map(h => String(h).toLowerCase());
+        if (!lowerHeaderMap.includes('id') || !lowerHeaderMap.includes('title')) {
+          showError('El archivo debe contener al menos las columnas "id" y "title". Revisa los encabezados.');
+          return;
+        }
+
+        // Build records from rows 1..n
+        const dataRows = rows.slice(1);
+        const result = dataRows
+          .filter(row => {
+            // Filter out completely empty rows
+            if (!row || row.length === 0) return false;
+            const hasData = row.some(cell => {
+              if (cell === undefined || cell === null || cell === '') return false;
+              const str = String(cell).trim();
+              return str !== '' && str !== 'undefined' && str !== 'null';
+            });
+            return hasData;
+          })
+          .map(row => {
+            // Build a temporary arrays of values aligned to headerMap length
+            const alignedRow = [];
+            for (let c = 0; c < headerMap.length; c++) {
+              const val = row[c];
+              // Normalize empty values
+              alignedRow.push((val === undefined || val === null) ? '' : val);
+            }
+            // For buildRecordFromRow we require headers names to match expected keys.
+            // We'll convert headerMap entries to expected-like keys for those that match,
+            // and pass alignedRow as values in the same order.
+            // buildRecordFromRow expects headers array where each header is the exact key name (id,image,download,...).
+            return buildRecordFromRow(headerMap, alignedRow);
+          })
+          .filter(record => {
+            // Filter out records with empty id or title (required fields)
+            return record.id && record.id !== '' && record.title && record.title !== '';
+          });
+
+        // Final JSON string
+        const pretty = JSON.stringify(result, null, 2);
+        jsonOutput.textContent = pretty;
+        jsonOutputContainer.classList.remove('hidden');
+        hideError();
+      }
+
+      function copyJsonToClipboard() {
+        const text = jsonOutput.textContent;
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(() => {
+          // small feedback
+          alert('JSON copiado al portapapeles!');
+        }).catch((err) => {
+          console.error('Error copying JSON: ', err);
+          showError('No se pudo copiar el JSON al portapapeles.');
+        });
+      }
+
+      function downloadJsonFile() {
+        const text = jsonOutput.textContent;
+        if (!text) return;
+        const blob = new Blob([text], { type: 'application/json;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'maps.json';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        }, 100);
+      }
+
+      function showError(msg) {
+        errorText.textContent = msg;
+        errorMessage.classList.remove('hidden');
+      }
+
+      function hideError() {
+        errorMessage.classList.add('hidden');
+        errorText.textContent = '';
+      }
+    });
+  </script>
+</body>
+
+</html>

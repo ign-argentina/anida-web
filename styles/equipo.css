@@ -1,0 +1,94 @@
+/* Estilos específicos para la página de equipo */
+.section-authorities,
+.section-team,
+.section-collaborators,
+.section-abbreviations {
+  margin-bottom: 3rem;
+  padding: 0;
+}
+.section-authorities h3,
+.section-team h3,
+.section-collaborators h3,
+.section-abbreviations h3 {
+  margin-bottom: 2rem;
+}
+.authority-item,
+.team-area,
+.collaborator-area {
+  margin-bottom: 2rem;
+}
+.authority-item h5,
+.team-area h5,
+.collaborator-area h5 {
+  color: #157DB9;
+  margin-bottom: 0.5rem;
+}
+.section-abbreviations li {
+  margin-bottom: 1.5rem;
+}
+.collaborator-area>ul, .acronyms-list {
+  column-count: 2;
+}
+.disclaimer {
+  font-style: italic;
+  color: #666;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-left: 3px solid #ddd;
+}
+/* Responsividad */
+@media (max-width: 768px) {
+  .authority-item,
+  .team-area,
+  .collaborator-area {
+    margin-bottom: 1.5rem;
+  }
+  .collaborator-area>ul, .acronyms-list {
+    column-count: 1;
+  }
+}
+/* Abrebiaturas */
+.acronyms-section {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  background: #fafbfc;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+.acronyms-section h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #222;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+.acronym-card {
+  padding: 0 1.1rem 1.3rem;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); */
+  display: flex;
+  flex-direction: column;
+  /* transition: box-shadow 0.2s; */
+}
+.acronym {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+.meaning {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  font-weight: 400;
+}
+@media (max-width: 600px) {
+  .acronyms-section {
+    padding: 1rem 0.3rem;
+  }
+  .acronym-card {
+    padding: 0.9rem 0.7rem;
+  }
+}
+/* Fin estilos específicos para la página de equipo */

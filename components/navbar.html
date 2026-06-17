@@ -1,0 +1,130 @@
+<head>
+  <link rel="stylesheet" href="/styles/navbar.css">
+</head>
+<nav class="topnav" id="myTopnav">
+
+  <!-- Logo de ANIDA -->
+  <a href="/index.html" class="logo">
+    <img src="/assets/icons/logo_blanco_ANIDA_200x50.svg" alt="ANIDA">
+  </a>
+  <!-- Menú multinivel: Estructura temática -->
+  <div class="dropdown">
+    <div class="dropbtn" onclick="toggleDropdown(this)">
+      <a class="dropbtn-a" href="javascript:void(0);" style="cursor: default;">Estructura temática</a>
+      <i class='bx bxs-chevron-down' onclick="toggleDropdown(this.parentElement); event.stopPropagation();"></i>
+    </div>
+    <div class="dropdown-content">
+      <div class="dropdown-submenu">
+        <a href="/estructura.html">
+          Estructura general</a>
+      </div>
+      <div class="dropdown-submenu">
+        <a href="/estructura/arg_mundo.html" onclick="toggleSubmenu(this, event)">
+          Argentina y el mundo<i class='bx bxs-chevron-right menu-chevron-right'></i></a>
+        <div class="dropdown-subcontent">
+          <a href="/publicacion/argentina_mundo/rasgos_basicos_y_territorio.html">Rasgos básicos y componentes del territorio</a>
+          <a href="/publicacion/argentina_mundo/limites_y_fronteras_internacionales.html">Límites y fronteras internacionales</a>
+          <a href="/publicacion/argentina_mundo/organizacion_politica.html">Organización política</a>
+          <a href="/publicacion/argentina_mundo/formacion_del_territorio.html">Formación del territorio</a>
+          <a href="/publicacion/argentina_mundo/malvinas_y_otras_islas_del_atlantico_sur.html">Malvinas y otras islas del Atlántico Sur</a>
+          <a href="/publicacion/argentina_mundo/antartida.html">Antártida</a>
+          <a href="/publicacion/argentina_mundo/insercion_internacional.html">Inserción internacional</a>
+        </div>
+      </div>
+      <div class="dropdown-submenu">
+        <a href="/estructura/arg_fisico_natural.html" onclick="toggleSubmenu(this, event)">
+          Argentina físico-natural<i class='bx bxs-chevron-right menu-chevron-right'></i></a>
+        <div class="dropdown-subcontent">
+
+          <a href="/publicacion/argentina_fisico-natural/geologia.html">Geología</a>
+          <a href="/publicacion/argentina_fisico-natural/geologia_de_argentina.html">Geología de Argentina</a>
+          <a href="/publicacion/argentina_fisico-natural/geomorfologia.html">Geomorfología</a>
+          <a href="/publicacion/argentina_fisico-natural/volcanologia.html">Volcanología</a>
+          <a href="/publicacion/argentina_fisico-natural/sismologia.html">Sismología</a>
+
+          <a href="/publicacion/argentina_fisico-natural/clima.html">Clima</a>
+          <a href="/publicacion/argentina_fisico-natural/clima_de_argentina.html">Clima de Argentina</a>
+
+          <a href="/publicacion/argentina_fisico-natural/aguas_superficiales.html">Aguas superficiales</a>
+          <a href="/publicacion/argentina_fisico-natural/aguas_subterraneas.html">Aguas subterráneas</a>
+
+          <a href="/publicacion/argentina_fisico-natural/suelo.html">Suelo</a>
+          <a href="/publicacion/argentina_fisico-natural/ecologia_y_biogeografia.html">Ecología y biogeografía</a>
+          <!-- <a href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=9e3fd39ca5464eab83f9b1b904dd7ace" target="_blank">Galería de recursos</a> -->
+        </div>
+      </div>
+      <div class="dropdown-submenu">
+        <a href="/estructura/arg_socio_demo.html" onclick="toggleSubmenu(this, event)">
+          Argentina socio-demográfica<i class='bx bxs-chevron-right menu-chevron-right'></i></a>
+        <div class="dropdown-subcontent">
+          <a href="/publicacion/argentina_socio-demografica/tamano_y_peso_demografico_2010.html">Tamaño y peso demográfico 2010</a>
+          <a href="/publicacion/argentina_socio-demografica/tamano_y_peso_demografico_2022.html">Tamaño y peso demográfico 2022</a>
+          <a href="/publicacion/argentina_socio-demografica/composicion_de_la_poblacion_2010.html">Composición de la población 2010</a>
+          <a href="/publicacion/argentina_socio-demografica/composicion_de_la_poblacion_2022.html">Composición de la población 2022</a>
+          <a href="/publicacion/argentina_socio-demografica/crecimiento_demografico_2010.html">Crecimiento demográfico 2010</a>
+          <a href="/publicacion/argentina_socio-demografica/crecimiento_demografico_2022.html">Crecimiento demográfico 2022</a>
+          <a href="/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html">Distribución y asentamiento</a>
+          <a href="/publicacion/argentina_socio-demografica/movilidad_territorial.html">Movilidad territorial</a>
+          <a href="/publicacion/argentina_socio-demografica/calidad_de_vida.html">Calidad de vida</a>
+          <!-- <a href="https://ide.ign.gob.ar/portal/apps/MapAndAppGallery/index.html?appid=f7beacffe01c4c7886c797124df799cd" target="_blank">Galería de recursos</a> -->
+        </div>
+      </div>
+      <div class="dropdown-submenu">
+        <a href="/estructura/arg_econ.html" onclick="toggleSubmenu(this, event)">
+          Argentina económica<i class='bx bxs-chevron-right menu-chevron-right'></i></a>
+        <div class="dropdown-subcontent">
+          <a href="/publicacion/argentina_economica/actividad_agricola_ganadera.html">Actividad agrícola-ganadera</a>
+          <!-- <a href="/publicacion/argentina_economica/pesca_y_acuicultura.html" class="disabled">Pesca y acuicultura</a>
+          <a href="/publicacion/argentina_economica/mineria.html" class="disabled">Minería</a>
+          <a href="/publicacion/argentina_economica/industria.html" class="disabled">Industria</a> -->
+          <a href="/publicacion/argentina_economica/energia.html">Energía</a>
+          <!-- <a href="/publicacion/argentina_economica/turismo.html" class="disabled">Turismo</a> -->
+          <a href="/publicacion/argentina_economica/transporte.html">Transporte</a>
+          <!-- <a href="/publicacion/argentina_economica/comercio_exterior.html" class="disabled">Comercio exterior</a> -->
+        </div>
+      </div>
+      <div class="dropdown-submenu">
+        <a href="/estructura/arg_ambiental.html" onclick="toggleSubmenu(this, event)">
+          Argentina ambiental<i class='bx bxs-chevron-right menu-chevron-right'></i></a>
+        <div class="dropdown-subcontent">
+          <a href="/publicacion/argentina_ambiental/amenazas_hidrometeorologicas.html">Amenazas hidrometeorológicas</a>
+          <!-- <a href="/publicacion/argentina_ambiental/actividades_humanas_e_implicancias_ambientales.html" class="disabled">Actividades humanas e implicancias ambientales</a>
+          <a href="/publicacion/argentina_ambiental/riesgo_de_desastres.html" class="disabled">Riesgo de desastres</a>
+          <a href="/publicacion/argentina_ambiental/recursos_naturales.html" class="disabled">Recursos naturales</a>
+          <a href="/publicacion/argentina_ambiental/areas_naturales_protegidas.html" class="disabled">Áreas naturales protegidas</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="/mapas_tematicos.html">Buscador de mapas</a>
+
+  <a href="/otros_recursos.html">Otros recursos</a>
+
+  <!-- Menú multinivel: Acerca de ANIDA -->
+  <div class="dropdown">
+    <div class="dropbtn" onclick="toggleDropdown(this)">
+      <a class="dropbtn-a" href="javascript:void(0);" style="cursor: default;">Acerca de ANIDA</a>
+      <i class='bx bxs-chevron-down' onclick="toggleDropdown(this.parentElement); event.stopPropagation();"></i>
+    </div>
+    <div class="dropdown-content">
+      <div class="dropdown-submenu">
+
+        <a href="/acercade.html">Acerca de</a>
+        <a href="/equipo.html">Equipo de trabajo</a>
+        <a href="/tutoriales.html">¿Cómo usar el atlas?</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <a href="/contacto.html">Contacto</a>
+
+  <a href="https://antartida-anida.ign.gob.ar" style="color: #51A2B3; font-weight: 600;" target="_blank">Atlas de la Antártida Argentina</a>
+
+  <!-- Boton menu en celulares -->
+  <a href="javascript:void(0);" class="icon" onclick="toggleResponsiveNavbar()">&#9776;</a>
+
+</nav>

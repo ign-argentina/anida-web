@@ -16,17 +16,17 @@
 
   <!-- Título del sitio -->
   <title>ANIDA - Atlas Geográfico Digital de Argentina</title>
+
   <!-- Meta etiquetas básicas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
   <meta name="author" content="Instituto Geográfico Nacional">
-  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino, procesos geográficos, cartografía temática, información georreferenciada, textos explicativos, contenidos gráficos, multimedia, visualización de datos, consulta de información, interpretación de datos, análisis geográfico, educación geográfica, recursos educativos, investigación geográfica">
+  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino">
 
   <!-- Meta etiquetas para SEO -->
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
-  <meta name="language" content="Spanish">
 
   <!-- Favicon -->
   <link rel="icon" href="/assets/icons/favicon.png" type="image/svg+xml">
@@ -35,12 +35,8 @@
   <!-- Open Graph (para redes sociales) -->
   <meta property="og:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
   <meta property="og:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
-  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
-  <meta property="og:image:alt" content="ANIDA - Atlas Geográfico Digital de Argentina">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:secure_url" content="/assets/images/fondo_horizontal_1900_1800.jpg">
-
-  <meta property="og:url" content="https://anida.ign.gob.ar/">
+  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800_preliminar.jpg">
+  <meta property="og:url" content="https://www.anida.gob.ar"> <!-- Cambia esta URL por la de tu sitio -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
 
@@ -48,18 +44,15 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
   <meta name="twitter:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
-  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800_preliminar.jpg">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <!-- Boxicons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="/styles/normalize.css">
   <link rel="stylesheet" href="/styles/main.css">
-  <link rel="stylesheet" href="/styles/navbar.css">
-  <link rel="stylesheet" href="/styles/contacto.css">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -80,38 +73,46 @@
         document.getElementById('header').innerHTML = data;
       });
   </script>
-  <main>
-    <div id="menusup_titlezone" class="jumbotron text-center">
-      <h2>Contacto</h2>
-    </div>
 
-    <section class="content-section">
-      <div class="container">
-        <!-- Introducción -->
-        <div class="section-intro">
-          <p id="anida_hoy_descripcion">
-            Quienes quieran contactarse con <strong>ANIDA</strong> para realizar sus comentarios y consultas pueden hacerlo mediante el siguiente formulario.
-          </p>
-        </div>
+  <div id="menusup_titlezone" class="jumbotron text-center">
+    <h2>ANIDA hoy</h2>
+  </div>
 
-        <!-- Cuerpo principal -->
-        <div class="section-body" style="text-align: center;">
-          <div>
-            <h5>Dirección</h5>
-            <p>Avda. Cabildo 381 - C1426 AAD - Ciudad Autónoma de Buenos Aires, Argentina.</p>
-          </div>
-          <div>
-            <h5>Correo electrónico</h5>
-            <p><a href="mailto:anida@ign.gob.ar">anida@ign.gob.ar</a></p>
-          </div>
-          <!-- Formulario de contacto -->
-          <div id="form">
-            <iframe src="/components/form.html" width="100%" height="850" frameborder="0" scrolling="no" style="overflow:hidden" title="Formulario de contacto"></iframe>
-          </div>
-        </div>
+  <section class="content-section">
+    <div class="container">
+      <!-- Introducción -->
+      <div class="section-intro">
+        <p>ANIDA hoy se propone dar a conocimiento público los contenidos elaborados hasta el momento a través de este sitio web.</p>
       </div>
-    </section>
-  </main>
+
+      <!-- Cuerpo principal -->
+      <div class="section-body">
+        <h4>Cuenta, hasta el momento, con:</h4>
+        <ul>
+          <li>48 colaboradores especialistas del ámbito gubernamental y del sistema CyT que participaron en la elaboración de los contenidos.</li>
+          <li>20 organismos públicos que proveyeron datos e información para el desarrollo de los contenidos.</li>
+          <li>26 publicaciones.</li>
+          <li>320 mapas web.</li>
+          <li>347 capas geoespaciales.</li>
+          <li>604 textos.</li>
+          <li>915 recursos visuales (estáticos y multimedia). Entre ellos, 275 mapas para descargar e imprimir en tamaño A4.</li>
+          <li>506 links.</li>
+        </ul>
+
+        <p>También:</p>
+        <ul>
+          <li>12 fascículos temáticos descargables.</li>
+          <li>3 guías de orientación docente.</li>
+          <li>2 tutoriales (cómo usar ANIDA).</li>
+        </ul>
+
+        <p>Además, desde este sitio web podés acceder al Atlas de la Antártida Argentina.</p>
+
+        <p>ANIDA está en proceso de elaboración continuo mediante la actualización de información, la elaboración de nuevas publicaciones y la mejora y optimización de todos los procesos de diseño y producción.</p>
+      </div>
+    </div>
+  </section>
+
   <footer id="footer"></footer>
 
   <script>
@@ -121,7 +122,6 @@
         document.getElementById('footer').innerHTML = data;
       });
   </script>
-  <script src="/js/main.js"></script>
 </body>
 
 </html>

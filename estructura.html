@@ -1,185 +1,195 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <title>Estructura</title>
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <link rel="stylesheet" href="css/main.css">
-  <script src="https://anida.ign.gob.ar/js/jquery-3.3.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<!--  <script src="http://10.20.200.72/tmp/poncho_para_idera.css"></script> -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WSV8Q7P');
+  </script>
+  <!-- End Google Tag Manager -->
 
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 3px;
-    }
+  <!-- Título del sitio -->
+  <title>ANIDA - Atlas Geográfico Digital de Argentina</title>
+  <!-- Meta etiquetas básicas -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
+  <meta name="author" content="Instituto Geográfico Nacional">
+  <meta name="keywords" content="atlas, geografía, Argentina, mapas interactivos, estudios geográficos, datos ambientales, territorio argentino, procesos geográficos, cartografía temática, información georreferenciada, textos explicativos, contenidos gráficos, multimedia, visualización de datos, consulta de información, interpretación de datos, análisis geográfico, educación geográfica, recursos educativos, investigación geográfica">
 
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #5599DB;
-      padding:25px;
-    }
+  <!-- Meta etiquetas para SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="language" content="Spanish">
 
-     .home1 {
-	      background-color: #e1ffff;
-    }
-      </style>
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/icons/favicon.png" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon.png">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136146579-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Open Graph (para redes sociales) -->
+  <meta property="og:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta property="og:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
+  <meta property="og:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
+  <meta property="og:image:alt" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:secure_url" content="/assets/images/fondo_horizontal_1900_1800.jpg">
 
-  gtag('config', 'UA-136146579-4');
-</script>
+  <meta property="og:url" content="https://anida.ign.gob.ar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
 
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ANIDA - Atlas Geográfico Digital de Argentina">
+  <meta name="twitter:description" content="ANIDA es el primer atlas geográfico digital de Argentina, con mapas, estudios y datos interactivos sobre su territorio y procesos geográficos.">
+  <meta name="twitter:image" content="/assets/images/fondo_horizontal_1900_1800.jpg">
 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/styles/normalize.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/estructura.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
+
 <body>
-<nav class="navbar navbar-inverse">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		        <a class="navbar-brand" href="index.html">ANIDA</a>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-		       <ul class="nav navbar-nav">
-			  		        <li><a href="acercade.html">Acerca de ANIDA</a></li>
-			  		        <li><a href="estructura.html">Estructura temática</a></li>
-			  		        <li><a href="anida_hoy.html">ANIDA hoy</a></li>
-			  		        <li><a href="equipo.html">Equipo de trabajo</a></li>
-			  		        <li><a href="fuente_datos.html">Fuente de datos</a></li>
-			              <li><a href="contacto.html">Contacto</a></li>
-			              <li><a href="cita.html">¿Cómo citar?</a></li>
-		      </ul>
-		     <!-- login derecho <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		      </ul>-->
-		    </div>
-		  </div>
-</nav>
-	<div id="menusup_titlezone" class="jumbotron">
-	<h2>Estructura<br>temática</h2></div>
-	<div  class="row" style="background-color:#fafafa; padding: 0px 20px 150px 20px" >
-	    <div id="menusup_copete" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-	        <p>En <strong>ANIDA</strong> el conocimiento y la información sobre el territorio nacional se organiza en torno a grandes secciones temáticas, denominadas, a saber: Argentina y el mundo, Argentina físico- natural, Argentina socio-demográfica, Argentina económica, Argentina ambiental y Argentina político-administrativa. Las secciones temáticas surgen a partir del agrupamiento de contenidos cuya información presenta características comunes y se organizan en temas particulares o parciales que se despliegan de un asunto general. A continuación, se presenta la estructura temática básica de ANIDA, enumerando los ejes temáticos. En la publicación, estos ejes temáticos están compuestos por contenidos a nivel de temas, en todos los casos, y también de subtemas, en muchos de ellos.</p>
-		</div>
-    <div id="menusup_content" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-				<h4>Argentina y el mundo</h4>
-				<p>
-					Presenta a Argentina en su condición de Estado desde la óptica de la geografía política, proporcionando la información básica necesaria para conocer y comprender la realidad internacional del país, en el pasado y en la actualidad.
-					<ul>
-						<li>Rasgos básicos</li>
-						<li>Componentes del territorio</li>
-						<li>Límites y fronteras internacionales</li>
-						<li>Organización política</li>
-						<li>Formación del territorio</li>
-						<li>Malvinas y otras islas del Atlántico Sur</li>
-						<li>Antártida</li>
-						<li>Inserción internacional</li>
-					</ul>
-				</p>
-				<br>
-				<h4 id="físico-natural">Argentina físico-natural</h4>
-				<p>
-					Argentina presenta una amplia diversidad en sus condiciones físicas y naturales. Esta sección describe las características de los elementos y procesos físico-naturales del territorio argentino.
-					<ul>
-						<li>Geología y relieve</li>
-						<li>Clima</li>
-						<li>Suelos</li>
-						<li>Hidrografía</li>
-						<li>Ecología y biogeografía</li>
-					</ul>
-				</p>
-				<br>
-				<h4 id="socio-demográfica">Argentina socio-demográfica</h4>
-				<p>
-					Describe las características socio-demográficas más destacadas de los habitantes de Argentina, brindando información detallada y actualizada de la población y la sociedad del país de modo que el usuario pueda comprender su situación y realizar un análisis crítico de la temática.
-					<ul>
-						<li>Tamaño, composición y crecimiento</li>
-						<li>Fecundidad y mortalidad</li>
-						<li>Distribución, asentamiento y movilidad territorial</li>
-						<li>Trabajo y empleo</li>
-						<li>Calidad de Vida</li>
-						<li>Diversidad socio-cultural</li>
-					</ul>
-				</p>
-				<br>
-				<h4 id="económica">Argentina económica</h4>
-				<p>
-					Describe las características cuantitativas, cualitativas y territoriales de la economía argentina, proporcionando la información necesaria para la comprensión y análisis crítico de su enorme potencial, alcances y limitaciones.
-					<ul>
-						<li>Actividad agrícolo-ganadera</li>
-						<li>Pesca y apicultura</li>
-						<li>Minería</li>
-						<li>Industria</li>
-						<li>Energía</li>
-						<li>Turismo</li>
-						<li>Servicios públicos</li>
-						<li>Infraestructura y equipamiento</li>
-						<li>Comercio exterior</li>
-					</ul>
-				</p>
-				<br>
-				<h4 id="ambiental">Argentina ambiental</h4>
-				<p>
-					Realiza una aproximación al carácter complejo e interrelacionado del ambiente en el que viven los habitantes de Argentina, dado por las múltiples dimensiones que abarca, tanto en el plano de la realidad social como del sistema natural, y las múltiples combinaciones entre estas dos dimensiones, variables en cada momento y lugar de nuestro país.
-					<ul>
-						<li>Los recursos naturales</li>
-						<li>Actividades humanas e implicancias ambientales</li>
-						<li>Riesgo de desastres</li>
-						<li>Cambio climático</li>
-						<li>Áreas naturales protegidas</li>
 
-					</ul>
-				</p>
-				<br>
-				<h4 id="político-administrativa">Argentina político-administrativa</h4>
-				<p>
-					Describe el sistema político-administrativo del país y las provincias, proporcionando la información necesaria para la comprensión del sistema de gobierno nacional y provincial y sus principales políticas.
-					<ul>
-						<li>Sistema de gobierno</li>
-						<li>Sistema educativo</li>
-						<li>Sistema de salud</li>
-						<li>Sistema electoral</li>
-						<li>Sistema tributario</li>
-						<li>Sistema previsional y de seguridad social</li>
-					</ul>
-				</p>
-			</div>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSV8Q7P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<footer class="container-fluid text-center full-width hidden-xs" style="position:fixed; bottom:0px; height:70px; padding-top:0px">
-	<div class="container-fluid col-sm-6 col-xs-5" style="padding:0px"><a target="_blank" href="https://www.argentina.gob.ar/defensa"><img src="img/defensamargen-30.svg" style="height:100px"></a></div>
-	<div class="col-sm-6 col-xs-7" >
-				<a target="_blank" href="https://www.facebook.com/institutogeograficonacional"><img src="http://anida.ign.gob.ar/img/redes-blanco-01.svg" style="height:35px" ></a>
-	  			<a target="_blank" href="https://twitter.com/ARGENTINAIGN"><img src="http://anida.ign.gob.ar/img/redes-blanco-02.svg" style="height:35px"></a>
-	  			<a target="_blank" href="https://www.instagram.com/argentinaignoficial/"><img  src="http://anida.ign.gob.ar/img/redes-blanco-03.svg" style="height:35px"></a>
-	  			<a target="_blank" href="https://www.youtube.com/user/IgnArgentina"><img  src="http://anida.ign.gob.ar/img/redes-blanco-04.svg" style="height:35px"></a>
-	  			<a target="_blank" href="http://www.ign.gob.ar/"><img src="http://anida.ign.gob.ar/img/ign-logo-footer.svg" style="height:70px"></a>
-	 </div>
-</footer>
+  <header id="header"></header>
 
-<footer class="container-fluid text-center full-width visible-xs" style="position:fixed; bottom:0px; height:70px; padding-top:0px">
-	<div class="container-fluid col-sm-6 col-xs-5" style="padding:0px"><a target="_blank" href="https://www.argentina.gob.ar/defensa"><img src="img/defensamargen-30.svg" style="height:75px"></a></div>
-	<div class="col-sm-6 col-xs-7"><a target="_blank" href="https://www.facebook.com/institutogeograficonacional"><img src="http://anida.ign.gob.ar/img/redes-blanco-01.svg" style="height:20px"></a>
-	  			<a target="_blank" href="https://twitter.com/ARGENTINAIGN"><img src="http://anida.ign.gob.ar/img/redes-blanco-02.svg" style="height:20px"></a>
-	  			<a target="_blank" href="https://www.instagram.com/argentinaignoficial/"><img  src="http://anida.ign.gob.ar/img/redes-blanco-03.svg" style="height:20px"></a>
-	  			<a target="_blank" href="https://www.youtube.com/user/IgnArgentina"><img  src="http://anida.ign.gob.ar/img/redes-blanco-04.svg"style="height:20px"></a>
-	  			<a target="_blank" href="http://www.ign.gob.ar/"><img src="http://anida.ign.gob.ar/img/ign-logo-footer.svg" style="height:40px" ></a>
-	 </div>
-</footer>
+  <script>
+    fetch('/components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+  <main>
+    <div id="menusup_titlezone" class="jumbotron text-center">
+      <h2>Estructura temática</h2>
+    </div>
 
+    <section class="content-section">
+      <div class="container">
+        <!-- Introducción -->
+        <div class="section-intro">
+          <p>En <Strong>ANIDA</Strong> el conocimiento y la información sobre el territorio nacional se organiza en torno a grandes secciones temáticas, denominadas, a saber: Argentina y el mundo, Argentina físico- natural, Argentina socio-demográfica, Argentina económica y Argentina ambiental. Las secciones temáticas surgen a partir del agrupamiento de contenidos cuya información presenta características comunes y se organizan en temas particulares o parciales que se despliegan de un asunto general.</p>
+        </div>
 
+        <!-- Secciones temáticas -->
+        <div class="thematic-sections">
+          <p>A continuación, se presenta la estructura temática básica de ANIDA, enumerando los ejes temáticos. En la publicación, estos ejes temáticos están compuestos por contenidos a nivel de temas, en todos los casos, y también de subtemas, en muchos de ellos.</p>
+          <!-- Argentina y el mundo -->
+          <article class="thematic-section">
+            <h3>Argentina y el mundo</h3>
+            <p>Presenta a Argentina en su condición de Estado desde la óptica de la geografía política, proporcionando la información básica necesaria para conocer y comprender la realidad internacional del país, en el pasado y en la actualidad.</p>
+            <ul>
+              <li><a href="/publicacion/argentina_mundo/rasgos_basicos_y_territorio.html" id="estructu-basicos-territorio" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Rasgos básicos y componentes del territorio" title="Rasgos básicos y componentes del territorio">Rasgos básicos y componentes del territorio</a></li>
+              <li><a href="/publicacion/argentina_mundo/limites_y_fronteras_internacionales.html" id="estructu-limites-fronteras" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Límites y fronteras internacionales" title="Límites y fronteras internacionales">Límites y fronteras internacionales</a></li>
+              <li><a href="/publicacion/argentina_mundo/organizacion_politica.html" id="estructu-org-politica" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Organización política" title="Organización política">Organización política</a></li>
+              <li><a href="/publicacion/argentina_mundo/formacion_del_territorio.html" id="estructu-formacion-territorio" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Formación del territorio" title="Formación del territorio">Formación del territorio</a></li>
+              <li><a href="/publicacion/argentina_mundo/malvinas_y_otras_islas.html" id="estructu-malvinas-islas" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Malvinas y otras islas del Atlántico Sur" title="Malvinas y otras islas del Atlántico Sur">Malvinas y otras islas del Atlántico Sur</a></li>
+              <li><a href="/publicacion/argentina_mundo/antartida.html" id="estructu-antartida" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Antártida" title="Antártida">Antártida</a></li>
+              <li><a href="/publicacion/argentina_mundo/insercion_internacional.html" id="estructu-insercion-internacional" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Inserción internacional" title="Inserción internacional">Inserción internacional</a></li>
+            </ul>
+          </article>
+
+          <!-- Argentina físico-natural -->
+          <article class="thematic-section">
+            <h3 id="físico-natural">Argentina físico-natural</h3>
+            <p>Argentina presenta una amplia diversidad en sus condiciones físicas y naturales. Esta sección describe las características de los elementos y procesos físico-naturales del territorio argentino.</p>
+            <ul>
+              <li><a href="/publicacion/argentina_fisico-natural/geologia.html" id="estructu-geologia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Geología" title="Geología">Geología</a></li>
+              <li><a href="/publicacion/argentina_fisico-natural/geologia_de_argentina.html" id="estructu-geologia-argentina" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Geología de Argentina" title="Geología de Argentina">Geología de Argentina</a></li>
+              <li><a href="/publicacion/argentina_fisico-natural/geomorfologia.html" id="estructu-geomorfologia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Geomorfología" title="Geomorfología">Geomorfología</a></li>
+              <li><a href="/publicacion/argentina_fisico-natural/volcanologia.html" id="estructu-volcanologia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Volcanología" title="Volcanología">Volcanología</a></li>
+              <li><a href="/publicacion/argentina_fisico-natural/sismologia.html" id="estructu-sismologia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Sismología" title="Sismología">Sismología</a></li>
+
+              <li><a href="/publicacion/argentina_fisico-natural/clima.html" id="estructu-clima" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Clima" title="Clima">Clima</a></li>
+              <li><a href="/publicacion/argentina_fisico-natural/clima_de_argentina.html" id="estructu-clima-argentina" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Clima de Argentina" title="Clima de Argentina">Clima de Argentina</a></li>
+
+              <li><a href="/publicacion/argentina_fisico-natural/aguas_superficiales.html" id="estructu-aguas-superficiales" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Aguas superficiales" title="Aguas superficiales">Aguas superficiales</a></li>
+              <li><a href="/publicacion/argentina_fisico-natural/aguas_subterraneas.html" id="estructu-aguas-subterraneas" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Aguas subterráneas" title="Aguas subterráneas">Aguas subterráneas</a></li>
+
+              <li><a href="/publicacion/argentina_fisico-natural/suelo.html" id="estructu-suelo" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Suelo" title="Suelo">Suelo</a></li>
+              <li><a href="/publicacion/argentina_fisico-natural/ecologia_y_biogeografia.html" id="estructu-ecologia-biogeografia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Ecología y biogeografía" title="Ecología y biogeografía">Ecología y biogeografía</a></li>
+            </ul>
+          </article>
+
+          <!-- Argentina socio-demográfica -->
+          <article class="thematic-section">
+            <h3 id="socio-demográfica">Argentina socio-demográfica</h3>
+            <p>Describe las características socio-demográficas más destacadas de los habitantes de Argentina, brindando información detallada y actualizada de la población y la sociedad del país de modo que el usuario pueda comprender su situación y realizar un análisis crítico de la temática.</p>
+            <ul>
+              <li><a href="/publicacion/argentina_socio-demografica/tamano_y_peso_demografico_2010.html" id="estructu-tamaño-peso-demografico" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Tamaño y peso demográfico" title="Tamaño y peso demográfico">Tamaño y peso demográfico 2010</a></li>
+              <li><a href="/publicacion/argentina_socio-demografica/tamano_y_peso_demografico_2022.html" id="estructu-tamaño-peso-demografico" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Tamaño y peso demográfico" title="Tamaño y peso demográfico">Tamaño y peso demográfico 2022</a></li>
+              <li><a href="/publicacion/argentina_socio-demografica/crecimiento_demografico_2010.html" id="estructu-composicion-poblacion" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Composición de la población" title="Composición de la población">Composición de la población 2010</a></li>
+              <li><a href="/publicacion/argentina_socio-demografica/composicion_de_la_poblacion_2022.html" id="estructu-composicion-poblacion" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Composición de la población" title="Composición de la población">Composición de la población 2022</a></li>
+              <li><a href="/publicacion/argentina_socio-demografica/crecimiento_demografico_2010.html" id="estructu-crecimiento-demografico" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Crecimiento demográfico" title="Crecimiento demográfico">Crecimiento demográfico 2010</a></li>
+              <li><a href="/publicacion/argentina_socio-demografica/crecimiento_demografico_2022.html" id="estructu-crecimiento-demografico" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Crecimiento demográfico" title="Crecimiento demográfico">Crecimiento demográfico 2022</a></li>
+              <li><a href="/publicacion/argentina_socio-demografica/distribucion_y_asentamiento.html" id="estructu-distribucion-asentamiento" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Distribución y asentamiento" title="Distribución y asentamiento">Distribución y asentamiento</a></li>
+              <li><a href="/publicacion/argentina_socio-demografica/movilidad_territorial.html" id="estructu-movilidad-territorial" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Movilidad territorial" title="Movilidad territorial">Movilidad territorial</a></li>
+              <li><a href="/publicacion/argentina_socio-demografica/calidad_de_vida.html" id="estructu-calidad-vida" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Calidad de vida" title="Calidad de vida">Calidad de vida</a></li>
+            </ul>
+          </article>
+
+          <!-- Argentina económica -->
+          <article class="thematic-section">
+            <h3 id="económica">Argentina económica</h3>
+            <p>Describe las características cuantitativas, cualitativas y territoriales de la economía argentina, proporcionando la información necesaria para la comprensión y análisis crítico de su enorme potencial, alcances y limitaciones.</p>
+            <ul>
+              <li><a href="/publicacion/argentina_economica/actividad_agricola_ganadera.html" id="estructu-actividad-agro" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Actividad agrícola-ganadera" title="Actividad agrícola-ganadera">Actividad agrícola-ganadera</a></li>
+              <li>Pesca y acuicultura</li>
+              <li>Minería</li>
+              <li>Industria</li>
+              <li><a href="/publicacion/argentina_economica/energia.html" id="estructu-energia" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Energía" title="Energía">Energía</a></li>
+              <li>Turismo</li>
+              <li><a href="/publicacion/argentina_economica/transporte.html" id="estructu-transporte" data-tracking-category="navigation" data-tracking-action="click" data-tracking-label="Transporte" title="Transporte">Transporte</a></li>
+              <li>Comercio exterior</li>
+            </ul>
+          </article>
+
+          <!-- Argentina ambiental -->
+          <article class="thematic-section">
+            <h3 id="ambiental">Argentina ambiental</h3>
+            <p>Realiza una aproximación al carácter complejo e interrelacionado del ambiente en el que viven los habitantes de Argentina, dado por las múltiples dimensiones que abarca, tanto en el plano de la realidad social como del sistema natural, y las múltiples combinaciones entre estas dos dimensiones, variables en cada momento y lugar de nuestro país.</p>
+            <ul>
+              <li>Recursos naturales</li>
+              <li>Actividades humanas e implicancias ambientales</li>
+              <li>Riesgo de desastres</li>
+              <li>Áreas naturales protegidas</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer"></footer>
+
+  <script>
+    fetch('/components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+  <script src="/js/main.js"></script>
 </body>
+
 </html>

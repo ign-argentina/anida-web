@@ -1,0 +1,471 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Estilos base y variables CSS */
+    :root {
+      --primary: #157DB9;
+      /* Color primario azul */
+      --bg: #f5f7fa;
+      /* Color de fondo general */
+      --white: #fff;
+      /* Color blanco */
+      --gray: #6c757d;
+      /* Color gris para texto secundario */
+      --light-gray: #ccd4e0;
+      /* Gris claro para bordes */
+      --success: #28a745;
+      /* Color para mensajes de éxito */
+      --success-bg: #d4edda;
+      /* Fondo para mensajes de éxito */
+      --error: #dc3545;
+      /* Color para mensajes de error */
+      --error-bg: #f8d7da;
+      /* Fondo para mensajes de error */
+      --radius: 8px;
+      /* Radio de borde para elementos */
+      --shadow: 0 4px 18px rgba(0, 0, 0, .07);
+      /* Sombra suave */
+      --font-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      /* Fuente principal */
+    }
+
+    @font-face {
+      font-family: 'Arial';
+      src: local('Arial');
+    }
+
+    @font-face {
+      font-family: 'Helvetica';
+      src: local('Helvetica');
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url("../assets/fonts/Gotham-Medium.otf") format("opentype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Gotham-Light';
+      src: url("../assets/fonts/Gotham-Light-Regular.otf") format("opentype");
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    /* Aplicar fuentes a todo el formulario */
+    body {
+      font-family: 'Gotham-Light', 'Arial', 'Helvetica', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Elementos con fuente ligera */
+    .form-group label,
+    .success-msg,
+    .error-msg {
+      font-family: 'Gotham', 'Arial', 'Helvetica', sans-serif;
+      font-weight: 300;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+
+    .form-row .form-group {
+      width: calc(50% - 0.5rem);
+    }
+
+    /* Estilo del contenedor principal */
+    .content-section {
+      background: var(--bg);
+      padding: 2rem 1.5rem;
+      /* Relleno interno */
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 800px;
+      /* Ancho máximo del contenedor */
+    }
+
+    /* Contenedor de la tarjeta de contacto */
+    .contact-card {
+      background: var(--white);
+      width: 100%;
+      max-width: 600px;
+      /* Ancho máximo del formulario */
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* Título del formulario */
+    .contact-card h2 {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      /* Tamaño de fuente del título */
+      font-weight: 600;
+      /* Grosor de fuente del título */
+      color: var(--primary);
+    }
+
+    /* Grupos de campos del formulario */
+    .form-group {
+      margin-bottom: 1.25rem;
+      /* Espacio entre grupos de campos */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Etiquetas de los campos */
+    .form-group label {
+      font-size: .9rem;
+      /* Tamaño de fuente de las etiquetas */
+      font-weight: 500;
+      /* Grosor de fuente de las etiquetas */
+      margin-bottom: .4rem;
+      color: var(--gray);
+    }
+
+    /* Estilos para inputs y textarea */
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: .75rem .9rem;
+      /* Relleno interno */
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: border-color .2s, box-shadow .2s;
+      color: #333;
+    }
+
+    .form-group input[type="text"]::placeholder,
+    .form-group input[type="email"]::placeholder,
+    .form-group textarea::placeholder {
+      color: #999;
+      /* Color del placeholder */
+    }
+
+    /* Foco en inputs y textarea */
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 95, 204, .15);
+      /* Sombra de foco */
+    }
+
+    /* Estilo específico para textarea */
+    .form-group textarea {
+      min-height: 120px;
+      /* Altura mínima del textarea */
+      resize: vertical;
+      /* Permite redimensionar verticalmente */
+    }
+
+    /* Estilo para campos inválidos (feedback visual de HTML5) */
+    .form-group input:invalid:not(:placeholder-shown),
+    .form-group textarea:invalid:not(:placeholder-shown) {
+      border-color: var(--error);
+    }
+
+    .form-group input:invalid:not(:placeholder-shown):focus,
+    .form-group textarea:invalid:not(:placeholder-shown):focus {
+      box-shadow: 0 0 0 3px rgba(220, 53, 69, .15);
+    }
+
+    /* Botón de envío */
+    .btn {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: .8rem 1.5rem;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color .2s, opacity .2s;
+      width: 100%;
+      /* Botón ocupa todo el ancho */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn:hover {
+      background: #004ba0;
+      /* Color primario más oscuro al pasar el mouse */
+    }
+
+    /* Estilo del botón cuando está deshabilitado */
+    .btn:disabled {
+      background: #cccccc;
+      /* Fondo gris */
+      color: #666666;
+      /* Texto gris oscuro */
+      cursor: not-allowed;
+      /* Cursor de no permitido */
+      opacity: 0.7;
+    }
+
+    /* Animación de carga para el botón */
+    .loading {
+      position: relative;
+      pointer-events: none;
+      /* Evita clics mientras carga */
+    }
+
+    .loading::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin: -10px 0 0 -10px;
+      /* Centra el spinner */
+      border: 3px solid rgba(255, 255, 255, .3);
+      /* Borde claro del spinner */
+      border-radius: 50%;
+      border-top-color: var(--white);
+      /* Color principal del spinner */
+      animation: spin .6s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Mensajes de éxito y error */
+    .success-msg,
+    .error-msg {
+      margin-top: 1rem;
+      padding: .9rem 1.2rem;
+      border-radius: var(--radius);
+      font-size: .95rem;
+      display: none;
+      /* Ocultos por defecto */
+      text-align: center;
+    }
+
+    .success-msg {
+      background: var(--success-bg);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+
+    .error-msg {
+      background: var(--error-bg);
+      color: var(--error);
+      border: 1px solid var(--error);
+    }
+
+    /* Pequeños ajustes para responsividad */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+        /* Menos padding en pantallas pequeñas */
+      }
+
+      .contact-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .contact-card h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<div class="contact-card">
+  <h2>ANIDA | Formulario de contacto </h2>
+  <hr>
+  <br>
+  <form id="contactForm" action="https://formsubmit.co/ajax/anida@ign.gob.ar" method="POST" novalidate>
+
+    <input type="text" name="_honey" style="display:none">
+    <!-- <input type="hidden" name="_captcha" value="false"> -->
+    <input type="hidden" name="_template" value="table">
+    <!-- <input type="hidden" name="_next" value="https://anida.ign.gob.ar/contacto.html"> -->
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nombre">Nombre *</label>
+        <input type="text" id="nombre" name="Nombre" required minlength="2" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Solo se permiten letras y espacios. Mínimo 2 caracteres.">
+      </div>
+
+      <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="Apellido" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]*" title="Solo se permiten letras y espacios.">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="ocupacion">Ocupación / Organización</label>
+      <input type="text" id="ocupacion" name="Ocupación / Organización">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" name="Email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Ingresa una dirección de correo electrónico válida.">
+    </div>
+
+    <div class="form-group">
+      <label for="asunto">Asunto *</label>
+      <input type="text" id="asunto" name="Asunto" required minlength="4" maxlength="100" title="Mínimo 4 caracteres, máximo 100.">
+    </div>
+
+    <div class="form-group">
+      <label for="mensaje">Mensaje *</label>
+      <textarea id="mensaje" name="Mensaje" required minlength="10" maxlength="1000" title="Mínimo 10 caracteres, máximo 1000."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label id="captchaLabel" for="captchaInput">¿Cuánto es ... ? *</label>
+      <input type="text" id="captchaInput" name="Captcha" placeholder="Resultado de la suma" autocomplete="off" required pattern="[0-9]+" title="Ingresa solo números.">
+    </div>
+
+    <button type="submit" class="btn" id="submitBtn" disabled>Enviar</button>
+
+    <div id="formSuccess" class="success-msg">
+      ¡Mensaje enviado con éxito! Gracias por contactarnos.
+    </div>
+    <div id="formError" class="error-msg">
+      Algo salió mal al enviar el formulario. Por favor, inténtalo nuevamente.
+    </div>
+  </form>
+</div>
+
+<script>
+  // Variables globales para el formulario y el captcha
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const captchaInput = document.getElementById('captchaInput');
+  const captchaLabel = document.getElementById('captchaLabel');
+  const formSuccessMsg = document.getElementById('formSuccess');
+  const formErrorMsg = document.getElementById('formError');
+  let captchaExpectedAnswer; // Almacenará la respuesta correcta del captcha
+
+  /**
+   * Genera una nueva operación matemática para el captcha y la muestra.
+   * @returns {number} La respuesta correcta de la operación.
+   */
+  function generateNewCaptcha() {
+    const num1 = Math.floor(Math.random() * 10) + 1; // Número aleatorio entre 1 y 10
+    const num2 = Math.floor(Math.random() * 10) + 1; // Número aleatorio entre 1 y 10
+    captchaLabel.textContent = `¿Cuánto es ${num1} + ${num2}? *`; // Muestra la pregunta
+    return num1 + num2; // Retorna la suma correcta
+  }
+
+  /**
+   * Valida todo el formulario, incluyendo los campos y el captcha.
+   * Habilita o deshabilita el botón de envío según la validez.
+   */
+  function validateForm() {
+    // 'checkValidity()' verifica todos los campos del formulario según sus atributos HTML5 (required, pattern, minlength, etc.)
+    const isFormContentValid = contactForm.checkValidity();
+
+    // Verifica que el valor ingresado en el captcha sea numérico y coincida con la respuesta esperada.
+    const isCaptchaValid = Number(captchaInput.value) === captchaExpectedAnswer && captchaInput.value !== '';
+
+    // Habilita el botón de envío solo si tanto el contenido del formulario como el captcha son válidos.
+    submitBtn.disabled = !(isFormContentValid && isCaptchaValid);
+  }
+
+  /**
+   * Maneja el evento de envío del formulario.
+   * Previene el envío tradicional, realiza una petición AJAX a FormSubmit.
+   * @param {Event} event - El evento de envío del formulario.
+   */
+  async function handleSubmit(event) {
+    event.preventDefault(); // Previene la recarga de la página o redirección por defecto.
+
+    // Deshabilita el botón y muestra el indicador de carga.
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+    formSuccessMsg.style.display = 'none'; // Oculta mensajes previos
+    formErrorMsg.style.display = 'none';
+
+    // Crea un objeto FormData con los datos del formulario.
+    // FormSubmit acepta 'FormData' para envíos AJAX.
+    const formData = new FormData(contactForm);
+
+    try {
+      // Realiza la petición POST a la URL de acción del formulario (FormSubmit).
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json' // Indica que esperamos una respuesta JSON de FormSubmit.
+        }
+      });
+
+      if (response.ok) {
+        // Si la respuesta del servidor es exitosa (ej. status 200-299).
+        formSuccessMsg.style.display = 'block'; // Muestra mensaje de éxito.
+        formErrorMsg.style.display = 'none';  // Oculta mensaje de error.
+        contactForm.reset(); // Limpia los campos del formulario.
+        captchaExpectedAnswer = generateNewCaptcha(); // Genera un nuevo captcha.
+        validateForm(); // Revalida el formulario (el botón debe quedar deshabilitado).
+
+        // Desplaza la vista al mensaje de éxito para asegurar que el usuario lo vea.
+        formSuccessMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        // Si la respuesta del servidor indica un error.
+        const errorData = await response.json().catch(() => null); // Intenta parsear error JSON
+        console.error('Error en la respuesta de FormSubmit:', response.status, errorData);
+        throw new Error(`Error del servidor: ${response.status}. ${errorData?.message || 'No se pudo enviar.'}`);
+      }
+    } catch (error) {
+      // Si ocurre un error en la petición fetch (ej. problema de red) o un error lanzado arriba.
+      console.error('Error al enviar el formulario:', error);
+      formErrorMsg.textContent = `Ups, algo salió mal: ${error.message || 'Inténtalo nuevamente.'}`;
+      formErrorMsg.style.display = 'block'; // Muestra mensaje de error.
+      formSuccessMsg.style.display = 'none'; // Oculta mensaje de éxito.
+      // Desplaza la vista al mensaje de error.
+      formErrorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } finally {
+      // Se ejecuta siempre, después del try o catch.
+      // Quita el indicador de carga del botón. La validación se encargará de su estado 'disabled'.
+      submitBtn.classList.remove('loading');
+      // Re-validar para asegurar que el botón quede deshabilitado si el form se reseteó o si hubo error y no se reseteó.
+      validateForm();
+    }
+  }
+
+  // Event Listeners
+  // Se ejecuta cuando el contenido del DOM está completamente cargado.
+  document.addEventListener('DOMContentLoaded', () => {
+    // Genera el primer captcha al cargar la página.
+    captchaExpectedAnswer = generateNewCaptcha();
+
+    // Agrega un listener al formulario para manejar el evento 'submit'.
+    contactForm.addEventListener('submit', handleSubmit);
+
+    // Agrega listeners a todos los inputs y textareas para validar el formulario en tiempo real
+    // cada vez que el usuario modifica un campo.
+    const formElements = contactForm.querySelectorAll('input, textarea');
+    formElements.forEach(element => {
+      element.addEventListener('input', validateForm);
+    });
+
+    // Llama a validateForm una vez al inicio para establecer el estado inicial del botón.
+    validateForm();
+  });
+</script>
